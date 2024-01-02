@@ -114,16 +114,46 @@
     function initDataTable(tableId) {
         var table = $('#' + tableId).find('.display');
         if (!$.fn.DataTable.isDataTable(table)) {
+            var orderSetting;
+            // Set the initial order settings based on the table ID
+            if (tableId === 'table1') {
+                orderSetting = [[1, 'desc']]; // Sort by the second column in a descending manner
+            } else if (tableId === 'table2') {
+                orderSetting = [[3, 'desc']]; // Sort by the fourth column in a descending manner
+            } else {
+                orderSetting = [[0, 'asc']]; // Default sorting
+            }
+
             table.DataTable({
                 "scrollX": true,
                 "autoWidth": true,
-                "order": [[0, 'asc']],
+                "order": orderSetting,
                 "language": {
                     "search": "Search Player:"
+                },
+                "drawCallback": function(settings) {
+                    // Clear previous highlighting
+                    $(this).find('tbody tr').css('background-color', '');
+
+                    var api = this.api();
+                    var rows = api.rows({ page: 'current' }).nodes();
+                    var data = api.rows({ page: 'current' }).data();
+
+                    // Check if we have at least 3 rows in the current page
+                    if (data.length >= 3) {
+                        // Highlight the top 3 rows based on the current sorting
+                        $(rows).eq(0).css('background-color', '#d4af37'); // dark gold
+                        $(rows).eq(1).css('background-color', '#c0c0c0'); // dark silver
+                        $(rows).eq(2).css('background-color', '#cd7f32'); // bronze
+                    }
                 }
             });
+        } else {
+            // If already initialized, adjust the columns and redraw
+            table.DataTable().columns.adjust().draw();
         }
     }
+
 
     function showTable(tableId) {
         // Hide all table containers
@@ -148,6 +178,11 @@
     $('#table-select').on('change', function() {
         showTable(this.value);
     });
+
+    // Show the first table by default
+    showTable('table1');
+
+
 </script>
 
 
