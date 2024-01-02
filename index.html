@@ -82,6 +82,7 @@
     <select id="table-select" onchange="showTable(this.value)">
         <option value="table1">Sammelwahn</option>
         <option value="table2">Schießstand</option>
+        <option value="table3">Wettrennen</option>
         <!-- Add more options as per your tables -->
     </select>
 </div>
@@ -100,6 +101,15 @@
             <thead>    <tr style="text-align: right;">      <th></th>      <th>City</th>      <th>Jungle</th>      <th>Farm</th>    </tr>  </thead>  <tbody>    <tr>      <th>lizsyy</th>      <td>453</td>      <td>377</td>      <td>430</td>    </tr>    <tr>      <th>fflopse</th>      <td>416</td>      <td>418</td>      <td>481</td>    </tr>    <tr>      <th>Gobo9</th>      <td>448</td>      <td>360</td>      <td>448</td>    </tr>    <tr>      <th>HerrDante</th>      <td>452</td>      <td>409</td>      <td>465</td>    </tr>    <tr>      <th>PedroZockt</th>      <td>406</td>      <td>347</td>      <td>437</td>    </tr>    <tr>      <th>Kyuudo</th>      <td>349</td>      <td>284</td>      <td>349</td>    </tr>    <tr>      <th>Sey__</th>      <td>323</td>      <td>280</td>      <td>324</td>    </tr>    <tr>      <th>cediiiiii_10</th>      <td>433</td>      <td>385</td>      <td>451</td>    </tr>  </tbody>
         </table>
     </div>
+
+    <!-- Table 3: Wettrennen -->
+    <div id="table3" style="display:none;">
+        <table id="dataframe3" class="display nowrap">
+            <thead>    <tr style="text-align: right;">      <th></th>      <th>Green Hills</th>      <th>Cherry Blossom Canyon</th>      <th>Cyberpunk</th>      <th>Snow</th>    </tr>  </thead>  <tbody>    <tr>      <th>lizsyy</th>      <td>1:07"436</td>      <td>1:20"152</td>      <td>1:20"763</td>      <td>1:12"887</td>    </tr>    <tr>      <th>fflopse</th>      <td>1:07"568</td>      <td>1:20"061</td>      <td>1:18"594</td>      <td>1:12"858</td>    </tr>    <tr>      <th>Gobo9</th>      <td>1:02"593</td>      <td>1:19"553</td>      <td>1:19"800</td>      <td>1:12"024</td>    </tr>    <tr>      <th>HerrDante</th>      <td>1:04"999</td>      <td>1:20"568</td>      <td>1:20"245</td>      <td>1:12"171</td>    </tr>    <tr>      <th>PedroZockt</th>      <td>1:05"100</td>      <td>1:19"354</td>      <td>1:19"447</td>      <td>1:13"101</td>    </tr>    <tr>      <th>Kyuudo</th>      <td>1:08"096</td>      <td>1:21"219</td>      <td>1:21"556</td>      <td>1:14"827</td>    </tr>    <tr>      <th>Sey__</th>      <td>1:07"458</td>      <td>1:21"608</td>      <td>1:20"421</td>      <td>1:13"285</td>    </tr>    <tr>      <th>cediiiiii_10</th>      <td>1:04"439</td>      <td>1:18"876</td>      <td>1:18"799</td>      <td>1:11"405</td>    </tr>  </tbody>
+        </table>
+    </div>
+
+
 
     <!-- Add more tables as needed, each in their own div with a unique ID -->
 </div>
@@ -120,8 +130,11 @@
                 orderSetting = [[1, 'desc']]; // Sort by the second column in a descending manner
             } else if (tableId === 'table2') {
                 orderSetting = [[3, 'desc']]; // Sort by the fourth column in a descending manner
-            } else {
-                orderSetting = [[0, 'asc']]; // Default sorting
+            } else if (tableId === 'table3') {
+                orderSetting = [[3, 'asc']];
+            }
+            else {
+                orderSetting = [[1, 'asc']]; // Default sorting
             }
 
             table.DataTable({
