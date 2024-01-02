@@ -4,21 +4,156 @@
     <meta charset="UTF-8">
     <title>Interactive Table</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+            margin-top: 50px;
+        }
+        .caption {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .caption span {
+            font-weight: bold;
+            color: #213220;
+        }
+        .table-container {
+            width: 90%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Subtle shadow */
+            border-radius: 15px; /* Rounded corners */
+            overflow: hidden; /* Ensures the inner table respects border radius */
+        }
+        .display {
+            margin-top: 0;
+            width: 100%;
+            clear: both;
+            border-collapse: collapse;
+            table-layout: auto; /* Adjusted for dynamic layout */
+            word-wrap: break-word;
+        }
+        .display th, .display td {
+            text-align: center;
+            padding: 8px 10px;
+        }
+        .display thead th {
+            background-color: #2E7D32; /* Darker green color */
+            color: white;
+        }
+        .display tbody td {
+            background-color: #f2f2f2;
+        }
+        .display tbody tr:nth-child(odd) {
+            background-color: #ddd;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            background-color: #f1f1f1;
+            color: #333;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+    </style>
     <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 </head>
 <body>
 
-<!-- Your DataFrame HTML table here -->
-<table id="dataframe" class="display">
-    '<table border="1" class="dataframe">\n  <thead>\n    <tr style="text-align: right;">\n      <th></th>\n      <th>Carrot</th>\n      <th>Coffee</th>\n      <th>Globe</th>\n      <th>Target</th>\n      <th>Windows</th>\n      <th>Controller</th>\n      <th>Excavator</th>\n      <th>Toad</th>\n      <th>Instagram</th>\n      <th>Sheep</th>\n      <th>Caterpie</th>\n      <th>Among Us</th>\n      <th>Pizza</th>\n      <th>Apple</th>\n      <th>Fox</th>\n      <th>Kitty</th>\n      <th>House</th>\n      <th>Pineapple In The Sea</th>\n      <th>Diskette</th>\n      <th>Snake</th>\n      <th>Blinky</th>\n      <th>Chicken</th>\n      <th>YouTube</th>\n      <th>Camera</th>\n      <th>Cowboy</th>\n      <th>Pikachu</th>\n      <th>Ender Pearl</th>\n      <th>Frog</th>\n      <th>Poke Ball</th>\n      <th>Leg of Meat</th>\n      <th>Tetris</th>\n      <th>Heart</th>\n      <th>Koopa</th>\n      <th>Tree</th>\n      <th>Sonic</th>\n      <th>Turtle</th>\n      <th>Iron Ingot</th>\n      <th>French Fries</th>\n      <th>Netherite Ingot</th>\n      <th>Random 1</th>\n      <th>Piranha Plant</th>\n      <th>Random 2</th>\n      <th>Mouse</th>\n      <th>Skeleton</th>\n      <th>Cytooxien</th>\n      <th>Bob-omb</th>\n      <th>Cow</th>\n      <th>Doge</th>\n      <th>Deadpool</th>\n      <th>Arrow</th>\n      <th>Bowser Jr.</th>\n      <th>Bee</th>\n      <th>Penguin</th>\n      <th>Spider</th>\n      <th>Perry</th>\n      <th>Unicorn</th>\n      <th>Wizard</th>\n      <th>ppHop 2</th>\n      <th>Galaxian Alien</th>\n      <th>Sword</th>\n      <th>Poppy</th>\n      <th>Blue Monster</th>\n      <th>Robin Hood</th>\n      <th>Baby Yoda</th>\n      <th>Twitch</th>\n      <th>Guardian</th>\n      <th>Charizard</th>\n      <th>Skeleton Skull</th>\n      <th>Zombie</th>\n      <th>Ghost</th>\n      <th>Slime</th>\n      <th>1-Up</th>\n      <th>Thinking</th>\n      <th>Eevee</th>\n      <th>Smurf</th>\n      <th>Pirate</th>\n      <th>Cherry</th>\n      <th>Creeper</th>\n      <th>Kirby</th>\n      <th>Parrot</th>\n      <th>TNT</th>\n      <th>Pacman Ghost</th>\n      <th>Thinking 2</th>\n      <th>Duck</th>\n      <th>Mario</th>\n      <th>Mr. Krabs</th>\n      <th>Cookie</th>\n      <th>Mooshroom</th>\n      <th>Princess</th>\n      <th>ppHop 1</th>\n      <th>Hourglass</th>\n      <th>Cake</th>\n      <th>Water Temple</th>\n      <th>Twitter</th>\n      <th>Mountain</th>\n      <th>Gold Ingot</th>\n      <th>Rocket</th>\n      <th>Bruder muss los</th>\n      <th>Egg</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>lizsyy</th>\n      <td>12</td>\n      <td>11</td>\n      <td>26</td>\n      <td>12</td>\n      <td>17</td>\n      <td>16.0</td>\n      <td>15</td>\n      <td>21</td>\n      <td>24.0</td>\n      <td>16</td>\n      <td>13</td>\n      <td>21</td>\n      <td>17</td>\n      <td>18</td>\n      <td>17.0</td>\n      <td>19.0</td>\n      <td>18</td>\n      <td>14</td>\n      <td>17</td>\n      <td>9</td>\n      <td>19</td>\n      <td>17</td>\n      <td>18</td>\n      <td>19</td>\n      <td>13.0</td>\n      <td>35.0</td>\n      <td>24.0</td>\n      <td>23</td>\n      <td>17</td>\n      <td>15.0</td>\n      <td>13</td>\n      <td>19</td>\n      <td>14.0</td>\n      <td>17</td>\n      <td>13.0</td>\n      <td>22</td>\n      <td>11</td>\n      <td>18.0</td>\n      <td>11.0</td>\n      <td>10</td>\n      <td>29</td>\n      <td>12</td>\n      <td>18</td>\n      <td>18</td>\n      <td>14</td>\n      <td>12</td>\n      <td>23.0</td>\n      <td>26</td>\n      <td>21</td>\n      <td>13</td>\n      <td>18</td>\n      <td>11</td>\n      <td>20.0</td>\n      <td>20</td>\n      <td>13</td>\n      <td>11</td>\n      <td>22</td>\n      <td>15.0</td>\n      <td>20.0</td>\n      <td>8.0</td>\n      <td>15</td>\n      <td>22.0</td>\n      <td>23</td>\n      <td>17</td>\n      <td>15</td>\n      <td>22</td>\n      <td>21</td>\n      <td>24</td>\n      <td>20</td>\n      <td>11</td>\n      <td>21</td>\n      <td>17</td>\n      <td>19</td>\n      <td>19</td>\n      <td>22</td>\n      <td>13</td>\n      <td>18</td>\n      <td>37</td>\n      <td>22</td>\n      <td>15</td>\n      <td>23</td>\n      <td>12</td>\n      <td>20</td>\n      <td>12</td>\n      <td>17.0</td>\n      <td>16</td>\n      <td>15.0</td>\n      <td>20</td>\n      <td>18</td>\n      <td>21</td>\n      <td>19</td>\n      <td>21.0</td>\n      <td>15</td>\n      <td>19</td>\n      <td>22</td>\n      <td>10</td>\n      <td>12.0</td>\n      <td>18</td>\n      <td>12</td>\n    </tr>\n    <tr>\n      <th>Fflopse</th>\n      <td>13</td>\n      <td>11</td>\n      <td>24</td>\n      <td>10</td>\n      <td>14</td>\n      <td>14.0</td>\n      <td>18</td>\n      <td>21</td>\n      <td>24.0</td>\n      <td>18</td>\n      <td>19</td>\n      <td>21</td>\n      <td>15</td>\n      <td>28</td>\n      <td>15.0</td>\n      <td>22.0</td>\n      <td>18</td>\n      <td>21</td>\n      <td>15</td>\n      <td>9</td>\n      <td>20</td>\n      <td>15</td>\n      <td>15</td>\n      <td>20</td>\n      <td>11.0</td>\n      <td>28.0</td>\n      <td>29.0</td>\n      <td>18</td>\n      <td>17</td>\n      <td>20.0</td>\n      <td>13</td>\n      <td>19</td>\n      <td>15.0</td>\n      <td>19</td>\n      <td>16.0</td>\n      <td>21</td>\n      <td>10</td>\n      <td>16.0</td>\n      <td>10.0</td>\n      <td>10</td>\n      <td>32</td>\n      <td>11</td>\n      <td>22</td>\n      <td>22</td>\n      <td>12</td>\n      <td>13</td>\n      <td>29.0</td>\n      <td>30</td>\n      <td>23</td>\n      <td>14</td>\n      <td>16</td>\n      <td>12</td>\n      <td>20.0</td>\n      <td>21</td>\n      <td>9</td>\n      <td>11</td>\n      <td>17</td>\n      <td>19.0</td>\n      <td>21.0</td>\n      <td>10.0</td>\n      <td>14</td>\n      <td>20.0</td>\n      <td>22</td>\n      <td>17</td>\n      <td>14</td>\n      <td>28</td>\n      <td>20</td>\n      <td>22</td>\n      <td>20</td>\n      <td>12</td>\n      <td>20</td>\n      <td>24</td>\n      <td>20</td>\n      <td>24</td>\n      <td>20</td>\n      <td>11</td>\n      <td>21</td>\n      <td>44</td>\n      <td>22</td>\n      <td>15</td>\n      <td>27</td>\n      <td>12</td>\n      <td>17</td>\n      <td>11</td>\n      <td>18.0</td>\n      <td>20</td>\n      <td>16.0</td>\n      <td>26</td>\n      <td>16</td>\n      <td>21</td>\n      <td>18</td>\n      <td>27.0</td>\n      <td>16</td>\n      <td>16</td>\n      <td>20</td>\n      <td>10</td>\n      <td>11.0</td>\n      <td>21</td>\n      <td>22</td>\n    </tr>\n    <tr>\n      <th>Gobo9</th>\n      <td>8</td>\n      <td>8</td>\n      <td>16</td>\n      <td>10</td>\n      <td>13</td>\n      <td>14.0</td>\n      <td>9</td>\n      <td>14</td>\n      <td>20.0</td>\n      <td>11</td>\n      <td>12</td>\n      <td>17</td>\n      <td>10</td>\n      <td>13</td>\n      <td>11.0</td>\n      <td>14.0</td>\n      <td>10</td>\n      <td>14</td>\n      <td>13</td>\n      <td>6</td>\n      <td>17</td>\n      <td>12</td>\n      <td>13</td>\n      <td>14</td>\n      <td>10.0</td>\n      <td>17.0</td>\n      <td>15.0</td>\n      <td>11</td>\n      <td>14</td>\n      <td>11.0</td>\n      <td>9</td>\n      <td>17</td>\n      <td>11.0</td>\n      <td>15</td>\n      <td>12.0</td>\n      <td>17</td>\n      <td>8</td>\n      <td>15.0</td>\n      <td>8.0</td>\n      <td>8</td>\n      <td>21</td>\n      <td>9</td>\n      <td>11</td>\n      <td>15</td>\n      <td>11</td>\n      <td>10</td>\n      <td>22.0</td>\n      <td>23</td>\n      <td>20</td>\n      <td>10</td>\n      <td>13</td>\n      <td>9</td>\n      <td>13.0</td>\n      <td>17</td>\n      <td>9</td>\n      <td>9</td>\n      <td>15</td>\n      <td>13.0</td>\n      <td>16.0</td>\n      <td>7.0</td>\n      <td>11</td>\n      <td>20.0</td>\n      <td>15</td>\n      <td>10</td>\n      <td>13</td>\n      <td>19</td>\n      <td>20</td>\n      <td>12</td>\n      <td>17</td>\n      <td>10</td>\n      <td>15</td>\n      <td>14</td>\n      <td>14</td>\n      <td>14</td>\n      <td>16</td>\n      <td>8</td>\n      <td>13</td>\n      <td>26</td>\n      <td>21</td>\n      <td>12</td>\n      <td>18</td>\n      <td>11</td>\n      <td>15</td>\n      <td>8</td>\n      <td>12.0</td>\n      <td>12</td>\n      <td>13.0</td>\n      <td>19</td>\n      <td>17</td>\n      <td>16</td>\n      <td>16</td>\n      <td>22.0</td>\n      <td>14</td>\n      <td>16</td>\n      <td>13</td>\n      <td>8</td>\n      <td>9.0</td>\n      <td>16</td>\n      <td>11</td>\n    </tr>\n    <tr>\n      <th>HerrDante</th>\n      <td>12</td>\n      <td>12</td>\n      <td>21</td>\n      <td>12</td>\n      <td>14</td>\n      <td>16.0</td>\n      <td>20</td>\n      <td>31</td>\n      <td>22.0</td>\n      <td>19</td>\n      <td>19</td>\n      <td>23</td>\n      <td>13</td>\n      <td>18</td>\n      <td>29.0</td>\n      <td>29.0</td>\n      <td>14</td>\n      <td>20</td>\n      <td>17</td>\n      <td>8</td>\n      <td>19</td>\n      <td>16</td>\n      <td>15</td>\n      <td>19</td>\n      <td>13.0</td>\n      <td>36.0</td>\n      <td>20.0</td>\n      <td>14</td>\n      <td>18</td>\n      <td>17.0</td>\n      <td>15</td>\n      <td>18</td>\n      <td>13.0</td>\n      <td>20</td>\n      <td>16.0</td>\n      <td>23</td>\n      <td>11</td>\n      <td>19.0</td>\n      <td>12.0</td>\n      <td>11</td>\n      <td>37</td>\n      <td>10</td>\n      <td>26</td>\n      <td>19</td>\n      <td>12</td>\n      <td>10</td>\n      <td>23.0</td>\n      <td>26</td>\n      <td>36</td>\n      <td>15</td>\n      <td>16</td>\n      <td>12</td>\n      <td>21.0</td>\n      <td>21</td>\n      <td>13</td>\n      <td>16</td>\n      <td>25</td>\n      <td>21.0</td>\n      <td>24.0</td>\n      <td>8.0</td>\n      <td>13</td>\n      <td>21.0</td>\n      <td>24</td>\n      <td>19</td>\n      <td>20</td>\n      <td>29</td>\n      <td>26</td>\n      <td>15</td>\n      <td>20</td>\n      <td>11</td>\n      <td>21</td>\n      <td>16</td>\n      <td>24</td>\n      <td>19</td>\n      <td>26</td>\n      <td>13</td>\n      <td>21</td>\n      <td>39</td>\n      <td>26</td>\n      <td>19</td>\n      <td>28</td>\n      <td>13</td>\n      <td>23</td>\n      <td>11</td>\n      <td>18.0</td>\n      <td>13</td>\n      <td>15.0</td>\n      <td>25</td>\n      <td>20</td>\n      <td>21</td>\n      <td>17</td>\n      <td>24.0</td>\n      <td>16</td>\n      <td>18</td>\n      <td>23</td>\n      <td>12</td>\n      <td>12.0</td>\n      <td>26</td>\n      <td>15</td>\n    </tr>\n    <tr>\n      <th>PedroZockt</th>\n      <td>9</td>\n      <td>9</td>\n      <td>19</td>\n      <td>11</td>\n      <td>13</td>\n      <td>15.0</td>\n      <td>14</td>\n      <td>21</td>\n      <td>19.0</td>\n      <td>16</td>\n      <td>13</td>\n      <td>16</td>\n      <td>15</td>\n      <td>20</td>\n      <td>15.0</td>\n      <td>19.0</td>\n      <td>12</td>\n      <td>14</td>\n      <td>15</td>\n      <td>7</td>\n      <td>17</td>\n      <td>17</td>\n      <td>13</td>\n      <td>18</td>\n      <td>11.0</td>\n      <td>27.0</td>\n      <td>21.0</td>\n      <td>13</td>\n      <td>14</td>\n      <td>15.0</td>\n      <td>12</td>\n      <td>16</td>\n      <td>15.0</td>\n      <td>17</td>\n      <td>13.0</td>\n      <td>18</td>\n      <td>8</td>\n      <td>16.0</td>\n      <td>8.0</td>\n      <td>9</td>\n      <td>25</td>\n      <td>11</td>\n      <td>20</td>\n      <td>15</td>\n      <td>10</td>\n      <td>10</td>\n      <td>25.0</td>\n      <td>25</td>\n      <td>23</td>\n      <td>12</td>\n      <td>16</td>\n      <td>11</td>\n      <td>16.0</td>\n      <td>19</td>\n      <td>10</td>\n      <td>10</td>\n      <td>20</td>\n      <td>17.0</td>\n      <td>18.0</td>\n      <td>6.0</td>\n      <td>13</td>\n      <td>19.0</td>\n      <td>19</td>\n      <td>13</td>\n      <td>13</td>\n      <td>24</td>\n      <td>19</td>\n      <td>21</td>\n      <td>16</td>\n      <td>9</td>\n      <td>17</td>\n      <td>17</td>\n      <td>15</td>\n      <td>16</td>\n      <td>16</td>\n      <td>11</td>\n      <td>17</td>\n      <td>42</td>\n      <td>22</td>\n      <td>15</td>\n      <td>20</td>\n      <td>12</td>\n      <td>17</td>\n      <td>10</td>\n      <td>15.0</td>\n      <td>10</td>\n      <td>14.0</td>\n      <td>21</td>\n      <td>21</td>\n      <td>18</td>\n      <td>16</td>\n      <td>23.0</td>\n      <td>17</td>\n      <td>14</td>\n      <td>15</td>\n      <td>10</td>\n      <td>11.0</td>\n      <td>19</td>\n      <td>12</td>\n    </tr>\n    <tr>\n      <th>Kyuudo</th>\n      <td>19</td>\n      <td>19</td>\n      <td>27</td>\n      <td>12</td>\n      <td>16</td>\n      <td>NaN</td>\n      <td>23</td>\n      <td>40</td>\n      <td>29.0</td>\n      <td>24</td>\n      <td>23</td>\n      <td>40</td>\n      <td>30</td>\n      <td>32</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>21</td>\n      <td>21</td>\n      <td>24</td>\n      <td>15</td>\n      <td>35</td>\n      <td>15</td>\n      <td>21</td>\n      <td>18</td>\n      <td>NaN</td>\n      <td>35.0</td>\n      <td>NaN</td>\n      <td>23</td>\n      <td>24</td>\n      <td>23.0</td>\n      <td>19</td>\n      <td>27</td>\n      <td>NaN</td>\n      <td>29</td>\n      <td>NaN</td>\n      <td>29</td>\n      <td>12</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>12</td>\n      <td>34</td>\n      <td>15</td>\n      <td>43</td>\n      <td>23</td>\n      <td>17</td>\n      <td>18</td>\n      <td>NaN</td>\n      <td>37</td>\n      <td>41</td>\n      <td>19</td>\n      <td>22</td>\n      <td>15</td>\n      <td>NaN</td>\n      <td>27</td>\n      <td>15</td>\n      <td>13</td>\n      <td>25</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>16</td>\n      <td>NaN</td>\n      <td>26</td>\n      <td>25</td>\n      <td>18</td>\n      <td>32</td>\n      <td>23</td>\n      <td>33</td>\n      <td>29</td>\n      <td>18</td>\n      <td>23</td>\n      <td>21</td>\n      <td>27</td>\n      <td>27</td>\n      <td>35</td>\n      <td>17</td>\n      <td>25</td>\n      <td>55</td>\n      <td>30</td>\n      <td>27</td>\n      <td>25</td>\n      <td>18</td>\n      <td>21</td>\n      <td>16</td>\n      <td>NaN</td>\n      <td>21</td>\n      <td>NaN</td>\n      <td>49</td>\n      <td>32</td>\n      <td>24</td>\n      <td>27</td>\n      <td>NaN</td>\n      <td>18</td>\n      <td>21</td>\n      <td>24</td>\n      <td>16</td>\n      <td>NaN</td>\n      <td>30</td>\n      <td>23</td>\n    </tr>\n    <tr>\n      <th>Sey__</th>\n      <td>14</td>\n      <td>14</td>\n      <td>26</td>\n      <td>14</td>\n      <td>18</td>\n      <td>20.0</td>\n      <td>21</td>\n      <td>28</td>\n      <td>NaN</td>\n      <td>20</td>\n      <td>20</td>\n      <td>21</td>\n      <td>23</td>\n      <td>27</td>\n      <td>24.0</td>\n      <td>33.0</td>\n      <td>20</td>\n      <td>23</td>\n      <td>19</td>\n      <td>12</td>\n      <td>29</td>\n      <td>23</td>\n      <td>18</td>\n      <td>19</td>\n      <td>18.0</td>\n      <td>NaN</td>\n      <td>31.0</td>\n      <td>23</td>\n      <td>22</td>\n      <td>NaN</td>\n      <td>17</td>\n      <td>19</td>\n      <td>19.0</td>\n      <td>25</td>\n      <td>23.0</td>\n      <td>26</td>\n      <td>21</td>\n      <td>21.0</td>\n      <td>NaN</td>\n      <td>12</td>\n      <td>34</td>\n      <td>18</td>\n      <td>27</td>\n      <td>23</td>\n      <td>16</td>\n      <td>14</td>\n      <td>37.0</td>\n      <td>39</td>\n      <td>31</td>\n      <td>20</td>\n      <td>23</td>\n      <td>17</td>\n      <td>33.0</td>\n      <td>23</td>\n      <td>16</td>\n      <td>13</td>\n      <td>25</td>\n      <td>24.0</td>\n      <td>24.0</td>\n      <td>9.0</td>\n      <td>18</td>\n      <td>25.0</td>\n      <td>32</td>\n      <td>22</td>\n      <td>19</td>\n      <td>45</td>\n      <td>29</td>\n      <td>23</td>\n      <td>29</td>\n      <td>12</td>\n      <td>26</td>\n      <td>24</td>\n      <td>24</td>\n      <td>31</td>\n      <td>31</td>\n      <td>20</td>\n      <td>23</td>\n      <td>49</td>\n      <td>36</td>\n      <td>20</td>\n      <td>32</td>\n      <td>18</td>\n      <td>21</td>\n      <td>15</td>\n      <td>20.0</td>\n      <td>18</td>\n      <td>19.0</td>\n      <td>26</td>\n      <td>27</td>\n      <td>26</td>\n      <td>29</td>\n      <td>34.0</td>\n      <td>20</td>\n      <td>20</td>\n      <td>25</td>\n      <td>14</td>\n      <td>19.0</td>\n      <td>27</td>\n      <td>22</td>\n    </tr>\n    <tr>\n      <th>cediiiiii_10</th>\n      <td>10</td>\n      <td>9</td>\n      <td>18</td>\n      <td>9</td>\n      <td>11</td>\n      <td>13.0</td>\n      <td>14</td>\n      <td>19</td>\n      <td>20.0</td>\n      <td>16</td>\n      <td>14</td>\n      <td>17</td>\n      <td>13</td>\n      <td>14</td>\n      <td>13.0</td>\n      <td>21.0</td>\n      <td>11</td>\n      <td>14</td>\n      <td>14</td>\n      <td>7</td>\n      <td>17</td>\n      <td>11</td>\n      <td>13</td>\n      <td>17</td>\n      <td>10.0</td>\n      <td>25.0</td>\n      <td>17.0</td>\n      <td>12</td>\n      <td>14</td>\n      <td>13.0</td>\n      <td>11</td>\n      <td>17</td>\n      <td>12.0</td>\n      <td>15</td>\n      <td>13.0</td>\n      <td>18</td>\n      <td>9</td>\n      <td>13.0</td>\n      <td>10.0</td>\n      <td>10</td>\n      <td>23</td>\n      <td>10</td>\n      <td>20</td>\n      <td>16</td>\n      <td>11</td>\n      <td>10</td>\n      <td>22.0</td>\n      <td>24</td>\n      <td>25</td>\n      <td>12</td>\n      <td>13</td>\n      <td>12</td>\n      <td>12.0</td>\n      <td>17</td>\n      <td>10</td>\n      <td>10</td>\n      <td>18</td>\n      <td>14.0</td>\n      <td>21.0</td>\n      <td>9.0</td>\n      <td>10</td>\n      <td>17.0</td>\n      <td>22</td>\n      <td>13</td>\n      <td>13</td>\n      <td>18</td>\n      <td>21</td>\n      <td>19</td>\n      <td>17</td>\n      <td>10</td>\n      <td>16</td>\n      <td>18</td>\n      <td>18</td>\n      <td>16</td>\n      <td>21</td>\n      <td>12</td>\n      <td>16</td>\n      <td>34</td>\n      <td>23</td>\n      <td>14</td>\n      <td>21</td>\n      <td>12</td>\n      <td>18</td>\n      <td>11</td>\n      <td>15.0</td>\n      <td>11</td>\n      <td>14.0</td>\n      <td>19</td>\n      <td>20</td>\n      <td>17</td>\n      <td>17</td>\n      <td>17.0</td>\n      <td>12</td>\n      <td>15</td>\n      <td>19</td>\n      <td>9</td>\n      <td>11.0</td>\n      <td>18</td>\n      <td>14</td>\n    </tr>\n  </tbody>\n</table>'
-</table>
+<h1>Minecraft Party Rekorde</h1>
+<div class="caption">Scraped by <span>Fflopse</span> </div>
+
+<!-- Dropdown Menu for selecting tables -->
+<div class="dropdown">
+    <label for="table-select">Choose a table:</label>
+    <select id="table-select" onchange="showTable(this.value)">
+        <option value="table1">Sammelwahn</option>
+        <option value="table2">Schießstand</option>
+        <!-- Add more options as per your tables -->
+    </select>
+</div>
+
+<div class="table-container">
+    <!-- Table 1: Sammelwahn -->
+    <div id="table1" style="display:none;">
+        <table id="dataframe1" class="display nowrap">
+            <thead>    <tr style="text-align: right;">      <th></th>      <th>Chiefere-Urtaiga</th>      <th>Birke-Urwald</th>      <th>Verschneiti Taiga</th>      <th>Sumpf</th>      <th>Karmesinwald</th>      <th>Taiga</th>      <th>Fichte-Urtaiga</th>      <th>Ebeni</th>      <th>Bambusdschungel</th>      <th>Kirschberghain</th>      <th>Birkewald</th>      <th>Liechte Dschungel</th>      <th>Wald</th>      <th>Wirrwald</th>      <th>Dschungel</th>      <th>Zerzausti Savanne</th>      <th>Zerzausti Hügel</th>      <th>Verschneiti Ebeni</th>      <th>Savannehochebeni</th>      <th>Savanne</th>      <th>Dichte Wald</th>      <th>Bluemewald</th>      <th>Sunnebluemeebeni</th>      <th>Berghain</th>    </tr>  </thead>  <tbody>    <tr>      <th>lizsyy</th>      <td>32</td>      <td>27</td>      <td>28</td>      <td>28</td>      <td>11.0</td>      <td>31</td>      <td>26</td>      <td>32</td>      <td>27</td>      <td>28</td>      <td>28</td>      <td>35</td>      <td>31</td>      <td>14.0</td>      <td>27</td>      <td>30</td>      <td>29</td>      <td>32</td>      <td>31</td>      <td>31</td>      <td>31</td>      <td>35</td>      <td>31</td>      <td>NaN</td>    </tr>    <tr>      <th>fflopse</th>      <td>23</td>      <td>23</td>      <td>29</td>      <td>27</td>      <td>18.0</td>      <td>23</td>      <td>27</td>      <td>31</td>      <td>27</td>      <td>25</td>      <td>26</td>      <td>29</td>      <td>27</td>      <td>NaN</td>      <td>30</td>      <td>32</td>      <td>24</td>      <td>30</td>      <td>30</td>      <td>32</td>      <td>30</td>      <td>31</td>      <td>31</td>      <td>17.0</td>    </tr>    <tr>      <th>Gobo9</th>      <td>29</td>      <td>29</td>      <td>23</td>      <td>27</td>      <td>9.0</td>      <td>36</td>      <td>26</td>      <td>35</td>      <td>34</td>      <td>29</td>      <td>34</td>      <td>30</td>      <td>28</td>      <td>NaN</td>      <td>34</td>      <td>34</td>      <td>31</td>      <td>37</td>      <td>30</td>      <td>36</td>      <td>31</td>      <td>36</td>      <td>33</td>      <td>18.0</td>    </tr>    <tr>      <th>HerrDante</th>      <td>29</td>      <td>26</td>      <td>29</td>      <td>31</td>      <td>13.0</td>      <td>25</td>      <td>31</td>      <td>36</td>      <td>29</td>      <td>28</td>      <td>29</td>      <td>28</td>      <td>31</td>      <td>21.0</td>      <td>31</td>      <td>31</td>      <td>31</td>      <td>31</td>      <td>30</td>      <td>33</td>      <td>31</td>      <td>34</td>      <td>31</td>      <td>22.0</td>    </tr>    <tr>      <th>PedroZockt</th>      <td>29</td>      <td>26</td>      <td>22</td>      <td>26</td>      <td>NaN</td>      <td>30</td>      <td>28</td>      <td>29</td>      <td>28</td>      <td>26</td>      <td>25</td>      <td>30</td>      <td>31</td>      <td>11.0</td>      <td>34</td>      <td>30</td>      <td>27</td>      <td>31</td>      <td>27</td>      <td>32</td>      <td>35</td>      <td>35</td>      <td>29</td>      <td>19.0</td>    </tr>    <tr>      <th>Kyuudo</th>      <td>28</td>      <td>25</td>      <td>24</td>      <td>23</td>      <td>NaN</td>      <td>18</td>      <td>30</td>      <td>33</td>      <td>27</td>      <td>24</td>      <td>30</td>      <td>29</td>      <td>27</td>      <td>NaN</td>      <td>31</td>      <td>29</td>      <td>25</td>      <td>27</td>      <td>32</td>      <td>35</td>      <td>31</td>      <td>35</td>      <td>32</td>      <td>NaN</td>    </tr>    <tr>      <th>Sey__</th>      <td>30</td>      <td>26</td>      <td>23</td>      <td>23</td>      <td>NaN</td>      <td>30</td>      <td>24</td>      <td>32</td>      <td>25</td>      <td>24</td>      <td>31</td>      <td>30</td>      <td>31</td>      <td>NaN</td>      <td>31</td>      <td>29</td>      <td>25</td>      <td>32</td>      <td>26</td>      <td>31</td>      <td>30</td>      <td>34</td>      <td>28</td>      <td>NaN</td>    </tr>    <tr>      <th>cediiiiii_10</th>      <td>30</td>      <td>26</td>      <td>40</td>      <td>33</td>      <td>19.0</td>      <td>33</td>      <td>27</td>      <td>37</td>      <td>33</td>      <td>33</td>      <td>28</td>      <td>35</td>      <td>31</td>      <td>17.0</td>      <td>33</td>      <td>31</td>      <td>32</td>      <td>36</td>      <td>35</td>      <td>43</td>      <td>31</td>      <td>37</td>      <td>32</td>      <td>NaN</td>    </tr>  </tbody>
+        </table>
+    </div>
+
+    <!-- Table 2: Schießstand -->
+    <div id="table2" style="display:none;">
+        <table id="dataframe2" class="display nowrap">
+            <thead>    <tr style="text-align: right;">      <th></th>      <th>City</th>      <th>Jungle</th>      <th>Farm</th>    </tr>  </thead>  <tbody>    <tr>      <th>lizsyy</th>      <td>453</td>      <td>377</td>      <td>430</td>    </tr>    <tr>      <th>fflopse</th>      <td>416</td>      <td>418</td>      <td>481</td>    </tr>    <tr>      <th>Gobo9</th>      <td>448</td>      <td>360</td>      <td>448</td>    </tr>    <tr>      <th>HerrDante</th>      <td>452</td>      <td>409</td>      <td>465</td>    </tr>    <tr>      <th>PedroZockt</th>      <td>406</td>      <td>347</td>      <td>437</td>    </tr>    <tr>      <th>Kyuudo</th>      <td>349</td>      <td>284</td>      <td>349</td>    </tr>    <tr>      <th>Sey__</th>      <td>323</td>      <td>280</td>      <td>324</td>    </tr>    <tr>      <th>cediiiiii_10</th>      <td>433</td>      <td>385</td>      <td>451</td>    </tr>  </tbody>
+        </table>
+    </div>
+
+    <!-- Add more tables as needed, each in their own div with a unique ID -->
+</div>
 
 <script>
-    $(document).ready( function () {
-        $('#dataframe').DataTable();
-    } );
+    $(document).ready(function() {
+        // Initialize the first table by default
+        initDataTable('table1');
+        showTable('table1');
+    });
+
+    function initDataTable(tableId) {
+        var table = $('#' + tableId).find('.display');
+        if (!$.fn.DataTable.isDataTable(table)) {
+            table.DataTable({
+                "scrollX": true,
+                "autoWidth": true,
+                "order": [[0, 'asc']],
+                "language": {
+                    "search": "Search Player:"
+                }
+            });
+        }
+    }
+
+    function showTable(tableId) {
+        // Hide all table containers
+        $('.table-container > div').hide();
+
+        // Show the selected table container
+        $('#' + tableId).show();
+
+        // Destroy any existing DataTable instances
+        $('.display').DataTable().destroy();
+
+        // Reinitialize DataTable on the newly shown table
+        initDataTable(tableId);
+
+        // Adjust column sizing after a slight delay to ensure the table is rendered
+        setTimeout(function() {
+            $('#' + tableId).find('.display').DataTable().columns.adjust().draw();
+        }, 100); // Increase the timeout if necessary
+    }
+
+    // Event listener for dropdown change
+    $('#table-select').on('change', function() {
+        showTable(this.value);
+    });
 </script>
+
+
+<div class="footer">
+    If you wish to be added to this list, contact @Fflopse on Discord or in-game.
+</div>
 
 </body>
 </html>
