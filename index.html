@@ -18,11 +18,22 @@
         }
         .caption {
             color: #666;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
-        .caption span {
+        .caption .highlight {
             font-weight: bold;
-            color: #213220;
+            color: #2E7D32; /* Dark green color for the name */
+        }
+        .caption .date {
+            font-style: italic; /* Italicize the date for emphasis */
+            color: #555; /* Slightly darker color for the date for contrast */
+            padding: 0 5px; /* Adds spacing on either side of the date */
+        }
+        /* Additional styling to add a little space between the sections */
+        .caption span:not(:last-child)::after {
+            content: "|"; /* Inserts a pipe character */
+            margin: 0 8px; /* Adds horizontal spacing around the pipe */
+            color: #999; /* Color of the separator */
         }
         .table-container {
             width: 90%;
@@ -82,6 +93,38 @@
             width: 100%;
             font-size: 14px;
         }
+        /* Style the dropdown container */
+        .dropdown {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* Style the dropdown select element */
+        .dropdown select {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            color: #333;
+            outline: none; /* Removes the default focus outline */
+            cursor: pointer; /* Changes cursor to pointer */
+            transition: all 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        /* Hover effect for dropdown */
+        .dropdown select:hover {
+            border-color: #bbb;
+        }
+
+        /* Style for the dropdown label */
+        .dropdown label {
+            font-size: 18px;
+            color: #666;
+            margin-right: 10px;
+        }
+
     </style>
     <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
@@ -89,12 +132,15 @@
 <body>
 
 <h1>Minecraft Party Rekorde</h1>
-<div class="caption">Scraped by <span>Fflopse</span> </div>
+<div class="caption">
+    Scraped by <span class="highlight">Fflopse</span> data as of <span class="date"> 03 Jan 2023</span>
+</div>
+
 
 <!-- Dropdown Menu for selecting tables -->
 <!-- Dropdown Menu for selecting tables -->
 <div class="dropdown">
-    <label for="table-select">Choose a table:</label>
+    <label for="table-select">Minigame:</label>
     <select id="table-select" onchange="showTable(this.value)">
         <option value="table1">Sammelwahn</option>
         <option value="table2">Schießstand</option>
@@ -326,6 +372,8 @@
     });
 
     function initDataTable(tableId) {
+
+        
         var table = $('#' + tableId).find('.display');
         console.log('Initializing table with ID:', tableId); // Debugging line
 
@@ -364,6 +412,9 @@
                 "scrollX": true,
                 "autoWidth": false,
                 "order": orderSetting,
+                "columnDefs": [
+                    { "orderSequence": [initialOrderDirection], "targets": '_all' }
+                ],
                 "language": {
                     "search": "Search Player:"
                 },
@@ -413,6 +464,8 @@
     $(document).ready(function() {
         initDataTable('table1'); // Initialize the first table by default
     });
+
+
 
     // Function to handle table switching
     function showTable(tableId) {
