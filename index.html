@@ -128,6 +128,7 @@
     </style>
     <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
 
@@ -256,7 +257,10 @@
   </div>
   
   
-  
+<!-- Container for the swarm plot -->
+<div id="swarm-plot-container" style="display: none;">
+  <iframe id="swarm-plot-iframe" src="" frameborder="0" width="100%" height="600"></iframe>
+</div>
 
 <script>
     $(document).ready(function() {
@@ -266,7 +270,6 @@
     });
 
     function initDataTable(tableId) {
-
 
         var table = $('#' + tableId).find('.display');
         console.log('Initializing table with ID:', tableId); // Debugging line
@@ -373,8 +376,33 @@
 
     // Event listener for dropdown change
     $('#table-select').on('change', function() {
-        showTable(this.value);
+        var selectedMinigame = this.value;
+        showTable(selectedMinigame);
+        showSwarmPlot(selectedMinigame);
     });
+
+    // Function to show or hide the Plotly swarm plot based on the selected table ID
+    function showSwarmPlot(tableId) {
+        var swarmPlotContainer = document.getElementById('swarm-plot-container');
+        var swarmPlotIframe = document.getElementById('swarm-plot-iframe');
+
+        // Check if the selected table ID is 20
+        if (tableId === 'table20') {
+            swarmPlotIframe.src = "data-analysis/out/repl_swarm_plot.html";  // Replace with actual path to swarm plot HTML file
+            swarmPlotContainer.style.display = 'block';  // Show the container 
+          } 
+        else if (tableId === 'table21') {
+            swarmPlotIframe.src = "data-analysis/out/sammel_swarm_plot.html";  // Replace with actual path to swarm plot HTML file
+            swarmPlotContainer.style.display = 'block';  // Show the container 
+          } 
+        else {
+            swarmPlotContainer.style.display = 'none';  // Hide the container
+        }
+
+        swarmPlotContainer.style.borderRadius = '10px';  // Adjust the radius as needed
+        swarmPlotContainer.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';  // Apply shadow effect
+
+    }
 
     // Initialize the first table by default
     showTable('table1');
