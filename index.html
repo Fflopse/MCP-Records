@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-
     <meta charset="UTF-8">
     <title>MCP Records</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,55 +11,74 @@
         }
 
         body {
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-            font-family: 'Minecraft', Arial, sans-serif;
-            transition: filter 0.5s ease;
+            overflow: hidden; /* Hide overflow to prevent scrollbars */
+            background-image: url('bg/lobby-blurred.png');
+            background-size: cover;
+            background-position: center;
         }
+
+        .blurry-background {
+            filter: blur(10px); /* Apply blur only to the background */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Ensure it's behind other content */
+        }
+
         .container {
+            position: relative;
+            z-index: 1;
             text-align: center;
         }
-        .link {
-            display: inline-block;
+
+        .container h1 {
+            font-family: 'Minecraft', sans-serif;
+            font-size: 3em;
+            color: white; /* Text color */
             margin: 0 20px;
-            font-size: 24px;
-            color: #666;
-            text-decoration: none;
-            transition: color 0.3s;
+            display: inline-block;
+            cursor: pointer;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
-        .link:hover {
+
+        .container h1nh {
+            font-family: 'Minecraft', sans-serif;
+            font-size: 3em;
+            color: white; /* Text color */
+            margin: 0 20px;
+            display: inline-block;
+            cursor: pointer;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .container h1:hover {
             color: #FFD300FF;
         }
     </style>
     <script>
-        function unblurSite() {
-            document.body.style.filter = 'none';
-        }
         function blurAndRedirect(url) {
-            document.body.style.filter = 'blur(2px)';
+            document.querySelector('.blurry-background').style.filter = 'blur(10px)';
             setTimeout(function() {
                 window.location.href = url;
             }, 250);
         }
         window.onpopstate = function(event) {
-        unblurSite();
+            document.querySelector('.blurry-background').style.filter = 'none';
         };
     </script>
 </head>
 <body>
-
-<body onload="unblurSite()">
-
-<div class="container">
-    <a href="javascript:void(0);" class="link" onclick="blurAndRedirect('ger-SB.html')">Deutsch</a>
-    <a href="javascript:void(0);" class="link" onclick="blurAndRedirect('eng-SB.html')">English</a>
-</div>
-
-
-
+    <div class="blurry-background"></div> <!-- Background div -->
+    <div class="container">
+        <h1 id="english" onclick="blurAndRedirect('eng-SB.html')">EN</h1>
+        <h1 id="slash"> / </h1>
+        <h1 id="german" onclick="blurAndRedirect('ger-SB.html')">DE</h1>
+    </div>
 </body>
 </html>
