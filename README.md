@@ -6,6 +6,3 @@
 3. HTML implementation using DataTables with custom layout and sorting features, hosted through Github Pages.
 
 ### find the scoreboard [here](https://fflopse.github.io/MCP-Records/) ###
-
-![allSwarm](https://github.com/Fflopse/MCP-Records/assets/155480462/966d2a0a-6096-4cda-b587-41c123ca3f3e)
-
