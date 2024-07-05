@@ -5,4 +5,4 @@
 2. Data Analysis in Python using Regex and Pandas (data-analysis/analysis-v2.ipynb)
 3. HTML implementation using DataTables with custom layout and sorting features, hosted through Github Pages.
 
-### find the scoreboard [here](scoreboard.fflopse.de) ###
+### find the scoreboard [here](https://fflopse.de) ###
