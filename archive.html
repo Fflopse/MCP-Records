@@ -310,7 +310,7 @@
                     // Check if the table is sorted in the initial direction
                     if (currentOrder[1] === initialOrderDirection && pageInfo.page === 0) {
                         // Apply highlights only if current sort direction matches initial direction
-                        if (api.rows({ page: 'current' }).data().length >= 3 && tableId !== 'table17' && tableId !== 'table27' && tableId !== 'table25' && tableId !== 'table24' && tableId !== 'table21' && tableId !== 'table19' && tableId !== 'table18') {
+                        if (api.rows({ page: 'current' }).data().length >= 3) {
                             $(rows).eq(0).css('background-color', '#d4af37'); // Gold
                             $(rows).eq(1).css('background-color', '#c0c0c0'); // Silver
                             $(rows).eq(2).css('background-color', '#cd7f32'); // Bronze
