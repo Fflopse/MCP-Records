@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Party Records</title>
+    <link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .caption {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            color: #4CAF50;
+        }
+        .date {
+            font-style: italic;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .tabulator {
+            background-color: #2a2a2a;
+            border: none;
+        }
+        .tabulator .tabulator-header {
+            background-color: #3a3a3a;
+            color: #ffffff;
+        }
+        .tabulator .tabulator-row {
+            color: #ffffff;
+        }
+        .tabulator .tabulator-row.tabulator-row-even {
+            background-color: #2a2a2a;
+        }
+        .tabulator .tabulator-row.tabulator-row-odd {
+            background-color: #333333;
+        }
+        .player-avatar {
+            width: 32px;
+            height: 32px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Minecraft Party Records</h1>
+        <div class="caption">
+            by <span class="highlight">Fflopse</span> data as of <span class="date" id="current-date"></span>
+        </div>
+        <div class="dropdown">
+            <select id="minigame-select">
+                <option value="">All Minigames</option>
+                <!-- Minigame options will be populated dynamically -->
+            </select>
+        </div>
+        <div id="records-table"></div>
+        <div class="footer">
+            See the <a href="https://github.com/Fflopse/MCP-Records">Repository on Github</a>.
+            <a href="https://github.com/Fflopse/MCP-Records/actions">Update History</a>.
+            <a href="mailto:contact@fflopse.de">Let me know</a> if you wish to be included in this scoreboard!
+        </div>
+    </div>
+
+    <script>
+        // Set current date
+        document.getElementById('current-date').textContent = new Date().toLocaleString('en-US', { 
+            year: 'numeric', 
+            month: 'short', 
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric'
+        });
+
+        // Function to create avatar + name cell
+        function avatarFormatter(cell) {
+            const {name} = cell.getData();
+            // Note: You'll need to determine how to get the UUID for the avatar
+            const uuid = "placeholder-uuid"; // Replace this with actual UUID retrieval logic
+            const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
+            return `<img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar"> ${name}`;
+        }
+
+        // Initialize Tabulator
+        var table = new Tabulator("#records-table", {
+            ajaxURL: "records_data.json",
+            layout: "fitColumns",
+            columns: [
+                {title: "Name", field: "name", formatter: avatarFormatter, sorter: "string"},
+                {title: "Minigame", field: "minigame", sorter: "string"},
+                {title: "Best Score", field: "best_score", sorter: "number"},
+            ],
+            initialSort: [{column: "best_score", dir: "desc"}],
+            ajaxResponse: function(url, params, response) {
+                // Populate minigame dropdown
+                var minigames = [...new Set(response.map(item => item.minigame))].sort();
+                var select = document.getElementById("minigame-select");
+                minigames.forEach(function(minigame) {
+                    var option = document.createElement("option");
+                    option.value = minigame;
+                    option.textContent = minigame;
+                    select.appendChild(option);
+                });
+                return response;
+            },
+        });
+
+        // Filter table based on selected minigame
+        document.getElementById("minigame-select").addEventListener("change", function() {
+            if (this.value === "") {
+                table.clearFilter();
+            } else {
+                table.setFilter("minigame", "=", this.value);
+            }
+        });
+    </script>
+</body>
+</html>
