@@ -87,7 +87,7 @@
     <script>
         // Load player UUIDs
         var playerUUIDs = {};
-        fetch('player_uuids.json')
+        fetch('data-analysis/player_uuids.json')
             .then(response => response.text())
             .then(text => {
                 console.log("Raw JSON text:", text);  // Log the raw text
@@ -116,7 +116,7 @@
         function initializeTable() {
             // Initialize Tabulator
             var table = new Tabulator("#records-table", {
-                ajaxURL: "records_data.json",
+                ajaxURL: "data-analysis/records_data.json",
                 layout: "fitColumns",
                 columns: [
                     {title: "Name", field: "name", formatter: avatarFormatter, sorter: "string"},
