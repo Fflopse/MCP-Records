@@ -138,10 +138,46 @@
         .tabulator .tabulator-tableholder {
             overflow-x: auto;
         }
-        .search-container {
+        .controls-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
         }
-
+        .dropdown {
+            flex: 1;
+            max-width: 300px;
+        }
+        .search-container {
+            flex: 1;
+            max-width: 300px;
+        }
+        #minigame-select,
+        #player-search {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #FFD300FF;
+            border-radius: 5px;
+            background-color: #3a3a3a;
+            color: #ffffff;
+            font-size: 16px;
+        }
+        #minigame-select:focus,
+        #player-search:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255, 211, 0, 0.5);
+        }
+        @media (max-width: 768px) {
+            .controls-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .dropdown,
+            .search-container {
+                max-width: none;
+                margin-bottom: 10px;
+            }
+        }
         #player-search {
             width: 100%;
             max-width: 300px;
@@ -165,43 +201,45 @@
         <div class="caption">
             by <span class="highlight">Fflopse</span> data as of <span class="date" id="current-date"></span>
         </div>
-        <div class="dropdown">
-            <label for="minigame-select">Minigame:</label>
-            <select id="minigame-select">
-                <option value="Blockhüpfer">Block Jump</option>
-                <option value="Buntes Chaos">Colorful Chaos</option>
-                <option value="Todeswürfel">Death Cube</option>
-                <option value="Duelle">Duels</option>
-                <option value="Freier Fall">Dropper</option>
-                <option value="Elytrarennen">Elytra Race</option>
-                <option value="Frostiger Pfad">Frozen Path</option>
-                <option value="Waffenfolge">Gungame</option>
-                <option value="Pferderennen">Horse Race</option>
-                <option value="Jump and Run">Jump and Run</option>
-                <option value="Kletter-König">King of the Hill</option>
-                <option value="Lasertag">Lasertag</option>
-                <option value="Minengefecht">Mine Battle</option>
-                <option value="Minenfeld">Minefield</option>
-                <option value="Mini Skywars">Mini Skywars</option>
-                <option value="Mini Survivalgames">Mini Survivalgames</option>
-                <option value="Einer im Köcher">One in the Chamber</option>
-                <option value="Paintball">Paintball</option>
-                <option value="Replika">Replica</option>
-                <option value="Ampelrennen">Red Light, Green Light</option>
-                <option value="Schießstand">Shooting Range</option>
-                <option value="Spleef">Spleef</option>
-                <option value="Wettrennen">Speed Race</option>
-                <option value="Sammelwahn">Too many items</option>
-                <option value="Hoch hinaus">Up High</option>
-                <option value="Walls">Walls</option>
-            </select>
+        <div class="controls-container">
+            <div class="dropdown">
+                <label for="minigame-select">Minigame:</label>
+                <select id="minigame-select">
+                    <option value="Blockhüpfer">Block Jump</option>
+                    <option value="Buntes Chaos">Colorful Chaos</option>
+                    <option value="Todeswürfel">Death Cube</option>
+                    <option value="Duelle">Duels</option>
+                    <option value="Freier Fall">Dropper</option>
+                    <option value="Elytrarennen">Elytra Race</option>
+                    <option value="Frostiger Pfad">Frozen Path</option>
+                    <option value="Waffenfolge">Gungame</option>
+                    <option value="Pferderennen">Horse Race</option>
+                    <option value="Jump and Run">Jump and Run</option>
+                    <option value="Kletter-König">King of the Hill</option>
+                    <option value="Lasertag">Lasertag</option>
+                    <option value="Minengefecht">Mine Battle</option>
+                    <option value="Minenfeld">Minefield</option>
+                    <option value="Mini Skywars">Mini Skywars</option>
+                    <option value="Mini Survivalgames">Mini Survivalgames</option>
+                    <option value="Einer im Köcher">One in the Chamber</option>
+                    <option value="Paintball">Paintball</option>
+                    <option value="Replika">Replica</option>
+                    <option value="Ampelrennen">Red Light, Green Light</option>
+                    <option value="Schießstand">Shooting Range</option>
+                    <option value="Spleef">Spleef</option>
+                    <option value="Wettrennen">Speed Race</option>
+                    <option value="Sammelwahn">Too many items</option>
+                    <option value="Hoch hinaus">Up High</option>
+                    <option value="Walls">Walls</option>
+                </select>
+            </div>
+            <div class="search-container">
+                <input type="text" id="player-search" placeholder="Search player names...">
+            </div>
         </div>
         <div id="loading-animation" class="loading">
             <div class="spinner"></div>
             <p>Loading data and avatars...</p>
-        </div>
-        <div class="search-container">
-            <input type="text" id="player-search" placeholder="Search player names...">
         </div>
         <div id="records-table"></div>
         <div class="footer">
