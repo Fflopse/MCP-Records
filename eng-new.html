@@ -263,11 +263,17 @@
                     const aValue = aRow.getData().scores[column.getField().split('.')[1]];
                     const bValue = bRow.getData().scores[column.getField().split('.')[1]];
 
-                    if (aValue === undefined && bValue === undefined) return 0;
-                    if (aValue === undefined) return 1;
-                    if (bValue === undefined) return -1;
+                    // Handle undefined, null, or "-" values
+                    if (aValue === undefined || aValue === null || aValue === "-") {
+                        return 1;  // Always sort these to the bottom
+                    }
+                    if (bValue === undefined || bValue === null || bValue === "-") {
+                        return -1;  // Always sort these to the bottom
+                    }
 
-                    return dir === "asc" ? aValue - bValue : bValue - aValue;
+                    // For actual numeric values, sort based on the sortDirection
+                    const diff = aValue - bValue;
+                    return sortDirection === "asc" ? diff : -diff;
                 }
                 
                 Array.from(allMapNames).sort().forEach(mapName => {
@@ -278,7 +284,7 @@
                         sorter: customSorter,
                         formatter: function(cell) {
                             const value = cell.getValue();
-                            if (value === undefined) return "-";
+                            if (value === undefined || value === null) return "-";
                             return typeof value === 'number' ? value.toFixed(3) : value;
                         },
                         headerSortStartingDir: sortDirection,
