@@ -237,7 +237,6 @@
                 
                 const sortDirection = ascendingMinigames.includes(currentMinigame) ? "asc" : "desc";
 
-                // Custom sorter function
                 function customSorter(a, b, aRow, bRow, column, dir, sorterParams) {
                     const aValue = aRow.getData().scores[column.getField().split('.')[1]];
                     const bValue = bRow.getData().scores[column.getField().split('.')[1]];
