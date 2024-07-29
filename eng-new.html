@@ -239,16 +239,20 @@
 
                 // Custom sorter function
                 function customSorter(a, b, aRow, bRow, column, dir, sorterParams) {
-                    const valueA = a ?? Number.MAX_SAFE_INTEGER;
-                    const valueB = b ?? Number.MAX_SAFE_INTEGER;
-
-                    if (valueA === valueB) return 0;
-
-                    // Always put null/undefined values at the bottom
-                    if (a === null || a === undefined) return 1;
-                    if (b === null || b === undefined) return -1;
-
-                    return dir === "asc" ? valueA - valueB : valueB - valueA;
+                    // If both values are null/undefined/"-", maintain their relative order
+                    if ((a === null || a === undefined || a === "-") && (b === null || b === undefined || b === "-")) {
+                        return 0;
+                    }
+                    // If only a is null/undefined/"-", it should be last
+                    if (a === null || a === undefined || a === "-") {
+                        return 1;
+                    }
+                    // If only b is null/undefined/"-", it should be last
+                    if (b === null || b === undefined || b === "-") {
+                        return -1;
+                    }
+                    // For actual numeric values, sort based on direction
+                    return dir === "asc" ? a - b : b - a;
                 }
 
                 // Add columns for each map
