@@ -296,10 +296,10 @@
             }
 
             // For actual numeric values, sort based on the explicitly defined sortDirection
-            if (dir === "asc") {
-                return a - b;
+            if (sortDirection === "asc") {
+                return aValue - bValue;
             } else {
-                return b - a;
+                return bValue - aValue;
             }
         }
 
