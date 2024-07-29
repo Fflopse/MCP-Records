@@ -193,6 +193,68 @@
             outline: none;
             box-shadow: 0 0 0 2px rgba(255, 211, 0, 0.5);
         }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #2a2a2a;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #FFD300FF;
+            width: 80%;
+            max-width: 800px;
+            color: #ffffff;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #FFD300FF;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .player-name {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .player-name:hover {
+            color: #FFD300FF;
+        }
+
+        .profile-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .profile-table th, .profile-table td {
+            border: 1px solid #FFD300FF;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .profile-table th {
+            background-color: #1a1a1a;
+        }
     </style>
 </head>
 <body>
@@ -242,6 +304,12 @@
             <p>Loading data and avatars...</p>
         </div>
         <div id="records-table"></div>
+        <div id="player-profile-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="player-profile-content"></div>
+            </div>
+        </div>
         <div class="footer">
             <!-- ... (footer content remains the same) ... -->
         </div>
@@ -307,12 +375,12 @@
                 initializeTable([]);
             });
     
-        function avatarFormatter(cell) {
-            const {name} = cell.getData();
-            const uuid = playerUUIDs[name] || "8667ba71-b85a-4004-af54-457a9734eed7";
-            const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
-            return `<img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar"> ${name}`;
-        }
+            function avatarFormatter(cell) {
+                const {name} = cell.getData();
+                const uuid = playerUUIDs[name] || "8667ba71-b85a-4004-af54-457a9734eed7";
+                const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
+                return `<img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar"> <span class="player-name" onclick="showPlayerProfile('${name}')">${name}</span>`;
+            }
     
         function initializeTable(initialData) {
             console.log("Initializing table with data:", initialData);
@@ -574,6 +642,45 @@
             console.error("JavaScript error:", message, "at", source, ":", lineno);
             alert("An error occurred. Please check the console for more details.");
         };
+
+        function createPlayerProfile(playerName) {
+            const playerData = initialData.filter(record => record.name === playerName);
+            
+            let profileHTML = `<h2>${playerName}'s Profile</h2>`;
+            profileHTML += `<img src="https://crafatar.com/avatars/${playerUUIDs[playerName] || '8667ba71-b85a-4004-af54-457a9734eed7'}?size=100&overlay" alt="${playerName}'s avatar">`;
+            
+            const minigames = [...new Set(playerData.map(record => record.minigame))];
+            
+            minigames.forEach(minigame => {
+                const minigameData = playerData.find(record => record.minigame === minigame);
+                if (minigameData) {
+                    profileHTML += `<h3>${minigame}</h3>`;
+                    profileHTML += `<table class="profile-table">
+                        <tr><th>Map</th><th>Score</th></tr>
+                        ${Object.entries(minigameData.scores)
+                            .map(([map, score]) => `<tr><td>${map}</td><td>${score}</td></tr>`)
+                            .join('')}
+                    </table>`;
+                }
+            });
+            
+            return profileHTML;
+        }
+
+        function showPlayerProfile(playerName) {
+            const modal = document.getElementById('player-profile-modal');
+            const content = document.getElementById('player-profile-content');
+            content.innerHTML = createPlayerProfile(playerName);
+            modal.style.display = 'block';
+        }
+
+        // Close modal when clicking the close button or outside the modal
+        window.onclick = function(event) {
+            const modal = document.getElementById('player-profile-modal');
+            if (event.target == modal || event.target.className == 'close') {
+                modal.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>
