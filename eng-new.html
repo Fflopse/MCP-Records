@@ -256,7 +256,7 @@
                     // For actual numeric values, sort based on direction
                     return dir === "asc" ? aValue - bValue : bValue - aValue;
                 }
-
+                
                 // Add columns for each map
                 Array.from(allMapNames).sort().forEach(mapName => {
                     columns.push({
@@ -265,8 +265,7 @@
                         headerSort: true,
                         sorter: customSorter,
                         formatter: function(cell) {
-                            const value = cell.getValue();
-                            return (value !== null && value !== undefined) ? value : "-";
+                            return cell.getValue() ?? "-";
                         },
                         headerSortStartingDir: sortDirection,
                         headerSortTristate: false
@@ -299,8 +298,14 @@
                         table.setSort(column.getField(), sortDirection);
                     }
                 });
-                }
             }
+    
+            document.getElementById("minigame-select").addEventListener("change", function() {
+                updateTable(this.value);
+            });
+    
+            updateTable(currentMinigame);
+        }
     
         // Set current date
         document.getElementById('current-date').textContent = new Date().toLocaleString('en-US', { 
