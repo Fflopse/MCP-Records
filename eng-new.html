@@ -255,6 +255,8 @@
         }
     
         function initializeTable(initialData) {
+            const MIN_COLUMN_WIDTH = 100; // Adjust this value as needed
+
             console.log("Initializing table with data:", initialData);
             if (typeof Tabulator === 'undefined') {
                 console.error("Tabulator library is not loaded!");
@@ -315,15 +317,23 @@
                     const availableWidth = tableWidth - frozenWidth;
 
                     const columns = table.getColumns();
-                    const columnCount = columns.length - 1; // Exclude the frozen column
-                    if (columnCount > 0) {
-                        const newWidth = Math.floor(availableWidth / columnCount);
+                    const nonFrozenColumns = columns.filter(column => column.getField() !== "name");
+                    const columnCount = nonFrozenColumns.length;
 
-                        columns.forEach((column) => {
-                            if (column.getField() !== "name") {
-                                column.setWidth(newWidth);
-                            }
+                    if (columnCount > 0) {
+                        let newWidth = Math.floor(availableWidth / columnCount);
+                        newWidth = Math.max(newWidth, MIN_COLUMN_WIDTH);
+
+                        nonFrozenColumns.forEach((column) => {
+                            column.setWidth(newWidth);
                         });
+
+                        // If the total width is less than the available width, expand the last column
+                        const totalWidth = frozenWidth + (newWidth * columnCount);
+                        if (totalWidth < tableWidth && nonFrozenColumns.length > 0) {
+                            const lastColumn = nonFrozenColumns[nonFrozenColumns.length - 1];
+                            lastColumn.setWidth(newWidth + (tableWidth - totalWidth));
+                        }
                     }
                 }
             }
@@ -388,6 +398,7 @@
                         title: mapName,
                         field: `scores.${mapName}`,
                         headerSort: false,
+                        minWidth: MIN_COLUMN_WIDTH,
                         formatter: function(cell) {
                             const value = cell.getValue();
                             if (value === undefined || value === null) return "-";
@@ -405,7 +416,7 @@
                 const tableOptions = {
                     data: filteredData,
                     columns: columns,
-                    layout: "fitDataTable",
+                    layout: "fitDataFill",
                     columnHeaderSortMulti: false,
                     sortOrderReverse: false,
                     movableColumns: false,
