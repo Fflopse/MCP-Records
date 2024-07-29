@@ -44,12 +44,16 @@
             border: none;
         }
         .tabulator .tabulator-header {
-            background-color: #3a3a3a;
-            color: #FFD300FF;
-            font-weight: bold;
+        background-color: #000000;  /* Changed to black */
+        color: #ffffff;
+        font-weight: bold;
+        }
+        .tabulator .tabulator-header .tabulator-col {
+            background-color: #000000;  /* Ensure each column header is black */
+            border-right: 1px solid #2a2a2a;  /* Add a subtle separator between columns */
         }
         .tabulator .tabulator-header .tabulator-col.tabulator-sortable:hover {
-            background-color: #4a4a4a;
+            background-color: #1a1a1a;  /* Darker shade on hover */
         }
         .tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort] {
             background-color: #FFD300FF;
