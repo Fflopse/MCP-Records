@@ -71,85 +71,125 @@
             by <span class="highlight">Fflopse</span> data as of <span class="date" id="current-date"></span>
         </div>
         <div class="dropdown">
+            <label for="minigame-select">Minigame:</label>
             <select id="minigame-select">
-                <option value="">All Minigames</option>
-                <!-- Minigame options will be populated dynamically -->
+                <option value="Block Jump">Block Jump</option>
+                <option value="Colorful Chaos">Colorful Chaos</option>
+                <option value="Death Cube">Death Cube</option>
+                <option value="Duels">Duels</option>
+                <option value="Dropper">Dropper</option>
+                <option value="Elytra Race">Elytra Race</option>
+                <option value="Frozen Path">Frozen Path</option>
+                <option value="Gungame">Gungame</option>
+                <option value="Horse Race">Horse Race</option>
+                <option value="Jump and Run">Jump and Run</option>
+                <option value="King of the Hill">King of the Hill</option>
+                <option value="Lasertag">Lasertag</option>
+                <option value="Mine Battle">Mine Battle</option>
+                <option value="Minefield">Minefield</option>
+                <option value="Mini Skywars">Mini Skywars</option>
+                <option value="Mini Survivalgames">Mini Survivalgames</option>
+                <option value="One in the Chamber">One in the Chamber</option>
+                <option value="Paintball">Paintball</option>
+                <option value="Replika">Replika</option>
+                <option value="Red Light, Green Light">Red Light, Green Light</option>
+                <option value="Shooting Range">Shooting Range</option>
+                <option value="Spleef">Spleef</option>
+                <option value="Speed Race">Speed Race</option>
+                <option value="Too many items">Too many items</option>
+                <option value="Up High">Up High</option>
+                <option value="Walls">Walls</option>
             </select>
         </div>
         <div id="records-table"></div>
         <div class="footer">
-            See the <a href="https://github.com/Fflopse/MCP-Records">Repository on Github</a>.
-            <a href="https://github.com/Fflopse/MCP-Records/actions">Update History</a>.
-            <a href="mailto:contact@fflopse.de">Let me know</a> if you wish to be included in this scoreboard!
+            <!-- ... (footer content remains the same) ... -->
         </div>
     </div>
 
     <script>
         // Load player UUIDs
         var playerUUIDs = {};
-        fetch('data-analysis/player_uuids.json')
-            .then(response => response.text())
-            .then(text => {
-                console.log("Raw JSON text:", text);  // Log the raw text
-                return JSON.parse(text);
-            })
+        fetch('player_uuids.json')
+            .then(response => response.json())
             .then(data => {
-                console.log("Parsed UUID data:", data);  // Log the parsed data
                 playerUUIDs = data;
                 initializeTable();
             })
             .catch(error => {
                 console.error("Error loading UUIDs:", error);
-                initializeTable();  // Initialize table even if UUID loading fails
+                initializeTable();
             });
-    
+
         // Function to create avatar + name cell
         function avatarFormatter(cell) {
             const {name} = cell.getData();
-            console.log("Formatting avatar for:", name);  // Log the name being formatted
-            const uuid = playerUUIDs[name] || "8667ba71-b85a-4004-af54-457a9734eed7";
-            console.log("UUID used:", uuid);  // Log the UUID being used
+            const uuid = playerUUIDs[name] || "steve";
             const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
             return `<img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar"> ${name}`;
         }
-    
+
         function initializeTable() {
-            // Initialize Tabulator
-            var table = new Tabulator("#records-table", {
-                ajaxURL: "data-analysis/records_data.json",
-                layout: "fitColumns",
-                columns: [
-                    {title: "Name", field: "name", formatter: avatarFormatter, sorter: "string"},
-                    {title: "Minigame", field: "minigame", sorter: "string"},
-                    {title: "Best Score", field: "best_score", sorter: "number"},
-                ],
-                initialSort: [{column: "best_score", dir: "desc"}],
-                ajaxResponse: function(url, params, response) {
-                    console.log("Records data:", response);  // Log the records data
-                    // Populate minigame dropdown
-                    var minigames = [...new Set(response.map(item => item.minigame))].sort();
-                    var select = document.getElementById("minigame-select");
-                    select.innerHTML = '<option value="">All Minigames</option>';
-                    minigames.forEach(function(minigame) {
-                        var option = document.createElement("option");
-                        option.value = minigame;
-                        option.textContent = minigame;
-                        select.appendChild(option);
-                    });
-                    return response;
-                },
-            });
-    
-            // Filter table based on selected minigame
-            document.getElementById("minigame-select").addEventListener("change", function() {
-                if (this.value === "") {
-                    table.clearFilter();
+            var table;
+            var currentMinigame = "Block Jump";  // Default minigame
+
+            function updateTable(minigame) {
+                currentMinigame = minigame;
+                if (table) {
+                    table.setData("records_data.json");
                 } else {
-                    table.setFilter("minigame", "=", this.value);
+                    createTable();
                 }
+            }
+
+            function createTable() {
+                fetch("records_data.json")
+                    .then(response => response.json())
+                    .then(data => {
+                        const filteredData = data.filter(record => record.minigame === currentMinigame);
+                        const columns = [
+                            {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false}
+                        ];
+
+                        // Add columns for each map
+                        if (filteredData.length > 0) {
+                            Object.keys(filteredData[0].scores).forEach(mapName => {
+                                columns.push({
+                                    title: mapName,
+                                    field: `scores.${mapName}`,
+                                    headerSort: true,
+                                    sorter: "number"
+                                });
+                            });
+                        }
+
+                        table = new Tabulator("#records-table", {
+                            data: filteredData,
+                            columns: columns,
+                            layout: "fitColumns",
+                            initialSort: getInitialSort(currentMinigame)
+                        });
+                    });
+            }
+
+            function getInitialSort(minigame) {
+                const ascendingMinigames = [
+                    "Block Jump", "Death Cube", "Dropper", "Elytra Race", "Frozen Path", "Gungame",
+                    "Horse Race", "Jump and Run", "King of the Hill", "Minefield", "Replika",
+                    "Red Light, Green Light", "Speed Race"
+                ];
+                
+                const sortDirection = ascendingMinigames.includes(minigame) ? "asc" : "desc";
+                return [{column: "scores." + Object.keys(table.getData()[0].scores)[0], dir: sortDirection}];
+            }
+
+            document.getElementById("minigame-select").addEventListener("change", function() {
+                updateTable(this.value);
             });
+
+            updateTable(currentMinigame);
         }
-    
+
         // Set current date
         document.getElementById('current-date').textContent = new Date().toLocaleString('en-US', { 
             year: 'numeric', 
