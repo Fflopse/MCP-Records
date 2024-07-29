@@ -120,7 +120,7 @@
                 console.error("Error loading UUIDs:", error);
                 initializeTable();
             });
-
+    
         // Function to create avatar + name cell
         function avatarFormatter(cell) {
             const {name} = cell.getData();
@@ -128,20 +128,16 @@
             const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
             return `<img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar"> ${name}`;
         }
-
+    
         function initializeTable() {
             var table;
             var currentMinigame = "Block Jump";  // Default minigame
-
+    
             function updateTable(minigame) {
                 currentMinigame = minigame;
-                if (table) {
-                    table.setData("data-analysis/records_data.json");
-                } else {
-                    createTable();
-                }
+                createTable();
             }
-
+    
             function createTable() {
                 fetch("data-analysis/records_data.json")
                     .then(response => response.json())
@@ -150,7 +146,7 @@
                         const columns = [
                             {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false}
                         ];
-
+    
                         // Add columns for each map
                         if (filteredData.length > 0) {
                             Object.keys(filteredData[0].scores).forEach(mapName => {
@@ -162,34 +158,40 @@
                                 });
                             });
                         }
-
-                        table = new Tabulator("#records-table", {
-                            data: filteredData,
-                            columns: columns,
-                            layout: "fitColumns",
-                            initialSort: getInitialSort(currentMinigame)
-                        });
+    
+                        const ascendingMinigames = [
+                            "Block Jump", "Death Cube", "Dropper", "Elytra Race", "Frozen Path", "Gungame",
+                            "Horse Race", "Jump and Run", "King of the Hill", "Minefield", "Replika",
+                            "Red Light, Green Light", "Speed Race"
+                        ];
+                        
+                        const sortDirection = ascendingMinigames.includes(currentMinigame) ? "asc" : "desc";
+                        const initialSort = filteredData.length > 0 ? 
+                            [{column: "scores." + Object.keys(filteredData[0].scores)[0], dir: sortDirection}] : 
+                            [];
+    
+                        if (table) {
+                            table.setColumns(columns);
+                            table.setData(filteredData);
+                            table.setSort(initialSort);
+                        } else {
+                            table = new Tabulator("#records-table", {
+                                data: filteredData,
+                                columns: columns,
+                                layout: "fitColumns",
+                                initialSort: initialSort
+                            });
+                        }
                     });
             }
-
-            function getInitialSort(minigame) {
-                const ascendingMinigames = [
-                    "Block Jump", "Death Cube", "Dropper", "Elytra Race", "Frozen Path", "Gungame",
-                    "Horse Race", "Jump and Run", "King of the Hill", "Minefield", "Replika",
-                    "Red Light, Green Light", "Speed Race"
-                ];
-                
-                const sortDirection = ascendingMinigames.includes(minigame) ? "asc" : "desc";
-                return [{column: "scores." + Object.keys(table.getData()[0].scores)[0], dir: sortDirection}];
-            }
-
+    
             document.getElementById("minigame-select").addEventListener("change", function() {
                 updateTable(this.value);
             });
-
+    
             updateTable(currentMinigame);
         }
-
+    
         // Set current date
         document.getElementById('current-date').textContent = new Date().toLocaleString('en-US', { 
             year: 'numeric', 
