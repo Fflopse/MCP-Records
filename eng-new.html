@@ -5,89 +5,164 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minecraft Party Records</title>
     <link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
     <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #2a2a2a;
+            --accent-color: #FFD300;
+            --text-color: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --transition-speed: 0.3s;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
             margin: 0;
             padding: 20px;
+            transition: all var(--transition-speed) ease;
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
         }
+
+        .card {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all var(--transition-speed) ease;
+        }
+
         h1 {
+            font-size: 2.5em;
+            font-weight: 700;
             text-align: center;
             margin-bottom: 30px;
+            color: var(--accent-color);
         }
+
         .caption {
             text-align: center;
             margin-bottom: 20px;
+            font-size: 1.1em;
         }
+
         .highlight {
-            color: #FFD300FF;
+            color: var(--accent-color);
+            font-weight: 500;
         }
+
         .date {
             font-style: italic;
+            opacity: 0.8;
         }
-        .dropdown {
+
+        .controls-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
         }
-        .footer {
-            margin-top: 20px;
-            text-align: center;
+
+        .dropdown, .search-container {
+            flex: 1;
+            max-width: 300px;
         }
+
+        #minigame-select, #player-search {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border: 2px solid var(--accent-color);
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: all var(--transition-speed) ease;
+        }
+
+        #minigame-select:focus, #player-search:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 211, 0, 0.5);
+        }
+
         .tabulator {
-            background-color: #2a2a2a;
+            background-color: var(--secondary-color);
             border: none;
+            border-radius: 8px;
+            overflow: hidden;
         }
+
         .tabulator .tabulator-header {
-            background-color: #000000;
-            color: #ffffff;
-            font-weight: bold;
+            background-color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
         }
+
         .tabulator .tabulator-header .tabulator-col {
-            background-color: #000000;
-            border-right: 1px solid #2a2a2a;
+            background-color: var(--primary-color);
+            border-right: 1px solid var(--secondary-color);
+            color: var(--text-color);
+            font-weight: 500;
+            transition: background-color var(--transition-speed) ease;
         }
+
         .tabulator .tabulator-header .tabulator-col.tabulator-sortable:hover {
-            background-color: #1a1a1a;
+            background-color: rgba(255, 211, 0, 0.2);
         }
-        .tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort] {
-            background-color: #FFD300FF;
-            color: #ffffff;
-        }
-        .tabulator .tabulator-row {
-            color: #ffffff;
-        }
-        .tabulator .tabulator-row.tabulator-row-even {
-            background-color: #2a2a2a;
-        }
-        .tabulator .tabulator-row.tabulator-row-odd {
-            background-color: #333333;
-        }
+
         .tabulator .tabulator-header .tabulator-col.sorted {
-            background-color: #FFD300FF;
-            color: #ffffff;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
         }
-        .tabulator .tabulator-header .tabulator-col.tabulator-frozen,
-        .tabulator .tabulator-row .tabulator-cell.tabulator-frozen {
-            position: sticky;
-            left: 0;
-            z-index: 2;
-            background-color: inherit;
+
+        .tabulator .tabulator-row {
+            transition: background-color var(--transition-speed) ease;
         }
-        .tabulator .tabulator-row .tabulator-cell.tabulator-frozen {
-            box-shadow: 2px 0px 3px rgba(0,0,0,0.1);
+
+        .tabulator .tabulator-row.tabulator-row-even {
+            background-color: var(--secondary-color);
         }
+
+        .tabulator .tabulator-row.tabulator-row-odd {
+            background-color: var(--primary-color);
+        }
+
+        .tabulator .tabulator-row:hover {
+            background-color: rgba(255, 211, 0, 0.1);
+        }
+
+        .tabulator .tabulator-row .tabulator-cell {
+            border-right: none;
+        }
+
         .player-avatar {
             width: 32px;
             height: 32px;
             vertical-align: middle;
             margin-right: 10px;
+            border-radius: 50%;
+            transition: transform var(--transition-speed) ease;
         }
+
+        .player-avatar:hover {
+            transform: scale(1.1);
+        }
+
+        .player-name {
+            cursor: pointer;
+            transition: color var(--transition-speed) ease;
+        }
+
+        .player-name:hover {
+            color: var(--accent-color);
+        }
+
         .loading {
             display: flex;
             flex-direction: column;
@@ -95,103 +170,28 @@
             justify-content: center;
             height: 200px;
         }
+
         .spinner {
             border: 4px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
-            border-top: 4px solid #FFD300FF;
+            border-top: 4px solid var(--accent-color);
             width: 40px;
             height: 40px;
             animation: spin 1s linear infinite;
         }
+
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
         #records-table {
             opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        #records-table.loaded {
-            opacity: 1;
-        }
-        #minigame-select {
-            background-color: #3a3a3a;
-            color: #ffffff;
-            border: 1px solid #FFD300FF;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 16px;
-            width: 100%;
-            max-width: 300px;
-        }
-        #minigame-select:focus {
-            outline: none;
-            box-shadow: 0 0 0 2px rgb(163, 136, 0)(76, 175, 80, 0.5);
-        }
-        #records-table {
-            width: 100%;
-            overflow-x: auto;
-        }
-        .tabulator {
-            width: 100%;
-        }
-        .tabulator .tabulator-tableholder {
-            overflow-x: auto;
-        }
-        .controls-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .dropdown {
-            flex: 1;
-            max-width: 300px;
-        }
-        .search-container {
-            flex: 1;
-            max-width: 300px;
-        }
-        #minigame-select,
-        #player-search {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #FFD300FF;
-            border-radius: 5px;
-            background-color: #3a3a3a;
-            color: #ffffff;
-            font-size: 16px;
-        }
-        #minigame-select:focus,
-        #player-search:focus {
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(255, 211, 0, 0.5);
-        }
-        @media (max-width: 768px) {
-            .controls-container {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .dropdown,
-            .search-container {
-                max-width: none;
-                margin-bottom: 10px;
-            }
-        }
-        #player-search {
-            width: 100%;
-            max-width: 300px;
-            padding: 10px;
-            border: 1px solid #FFD300FF;
-            border-radius: 5px;
-            background-color: #3a3a3a;
-            color: #ffffff;
-            font-size: 16px;
+            transition: opacity var(--transition-speed) ease-in-out;
         }
 
-        #player-search:focus {
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(255, 211, 0, 0.5);
+        #records-table.loaded {
+            opacity: 1;
         }
 
         .modal {
@@ -203,40 +203,47 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.4);
+            background-color: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            transition: opacity var(--transition-speed) ease;
+        }
+
+        .modal.show {
+            opacity: 1;
         }
 
         .modal-content {
-            background-color: #2a2a2a;
+            background-color: var(--secondary-color);
             margin: 5% auto;
             padding: 20px;
-            border: 1px solid #FFD300FF;
+            border: 1px solid var(--accent-color);
             width: 80%;
             max-width: 800px;
-            color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            transform: translateY(-50px);
+            opacity: 0;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .modal.show .modal-content {
+            transform: translateY(0);
+            opacity: 1;
         }
 
         .close {
-            color: #aaa;
+            color: var(--text-color);
             float: right;
             font-size: 28px;
             font-weight: bold;
             cursor: pointer;
+            transition: color var(--transition-speed) ease;
         }
 
         .close:hover,
         .close:focus {
-            color: #FFD300FF;
+            color: var(--accent-color);
             text-decoration: none;
-            cursor: pointer;
-        }
-
-        .player-name {
-            cursor: pointer;
-        }
-
-        .player-name:hover {
-            color: #FFD300FF;
         }
 
         .profile-table {
@@ -246,13 +253,26 @@
         }
 
         .profile-table th, .profile-table td {
-            border: 1px solid #FFD300FF;
+            border: 1px solid var(--accent-color);
             padding: 8px;
             text-align: left;
         }
 
         .profile-table th {
-            background-color: #1a1a1a;
+            background-color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .controls-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .dropdown,
+            .search-container {
+                max-width: none;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
@@ -262,55 +282,57 @@
         <div class="caption">
             by <span class="highlight">Fflopse</span> data as of <span class="date" id="current-date"></span>
         </div>
-        <div class="controls-container">
-            <div class="dropdown">
-                <label for="minigame-select">Minigame:</label>
-                <select id="minigame-select">
-                    <option value="Blockhüpfer">Block Jump</option>
-                    <option value="Buntes Chaos">Colorful Chaos</option>
-                    <option value="Todeswürfel">Death Cube</option>
-                    <option value="Duelle">Duels</option>
-                    <option value="Freier Fall">Dropper</option>
-                    <option value="Elytrarennen">Elytra Race</option>
-                    <option value="Frostiger Pfad">Frozen Path</option>
-                    <option value="Waffenfolge">Gungame</option>
-                    <option value="Pferderennen">Horse Race</option>
-                    <option value="Jump and Run">Jump and Run</option>
-                    <option value="Kletter-König">King of the Hill</option>
-                    <option value="Lasertag">Lasertag</option>
-                    <option value="Minengefecht">Mine Battle</option>
-                    <option value="Minenfeld">Minefield</option>
-                    <option value="Mini Skywars">Mini Skywars</option>
-                    <option value="Mini Survivalgames">Mini Survivalgames</option>
-                    <option value="Einer im Köcher">One in the Chamber</option>
-                    <option value="Paintball">Paintball</option>
-                    <option value="Replika">Replica</option>
-                    <option value="Ampelrennen">Red Light, Green Light</option>
-                    <option value="Schießstand">Shooting Range</option>
-                    <option value="Spleef">Spleef</option>
-                    <option value="Wettrennen">Speed Race</option>
-                    <option value="Sammelwahn">Too many items</option>
-                    <option value="Hoch hinaus">Up High</option>
-                    <option value="Walls">Walls</option>
-                </select>
-            </div>
-            <div class="search-container">
-                <input type="text" id="player-search" placeholder="Search player names...">
-            </div>
-        </div>
-        <div id="loading-animation" class="loading">
-            <div class="spinner"></div>
-            <p>Loading data and avatars...</p>
-        </div>
-        <div id="records-table"></div>
-        <div id="player-profile-modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <div id="player-profile-content"></div>
+        <div class="card">
+            <div class="controls-container">
+                <div class="dropdown">
+                    <label for="minigame-select">Minigame:</label>
+                    <select id="minigame-select">
+                        <option value="Blockhüpfer">Block Jump</option>
+                        <option value="Buntes Chaos">Colorful Chaos</option>
+                        <option value="Todeswürfel">Death Cube</option>
+                        <option value="Duelle">Duels</option>
+                        <option value="Freier Fall">Dropper</option>
+                        <option value="Elytrarennen">Elytra Race</option>
+                        <option value="Frostiger Pfad">Frozen Path</option>
+                        <option value="Waffenfolge">Gungame</option>
+                        <option value="Pferderennen">Horse Race</option>
+                        <option value="Jump and Run">Jump and Run</option>
+                        <option value="Kletter-König">King of the Hill</option>
+                        <option value="Lasertag">Lasertag</option>
+                        <option value="Minengefecht">Mine Battle</option>
+                        <option value="Minenfeld">Minefield</option>
+                        <option value="Mini Skywars">Mini Skywars</option>
+                        <option value="Mini Survivalgames">Mini Survivalgames</option>
+                        <option value="Einer im Köcher">One in the Chamber</option>
+                        <option value="Paintball">Paintball</option>
+                        <option value="Replika">Replica</option>
+                        <option value="Ampelrennen">Red Light, Green Light</option>
+                        <option value="Schießstand">Shooting Range</option>
+                        <option value="Spleef">Spleef</option>
+                        <option value="Wettrennen">Speed Race</option>
+                        <option value="Sammelwahn">Too many items</option>
+                        <option value="Hoch hinaus">Up High</option>
+                        <option value="Walls">Walls</option>
+                    </select>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="player-search" placeholder="Search player names...">
+                </div>
             </div>
         </div>
-        <div class="footer">
-            <!-- ... (footer content remains the same) ... -->
+        <div class="card">
+            <div id="loading-animation" class="loading">
+                <div class="spinner"></div>
+                <p>Loading data and avatars...</p>
+            </div>
+            <div id="records-table"></div>
+        </div>
+    </div>
+
+    <div id="player-profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="player-profile-content"></div>
         </div>
     </div>
 
