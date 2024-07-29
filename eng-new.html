@@ -318,16 +318,18 @@
                 "Walls": "desc"
             };
 
+            let searchTerm = "";
+
+            function customFilter(data) {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    return data.name.toLowerCase().includes(searchTerm);
+                }
+
             function setupSearch() {
                 const searchInput = document.getElementById("player-search");
                 searchInput.addEventListener("input", function() {
                     table.setFilter(customFilter);
                 });
-
-                function customFilter(data) {
-                    const searchTerm = searchInput.value.toLowerCase();
-                    return data.name.toLowerCase().includes(searchTerm);
-                }
             }
 
             function highlightSortedColumn(column) {
@@ -376,10 +378,11 @@
                 console.log("Updating table for minigame:", minigame);
                 currentMinigame = minigame;
                 
-                // Reset search input
+                // Reset search input and term
                 const searchInput = document.getElementById("player-search");
                 if (searchInput) {
                     searchInput.value = "";
+                    searchTerm = "";
                 }
                 
                 createTable();
@@ -469,6 +472,7 @@
                 if (table) {
                     table.setColumns(columns);
                     table.setData(filteredData);
+                    table.setFilter(customFilter);
                 } else {
                     table = new Tabulator("#records-table", tableOptions);
                 }
