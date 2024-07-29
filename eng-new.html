@@ -44,16 +44,16 @@
             border: none;
         }
         .tabulator .tabulator-header {
-        background-color: #000000;  /* Changed to black */
-        color: #ffffff;
-        font-weight: bold;
+            background-color: #000000;
+            color: #ffffff;
+            font-weight: bold;
         }
         .tabulator .tabulator-header .tabulator-col {
-            background-color: #000000;  /* Ensure each column header is black */
-            border-right: 1px solid #2a2a2a;  /* Add a subtle separator between columns */
+            background-color: #000000;
+            border-right: 1px solid #2a2a2a;
         }
         .tabulator .tabulator-header .tabulator-col.tabulator-sortable:hover {
-            background-color: #1a1a1a;  /* Darker shade on hover */
+            background-color: #1a1a1a;
         }
         .tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort] {
             background-color: #FFD300FF;
@@ -72,17 +72,12 @@
             background-color: #FFD300FF;
             color: #ffffff;
         }
-        .tabulator .tabulator-header .tabulator-col.tabulator-frozen {
-            position: sticky;
-            left: 0;
-            z-index: 2;
-            background-color: #000000;  /* Match your header background color */
-        }
+        .tabulator .tabulator-header .tabulator-col.tabulator-frozen,
         .tabulator .tabulator-row .tabulator-cell.tabulator-frozen {
             position: sticky;
             left: 0;
-            z-index: 1;
-            background-color: inherit;  /* This will match the row's background color */
+            z-index: 2;
+            background-color: inherit;
         }
         .tabulator .tabulator-row .tabulator-cell.tabulator-frozen {
             box-shadow: 2px 0px 3px rgba(0,0,0,0.1);
@@ -142,16 +137,6 @@
         }
         .tabulator .tabulator-tableholder {
             overflow-x: auto;
-        }
-        .tabulator .tabulator-header .tabulator-col.tabulator-frozen,
-        .tabulator .tabulator-row .tabulator-cell.tabulator-frozen {
-            position: sticky;
-            left: 0;
-            z-index: 2;
-            background-color: inherit;
-        }
-        .tabulator .tabulator-row .tabulator-cell.tabulator-frozen {
-            box-shadow: 2px 0px 3px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -249,6 +234,7 @@
             })
             .then(response => response.json())
             .then(data => {
+                console.log("Loaded data:", data);
                 return preloadAvatars(data).then(() => data);
             })
             .then(data => {
@@ -269,179 +255,190 @@
         }
     
         function initializeTable(initialData) {
-    var table;
-    var currentMinigame = "Blockhüpfer";
-
-    // Explicitly define sorting direction for each minigame
-    const minigameSortDirections = {
-        "Blockhüpfer": "asc",
-        "Buntes Chaos": "desc",
-        "Todeswürfel": "asc",
-        "Duelle": "desc",
-        "Freier Fall": "asc",
-        "Elytrarennen": "asc",
-        "Frostiger Pfad": "asc",
-        "Waffenfolge": "asc",
-        "Pferderennen": "asc",
-        "Jump and Run": "asc",
-        "Kletter-König": "asc",
-        "Lasertag": "desc",
-        "Minengefecht": "desc",
-        "Minenfeld": "asc",
-        "Mini Skywars": "desc",
-        "Mini Survivalgames": "desc",
-        "Einer im Köcher": "desc",
-        "Paintball": "desc",
-        "Replika": "asc",
-        "Ampelrennen": "asc",
-        "Schießstand": "desc",
-        "Spleef": "desc",
-        "Wettrennen": "asc",
-        "Sammelwahn": "desc",
-        "Hoch hinaus": "asc",
-        "Walls": "desc"
-    };
-
-    function updateTable(minigame) {
-        currentMinigame = minigame;
-        createTable();
-        
-        // Highlight the initially sorted column for the new minigame
-        setTimeout(() => {
-            const firstMapName = Array.from(new Set(initialData.filter(record => record.minigame === currentMinigame)
-                .flatMap(record => Object.keys(record.scores)))).sort()[0];
-            const initialColumn = table.getColumn(`scores.${firstMapName}`);
-            if (initialColumn) {
-                highlightSortedColumn(initialColumn);
+            console.log("Initializing table with data:", initialData);
+            if (typeof Tabulator === 'undefined') {
+                console.error("Tabulator library is not loaded!");
+                alert("Tabulator library is not loaded. Please check your internet connection and refresh the page.");
+                return;
             }
-            adjustColumnWidths();
-        }, 0);
-    }
-
-    function createTable() {
-    const filteredData = initialData.filter(record => record.minigame === currentMinigame);
-    const columns = [
-        {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false, frozen: true, width: 200}
-    ];
-
-    const allMapNames = new Set();
-    filteredData.forEach(record => {
-        Object.keys(record.scores).forEach(mapName => {
-            allMapNames.add(mapName);
-        });
-    });
-
-    const sortDirection = minigameSortDirections[currentMinigame] || "desc";
-
-    function compareScores(a, b, mapName) {
-        const aScore = a.scores[mapName];
-        const bScore = b.scores[mapName];
-
-        if (aScore === undefined || aScore === null || aScore === "-") return 1;
-        if (bScore === undefined || bScore === null || bScore === "-") return -1;
-
-        return sortDirection === "asc" ? aScore - bScore : bScore - aScore;
-    }
-
-    Array.from(allMapNames).sort().forEach(mapName => {
-        columns.push({
-            title: mapName,
-            field: `scores.${mapName}`,
-            headerSort: false,
-            formatter: function(cell) {
-                const value = cell.getValue();
-                if (value === undefined || value === null) return "-";
-                return typeof value === 'number' ? value.toFixed(3) : value;
+            var table;
+            var currentMinigame = "Blockhüpfer";
+    
+            // Explicitly define sorting direction for each minigame
+            const minigameSortDirections = {
+                "Blockhüpfer": "asc",
+                "Buntes Chaos": "desc",
+                "Todeswürfel": "asc",
+                "Duelle": "desc",
+                "Freier Fall": "asc",
+                "Elytrarennen": "asc",
+                "Frostiger Pfad": "asc",
+                "Waffenfolge": "asc",
+                "Pferderennen": "asc",
+                "Jump and Run": "asc",
+                "Kletter-König": "asc",
+                "Lasertag": "desc",
+                "Minengefecht": "desc",
+                "Minenfeld": "asc",
+                "Mini Skywars": "desc",
+                "Mini Survivalgames": "desc",
+                "Einer im Köcher": "desc",
+                "Paintball": "desc",
+                "Replika": "asc",
+                "Ampelrennen": "asc",
+                "Schießstand": "desc",
+                "Spleef": "desc",
+                "Wettrennen": "asc",
+                "Sammelwahn": "desc",
+                "Hoch hinaus": "asc",
+                "Walls": "desc"
+            };
+    
+            function updateTable(minigame) {
+                console.log("Updating table for minigame:", minigame);
+                currentMinigame = minigame;
+                createTable();
+                
+                // Highlight the initially sorted column for the new minigame
+                setTimeout(() => {
+                    const firstMapName = Array.from(new Set(initialData.filter(record => record.minigame === currentMinigame)
+                        .flatMap(record => Object.keys(record.scores)))).sort()[0];
+                    const initialColumn = table.getColumn(`scores.${firstMapName}`);
+                    if (initialColumn) {
+                        highlightSortedColumn(initialColumn);
+                    }
+                    adjustColumnWidths();
+                }, 0);
             }
-        });
-    });
-
-    // Pre-sort the data
-    const firstMapName = Array.from(allMapNames)[0];
-    filteredData.sort((a, b) => compareScores(a, b, firstMapName));
-
-    let sortedColumn = firstMapName;
-
-    const tableOptions = {
-        data: filteredData,
-        columns: columns,
-        layout: "fitDataTable",
-        columnHeaderSortMulti: false,
-        sortOrderReverse: false,
-        movableColumns: false,
-        scrollToColumnPosition: 'center',
-        frozenColumns: 1,
-        height: 500, // Adjust as needed
-    };
-
-    if (table) {
-        table.setColumns(columns);
-        table.setData(filteredData);
-        table.setOptions(tableOptions);
-    } else {
-        table = new Tabulator("#records-table", tableOptions);
-    }
-
-    function highlightSortedColumn(column) {
-        table.getColumns().forEach(col => {
-            col.getElement().classList.remove('sorted');
-        });
-        column.getElement().classList.add('sorted');
-    }
-
-    // Highlight the initially sorted column
-    setTimeout(() => {
-        const initialColumn = table.getColumn(`scores.${sortedColumn}`);
-        if (initialColumn) {
-            highlightSortedColumn(initialColumn);
-        }
-        adjustColumnWidths();
-    }, 0);
-
-    table.on("headerClick", function(e, column){
-        if(column.getField() !== "name") {
-            e.stopPropagation();
-            const mapName = column.getField().split('.')[1];
-            filteredData.sort((a, b) => compareScores(a, b, mapName));
-            table.setData(filteredData);
-            highlightSortedColumn(column);
-            sortedColumn = mapName;
-        }
-    });
-
-    // Function to adjust column widths
-    function adjustColumnWidths() {
-        const tableWidth = table.element.clientWidth;
-        const scrollWidth = table.element.scrollWidth;
-        const frozenWidth = table.columnManager.getFrozenColumns()[0].getWidth();
-        const availableWidth = tableWidth - frozenWidth;
-
-        if (scrollWidth <= tableWidth) {
-            const columns = table.getColumns();
-            const columnCount = columns.length - 1; // Exclude the frozen column
-            const newWidth = Math.floor(availableWidth / columnCount);
-
-            columns.forEach((column, index) => {
-                if (index !== 0) { // Skip the frozen column
-                    column.setWidth(newWidth);
+    
+            function createTable() {
+                console.log("Creating table for minigame:", currentMinigame);
+                const filteredData = initialData.filter(record => record.minigame === currentMinigame);
+                console.log("Filtered data:", filteredData);
+                const columns = [
+                    {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false, frozen: true, width: 200}
+                ];
+    
+                const allMapNames = new Set();
+                filteredData.forEach(record => {
+                    Object.keys(record.scores).forEach(mapName => {
+                        allMapNames.add(mapName);
+                    });
+                });
+    
+                const sortDirection = minigameSortDirections[currentMinigame] || "desc";
+    
+                function compareScores(a, b, mapName) {
+                    const aScore = a.scores[mapName];
+                    const bScore = b.scores[mapName];
+    
+                    if (aScore === undefined || aScore === null || aScore === "-") return 1;
+                    if (bScore === undefined || bScore === null || bScore === "-") return -1;
+    
+                    return sortDirection === "asc" ? aScore - bScore : bScore - aScore;
                 }
+    
+                Array.from(allMapNames).sort().forEach(mapName => {
+                    columns.push({
+                        title: mapName,
+                        field: `scores.${mapName}`,
+                        headerSort: false,
+                        formatter: function(cell) {
+                            const value = cell.getValue();
+                            if (value === undefined || value === null) return "-";
+                            return typeof value === 'number' ? value.toFixed(3) : value;
+                        }
+                    });
+                });
+    
+                // Pre-sort the data
+                const firstMapName = Array.from(allMapNames)[0];
+                filteredData.sort((a, b) => compareScores(a, b, firstMapName));
+    
+                let sortedColumn = firstMapName;
+    
+                const tableOptions = {
+                    data: filteredData,
+                    columns: columns,
+                    layout: "fitDataTable",
+                    columnHeaderSortMulti: false,
+                    sortOrderReverse: false,
+                    movableColumns: false,
+                    scrollToColumnPosition: 'center',
+                    frozenColumns: 1,
+                    height: 500, // Adjust as needed
+                };
+    
+                if (table) {
+                    table.setColumns(columns);
+                    table.setData(filteredData);
+                    table.setOptions(tableOptions);
+                } else {
+                    table = new Tabulator("#records-table", tableOptions);
+                }
+    
+                function highlightSortedColumn(column) {
+                    table.getColumns().forEach(col => {
+                        col.getElement().classList.remove('sorted');
+                    });
+                    column.getElement().classList.add('sorted');
+                }
+    
+                // Highlight the initially sorted column
+                setTimeout(() => {
+                    const initialColumn = table.getColumn(`scores.${sortedColumn}`);
+                    if (initialColumn) {
+                        highlightSortedColumn(initialColumn);
+                    }
+                    adjustColumnWidths();
+                }, 0);
+    
+                table.on("headerClick", function(e, column){
+                    if(column.getField() !== "name") {
+                        e.stopPropagation();
+                        const mapName = column.getField().split('.')[1];
+                        filteredData.sort((a, b) => compareScores(a, b, mapName));
+                        table.setData(filteredData);
+                        highlightSortedColumn(column);
+                        sortedColumn = mapName;
+                    }
+                });
+    
+                // Function to adjust column widths
+                function adjustColumnWidths() {
+                    const tableWidth = table.element.clientWidth;
+                    const scrollWidth = table.element.scrollWidth;
+                    const frozenWidth = table.columnManager.getFrozenColumns()[0].getWidth();
+                    const availableWidth = tableWidth - frozenWidth;
+    
+                    if (scrollWidth <= tableWidth) {
+                        const columns = table.getColumns();
+                        const columnCount = columns.length - 1; // Exclude the frozen column
+                        const newWidth = Math.floor(availableWidth / columnCount);
+    
+                        columns.forEach((column, index) => {
+                            if (index !== 0) { // Skip the frozen column
+                                column.setWidth(newWidth);
+                            }
+                        });
+                    }
+                }
+    
+                // Adjust column widths on window resize
+                window.addEventListener('resize', adjustColumnWidths);
+    
+                // Initial adjustment
+                adjustColumnWidths();
+            }
+    
+            console.log("Setting up event listener for minigame select");
+            document.getElementById("minigame-select").addEventListener("change", function() {
+                updateTable(this.value);
             });
+    
+            console.log("Calling initial updateTable");
+            updateTable(currentMinigame);
         }
-    }
-
-    // Adjust column widths on window resize
-    window.addEventListener('resize', adjustColumnWidths);
-
-    // Initial adjustment
-    adjustColumnWidths();
-}
-
-    document.getElementById("minigame-select").addEventListener("change", function() {
-        updateTable(this.value);
-    });
-
-    updateTable(currentMinigame);
-}
     
         document.getElementById('current-date').textContent = new Date().toLocaleString('en-US', { 
             year: 'numeric', 
@@ -450,6 +447,12 @@
             hour: 'numeric',
             minute: 'numeric'
         });
+    
+        // Error logging
+        window.onerror = function(message, source, lineno, colno, error) {
+            console.error("JavaScript error:", message, "at", source, ":", lineno);
+            alert("An error occurred. Please check the console for more details.");
+        };
     </script>
 </body>
 </html>
