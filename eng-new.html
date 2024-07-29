@@ -110,7 +110,7 @@
     <script>
         // Load player UUIDs
         var playerUUIDs = {};
-        fetch('player_uuids.json')
+        fetch('data-analysis/player_uuids.json')
             .then(response => response.json())
             .then(data => {
                 playerUUIDs = data;
@@ -124,7 +124,7 @@
         // Function to create avatar + name cell
         function avatarFormatter(cell) {
             const {name} = cell.getData();
-            const uuid = playerUUIDs[name] || "steve";
+            const uuid = playerUUIDs[name] || "8667ba71-b85a-4004-af54-457a9734eed7";
             const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
             return `<img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar"> ${name}`;
         }
@@ -136,7 +136,7 @@
             function updateTable(minigame) {
                 currentMinigame = minigame;
                 if (table) {
-                    table.setData("records_data.json");
+                    table.setData("data-analysis/records_data.json");
                 } else {
                     createTable();
                 }
