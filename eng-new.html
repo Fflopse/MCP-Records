@@ -263,7 +263,7 @@
             }
             var table;
             var currentMinigame = "Blockhüpfer";
-    
+
             // Explicitly define sorting direction for each minigame
             const minigameSortDirections = {
                 "Blockhüpfer": "asc",
@@ -293,7 +293,41 @@
                 "Hoch hinaus": "asc",
                 "Walls": "desc"
             };
-    
+
+            function highlightSortedColumn(column) {
+                if (table) {
+                    table.getColumns().forEach(col => {
+                        if (col.getElement()) {
+                            col.getElement().classList.remove('sorted');
+                        }
+                    });
+                    if (column && column.getElement()) {
+                        column.getElement().classList.add('sorted');
+                    }
+                }
+            }
+
+            function adjustColumnWidths() {
+                if (table) {
+                    const tableWidth = table.element.clientWidth;
+                    const frozenColumn = table.getColumn("name");
+                    const frozenWidth = frozenColumn ? frozenColumn.getWidth() : 200;
+                    const availableWidth = tableWidth - frozenWidth;
+
+                    const columns = table.getColumns();
+                    const columnCount = columns.length - 1; // Exclude the frozen column
+                    if (columnCount > 0) {
+                        const newWidth = Math.floor(availableWidth / columnCount);
+
+                        columns.forEach((column) => {
+                            if (column.getField() !== "name") {
+                                column.setWidth(newWidth);
+                            }
+                        });
+                    }
+                }
+            }
+
             function updateTable(minigame) {
                 console.log("Updating table for minigame:", minigame);
                 currentMinigame = minigame;
@@ -312,14 +346,11 @@
                     }, 0);
                 }
             }
-    
+
             function createTable() {
                 console.log("Creating table for minigame:", currentMinigame);
                 const filteredData = initialData.filter(record => record.minigame === currentMinigame);
                 console.log("Filtered data:", filteredData);
-                const columns = [
-                    {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false, frozen: true, width: 200}
-                ];
 
                 if (filteredData.length === 0) {
                     console.log("No data for this minigame");
@@ -328,26 +359,30 @@
                     }
                     return;
                 }
-    
+
+                const columns = [
+                    {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false, frozen: true, width: 200}
+                ];
+
                 const allMapNames = new Set();
                 filteredData.forEach(record => {
                     Object.keys(record.scores).forEach(mapName => {
                         allMapNames.add(mapName);
                     });
                 });
-    
+
                 const sortDirection = minigameSortDirections[currentMinigame] || "desc";
-    
+
                 function compareScores(a, b, mapName) {
                     const aScore = a.scores[mapName];
                     const bScore = b.scores[mapName];
-    
+
                     if (aScore === undefined || aScore === null || aScore === "-") return 1;
                     if (bScore === undefined || bScore === null || bScore === "-") return -1;
-    
+
                     return sortDirection === "asc" ? aScore - bScore : bScore - aScore;
                 }
-    
+
                 Array.from(allMapNames).sort().forEach(mapName => {
                     columns.push({
                         title: mapName,
@@ -360,13 +395,13 @@
                         }
                     });
                 });
-    
+
                 // Pre-sort the data
                 const firstMapName = Array.from(allMapNames)[0];
                 filteredData.sort((a, b) => compareScores(a, b, firstMapName));
-    
+
                 let sortedColumn = firstMapName;
-    
+
                 const tableOptions = {
                     data: filteredData,
                     columns: columns,
@@ -381,18 +416,10 @@
                 if (table) {
                     table.setColumns(columns);
                     table.setData(filteredData);
-                    // Remove the setOptions call
                 } else {
                     table = new Tabulator("#records-table", tableOptions);
                 }
-    
-                function highlightSortedColumn(column) {
-                    table.getColumns().forEach(col => {
-                        col.getElement().classList.remove('sorted');
-                    });
-                    column.getElement().classList.add('sorted');
-                }
-    
+
                 // Highlight the initially sorted column
                 setTimeout(() => {
                     const initialColumn = table.getColumn(`scores.${sortedColumn}`);
@@ -401,7 +428,7 @@
                     }
                     adjustColumnWidths();
                 }, 0);
-    
+
                 table.on("headerClick", function(e, column){
                     if(column.getField() !== "name") {
                         e.stopPropagation();
@@ -412,39 +439,16 @@
                         sortedColumn = mapName;
                     }
                 });
-    
-                // Function to adjust column widths
-                function adjustColumnWidths() {
-                    const tableWidth = table.element.clientWidth;
-                    const frozenColumn = table.getColumn("name");
-                    const frozenWidth = frozenColumn ? frozenColumn.getWidth() : 200;
-                    const availableWidth = tableWidth - frozenWidth;
 
-                    const columns = table.getColumns();
-                    const columnCount = columns.length - 1; // Exclude the frozen column
-                    if (columnCount > 0) {
-                        const newWidth = Math.floor(availableWidth / columnCount);
-
-                        columns.forEach((column) => {
-                            if (column.getField() !== "name") {
-                                column.setWidth(newWidth);
-                            }
-                        });
-                    }
-                }
-    
                 // Adjust column widths on window resize
                 window.addEventListener('resize', adjustColumnWidths);
-    
-                // Initial adjustment
-                adjustColumnWidths();
             }
-    
+
             console.log("Setting up event listener for minigame select");
             document.getElementById("minigame-select").addEventListener("change", function() {
                 updateTable(this.value);
             });
-    
+
             console.log("Calling initial updateTable");
             updateTable(currentMinigame);
         }
