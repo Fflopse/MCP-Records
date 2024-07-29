@@ -138,6 +138,31 @@
         .tabulator .tabulator-tableholder {
             overflow-x: auto;
         }
+        .tabulator .tabulator-row {
+            transition: background-color 0.3s ease;
+        }
+
+        .tabulator .tabulator-row:hover {
+            background-color: rgba(255, 255, 255, 0.05); /* Very subtle light overlay */
+        }
+
+        /* Ensure even and odd rows maintain their distinct appearance */
+        .tabulator .tabulator-row.tabulator-row-even:hover {
+            background-color: rgba(42, 42, 42, 0.95); /* Slightly lighter than the original #2a2a2a */
+        }
+
+        .tabulator .tabulator-row.tabulator-row-odd:hover {
+            background-color: rgba(51, 51, 51, 0.95); /* Slightly lighter than the original #333333 */
+        }
+
+        /* Optional: Add a subtle transition to the text color as well */
+        .tabulator .tabulator-row .tabulator-cell {
+            transition: color 0.3s ease;
+        }
+
+        .tabulator .tabulator-row:hover .tabulator-cell {
+            color: #FFD300FF; /* Your accent color */
+        }
         .controls-container {
             display: flex;
             justify-content: space-between;
