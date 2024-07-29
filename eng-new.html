@@ -209,6 +209,27 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
+        .modal-loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+
+        .modal-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid var(--accent-color);
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         .close {
             color: #aaa;
             float: right;
@@ -336,6 +357,9 @@
         <div id="player-profile-modal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
+                <div id="modal-loader" class="modal-loader">
+                    <div class="modal-spinner"></div>
+                </div>
                 <div id="player-profile-content"></div>
             </div>
         </div>
@@ -692,8 +716,21 @@
             function showPlayerProfile(playerName) {
                 const modal = document.getElementById('player-profile-modal');
                 const content = document.getElementById('player-profile-content');
-                content.innerHTML = createPlayerProfile(playerName);
+                const loader = document.getElementById('modal-loader');
+
+                // Show modal and loader
                 modal.style.display = 'block';
+                loader.style.display = 'flex';
+                content.style.display = 'none';
+
+                // Simulate loading time (remove this in production and replace with actual data fetching if needed)
+                setTimeout(() => {
+                    content.innerHTML = createPlayerProfile(playerName);
+                    
+                    // Hide loader and show content
+                    loader.style.display = 'none';
+                    content.style.display = 'block';
+                }, 500); // Adjust this time as needed
             }
     
             window.showPlayerProfile = showPlayerProfile;
