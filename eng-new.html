@@ -299,16 +299,18 @@
                 currentMinigame = minigame;
                 createTable();
                 
-                // Highlight the initially sorted column for the new minigame
-                setTimeout(() => {
-                    const firstMapName = Array.from(new Set(initialData.filter(record => record.minigame === currentMinigame)
-                        .flatMap(record => Object.keys(record.scores)))).sort()[0];
-                    const initialColumn = table.getColumn(`scores.${firstMapName}`);
-                    if (initialColumn) {
-                        highlightSortedColumn(initialColumn);
-                    }
-                    adjustColumnWidths();
-                }, 0);
+                if (table) {
+                    // Highlight the initially sorted column for the new minigame
+                    setTimeout(() => {
+                        const firstMapName = Array.from(new Set(initialData.filter(record => record.minigame === currentMinigame)
+                            .flatMap(record => Object.keys(record.scores)))).sort()[0];
+                        const initialColumn = table.getColumn(`scores.${firstMapName}`);
+                        if (initialColumn) {
+                            highlightSortedColumn(initialColumn);
+                        }
+                        adjustColumnWidths();
+                    }, 0);
+                }
             }
     
             function createTable() {
@@ -318,6 +320,14 @@
                 const columns = [
                     {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false, frozen: true, width: 200}
                 ];
+
+                if (filteredData.length === 0) {
+                    console.log("No data for this minigame");
+                    if (table) {
+                        table.setData([]);
+                    }
+                    return;
+                }
     
                 const allMapNames = new Set();
                 filteredData.forEach(record => {
@@ -365,14 +375,13 @@
                     sortOrderReverse: false,
                     movableColumns: false,
                     scrollToColumnPosition: 'center',
-                    frozenColumns: 1,
                     height: 500, // Adjust as needed
                 };
-    
+
                 if (table) {
                     table.setColumns(columns);
                     table.setData(filteredData);
-                    table.setOptions(tableOptions);
+                    // Remove the setOptions call
                 } else {
                     table = new Tabulator("#records-table", tableOptions);
                 }
@@ -407,17 +416,17 @@
                 // Function to adjust column widths
                 function adjustColumnWidths() {
                     const tableWidth = table.element.clientWidth;
-                    const scrollWidth = table.element.scrollWidth;
-                    const frozenWidth = table.columnManager.getFrozenColumns()[0].getWidth();
+                    const frozenColumn = table.getColumn("name");
+                    const frozenWidth = frozenColumn ? frozenColumn.getWidth() : 200;
                     const availableWidth = tableWidth - frozenWidth;
-    
-                    if (scrollWidth <= tableWidth) {
-                        const columns = table.getColumns();
-                        const columnCount = columns.length - 1; // Exclude the frozen column
+
+                    const columns = table.getColumns();
+                    const columnCount = columns.length - 1; // Exclude the frozen column
+                    if (columnCount > 0) {
                         const newWidth = Math.floor(availableWidth / columnCount);
-    
-                        columns.forEach((column, index) => {
-                            if (index !== 0) { // Skip the frozen column
+
+                        columns.forEach((column) => {
+                            if (column.getField() !== "name") {
                                 column.setWidth(newWidth);
                             }
                         });
