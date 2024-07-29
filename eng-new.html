@@ -425,6 +425,12 @@
                     searchTerm = "";
                 }
                 
+                // Destroy existing table if it exists
+                if (table) {
+                    table.destroy();
+                    table = null;
+                }
+                
                 createTable();
                 
                 if (table) {
@@ -454,16 +460,17 @@
                     return;
                 }
 
-                const columns = [
-                    {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false, frozen: true, width: 200}
-                ];
-
+                // Reset allMapNames for each minigame
                 const allMapNames = new Set();
                 filteredData.forEach(record => {
                     Object.keys(record.scores).forEach(mapName => {
                         allMapNames.add(mapName);
                     });
                 });
+
+                const columns = [
+                    {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false, frozen: true, width: 200}
+                ];
 
                 const sortDirection = minigameSortDirections[currentMinigame] || "desc";
 
@@ -509,13 +516,12 @@
                     initialFilter: customFilter,
                 };
 
+                // Destroy the old table instance if it exists
                 if (table) {
-                    table.setColumns(columns);
-                    table.setData(filteredData);
-                    table.setFilter(customFilter);
-                } else {
-                    table = new Tabulator("#records-table", tableOptions);
+                    table.destroy();
                 }
+                // Create a new table instance
+                table = new Tabulator("#records-table", tableOptions);
 
                 // Highlight the initially sorted column
                 setTimeout(() => {
