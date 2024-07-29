@@ -277,8 +277,6 @@
         }
     
         function initializeTable(initialData) {
-            const MIN_COLUMN_WIDTH = 100; // Adjust this value as needed
-
             console.log("Initializing table with data:", initialData);
             if (typeof Tabulator === 'undefined') {
                 console.error("Tabulator library is not loaded!");
@@ -287,6 +285,8 @@
             }
             var table;
             var currentMinigame = "Blockhüpfer";
+            var searchTerm = "";
+            const MIN_COLUMN_WIDTH = 100; // Minimum width for each column
 
             // Explicitly define sorting direction for each minigame
             const minigameSortDirections = {
@@ -318,18 +318,20 @@
                 "Walls": "desc"
             };
 
-            let searchTerm = "";
-
             function customFilter(data) {
-                    const searchTerm = searchInput.value.toLowerCase();
-                    return data.name.toLowerCase().includes(searchTerm);
-                }
+                return data.name.toLowerCase().includes(searchTerm.toLowerCase());
+            }
 
             function setupSearch() {
                 const searchInput = document.getElementById("player-search");
-                searchInput.addEventListener("input", function() {
-                    table.setFilter(customFilter);
-                });
+                if (searchInput) {
+                    searchInput.addEventListener("input", function() {
+                        searchTerm = this.value;
+                        if (table) {
+                            table.setFilter(customFilter);
+                        }
+                    });
+                }
             }
 
             function highlightSortedColumn(column) {
@@ -509,6 +511,8 @@
                 updateTable(this.value);
             });
 
+            // Initial setup
+            setupSearch();
             console.log("Calling initial updateTable");
             updateTable(currentMinigame);
         }
