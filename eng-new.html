@@ -295,8 +295,12 @@
                 return -1;  // Always sort these to the bottom
             }
 
-            // For actual numeric values, sort based on the sortDirection
-            return sortDirection === "asc" ? aValue - bValue : bValue - aValue;
+            // For actual numeric values, sort based on the explicitly defined sortDirection
+            if (sortDirection === "asc") {
+                return a - b;
+            } else {
+                return b - a;
+            }
         }
 
         Array.from(allMapNames).sort().forEach(mapName => {
