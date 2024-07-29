@@ -375,14 +375,15 @@
                 initializeTable([]);
             });
     
-            function avatarFormatter(cell) {
-                const {name} = cell.getData();
-                const uuid = playerUUIDs[name] || "8667ba71-b85a-4004-af54-457a9734eed7";
-                const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
-                return `<img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar"> <span class="player-name" onclick="showPlayerProfile('${name}')">${name}</span>`;
-            }
+        function avatarFormatter(cell) {
+            const {name} = cell.getData();
+            const uuid = playerUUIDs[name] || "8667ba71-b85a-4004-af54-457a9734eed7";
+            const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
+            return `<img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar"> <span class="player-name" onclick="window.showPlayerProfile('${name}')">${name}</span>`;
+        }
     
-        function initializeTable(initialData) {
+        function initializeTable(data) {
+            const initialData = data;
             console.log("Initializing table with data:", initialData);
             if (typeof Tabulator === 'undefined') {
                 console.error("Tabulator library is not loaded!");
@@ -392,9 +393,8 @@
             var table;
             var currentMinigame = "Blockhüpfer";
             var searchTerm = "";
-            const MIN_COLUMN_WIDTH = 100; // Minimum width for each column
-
-            // Explicitly define sorting direction for each minigame
+            const MIN_COLUMN_WIDTH = 100;
+    
             const minigameSortDirections = {
                 "Blockhüpfer": "asc",
                 "Buntes Chaos": "desc",
@@ -423,11 +423,11 @@
                 "Hoch hinaus": "asc",
                 "Walls": "desc"
             };
-
+    
             function customFilter(data) {
                 return data.name.toLowerCase().includes(searchTerm.toLowerCase());
             }
-
+    
             function setupSearch() {
                 const searchInput = document.getElementById("player-search");
                 if (searchInput) {
@@ -439,7 +439,7 @@
                     });
                 }
             }
-
+    
             function highlightSortedColumn(column) {
                 if (table) {
                     table.getColumns().forEach(col => {
@@ -452,27 +452,26 @@
                     }
                 }
             }
-
+    
             function adjustColumnWidths() {
                 if (table) {
                     const tableWidth = table.element.clientWidth;
                     const frozenColumn = table.getColumn("name");
                     const frozenWidth = frozenColumn ? frozenColumn.getWidth() : 200;
                     const availableWidth = tableWidth - frozenWidth;
-
+    
                     const columns = table.getColumns();
                     const nonFrozenColumns = columns.filter(column => column.getField() !== "name");
                     const columnCount = nonFrozenColumns.length;
-
+    
                     if (columnCount > 0) {
                         let newWidth = Math.floor(availableWidth / columnCount);
                         newWidth = Math.max(newWidth, MIN_COLUMN_WIDTH);
-
+    
                         nonFrozenColumns.forEach((column) => {
                             column.setWidth(newWidth);
                         });
-
-                        // If the total width is less than the available width, expand the last column
+    
                         const totalWidth = frozenWidth + (newWidth * columnCount);
                         if (totalWidth < tableWidth && nonFrozenColumns.length > 0) {
                             const lastColumn = nonFrozenColumns[nonFrozenColumns.length - 1];
@@ -481,19 +480,17 @@
                     }
                 }
             }
-
+    
             function updateTable(minigame) {
                 console.log("Updating table for minigame:", minigame);
                 currentMinigame = minigame;
                 
-                // Reset search input and term
                 const searchInput = document.getElementById("player-search");
                 if (searchInput) {
                     searchInput.value = "";
                     searchTerm = "";
                 }
                 
-                // Destroy existing table if it exists
                 if (table) {
                     table.destroy();
                     table = null;
@@ -502,7 +499,6 @@
                 createTable();
                 
                 if (table) {
-                    // Highlight the initially sorted column for the new minigame
                     setTimeout(() => {
                         const firstMapName = Array.from(new Set(initialData.filter(record => record.minigame === currentMinigame)
                             .flatMap(record => Object.keys(record.scores)))).sort()[0];
@@ -514,12 +510,12 @@
                     }, 0);
                 }
             }
-
+    
             function createTable() {
                 console.log("Creating table for minigame:", currentMinigame);
                 const filteredData = initialData.filter(record => record.minigame === currentMinigame);
                 console.log("Filtered data:", filteredData);
-
+    
                 if (filteredData.length === 0) {
                     console.log("No data for this minigame");
                     if (table) {
@@ -527,31 +523,30 @@
                     }
                     return;
                 }
-
-                // Reset allMapNames for each minigame
+    
                 const allMapNames = new Set();
                 filteredData.forEach(record => {
                     Object.keys(record.scores).forEach(mapName => {
                         allMapNames.add(mapName);
                     });
                 });
-
+    
                 const columns = [
                     {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false, frozen: true, width: 200}
                 ];
-
+    
                 const sortDirection = minigameSortDirections[currentMinigame] || "desc";
-
+    
                 function compareScores(a, b, mapName) {
                     const aScore = a.scores[mapName];
                     const bScore = b.scores[mapName];
-
+    
                     if (aScore === undefined || aScore === null || aScore === "-") return 1;
                     if (bScore === undefined || bScore === null || bScore === "-") return -1;
-
+    
                     return sortDirection === "asc" ? aScore - bScore : bScore - aScore;
                 }
-
+    
                 Array.from(allMapNames).sort().forEach(mapName => {
                     columns.push({
                         title: mapName,
@@ -565,13 +560,12 @@
                         }
                     });
                 });
-
-                // Pre-sort the data
+    
                 const firstMapName = Array.from(allMapNames)[0];
                 filteredData.sort((a, b) => compareScores(a, b, firstMapName));
-
+    
                 let sortedColumn = firstMapName;
-
+    
                 const tableOptions = {
                     data: filteredData,
                     columns: columns,
@@ -580,18 +574,12 @@
                     sortOrderReverse: false,
                     movableColumns: false,
                     scrollToColumnPosition: 'center',
-                    height: 500, // Adjust as needed
+                    height: 500,
                     initialFilter: customFilter,
                 };
-
-                // Destroy the old table instance if it exists
-                if (table) {
-                    table.destroy();
-                }
-                // Create a new table instance
+    
                 table = new Tabulator("#records-table", tableOptions);
-
-                // Highlight the initially sorted column
+    
                 setTimeout(() => {
                     const initialColumn = table.getColumn(`scores.${sortedColumn}`);
                     if (initialColumn) {
@@ -599,7 +587,7 @@
                     }
                     adjustColumnWidths();
                 }, 0);
-
+    
                 table.on("headerClick", function(e, column){
                     if(column.getField() !== "name") {
                         e.stopPropagation();
@@ -610,21 +598,50 @@
                         sortedColumn = mapName;
                     }
                 });
-
-                // Adjust column widths on window resize
+    
                 window.addEventListener('resize', adjustColumnWidths);
-
-                // Set up search functionality
+    
                 setupSearch();
             }
-
+    
+            function createPlayerProfile(playerName) {
+                const playerData = initialData.filter(record => record.name === playerName);
+                
+                let profileHTML = `<h2>${playerName}'s Profile</h2>`;
+                profileHTML += `<img src="https://crafatar.com/avatars/${playerUUIDs[playerName] || '8667ba71-b85a-4004-af54-457a9734eed7'}?size=100&overlay" alt="${playerName}'s avatar">`;
+                
+                const minigames = [...new Set(playerData.map(record => record.minigame))];
+                
+                minigames.forEach(minigame => {
+                    const minigameData = playerData.find(record => record.minigame === minigame);
+                    if (minigameData) {
+                        profileHTML += `<h3>${minigame}</h3>`;
+                        profileHTML += `<table class="profile-table">
+                            <tr><th>Map</th><th>Score</th></tr>
+                            ${Object.entries(minigameData.scores)
+                                .map(([map, score]) => `<tr><td>${map}</td><td>${score}</td></tr>`)
+                                .join('')}
+                        </table>`;
+                    }
+                });
+                
+                return profileHTML;
+            }
+    
+            function showPlayerProfile(playerName) {
+                const modal = document.getElementById('player-profile-modal');
+                const content = document.getElementById('player-profile-content');
+                content.innerHTML = createPlayerProfile(playerName);
+                modal.style.display = 'block';
+            }
+    
+            window.showPlayerProfile = showPlayerProfile;
+    
             console.log("Setting up event listener for minigame select");
             document.getElementById("minigame-select").addEventListener("change", function() {
                 updateTable(this.value);
             });
-
-            // Initial setup
-            setupSearch();
+    
             console.log("Calling initial updateTable");
             updateTable(currentMinigame);
         }
@@ -637,43 +654,6 @@
             minute: 'numeric'
         });
     
-        // Error logging
-        window.onerror = function(message, source, lineno, colno, error) {
-            console.error("JavaScript error:", message, "at", source, ":", lineno);
-            alert("An error occurred. Please check the console for more details.");
-        };
-
-        function createPlayerProfile(playerName) {
-            const playerData = initialData.filter(record => record.name === playerName);
-            
-            let profileHTML = `<h2>${playerName}'s Profile</h2>`;
-            profileHTML += `<img src="https://crafatar.com/avatars/${playerUUIDs[playerName] || '8667ba71-b85a-4004-af54-457a9734eed7'}?size=100&overlay" alt="${playerName}'s avatar">`;
-            
-            const minigames = [...new Set(playerData.map(record => record.minigame))];
-            
-            minigames.forEach(minigame => {
-                const minigameData = playerData.find(record => record.minigame === minigame);
-                if (minigameData) {
-                    profileHTML += `<h3>${minigame}</h3>`;
-                    profileHTML += `<table class="profile-table">
-                        <tr><th>Map</th><th>Score</th></tr>
-                        ${Object.entries(minigameData.scores)
-                            .map(([map, score]) => `<tr><td>${map}</td><td>${score}</td></tr>`)
-                            .join('')}
-                    </table>`;
-                }
-            });
-            
-            return profileHTML;
-        }
-
-        function showPlayerProfile(playerName) {
-            const modal = document.getElementById('player-profile-modal');
-            const content = document.getElementById('player-profile-content');
-            content.innerHTML = createPlayerProfile(playerName);
-            modal.style.display = 'block';
-        }
-
         // Close modal when clicking the close button or outside the modal
         window.onclick = function(event) {
             const modal = document.getElementById('player-profile-modal');
@@ -681,6 +661,11 @@
                 modal.style.display = 'none';
             }
         }
+    
+        // Global showPlayerProfile function
+        window.showPlayerProfile = function(playerName) {
+            console.error("Profile view not initialized yet");
+        };
     </script>
 </body>
 </html>
