@@ -230,102 +230,124 @@
         }
     
         function initializeTable(initialData) {
-            var table;
-            var currentMinigame = "Blockhüpfer";
-    
-            function updateTable(minigame) {
-                currentMinigame = minigame;
-                createTable();
-            }
-    
-            function createTable() {
-                const filteredData = initialData.filter(record => record.minigame === currentMinigame);
-                const columns = [
-                    {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false}
-                ];
+    var table;
+    var currentMinigame = "Blockhüpfer";
 
-                const allMapNames = new Set();
-                filteredData.forEach(record => {
-                    Object.keys(record.scores).forEach(mapName => {
-                        allMapNames.add(mapName);
-                    });
-                });
+    // Explicitly define sorting direction for each minigame
+    const minigameSortDirections = {
+        "Blockhüpfer": "asc",
+        "Buntes Chaos": "desc",
+        "Todeswürfel": "asc",
+        "Duelle": "desc",
+        "Freier Fall": "asc",
+        "Elytrarennen": "asc",
+        "Frostiger Pfad": "asc",
+        "Waffenfolge": "asc",
+        "Pferderennen": "asc",
+        "Jump and Run": "asc",
+        "Kletterkönig": "asc",
+        "Lasertag": "desc",
+        "Minengefecht": "desc",
+        "Minenfeld": "asc",
+        "Mini Skywars": "desc",
+        "Mini Survivalgames": "desc",
+        "Einer im Köcher": "desc",
+        "Paintball": "desc",
+        "Replika": "asc",
+        "Ampelrennen": "asc",
+        "Schießstand": "desc",
+        "Spleef": "desc",
+        "Wettrennen": "asc",
+        "Sammelwahn": "desc",
+        "Hoch Hinaus": "asc",
+        "Walls": "desc"
+    };
 
-                const ascendingMinigames = [
-                    "Blockhüpfer", "Todeswürfel", "Freier Fall", "Elytrarennen", "Frostiger Pfad", 
-                    "Waffenfolge", "Pferderennen", "Jump and Run", "Kletterkönig", "Minenfeld", 
-                    "Replika", "Ampelrennen", "Wettrennen", "Hoch Hinaus"
-                ];
-                
-                const sortDirection = ascendingMinigames.includes(currentMinigame) ? "asc" : "desc";
+    function updateTable(minigame) {
+        currentMinigame = minigame;
+        createTable();
+    }
 
-                function customSorter(a, b, aRow, bRow, column, dir, sorterParams) {
-                    const aValue = aRow.getData().scores[column.getField().split('.')[1]];
-                    const bValue = bRow.getData().scores[column.getField().split('.')[1]];
+    function createTable() {
+        const filteredData = initialData.filter(record => record.minigame === currentMinigame);
+        const columns = [
+            {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false}
+        ];
 
-                    // Handle undefined, null, or "-" values
-                    if (aValue === undefined || aValue === null || aValue === "-") {
-                        return 1;  // Always sort these to the bottom
-                    }
-                    if (bValue === undefined || bValue === null || bValue === "-") {
-                        return -1;  // Always sort these to the bottom
-                    }
-
-                    // For actual numeric values, sort based on the sortDirection
-                    return sortDirection === "asc" ? aValue - bValue : bValue - aValue;
-                }
-                
-                Array.from(allMapNames).sort().forEach(mapName => {
-                    columns.push({
-                        title: mapName,
-                        field: `scores.${mapName}`,
-                        headerSort: true,
-                        sorter: customSorter,
-                        formatter: function(cell) {
-                            const value = cell.getValue();
-                            if (value === undefined || value === null) return "-";
-                            return typeof value === 'number' ? value.toFixed(3) : value;
-                        },
-                        headerSortStartingDir: sortDirection,
-                        headerSortTristate: false
-                    });
-                });
-
-                const initialSort = allMapNames.size > 0 ? 
-                    [{column: "scores." + Array.from(allMapNames)[0], dir: sortDirection}] : 
-                    [];
-
-                const tableOptions = {
-                    data: filteredData,
-                    columns: columns,
-                    layout: "fitColumns",
-                    initialSort: initialSort,
-                    columnHeaderSortMulti: false,
-                    sortOrderReverse: false
-                };
-
-                if (table) {
-                    table.setColumns(columns);
-                    table.setData(filteredData);
-                    table.setSort(initialSort);
-                } else {
-                    table = new Tabulator("#records-table", tableOptions);
-                }
-
-                table.on("headerClick", function(e, column){
-                    if(column.getField() !== "name") {
-                        e.stopPropagation();
-                        table.setSort(column.getField(), sortDirection);
-                    }
-                });
-            }
-    
-            document.getElementById("minigame-select").addEventListener("change", function() {
-                updateTable(this.value);
+        const allMapNames = new Set();
+        filteredData.forEach(record => {
+            Object.keys(record.scores).forEach(mapName => {
+                allMapNames.add(mapName);
             });
-    
-            updateTable(currentMinigame);
+        });
+
+        const sortDirection = minigameSortDirections[currentMinigame] || "desc";
+
+        function customSorter(a, b, aRow, bRow, column, dir, sorterParams) {
+            const aValue = aRow.getData().scores[column.getField().split('.')[1]];
+            const bValue = bRow.getData().scores[column.getField().split('.')[1]];
+
+            // Handle undefined, null, or "-" values
+            if (aValue === undefined || aValue === null || aValue === "-") {
+                return 1;  // Always sort these to the bottom
+            }
+            if (bValue === undefined || bValue === null || bValue === "-") {
+                return -1;  // Always sort these to the bottom
+            }
+
+            // For actual numeric values, sort based on the sortDirection
+            return sortDirection === "asc" ? aValue - bValue : bValue - aValue;
         }
+
+        Array.from(allMapNames).sort().forEach(mapName => {
+            columns.push({
+                title: mapName,
+                field: `scores.${mapName}`,
+                headerSort: true,
+                sorter: customSorter,
+                formatter: function(cell) {
+                    const value = cell.getValue();
+                    if (value === undefined || value === null) return "-";
+                    return typeof value === 'number' ? value.toFixed(3) : value;
+                },
+                headerSortStartingDir: sortDirection,
+                headerSortTristate: false
+            });
+        });
+
+        const initialSort = allMapNames.size > 0 ? 
+            [{column: "scores." + Array.from(allMapNames)[0], dir: sortDirection}] : 
+            [];
+
+        if (table) {
+            table.setColumns(columns);
+            table.setData(filteredData);
+            table.setSort(initialSort);
+        } else {
+            table = new Tabulator("#records-table", {
+                data: filteredData,
+                columns: columns,
+                layout: "fitColumns",
+                initialSort: initialSort,
+                columnHeaderSortMulti: false,
+                sortOrderReverse: false
+            });
+        }
+
+        table.on("headerClick", function(e, column){
+            if(column.getField() !== "name") {
+                e.stopPropagation();
+                table.setSort(column.getField(), sortDirection);
+            }
+        });
+    }
+
+    document.getElementById("minigame-select").addEventListener("change", function() {
+        updateTable(this.value);
+    });
+
+    updateTable(currentMinigame);
+}
     
         document.getElementById('current-date').textContent = new Date().toLocaleString('en-US', { 
             year: 'numeric', 
