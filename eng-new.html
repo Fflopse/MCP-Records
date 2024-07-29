@@ -138,7 +138,6 @@
     </div>
 
     <script>
-        // Load player UUIDs
         var playerUUIDs = {};
         var avatarsLoaded = 0;
         var totalAvatars = 0;
@@ -169,7 +168,7 @@
                         avatarsLoaded++;
                         resolve();
                     };
-                    img.onerror = resolve;  // Resolve even if there's an error, to avoid hanging
+                    img.onerror = resolve;
                     img.src = avatarUrl;
                 });
             }));
@@ -194,10 +193,9 @@
             .catch(error => {
                 console.error("Error loading data:", error);
                 hideLoading();
-                initializeTable([]);  // Initialize with empty data in case of error
+                initializeTable([]);
             });
     
-        // Function to create avatar + name cell
         function avatarFormatter(cell) {
             const {name} = cell.getData();
             const uuid = playerUUIDs[name] || "8667ba71-b85a-4004-af54-457a9734eed7";
@@ -207,7 +205,7 @@
     
         function initializeTable(initialData) {
             var table;
-            var currentMinigame = "Block Jump";  // Default minigame
+            var currentMinigame = "Blockhüpfer";
     
             function updateTable(minigame) {
                 currentMinigame = minigame;
@@ -220,7 +218,6 @@
                     {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false}
                 ];
 
-                // Collect all possible map names
                 const allMapNames = new Set();
                 filteredData.forEach(record => {
                     Object.keys(record.scores).forEach(mapName => {
@@ -229,10 +226,9 @@
                 });
 
                 const ascendingMinigames = [
-                    "Block Jump", "Death Cube", "Dropper", "Elytra Race", "Frozen Path", "Gungame",
-                    "Horse Race", "Jump and Run", "King of the Hill", "Minefield", "Replika", "Up High",
-                    "Red Light, Green Light", "Speed Race", "Blockhüpfer", "Todeswürfel", "Freier Fall", "Elytrarennen", "Frostiger Pfad", 
-                    "Waffenfolge", "Pferderennen", "Jump and Run", "Kletterkönig", "Minenfeld", "Replika", "Ampelrennen", "Wettrennen", "Hoch Hinaus"
+                    "Blockhüpfer", "Todeswürfel", "Freier Fall", "Elytrarennen", "Frostiger Pfad", 
+                    "Waffenfolge", "Pferderennen", "Jump and Run", "Kletterkönig", "Minenfeld", 
+                    "Replika", "Ampelrennen", "Wettrennen", "Hoch Hinaus"
                 ];
                 
                 const sortDirection = ascendingMinigames.includes(currentMinigame) ? "asc" : "desc";
@@ -241,23 +237,13 @@
                     const aValue = aRow.getData().scores[column.getField().split('.')[1]];
                     const bValue = bRow.getData().scores[column.getField().split('.')[1]];
 
-                    // If both values are null/undefined/"-" or empty objects, maintain their relative order
-                    if ((!aValue || Object.keys(aValue).length === 0) && (!bValue || Object.keys(bValue).length === 0)) {
-                        return 0;
-                    }
-                    // If only a is null/undefined/"-" or empty object, it should be last
-                    if (!aValue || Object.keys(aValue).length === 0) {
-                        return 1;
-                    }
-                    // If only b is null/undefined/"-" or empty object, it should be last
-                    if (!bValue || Object.keys(bValue).length === 0) {
-                        return -1;
-                    }
-                    // For actual numeric values, sort based on direction
+                    if (aValue === undefined && bValue === undefined) return 0;
+                    if (aValue === undefined) return 1;
+                    if (bValue === undefined) return -1;
+
                     return dir === "asc" ? aValue - bValue : bValue - aValue;
                 }
                 
-                // Add columns for each map
                 Array.from(allMapNames).sort().forEach(mapName => {
                     columns.push({
                         title: mapName,
@@ -265,7 +251,8 @@
                         headerSort: true,
                         sorter: customSorter,
                         formatter: function(cell) {
-                            return cell.getValue() ?? "-";
+                            const value = cell.getValue();
+                            return value !== undefined ? value : "-";
                         },
                         headerSortStartingDir: sortDirection,
                         headerSortTristate: false
@@ -291,7 +278,6 @@
                     });
                 }
 
-                // Add click event listener to prevent sorting direction change
                 table.on("headerClick", function(e, column){
                     if(column.getField() !== "name") {
                         e.stopPropagation();
@@ -307,7 +293,6 @@
             updateTable(currentMinigame);
         }
     
-        // Set current date
         document.getElementById('current-date').textContent = new Date().toLocaleString('en-US', { 
             year: 'numeric', 
             month: 'short', 
