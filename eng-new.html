@@ -62,6 +62,32 @@
             vertical-align: middle;
             margin-right: 10px;
         }
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+        }
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid #4CAF50;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #records-table {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        #records-table.loaded {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -101,6 +127,10 @@
                 <option value="Walls">Walls</option>
             </select>
         </div>
+        <div id="loading-animation" class="loading">
+            <div class="spinner"></div>
+            <p>Loading data and avatars...</p>
+        </div>
         <div id="records-table"></div>
         <div class="footer">
             <!-- ... (footer content remains the same) ... -->
@@ -110,15 +140,61 @@
     <script>
         // Load player UUIDs
         var playerUUIDs = {};
+        var avatarsLoaded = 0;
+        var totalAvatars = 0;
+    
+        function showLoading() {
+            document.getElementById('loading-animation').style.display = 'flex';
+            document.getElementById('records-table').style.display = 'none';
+        }
+    
+        function hideLoading() {
+            document.getElementById('loading-animation').style.display = 'none';
+            document.getElementById('records-table').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('records-table').classList.add('loaded');
+            }, 0);
+        }
+    
+        function preloadAvatars(data) {
+            const uniqueNames = [...new Set(data.map(record => record.name))];
+            totalAvatars = uniqueNames.length;
+            
+            return Promise.all(uniqueNames.map(name => {
+                const uuid = playerUUIDs[name] || "8667ba71-b85a-4004-af54-457a9734eed7";
+                const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
+                return new Promise((resolve) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        avatarsLoaded++;
+                        resolve();
+                    };
+                    img.onerror = resolve;  // Resolve even if there's an error, to avoid hanging
+                    img.src = avatarUrl;
+                });
+            }));
+        }
+    
+        showLoading();
+    
         fetch('data-analysis/player_uuids.json')
             .then(response => response.json())
             .then(data => {
                 playerUUIDs = data;
-                initializeTable();
+                return fetch("data-analysis/records_data.json");
+            })
+            .then(response => response.json())
+            .then(data => {
+                return preloadAvatars(data).then(() => data);
+            })
+            .then(data => {
+                hideLoading();
+                initializeTable(data);
             })
             .catch(error => {
-                console.error("Error loading UUIDs:", error);
-                initializeTable();
+                console.error("Error loading data:", error);
+                hideLoading();
+                initializeTable([]);  // Initialize with empty data in case of error
             });
     
         // Function to create avatar + name cell
@@ -129,7 +205,7 @@
             return `<img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar"> ${name}`;
         }
     
-        function initializeTable() {
+        function initializeTable(initialData) {
             var table;
             var currentMinigame = "Block Jump";  // Default minigame
     
@@ -139,50 +215,47 @@
             }
     
             function createTable() {
-                fetch("data-analysis/records_data.json")
-                    .then(response => response.json())
-                    .then(data => {
-                        const filteredData = data.filter(record => record.minigame === currentMinigame);
-                        const columns = [
-                            {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false}
-                        ];
+                const filteredData = initialData.filter(record => record.minigame === currentMinigame);
+                const columns = [
+                    {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false}
+                ];
     
-                        // Add columns for each map
-                        if (filteredData.length > 0) {
-                            Object.keys(filteredData[0].scores).forEach(mapName => {
-                                columns.push({
-                                    title: mapName,
-                                    field: `scores.${mapName}`,
-                                    headerSort: true,
-                                    sorter: "number"
-                                });
-                            });
-                        }
-    
-                        const ascendingMinigames = [
-                            "Block Jump", "Death Cube", "Dropper", "Elytra Race", "Frozen Path", "Gungame",
-                            "Horse Race", "Jump and Run", "King of the Hill", "Minefield", "Replika",
-                            "Red Light, Green Light", "Speed Race"
-                        ];
-                        
-                        const sortDirection = ascendingMinigames.includes(currentMinigame) ? "asc" : "desc";
-                        const initialSort = filteredData.length > 0 ? 
-                            [{column: "scores." + Object.keys(filteredData[0].scores)[0], dir: sortDirection}] : 
-                            [];
-    
-                        if (table) {
-                            table.setColumns(columns);
-                            table.setData(filteredData);
-                            table.setSort(initialSort);
-                        } else {
-                            table = new Tabulator("#records-table", {
-                                data: filteredData,
-                                columns: columns,
-                                layout: "fitColumns",
-                                initialSort: initialSort
-                            });
-                        }
+                // Add columns for each map
+                if (filteredData.length > 0) {
+                    Object.keys(filteredData[0].scores).forEach(mapName => {
+                        columns.push({
+                            title: mapName,
+                            field: `scores.${mapName}`,
+                            headerSort: true,
+                            sorter: "number"
+                        });
                     });
+                }
+    
+                const ascendingMinigames = [
+                    "Block Jump", "Death Cube", "Dropper", "Elytra Race", "Frozen Path", "Gungame",
+                    "Horse Race", "Jump and Run", "King of the Hill", "Minefield", "Replika",
+                    "Red Light, Green Light", "Speed Race", "Blockhüpfer", "Todeswürfel", "Freier Fall", "Elytrarennen", "Frostiger Pfad", 
+                    "Waffenfolge", "Pferderennen", "Jump and Run", "Kletterkönig", "Minenfeld", "Replika", "Ampelrennen", "Wettrennen"
+                ];
+                
+                const sortDirection = ascendingMinigames.includes(currentMinigame) ? "asc" : "desc";
+                const initialSort = filteredData.length > 0 ? 
+                    [{column: "scores." + Object.keys(filteredData[0].scores)[0], dir: sortDirection}] : 
+                    [];
+    
+                if (table) {
+                    table.setColumns(columns);
+                    table.setData(filteredData);
+                    table.setSort(initialSort);
+                } else {
+                    table = new Tabulator("#records-table", {
+                        data: filteredData,
+                        columns: columns,
+                        layout: "fitColumns",
+                        initialSort: initialSort
+                    });
+                }
             }
     
             document.getElementById("minigame-select").addEventListener("change", function() {
