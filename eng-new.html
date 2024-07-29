@@ -72,6 +72,28 @@
             background-color: #FFD300FF;
             color: #ffffff;
         }
+        .tabulator {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+        .tabulator .tabulator-tableholder {
+            overflow-x: auto;
+        }
+        .tabulator .tabulator-header .tabulator-col.tabulator-frozen {
+            position: sticky;
+            left: 0;
+            z-index: 2;
+            background-color: #000000;  /* Match your header background color */
+        }
+        .tabulator .tabulator-row .tabulator-cell.tabulator-frozen {
+            position: sticky;
+            left: 0;
+            z-index: 1;
+            background-color: inherit;  /* This will match the row's background color */
+        }
+        .tabulator .tabulator-row .tabulator-cell.tabulator-frozen {
+            box-shadow: 2px 0px 3px rgba(0,0,0,0.1);
+        }
         .player-avatar {
             width: 32px;
             height: 32px;
@@ -117,6 +139,9 @@
         #minigame-select:focus {
             outline: none;
             box-shadow: 0 0 0 2px rgb(163, 136, 0)(76, 175, 80, 0.5);
+        }
+        #records-table {
+            width: 100%;
         }
     </style>
 </head>
@@ -285,7 +310,7 @@
     function createTable() {
         const filteredData = initialData.filter(record => record.minigame === currentMinigame);
         const columns = [
-            {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false}
+            {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false, frozen: true, width: 200}
         ];
 
         const allMapNames = new Set();
@@ -333,9 +358,12 @@
             table = new Tabulator("#records-table", {
                 data: filteredData,
                 columns: columns,
-                layout: "fitColumns",
+                layout: "fitDataTable",  // Changed from "fitColumns" to "fitDataTable"
                 columnHeaderSortMulti: false,
-                sortOrderReverse: false
+                sortOrderReverse: false,
+                movableColumns: false,  // Prevent column reordering
+                scrollToColumnPosition: 'center',  // Center the scrolled column
+                frozenColumns: 1,  // Freeze the first column (player name)
             });
         }
 
