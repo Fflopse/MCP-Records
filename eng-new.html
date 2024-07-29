@@ -27,7 +27,7 @@
             margin-bottom: 20px;
         }
         .highlight {
-            color: #4CAF50;
+            color: #FFD300FF;
         }
         .date {
             font-style: italic;
@@ -45,6 +45,14 @@
         }
         .tabulator .tabulator-header {
             background-color: #3a3a3a;
+            color: #FFD300FF;
+            font-weight: bold;
+        }
+        .tabulator .tabulator-header .tabulator-col.tabulator-sortable:hover {
+            background-color: #4a4a4a;
+        }
+        .tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort] {
+            background-color: #FFD300FF;
             color: #ffffff;
         }
         .tabulator .tabulator-row {
@@ -72,7 +80,7 @@
         .spinner {
             border: 4px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
-            border-top: 4px solid #4CAF50;
+            border-top: 4px solid #FFD300FF;
             width: 40px;
             height: 40px;
             animation: spin 1s linear infinite;
@@ -87,6 +95,20 @@
         }
         #records-table.loaded {
             opacity: 1;
+        }
+        #minigame-select {
+            background-color: #3a3a3a;
+            color: #ffffff;
+            border: 1px solid #FFD300FF;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            max-width: 300px;
+        }
+        #minigame-select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgb(163, 136, 0)(76, 175, 80, 0.5);
         }
     </style>
 </head>
@@ -252,7 +274,8 @@
                         sorter: customSorter,
                         formatter: function(cell) {
                             const value = cell.getValue();
-                            return value !== undefined ? value : "-";
+                            if (value === undefined) return "-";
+                            return typeof value === 'number' ? value.toFixed(3) : value;
                         },
                         headerSortStartingDir: sortDirection,
                         headerSortTristate: false
