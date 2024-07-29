@@ -279,6 +279,18 @@
         .profile-table th {
             background-color: #1a1a1a;
         }
+
+        #records-table {
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #records-table.fade-out {
+            opacity: 0;
+        }
+
+        #records-table.fade-in {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -514,24 +526,40 @@
                     searchTerm = "";
                 }
                 
-                if (table) {
-                    table.destroy();
-                    table = null;
-                }
+                // Add fade-out class
+                const tableElement = document.getElementById("records-table");
+                tableElement.classList.add('fade-out');
                 
-                createTable();
-                
-                if (table) {
-                    setTimeout(() => {
-                        const firstMapName = Array.from(new Set(initialData.filter(record => record.minigame === currentMinigame)
-                            .flatMap(record => Object.keys(record.scores)))).sort()[0];
-                        const initialColumn = table.getColumn(`scores.${firstMapName}`);
-                        if (initialColumn) {
-                            highlightSortedColumn(initialColumn);
-                        }
-                        adjustColumnWidths();
-                    }, 0);
-                }
+                // Wait for fade-out to complete before updating
+                setTimeout(() => {
+                    if (table) {
+                        table.destroy();
+                        table = null;
+                    }
+                    
+                    createTable();
+                    
+                    if (table) {
+                        // Remove fade-out and add fade-in class
+                        tableElement.classList.remove('fade-out');
+                        tableElement.classList.add('fade-in');
+                        
+                        setTimeout(() => {
+                            const firstMapName = Array.from(new Set(initialData.filter(record => record.minigame === currentMinigame)
+                                .flatMap(record => Object.keys(record.scores)))).sort()[0];
+                            const initialColumn = table.getColumn(`scores.${firstMapName}`);
+                            if (initialColumn) {
+                                highlightSortedColumn(initialColumn);
+                            }
+                            adjustColumnWidths();
+                            
+                            // Remove fade-in class after animation completes
+                            setTimeout(() => {
+                                tableElement.classList.remove('fade-in');
+                            }, 300);
+                        }, 0);
+                    }
+                }, 300); // This duration should match the transition duration in CSS
             }
     
             function createTable() {
@@ -599,6 +627,9 @@
                     scrollToColumnPosition: 'center',
                     height: 500,
                     initialFilter: customFilter,
+                    renderStarted: function() {
+                        document.getElementById("records-table").style.opacity = "1";
+                    }
                 };
     
                 table = new Tabulator("#records-table", tableOptions);
