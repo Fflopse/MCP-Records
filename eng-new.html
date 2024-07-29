@@ -219,31 +219,40 @@
                 const columns = [
                     {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false}
                 ];
-    
-                // Add columns for each map
-                if (filteredData.length > 0) {
-                    Object.keys(filteredData[0].scores).forEach(mapName => {
-                        columns.push({
-                            title: mapName,
-                            field: `scores.${mapName}`,
-                            headerSort: true,
-                            sorter: "number"
-                        });
+
+                // Collect all possible map names
+                const allMapNames = new Set();
+                filteredData.forEach(record => {
+                    Object.keys(record.scores).forEach(mapName => {
+                        allMapNames.add(mapName);
                     });
-                }
+                });
+
+                // Add columns for each map
+                Array.from(allMapNames).sort().forEach(mapName => {
+                    columns.push({
+                        title: mapName,
+                        field: `scores.${mapName}`,
+                        headerSort: true,
+                        sorter: "number",
+                        formatter: function(cell) {
+                            return cell.getValue() || "-";
+                        }
+                    });
+                });
     
                 const ascendingMinigames = [
                     "Block Jump", "Death Cube", "Dropper", "Elytra Race", "Frozen Path", "Gungame",
-                    "Horse Race", "Jump and Run", "King of the Hill", "Minefield", "Replika",
+                    "Horse Race", "Jump and Run", "King of the Hill", "Minefield", "Replika", "Up High",
                     "Red Light, Green Light", "Speed Race", "Blockhüpfer", "Todeswürfel", "Freier Fall", "Elytrarennen", "Frostiger Pfad", 
-                    "Waffenfolge", "Pferderennen", "Jump and Run", "Kletterkönig", "Minenfeld", "Replika", "Ampelrennen", "Wettrennen"
+                    "Waffenfolge", "Pferderennen", "Jump and Run", "Kletterkönig", "Minenfeld", "Replika", "Ampelrennen", "Wettrennen", "Hoch Hinaus"
                 ];
                 
                 const sortDirection = ascendingMinigames.includes(currentMinigame) ? "asc" : "desc";
-                const initialSort = filteredData.length > 0 ? 
-                    [{column: "scores." + Object.keys(filteredData[0].scores)[0], dir: sortDirection}] : 
+                const initialSort = allMapNames.size > 0 ? 
+                    [{column: "scores." + Array.from(allMapNames)[0], dir: sortDirection}] : 
                     [];
-    
+
                 if (table) {
                     table.setColumns(columns);
                     table.setData(filteredData);
