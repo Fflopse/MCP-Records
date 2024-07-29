@@ -227,6 +227,15 @@
                         allMapNames.add(mapName);
                     });
                 });
+    
+                const ascendingMinigames = [
+                    "Block Jump", "Death Cube", "Dropper", "Elytra Race", "Frozen Path", "Gungame",
+                    "Horse Race", "Jump and Run", "King of the Hill", "Minefield", "Replika", "Up High",
+                    "Red Light, Green Light", "Speed Race", "Blockhüpfer", "Todeswürfel", "Freier Fall", "Elytrarennen", "Frostiger Pfad", 
+                    "Waffenfolge", "Pferderennen", "Jump and Run", "Kletterkönig", "Minenfeld", "Replika", "Ampelrennen", "Wettrennen", "Hoch Hinaus"
+                ];
+                
+                const sortDirection = ascendingMinigames.includes(currentMinigame) ? "asc" : "desc";
 
                 // Add columns for each map
                 Array.from(allMapNames).sort().forEach(mapName => {
@@ -237,18 +246,12 @@
                         sorter: "number",
                         formatter: function(cell) {
                             return cell.getValue() || "-";
-                        }
+                        },
+                        headerSortStartingDir: sortDirection,
+                        headerSortTristate: false
                     });
                 });
-    
-                const ascendingMinigames = [
-                    "Block Jump", "Death Cube", "Dropper", "Elytra Race", "Frozen Path", "Gungame",
-                    "Horse Race", "Jump and Run", "King of the Hill", "Minefield", "Replika", "Up High",
-                    "Red Light, Green Light", "Speed Race", "Blockhüpfer", "Todeswürfel", "Freier Fall", "Elytrarennen", "Frostiger Pfad", 
-                    "Waffenfolge", "Pferderennen", "Jump and Run", "Kletterkönig", "Minenfeld", "Replika", "Ampelrennen", "Wettrennen", "Hoch Hinaus"
-                ];
-                
-                const sortDirection = ascendingMinigames.includes(currentMinigame) ? "asc" : "desc";
+
                 const initialSort = allMapNames.size > 0 ? 
                     [{column: "scores." + Array.from(allMapNames)[0], dir: sortDirection}] : 
                     [];
@@ -262,10 +265,20 @@
                         data: filteredData,
                         columns: columns,
                         layout: "fitColumns",
-                        initialSort: initialSort
+                        initialSort: initialSort,
+                        columnHeaderSortMulti: false,
+                        sortOrderReverse: false
                     });
                 }
-            }
+
+                // Add click event listener to prevent sorting direction change
+                table.on("headerClick", function(e, column){
+                    if(column.getField() !== "name") {
+                        e.stopPropagation();
+                        table.setSort(column.getField(), sortDirection);
+                    }
+                });
+                }
     
             document.getElementById("minigame-select").addEventListener("change", function() {
                 updateTable(this.value);
