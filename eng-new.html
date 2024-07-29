@@ -138,6 +138,25 @@
         .tabulator .tabulator-tableholder {
             overflow-x: auto;
         }
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        #player-search {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            border: 1px solid #FFD300FF;
+            border-radius: 5px;
+            background-color: #3a3a3a;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        #player-search:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255, 211, 0, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -180,6 +199,9 @@
         <div id="loading-animation" class="loading">
             <div class="spinner"></div>
             <p>Loading data and avatars...</p>
+        </div>
+        <div class="search-container">
+            <input type="text" id="player-search" placeholder="Search player names...">
         </div>
         <div id="records-table"></div>
         <div class="footer">
@@ -296,6 +318,18 @@
                 "Walls": "desc"
             };
 
+            function setupSearch() {
+                const searchInput = document.getElementById("player-search");
+                searchInput.addEventListener("input", function() {
+                    table.setFilter(customFilter);
+                });
+
+                function customFilter(data) {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    return data.name.toLowerCase().includes(searchTerm);
+                }
+            }
+
             function highlightSortedColumn(column) {
                 if (table) {
                     table.getColumns().forEach(col => {
@@ -341,6 +375,13 @@
             function updateTable(minigame) {
                 console.log("Updating table for minigame:", minigame);
                 currentMinigame = minigame;
+                
+                // Reset search input
+                const searchInput = document.getElementById("player-search");
+                if (searchInput) {
+                    searchInput.value = "";
+                }
+                
                 createTable();
                 
                 if (table) {
@@ -422,6 +463,7 @@
                     movableColumns: false,
                     scrollToColumnPosition: 'center',
                     height: 500, // Adjust as needed
+                    initialFilter: customFilter,
                 };
 
                 if (table) {
@@ -453,6 +495,9 @@
 
                 // Adjust column widths on window resize
                 window.addEventListener('resize', adjustColumnWidths);
+
+                // Set up search functionality
+                setupSearch();
             }
 
             console.log("Setting up event listener for minigame select");
