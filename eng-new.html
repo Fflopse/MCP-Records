@@ -239,20 +239,23 @@
 
                 // Custom sorter function
                 function customSorter(a, b, aRow, bRow, column, dir, sorterParams) {
-                    // If both values are null/undefined/"-", maintain their relative order
-                    if ((a === null || a === undefined || a === "-") && (b === null || b === undefined || b === "-")) {
+                    const aValue = aRow.getData().scores[column.getField().split('.')[1]];
+                    const bValue = bRow.getData().scores[column.getField().split('.')[1]];
+
+                    // If both values are null/undefined/"-" or empty objects, maintain their relative order
+                    if ((!aValue || Object.keys(aValue).length === 0) && (!bValue || Object.keys(bValue).length === 0)) {
                         return 0;
                     }
-                    // If only a is null/undefined/"-", it should be last
-                    if (a === null || a === undefined || a === "-") {
+                    // If only a is null/undefined/"-" or empty object, it should be last
+                    if (!aValue || Object.keys(aValue).length === 0) {
                         return 1;
                     }
-                    // If only b is null/undefined/"-", it should be last
-                    if (b === null || b === undefined || b === "-") {
+                    // If only b is null/undefined/"-" or empty object, it should be last
+                    if (!bValue || Object.keys(bValue).length === 0) {
                         return -1;
                     }
                     // For actual numeric values, sort based on direction
-                    return dir === "asc" ? a - b : b - a;
+                    return dir === "asc" ? aValue - bValue : bValue - aValue;
                 }
 
                 // Add columns for each map
@@ -263,7 +266,8 @@
                         headerSort: true,
                         sorter: customSorter,
                         formatter: function(cell) {
-                            return cell.getValue() ?? "-";
+                            const value = cell.getValue();
+                            return (value !== null && value !== undefined) ? value : "-";
                         },
                         headerSortStartingDir: sortDirection,
                         headerSortTristate: false
@@ -296,14 +300,8 @@
                         table.setSort(column.getField(), sortDirection);
                     }
                 });
+                }
             }
-    
-            document.getElementById("minigame-select").addEventListener("change", function() {
-                updateTable(this.value);
-            });
-    
-            updateTable(currentMinigame);
-        }
     
         // Set current date
         document.getElementById('current-date').textContent = new Date().toLocaleString('en-US', { 
