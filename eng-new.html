@@ -272,8 +272,7 @@
                     }
 
                     // For actual numeric values, sort based on the sortDirection
-                    const diff = aValue - bValue;
-                    return sortDirection === "asc" ? diff : -diff;
+                    return sortDirection === "asc" ? aValue - bValue : bValue - aValue;
                 }
                 
                 Array.from(allMapNames).sort().forEach(mapName => {
@@ -296,19 +295,21 @@
                     [{column: "scores." + Array.from(allMapNames)[0], dir: sortDirection}] : 
                     [];
 
+                const tableOptions = {
+                    data: filteredData,
+                    columns: columns,
+                    layout: "fitColumns",
+                    initialSort: initialSort,
+                    columnHeaderSortMulti: false,
+                    sortOrderReverse: false
+                };
+
                 if (table) {
                     table.setColumns(columns);
                     table.setData(filteredData);
                     table.setSort(initialSort);
                 } else {
-                    table = new Tabulator("#records-table", {
-                        data: filteredData,
-                        columns: columns,
-                        layout: "fitColumns",
-                        initialSort: initialSort,
-                        columnHeaderSortMulti: false,
-                        sortOrderReverse: false
-                    });
+                    table = new Tabulator("#records-table", tableOptions);
                 }
 
                 table.on("headerClick", function(e, column){
