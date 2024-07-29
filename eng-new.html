@@ -85,6 +85,71 @@
     </div>
 
     <script>
+        // Load player UUIDs
+        var playerUUIDs = {};
+        fetch('player_uuids.json')
+            .then(response => response.text())
+            .then(text => {
+                console.log("Raw JSON text:", text);  // Log the raw text
+                return JSON.parse(text);
+            })
+            .then(data => {
+                console.log("Parsed UUID data:", data);  // Log the parsed data
+                playerUUIDs = data;
+                initializeTable();
+            })
+            .catch(error => {
+                console.error("Error loading UUIDs:", error);
+                initializeTable();  // Initialize table even if UUID loading fails
+            });
+    
+        // Function to create avatar + name cell
+        function avatarFormatter(cell) {
+            const {name} = cell.getData();
+            console.log("Formatting avatar for:", name);  // Log the name being formatted
+            const uuid = playerUUIDs[name] || "8667ba71-b85a-4004-af54-457a9734eed7";
+            console.log("UUID used:", uuid);  // Log the UUID being used
+            const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
+            return `<img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar"> ${name}`;
+        }
+    
+        function initializeTable() {
+            // Initialize Tabulator
+            var table = new Tabulator("#records-table", {
+                ajaxURL: "records_data.json",
+                layout: "fitColumns",
+                columns: [
+                    {title: "Name", field: "name", formatter: avatarFormatter, sorter: "string"},
+                    {title: "Minigame", field: "minigame", sorter: "string"},
+                    {title: "Best Score", field: "best_score", sorter: "number"},
+                ],
+                initialSort: [{column: "best_score", dir: "desc"}],
+                ajaxResponse: function(url, params, response) {
+                    console.log("Records data:", response);  // Log the records data
+                    // Populate minigame dropdown
+                    var minigames = [...new Set(response.map(item => item.minigame))].sort();
+                    var select = document.getElementById("minigame-select");
+                    select.innerHTML = '<option value="">All Minigames</option>';
+                    minigames.forEach(function(minigame) {
+                        var option = document.createElement("option");
+                        option.value = minigame;
+                        option.textContent = minigame;
+                        select.appendChild(option);
+                    });
+                    return response;
+                },
+            });
+    
+            // Filter table based on selected minigame
+            document.getElementById("minigame-select").addEventListener("change", function() {
+                if (this.value === "") {
+                    table.clearFilter();
+                } else {
+                    table.setFilter("minigame", "=", this.value);
+                }
+            });
+        }
+    
         // Set current date
         document.getElementById('current-date').textContent = new Date().toLocaleString('en-US', { 
             year: 'numeric', 
@@ -92,59 +157,6 @@
             day: 'numeric',
             hour: 'numeric',
             minute: 'numeric'
-        });
-
-        var playerUUIDs = {};
-        fetch('player_uuids.json')
-            .then(response => response.json())
-            .then(data => {
-                playerUUIDs = data;
-                // Initialize table after loading UUIDs
-                initializeTable();
-            });
-
-        var steveUUID = "8667ba71-b85a-4004-af54-457a9734eed7";
-
-        // Function to create avatar + name cell
-        function avatarFormatter(cell) {
-            const {name} = cell.getData();
-            // Note: You'll need to determine how to get the UUID for the avatar
-            const uuid = playerUUIDs[name] || steveUUID; // Replace this with actual UUID retrieval logic
-            const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
-            return `<img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar"> ${name}`;
-        }
-
-        // Initialize Tabulator
-        var table = new Tabulator("#records-table", {
-            ajaxURL: "data-analysis/records_data.json",
-            layout: "fitColumns",
-            columns: [
-                {title: "Name", field: "name", formatter: avatarFormatter, sorter: "string"},
-                {title: "Minigame", field: "minigame", sorter: "string"},
-                {title: "Best Score", field: "best_score", sorter: "number"},
-            ],
-            initialSort: [{column: "best_score", dir: "desc"}],
-            ajaxResponse: function(url, params, response) {
-                // Populate minigame dropdown
-                var minigames = [...new Set(response.map(item => item.minigame))].sort();
-                var select = document.getElementById("minigame-select");
-                minigames.forEach(function(minigame) {
-                    var option = document.createElement("option");
-                    option.value = minigame;
-                    option.textContent = minigame;
-                    select.appendChild(option);
-                });
-                return response;
-            },
-        });
-
-        // Filter table based on selected minigame
-        document.getElementById("minigame-select").addEventListener("change", function() {
-            if (this.value === "") {
-                table.clearFilter();
-            } else {
-                table.setFilter("minigame", "=", this.value);
-            }
         });
     </script>
 </body>
