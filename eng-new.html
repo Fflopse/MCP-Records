@@ -306,15 +306,91 @@
                 margin-bottom: 10px;
             }
         }
+
+        .language-selector {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .language-selector button {
+            background-color: #333;
+            color: #fff;
+            border-radius: 4px;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .language-selector button:hover,
+        .language-selector button:focus {
+            background-color: rgba(255, 211, 0, 0.5);
+            color: #000;
+        }
+
+        .language-selector button[aria-pressed="true"] {
+            background-color: rgba(255, 211, 0, 0.5);
+            color: #000;
+        }
+
+        .table-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .dropdown, .search-container {
+            flex: 1;
+        }
+
+        .dropdown {
+            margin-right: 10px;
+        }
+
+        .search-container {
+            margin-left: 10px;
+        }
+
+        #minigame-select, #player-search {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #274736;
+            background-color: #333;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        #minigame-select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            padding-right: 30px;
+        }
+
+        #player-search::placeholder {
+            color: #aaa;
+        }
+
+/* Existing styles for language selector, etc. */
     </style>
 </head>
 <body>
+    <div class="language-selector">
+        <button onclick="changeLanguage('en')" aria-label="Switch to English">EN</button>
+        <button onclick="changeLanguage('de')" aria-label="Switch to German">DE</button>
+    </div>
     <div class="container">
-        <h1>MCPR</h1>
+        <h1 id="page-title">Minecraft Party Records</h1>
         <div class="caption">
-            by <span class="highlight">Fflopse</span> | data as of <span class="date">30 Jul 2024, 01:00 Uhr</span>
+            <span id="subtitle">by</span> <span class="subtitle">Fflopse</span> | <span id="data-as-of">data as of</span> <span class="date"> 30 Jul, 01:00</span>
         </div>
-        <div class="controls-container">
+        <div class="table-controls">
             <div class="dropdown">
                 <select id="minigame-select">
                     <option value="Blockhüpfer">Block Jump</option>
@@ -351,12 +427,12 @@
         </div>
         <div id="loading-animation" class="loading">
             <div class="spinner"></div>
-            <p>Loading data and avatars...</p>
+            <p id="loading-text">Loading data and avatars...</p>
         </div>
         <div id="records-table"></div>
         <div id="player-profile-modal" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <span class="close" tabindex="0" role="button" aria-label="Close">&times;</span>
                 <div id="modal-loader" class="modal-loader">
                     <div class="modal-spinner"></div>
                 </div>
@@ -369,6 +445,105 @@
     </div>
 
     <script>
+        const translations = {
+            en: {
+                title: "Minecraft Party Records",
+                subtitle: "by",
+                dataAsOf: "data as of",
+                loading: "Loading data and avatars...",
+                minigames: {
+                    "Blockhüpfer": "Block Jump",
+                    "Buntes Chaos": "Colorful Chaos",
+                    "Todeswürfel": "Death Cube",
+                    "Duelle": "Duels",
+                    "Freier Fall": "Dropper",
+                    "Elytrarennen": "Elytra Race",
+                    "Frostiger Pfad": "Frozen Path",
+                    "Waffenfolge": "Gungame",
+                    "Pferderennen": "Horse Race",
+                    "Jump and Run": "Jump and Run",
+                    "Kletter-König": "King of the Hill",
+                    "Lasertag": "Lasertag",
+                    "Minengefecht": "Mine Battle",
+                    "Minenfeld": "Minefield",
+                    "Mini Skywars": "Mini Skywars",
+                    "Mini Survivalgames": "Mini Survivalgames",
+                    "Einer im Köcher": "One in the Chamber",
+                    "Paintball": "Paintball",
+                    "Replika": "Replica",
+                    "Ampelrennen": "Red Light, Green Light",
+                    "Schießstand": "Shooting Range",
+                    "Spleef": "Spleef",
+                    "Wettrennen": "Speed Race",
+                    "Sammelwahn": "Too many items",
+                    "Hoch hinaus": "Up High",
+                    "Walls": "Walls"
+                }
+            },
+            de: {
+                title: "Minecraft Party Rekorde",
+                subtitle: "von",
+                dataAsOf: "Daten vom",
+                loading: "Lade Daten und Avatare...",
+                minigames: {
+                    "Blockhüpfer": "Blockhüpfer",
+                    "Buntes Chaos": "Buntes Chaos",
+                    "Todeswürfel": "Todeswürfel",
+                    "Duelle": "Duelle",
+                    "Freier Fall": "Freier Fall",
+                    "Elytrarennen": "Elytrarennen",
+                    "Frostiger Pfad": "Frostiger Pfad",
+                    "Waffenfolge": "Waffenfolge",
+                    "Pferderennen": "Pferderennen",
+                    "Jump and Run": "Jump and Run",
+                    "Kletter-König": "Kletter-König",
+                    "Lasertag": "Lasertag",
+                    "Minengefecht": "Minengefecht",
+                    "Minenfeld": "Minenfeld",
+                    "Mini Skywars": "Mini Skywars",
+                    "Mini Survivalgames": "Mini Survivalgames",
+                    "Einer im Köcher": "Einer im Köcher",
+                    "Paintball": "Paintball",
+                    "Replika": "Replika",
+                    "Ampelrennen": "Ampelrennen",
+                    "Schießstand": "Schießstand",
+                    "Spleef": "Spleef",
+                    "Wettrennen": "Wettrennen",
+                    "Sammelwahn": "Sammelwahn",
+                    "Hoch hinaus": "Hoch Hinaus",
+                    "Walls": "Walls"
+                }
+            }
+        };
+
+        let currentLanguage = 'en';
+
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            document.documentElement.lang = lang;
+            updateTexts();
+
+            // Update button states
+            document.querySelectorAll('.language-selector button').forEach(button => {
+                button.setAttribute('aria-pressed', 'false');
+            });
+            document.querySelector(`.language-selector button[onclick="changeLanguage('${lang}')"]`)
+                .setAttribute('aria-pressed', 'true');
+        }
+
+        function updateTexts() {
+            document.getElementById('page-title').textContent = translations[currentLanguage].title;
+            document.getElementById('subtitle').textContent = translations[currentLanguage].subtitle;
+            document.getElementById('data-as-of').textContent = translations[currentLanguage].dataAsOf;
+            document.getElementById('minigame-label').textContent = translations[currentLanguage].minigameLabel;
+            document.getElementById('loading-text').textContent = translations[currentLanguage].loading;
+            
+            const select = document.getElementById('minigame-select');
+            Array.from(select.options).forEach(option => {
+                option.textContent = translations[currentLanguage].minigames[option.value];
+            });
+        }
+
         var playerUUIDs = {};
         var avatarsLoaded = 0;
         var totalAvatars = 0;
@@ -674,6 +849,7 @@
                 window.addEventListener('resize', adjustColumnWidths);
     
                 setupSearch();
+                updateTexts();
             }
     
             function createPlayerProfile(playerName) {
@@ -764,6 +940,12 @@
         window.showPlayerProfile = function(playerName) {
             console.error("Profile view not initialized yet");
         };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector(`.language-selector button[onclick="changeLanguage('${currentLanguage}')"]`)
+                .setAttribute('aria-pressed', 'true');
+        });
+
     </script>
 </body>
 </html>
