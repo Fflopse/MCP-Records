@@ -207,6 +207,7 @@
             max-width: 800px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         .modal-loader {
@@ -225,14 +226,11 @@
             animation: spin 1s linear infinite;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
         .close {
             color: #aaa;
-            float: right;
+            position: absolute;
+            top: 10px;
+            right: 15px;
             font-size: 28px;
             font-weight: bold;
             cursor: pointer;
@@ -246,20 +244,36 @@
 
         .player-profile-header {
             display: flex;
-            align-items: center;
+            justify-content: space-between;
+            align-items: flex-start;
             margin-bottom: 20px;
+            padding-right: 40px;
         }
 
-        .player-profile-header img {
+        .player-avatar-name {
+            display: flex;
+            align-items: center;
+        }
+
+        .player-avatar-name img {
             width: 100px;
             height: 100px;
             margin-right: 20px;
             border-radius: 8px;
         }
 
-        .player-profile-header h2 {
+        .player-avatar-name h2 {
             margin: 0;
-            color: var(--accent-color);
+            font-size: 24px;
+        }
+
+        .player-stats {
+            text-align: right;
+        }
+
+        .player-stats p {
+            margin: 5px 0;
+            font-size: 14px;
         }
 
         .profile-table {
@@ -292,19 +306,6 @@
         .minigame-section h3 {
             color: var(--accent-color);
             margin-bottom: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .controls-container {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .dropdown,
-            .search-container {
-                max-width: none;
-                margin-bottom: 10px;
-            }
         }
 
         .language-selector {
@@ -394,6 +395,28 @@
         }
         .rank-other {
             color: #A0A0A0;
+        }
+
+        @media (max-width: 768px) {
+            .controls-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .dropdown,
+            .search-container {
+                max-width: none;
+                margin-bottom: 10px;
+            }
+
+            .player-profile-header {
+                flex-direction: column;
+            }
+
+            .player-stats {
+                text-align: left;
+                margin-top: 15px;
+            }
         }
 
 /* Existing styles for language selector, etc. */
@@ -539,7 +562,8 @@
         var playerUUIDs = {};
         var avatarsLoaded = 0;
         var totalAvatars = 0;
-    
+        let playerInfoData = {};  
+
         function changeLanguage(lang) {
             currentLanguage = lang;
             document.documentElement.lang = lang;
@@ -639,6 +663,18 @@
             var searchTerm = "";
             var sortedColumn;
             const MIN_COLUMN_WIDTH = 100;
+
+            let playerInfoData = {};
+
+            fetch('data-analysis/player_data.json')
+                .then(response => response.json())
+                .then(data => {
+                    playerInfoData = data;
+                })
+                .catch(error => {
+                    console.error("Error loading player info:", error);
+                    playerInfoData = {}; // Ensure it's an empty object if loading fails
+                });
     
             const minigameSortDirections = {
                 "Blockhüpfer": "asc",
@@ -897,13 +933,47 @@
 
             function createPlayerProfile(playerName) {
                 const playerData = initialData.filter(record => record.name === playerName);
-                
+                const playerInfo = playerInfoData[playerName];
+
+                const rankColors = {
+                    'Bauteam': '#FFD700',
+                    'VIP': '#800080',
+                    'Content': '#FFC0CB',
+                    'Entwickler': '#FF0000',
+                    'Spieler': '#808080',
+                    'Premium': '#008000',
+                    'Premium+': '#006400',
+                    'Supporter': '#00FFFF'
+                };
+
                 let profileHTML = `
                 <div class="player-profile-header">
-                    <img src="https://crafatar.com/renders/head/${playerUUIDs[playerName] || '8667ba71-b85a-4004-af54-457a9734eed7'}?size=100&overlay" alt="${playerName}'s head">
-                    <h2>${playerName}'s Profile</h2>
-                </div>`;
-                
+                    <div class="player-avatar-name">
+                        <img src="https://crafatar.com/renders/head/${playerUUIDs[playerName] || '8667ba71-b85a-4004-af54-457a9734eed7'}?size=100&overlay" alt="${playerName}'s head">`;
+
+                if (playerInfo && playerInfo.rank) {
+                    const rankColor = rankColors[playerInfo.rank] || '#FFFFFF';
+                    profileHTML += `<h2 style="color: ${rankColor};">${playerName}</h2>`;
+                } else {
+                    profileHTML += `<h2>${playerName}</h2>`;
+                }
+
+                profileHTML += `</div>`;
+
+                if (playerInfo && playerInfo.minecraft_party) {
+                    const gameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Spiele'].replace(',', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Spiele'].replace(',', '')) * 100).toFixed(2);
+                    const minigameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Minispiele'].replace(',', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Minispiele'].replace(',', '')) * 100).toFixed(2);
+                    
+                    profileHTML += `
+                    <div class="player-stats">
+                        <p><strong>Rank:</strong> ${playerInfo.minecraft_party['Position (Punkte)']}</p>
+                        <p><strong>Game Win%:</strong> ${gameWinPercentage}%</p>
+                        <p><strong>Minigame Win%:</strong> ${minigameWinPercentage}%</p>
+                    </div>`;
+                }
+
+                profileHTML += `</div>`; // Close player-profile-header
+
                 const minigames = [...new Set(playerData.map(record => record.minigame))];
                 
                 minigames.forEach(minigame => {
@@ -930,8 +1000,6 @@
                             
                             const rankClass = getRankClass(playerRank);
                             
-                            console.log(`Map: ${map}, Score: ${score}, Rank: ${playerRank}, Class: ${rankClass}`);
-                            
                             profileHTML += `
                                 <tr>
                                     <td>${map}</td>
@@ -950,6 +1018,24 @@
                 return profileHTML;
             }
 
+function calculateRank(allPlayersData, map, playerScore, sortDirection) {
+    const validScores = allPlayersData
+        .map(player => player.scores[map])
+        .filter(score => score !== undefined && score !== null && score !== "-");
+    
+    const uniqueScores = [...new Set(validScores)];
+    uniqueScores.sort((a, b) => sortDirection === "asc" ? a - b : b - a);
+    
+    const playerRank = uniqueScores.indexOf(playerScore) + 1;
+    return playerRank;
+}
+
+function getRankClass(rank) {
+    if (rank === 1) return 'rank-1';
+    if (rank === 2) return 'rank-2';
+    if (rank === 3) return 'rank-3';
+    return 'rank-other';
+}
             function calculateRank(allPlayersData, map, playerScore, sortDirection) {
                 const validScores = allPlayersData
                     .map(player => player.scores[map])
@@ -1006,8 +1092,7 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector(`.language-selector button[onclick="changeLanguage('${currentLanguage}')"]`)
-                .setAttribute('aria-pressed', 'true');
+
         });
 
         function closeModal() {
@@ -1015,29 +1100,71 @@
             modal.style.display = "none";
         }
 
+
         document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById('player-profile-modal');
-            const closeBtn = document.getElementById('close-modal');
+            console.log("DOMContentLoaded event fired");
 
-            // Close the modal when clicking the close button
-            closeBtn.addEventListener('click', closeModal);
+            showLoading();
 
-            // Close the modal when clicking outside of it
-            modal.addEventListener('click', function(event) {
-                if (event.target === modal) {
-                    closeModal();
-                }
-            });
+            // First, fetch player UUIDs
+            fetch('data-analysis/player_uuids.json')
+                .then(response => response.json())
+                .then(data => {
+                    console.log("player_uuids.json loaded");
+                    playerUUIDs = data;
+                    // Now fetch the records data
+                    return fetch("data-analysis/records_data.json");
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("records_data.json loaded");
+                    // Preload avatars
+                    return preloadAvatars(data).then(() => data);
+                })
+                .then(data => {
+                    console.log("Avatars preloaded");
+                    // Now fetch the player info data
+                    return fetch('data-analysis/player_data.json')
+                        .then(response => response.json())
+                        .then(infoData => {
+                            console.log("player_data.json loaded");
+                            playerInfoData = infoData;
+                            return data;  // Return the original data
+                        });
+                })
+                .then(data => {
+                    console.log("All data loaded, initializing table");
+                    hideLoading();
+                    initializeTable(data);
+                })
+                .catch(error => {
+                    console.error("Error loading data:", error);
+                    hideLoading();
+                    initializeTable([]);
+                });
 
-            // Close the modal when pressing the Escape key
-            document.addEventListener('keydown', function(event) {
-                if (event.key === "Escape" && modal.style.display === "block") {
-                    closeModal();
-                }
-            });
+                const modal = document.getElementById('player-profile-modal');
+                const closeBtn = document.getElementById('close-modal');
 
-            document.querySelector(`.language-selector button[onclick="changeLanguage('${currentLanguage}')"]`)
-                .setAttribute('aria-pressed', 'true');
+                // Close the modal when clicking the close button
+                closeBtn.addEventListener('click', closeModal);
+
+                // Close the modal when clicking outside of it
+                modal.addEventListener('click', function(event) {
+                    if (event.target === modal) {
+                        closeModal();
+                    }
+                });
+
+                // Close the modal when pressing the Escape key
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === "Escape" && modal.style.display === "block") {
+                        closeModal();
+                    }
+                });
+
+                document.querySelector(`.language-selector button[onclick="changeLanguage('${currentLanguage}')"]`)
+                    .setAttribute('aria-pressed', 'true');
         });
 
         // Make closeModal function globally accessible
