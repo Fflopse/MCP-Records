@@ -451,7 +451,7 @@
         <div id="records-table"></div>
         <div id="player-profile-modal" class="modal">
             <div class="modal-content">
-                <span class="close" tabindex="0" role="button" aria-label="Close">&times;</span>
+                <span class="close" id="close-modal" onclick="closeModal()">&times;</span>
                 <div id="modal-loader" class="modal-loader">
                     <div class="modal-spinner"></div>
                 </div>
@@ -1005,17 +1005,43 @@
             minute: 'numeric'
         });
 
-        window.onclick = function(event) {
-            const modal = document.getElementById('player-profile-modal');
-            if (event.target == modal || event.target.className == 'close') {
-                modal.style.display = 'none';
-            }
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelector(`.language-selector button[onclick="changeLanguage('${currentLanguage}')"]`)
                 .setAttribute('aria-pressed', 'true');
         });
+
+        function closeModal() {
+            const modal = document.getElementById('player-profile-modal');
+            modal.style.display = "none";
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('player-profile-modal');
+            const closeBtn = document.getElementById('close-modal');
+
+            // Close the modal when clicking the close button
+            closeBtn.addEventListener('click', closeModal);
+
+            // Close the modal when clicking outside of it
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Close the modal when pressing the Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === "Escape" && modal.style.display === "block") {
+                    closeModal();
+                }
+            });
+
+            document.querySelector(`.language-selector button[onclick="changeLanguage('${currentLanguage}')"]`)
+                .setAttribute('aria-pressed', 'true');
+        });
+
+        // Make closeModal function globally accessible
+        window.closeModal = closeModal;
 
     </script>
 </body>
