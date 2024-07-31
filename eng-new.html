@@ -31,7 +31,7 @@
         h1 {
             text-align: center;
             margin-bottom: 30px;
-            color: #1a1a1a;
+            color: #c4760191;
         }
 
         .caption {
@@ -529,12 +529,40 @@
             }
         }
 
+        .title-container {
+            margin-bottom: 30px;
+            padding: 10px 0;
+            border-bottom: 2px solid var(--secondary-color);
+            }
+
+            .main-title {
+            font-family: Arial, sans-serif;
+            font-size: 2rem;
+            color: var(--text-color);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            transition: text-shadow 0.3s ease;
+            }
+
+            .main-title:hover {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+            }
+
+            /* Responsive design */
+            @media (max-width: 768px) {
+            .main-title {
+                font-size: 1.5rem;
+            }
+            }
+
 /* Existing styles for language selector, etc. */
     </style>
 <div class="container">
-    <h1 id="page-title">Minecraft Party Records</h1>
-    <div class="caption">
-        <span id="subtitle">by</span> <span class="subtitle">Fflopse</span> | <span id="data-as-of">data as of</span> <span class="date"> 30 Jul, 01:00</span>
+    <div class="title-container">
+        <h1 class="main-title">
+          Cytooxien Minecraft Party Records
+        </h1>
     </div>
     
     <div class="search-section">
@@ -544,7 +572,7 @@
             </span>
         </div>
         <input type="text" id="global-player-search" placeholder="records(<player>)">
-    </div>
+    </div> 
 
     <div class="controls-container">
         <div class="dropdown">
@@ -578,7 +606,7 @@
                 </select>
             </div>
             <div class="search-container">
-                <input type="text" id="player-search" placeholder="Search players...">
+                <input type="text" id="player-search" placeholder="filter scoreboard...">
             </div>
         </div>
         <div id="loading-animation" class="loading">
@@ -603,9 +631,6 @@
     <script>
         const translations = {
             en: {
-                title: "Minecraft Party Records",
-                subtitle: "by",
-                dataAsOf: "data as of",
                 loading: "Loading data and avatars...",
                 minigames: {
                     "Blockhüpfer": "Block Jump",
@@ -637,9 +662,6 @@
                 }
             },
             de: {
-                title: "Minecraft Party Rekorde",
-                subtitle: "von",
-                dataAsOf: "Daten vom",
                 loading: "Lade Daten und Avatare...",
                 minigames: {
                     "Blockhüpfer": "Blockhüpfer",
@@ -691,9 +713,6 @@
         }
     
         function updateTexts() {
-            document.getElementById('page-title').textContent = translations[currentLanguage].title;
-            document.getElementById('subtitle').textContent = translations[currentLanguage].subtitle;
-            document.getElementById('data-as-of').textContent = translations[currentLanguage].dataAsOf;
             document.getElementById('loading-text').textContent = translations[currentLanguage].loading;
             
             const select = document.getElementById('minigame-select');
@@ -1125,7 +1144,7 @@
                 let profileHTML = `
                 <div class="player-profile-header">
                     <div class="player-avatar-name">
-                        <img src="https://crafatar.com/renders/head/${playerUUIDs[playerName] || '8667ba71-b85a-4004-af54-457a9734eed7'}?size=100&overlay" alt="${playerName}'s head">`;
+                        <img src="https://crafatar.com/renders/head/${playerUUIDs[playerName] || '8667ba71-b85a-4004-af54-457a9734eed7'}?&overlay" alt="${playerName}'s head">`;
 
                 if (playerInfo && playerInfo.rank) {
                     const rankColor = rankColors[playerInfo.rank] || '#FFFFFF';
@@ -1240,6 +1259,9 @@ function getRankClass(rank) {
                 loader.style.display = 'flex';
                 content.style.display = 'none';
 
+                // Update the document title
+                document.title = `MCPR(${playerName})`;
+
                 setTimeout(() => {
                     content.innerHTML = createPlayerProfile(playerName);
                     
@@ -1274,6 +1296,9 @@ function getRankClass(rank) {
         function closeModal() {
             const modal = document.getElementById('player-profile-modal');
             modal.style.display = "none";
+            
+            // Reset the document title
+            document.title = "MCPR";
         }
 
         const playerSearch = document.getElementById('player-search');
@@ -1312,6 +1337,7 @@ function getRankClass(rank) {
 
         document.addEventListener('DOMContentLoaded', function() {
             console.log("DOMContentLoaded event fired");
+            document.title = "MCPR";
 
             showLoading();
 
@@ -1366,8 +1392,15 @@ function getRankClass(rank) {
                 });
 
                 // Close the modal when pressing the Escape key
+                document.addEventListener('click', function(event) {
+                    const modal = document.getElementById('player-profile-modal');
+                    if (event.target === modal) {
+                        closeModal();
+                    }
+                });
+
                 document.addEventListener('keydown', function(event) {
-                    if (event.key === "Escape" && modal.style.display === "block") {
+                    if (event.key === "Escape" && document.getElementById('player-profile-modal').style.display === "block") {
                         closeModal();
                     }
                 });
