@@ -31,11 +31,13 @@
         h1 {
             text-align: center;
             margin-bottom: 30px;
+            color: #1a1a1a;
         }
 
         .caption {
             text-align: center;
             margin-bottom: 20px;
+            color: #1a1a1a;
         }
 
         .highlight {
@@ -109,10 +111,6 @@
             cursor: pointer;
         }
 
-        .search-result-item:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
         .search-result-item img {
             width: 32px;
             height: 32px;
@@ -153,11 +151,12 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
+            gap: 20px; /* Add space between dropdown and search */
         }
 
         .dropdown, .search-container {
             flex: 1;
-            max-width: 300px;
+            max-width: calc(50% - 10px); /* Adjust width to account for gap */
         }
 
         #minigame-select, #player-search {
@@ -168,6 +167,7 @@
             background-color: var(--secondary-color);
             color: var(--text-color);
             font-size: 16px;
+            box-sizing: border-box; /* Ensure padding is included in width */
         }
 
         #minigame-select:focus, #player-search:focus {
@@ -178,6 +178,10 @@
         .tabulator {
             background-color: var(--secondary-color);
             border: none;
+        }
+
+        .tabulator {
+            width: 100% !important;
         }
 
         .tabulator .tabulator-header {
@@ -278,6 +282,9 @@
         #records-table {
             opacity: 0;
             transition: opacity 0.15s ease-in-out;
+        }
+        #records-table {
+            width: 100%;
         }
 
         #records-table.loaded,
