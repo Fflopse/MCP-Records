@@ -677,7 +677,14 @@
     <script>
         const translations = {
             en: {
+                title: "Cytooxien Minecraft Party Records",
+                subtitle: "by",
+                dataAsOf: "Data as of",
                 loading: "Loading data and avatars...",
+                searchPlaceholder: "records(<player>)",
+                tableSearchPlaceholder: "Search players...",
+                githubLink: "GitHub Repository",
+                contact: "Contact",
                 minigames: {
                     "Blockhüpfer": "Block Jump",
                     "Buntes Chaos": "Colorful Chaos",
@@ -708,7 +715,14 @@
                 }
             },
             de: {
+                title: "Cytooxien Minecraft Party Rekorde",
+                subtitle: "von",
+                dataAsOf: "Daten vom",
                 loading: "Lade Daten und Avatare...",
+                searchPlaceholder: "records(<spieler>)",
+                tableSearchPlaceholder: "Spieler suchen...",
+                githubLink: "GitHub Repository",
+                contact: "Kontakt",
                 minigames: {
                     "Blockhüpfer": "Blockhüpfer",
                     "Buntes Chaos": "Buntes Chaos",
@@ -740,11 +754,17 @@
             }
         };
     
-        let currentLanguage = 'en';
         var playerUUIDs = {};
         var avatarsLoaded = 0;
         var totalAvatars = 0;
         let playerInfoData = {};  
+
+        function detectLanguage() {
+            const userLang = navigator.language || navigator.userLanguage;
+            return userLang.startsWith('de') ? 'de' : 'en';
+        }
+
+        let currentLanguage = detectLanguage();
 
         function changeLanguage(lang) {
             currentLanguage = lang;
@@ -759,12 +779,31 @@
         }
     
         function updateTexts() {
+            document.querySelector('.main-title').textContent = translations[currentLanguage].title;
+            document.getElementById('global-player-search').placeholder = translations[currentLanguage].searchPlaceholder;
+            document.getElementById('player-search').placeholder = translations[currentLanguage].tableSearchPlaceholder;
             document.getElementById('loading-text').textContent = translations[currentLanguage].loading;
             
             const select = document.getElementById('minigame-select');
             Array.from(select.options).forEach(option => {
-                option.textContent = translations[currentLanguage].minigames[option.value];
+                option.textContent = translations[currentLanguage].minigames[option.value] || option.value;
             });
+
+            // Update footer
+            document.querySelector('.site-footer a[href^="https://github.com"]').textContent = translations[currentLanguage].githubLink;
+            document.querySelector('.site-footer a[href^="mailto:"]').textContent = translations[currentLanguage].contact;
+            
+            // Update "Data as of" text
+            const dataAsOfElement = document.getElementById('data-as-of');
+            const currentDate = new Date();
+            const formattedDate = currentDate.toLocaleString(currentLanguage, { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric'
+            });
+            dataAsOfElement.innerHTML = `${translations[currentLanguage].dataAsOf}: <time datetime="${currentDate.toISOString()}">${formattedDate}</time>`;
         }
     
         function showLoading() {
@@ -1336,7 +1375,7 @@ function getRankClass(rank) {
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-
+            
         });
 
         function closeModal() {
@@ -1384,6 +1423,8 @@ function getRankClass(rank) {
         document.addEventListener('DOMContentLoaded', function() {
             console.log("DOMContentLoaded event fired");
             document.title = "MCPR";
+
+            updateTexts();
 
             showLoading();
 
