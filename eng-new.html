@@ -16,10 +16,11 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: var(--primary-color);
+            background: linear-gradient(to bottom, var(--primary-color), #2c2c2c);
             color: var(--text-color);
             margin: 0;
             padding: 20px;
+            min-height: 100vh;
         }
 
         .container {
@@ -45,6 +46,108 @@
             font-style: italic;
         }
 
+        .search-subheading {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: rgb(138, 138, 138);
+        }
+
+        .search-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        @keyframes unfold {
+            from {
+                max-height: 0;
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                max-height: 200px;
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #global-search-results {
+            position: absolute;
+            top: 100%;
+            left: 20px;
+            right: 20px;
+            background-color: var(--secondary-color);
+            border-top: none;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+            max-height: 200px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+            animation: unfold 0.3s ease-out;
+        }
+
+        .blur-background {
+            filter: blur(3px);
+            transition: filter 0.3s ease-out;
+        }
+        
+        #global-search-results .search-result-item:last-child {
+            border-radius: 0 0 9px 9px; /* Slightly smaller than the container to account for border */
+        }
+
+        .search-result-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .search-result-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .search-result-item img {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+
+        }
+
+        .arrow {
+            display: inline-block;
+            animation: bounce 2s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(-1px); }
+            to { transform: translateY(4px); }
+        }
+
+        #global-player-search {
+            width: calc(100% - 40px); /* Subtract left and right padding */
+            padding: 10px 20px;
+            border: 1px solid var(--accent-color);
+            border-radius: 5px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            font-size: 16px;
+            margin: 0 auto; /* Center the search bar */
+            display: block; /* Ensure it's a block element */
+        }
+
+        #global-player-search:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255, 211, 0, 0.5);
+        }
+
+        /* Existing styles for controls-container */
         .controls-container {
             display: flex;
             justify-content: space-between;
@@ -62,7 +165,7 @@
             padding: 10px;
             border: 1px solid var(--accent-color);
             border-radius: 5px;
-            background-color: #3a3a3a;
+            background-color: var(--secondary-color);
             color: var(--text-color);
             font-size: 16px;
         }
@@ -421,20 +524,24 @@
 
 /* Existing styles for language selector, etc. */
     </style>
-</head>
-<body>
-    <div class="language-selector">
-        <button onclick="changeLanguage('en')" aria-label="Switch to English">EN</button>
-        <button onclick="changeLanguage('de')" aria-label="Switch to German">DE</button>
+<div class="container">
+    <h1 id="page-title">Minecraft Party Records</h1>
+    <div class="caption">
+        <span id="subtitle">by</span> <span class="subtitle">Fflopse</span> | <span id="data-as-of">data as of</span> <span class="date"> 30 Jul, 01:00</span>
     </div>
-    <div class="container">
-        <h1 id="page-title">Minecraft Party Records</h1>
-        <div class="caption">
-            <span id="subtitle">by</span> <span class="subtitle">Fflopse</span> | <span id="data-as-of">data as of</span> <span class="date"> 30 Jul, 01:00</span>
+    
+    <div class="search-section">
+        <div class="search-subheading">
+            <span class="arrow">
+            full records data
+            </span>
         </div>
-        <div class="table-controls">
-            <div class="dropdown">
-                <select id="minigame-select">
+        <input type="text" id="global-player-search" placeholder="records(<player>)">
+    </div>
+
+    <div class="controls-container">
+        <div class="dropdown">
+            <select id="minigame-select">
                     <option value="Blockhüpfer">Block Jump</option>
                     <option value="Buntes Chaos">Colorful Chaos</option>
                     <option value="Todeswürfel">Death Cube</option>
@@ -782,6 +889,68 @@
                     }
                     
                     createTable();
+
+                    function debounce(func, wait) {
+                        let timeout;
+                        return function executedFunction(...args) {
+                            const later = () => {
+                                clearTimeout(timeout);
+                                func(...args);
+                            };
+                            clearTimeout(timeout);
+                            timeout = setTimeout(later, wait);
+                        };
+                    }
+
+                    const globalPlayerSearch = document.getElementById('global-player-search');
+                    const globalSearchResults = document.createElement('div');
+                    globalSearchResults.id = 'global-search-results';
+                    globalSearchResults.style.cssText = `
+                        position: absolute;
+                        top: 90%;
+                        left: 20;
+                        right: 20;
+                        background-color: var(--secondary-color);
+                        border-top: none;
+                        border-radius: 0 0 5px 5px;
+                        max-height: 200px;
+                        overflow-y: auto;
+                        display: none;
+                        z-index: 1000;
+                    `;
+                    globalPlayerSearch.parentNode.appendChild(globalSearchResults);
+
+                    const performGlobalSearch = debounce(function() {
+                        const searchTerm = globalPlayerSearch.value.toLowerCase();
+                        if (searchTerm.length < 2) {
+                            globalSearchResults.style.display = 'none';
+                            return;
+                        }
+
+                        const matchingPlayers = Object.keys(playerUUIDs).filter(name => 
+                            name.toLowerCase().includes(searchTerm)
+                        ).slice(0, 5); // Limit to 5 results
+
+                        if (matchingPlayers.length > 0) {
+                            globalSearchResults.innerHTML = matchingPlayers.map(name => `
+                                <div class="search-result-item" onclick="showPlayerProfile('${name}')">
+                                    <img src="https://crafatar.com/avatars/${playerUUIDs[name]}?size=32&overlay" alt="${name}'s avatar">
+                                    <span>${name}</span>
+                                </div>
+                            `).join('');
+                            globalSearchResults.style.display = 'block';
+                        } else {
+                            globalSearchResults.style.display = 'none';
+                        }
+                    }, 300);
+
+                    globalPlayerSearch.addEventListener('input', performGlobalSearch);
+
+                    document.addEventListener('click', function(event) {
+                        if (!globalSearchResults.contains(event.target) && event.target !== globalPlayerSearch) {
+                            globalSearchResults.style.display = 'none';
+                        }
+                    });
                     
                     if (table) {
                         tableElement.classList.remove('fade-out');
@@ -966,9 +1135,9 @@
                     
                     profileHTML += `
                     <div class="player-stats">
-                        <p><strong>Rank:</strong> ${playerInfo.minecraft_party['Position (Punkte)']}</p>
-                        <p><strong>Game Win%:</strong> ${gameWinPercentage}%</p>
-                        <p><strong>Minigame Win%:</strong> ${minigameWinPercentage}%</p>
+                        <p><strong>alltime#:</strong> ${playerInfo.minecraft_party['Position (Punkte)']}</p>
+                        <p><strong>game%:</strong> ${gameWinPercentage}%</p>
+                        <p><strong>minigame%:</strong> ${minigameWinPercentage}%</p>
                     </div>`;
                 }
 
@@ -1099,6 +1268,39 @@ function getRankClass(rank) {
             const modal = document.getElementById('player-profile-modal');
             modal.style.display = "none";
         }
+
+        const playerSearch = document.getElementById('player-search');
+        const searchResults = document.getElementById('search-results');
+
+        playerSearch.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            if (searchTerm.length < 2) {
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            const matchingPlayers = Object.keys(playerUUIDs).filter(name => 
+                name.toLowerCase().includes(searchTerm)
+            ).slice(0, 5); // Limit to 5 results
+
+            if (matchingPlayers.length > 0) {
+                searchResults.innerHTML = matchingPlayers.map(name => `
+                    <div class="search-result-item" onclick="showPlayerProfile('${name}')">
+                        <img src="https://crafatar.com/avatars/${playerUUIDs[name]}?size=32&overlay" alt="${name}'s avatar">
+                        <span>${name}</span>
+                    </div>
+                `).join('');
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!searchResults.contains(event.target) && event.target !== playerSearch) {
+                searchResults.style.display = 'none';
+            }
+        });
 
 
         document.addEventListener('DOMContentLoaded', function() {
