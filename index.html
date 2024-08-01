@@ -600,6 +600,9 @@
     </style>
 <div class="container">
     <div class="title-container">
+        <h2 class="search-subheading">
+            unofficial
+        </h2>
         <h1 class="main-title">
           Cytooxien Minecraft Party Records
         </h1>
@@ -665,7 +668,7 @@
         </div>
         <footer class="site-footer">
             <div class="footer-content">
-                <span id="data-as-of">Data as of: <time datetime="2023-07-30T01:00:00Z">30 Jul, 01:00</time></span>
+                <span id="data-as-of">Data as of: <time datetime="2023-08-01T15:00:00Z">01 Aug, 15:00</time></span>
                 <span class="footer-separator">|</span>
                 <a href="https://github.com/Fflopse/MCP-Records" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
                 <span class="footer-separator">|</span>
@@ -803,7 +806,6 @@
                 hour: 'numeric',
                 minute: 'numeric'
             });
-            dataAsOfElement.innerHTML = `${translations[currentLanguage].dataAsOf}: <time datetime="${currentDate.toISOString()}">${formattedDate}</time>`;
         }
     
         function showLoading() {
