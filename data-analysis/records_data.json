@@ -901,6 +901,15 @@
     "best_score": 23.243
   },
   {
+    "name": "Schmaarek",
+    "minigame": "Ampelrennen",
+    "scores": {
+      "Castle": 21.678,
+      "Street": 23.154
+    },
+    "best_score": 23.154
+  },
+  {
     "name": "ScreamingBlatz",
     "minigame": "Ampelrennen",
     "scores": {
@@ -1963,6 +1972,14 @@
       "City": 28.467
     },
     "best_score": 28.467
+  },
+  {
+    "name": "Schmaarek",
+    "minigame": "Blockh\u00fcpfer",
+    "scores": {
+      "City": 24.793
+    },
+    "best_score": 24.793
   },
   {
     "name": "ScreamingBlatz",
@@ -3100,6 +3117,15 @@
       "Structure": 21.0
     },
     "best_score": 27.0
+  },
+  {
+    "name": "Schmaarek",
+    "minigame": "Buntes Chaos",
+    "scores": {
+      "Cyberpunk": 36.0,
+      "Structure": 23.0
+    },
+    "best_score": 36.0
   },
   {
     "name": "ScreamingBlatz",
@@ -4497,6 +4523,18 @@
     "best_score": 155.824
   },
   {
+    "name": "Schmaarek",
+    "minigame": "Drachenflucht",
+    "scores": {
+      "Ancient City": 120.363,
+      "Chaotic Cubes": 62.157,
+      "Factory": 156.292,
+      "Hills": 156.054,
+      "Temple": 157.317
+    },
+    "best_score": 157.317
+  },
+  {
     "name": "ScreamingBlatz",
     "minigame": "Drachenflucht",
     "scores": {
@@ -5633,6 +5671,14 @@
       "Default": 20.0
     },
     "best_score": 20.0
+  },
+  {
+    "name": "Schmaarek",
+    "minigame": "Duelle",
+    "scores": {
+      "Default": 27.0
+    },
+    "best_score": 27.0
   },
   {
     "name": "ScreamingBlatz",
@@ -6867,6 +6913,16 @@
     "best_score": 22.0
   },
   {
+    "name": "Schmaarek",
+    "minigame": "Einer im K\u00f6cher",
+    "scores": {
+      "Asia": 27.0,
+      "Fall": 20.0,
+      "T\u00f6tungen Japan": 26.0
+    },
+    "best_score": 27.0
+  },
+  {
     "name": "ScreamingBlatz",
     "minigame": "Einer im K\u00f6cher",
     "scores": {
@@ -7906,6 +7962,15 @@
       "River": 50.059
     },
     "best_score": 50.059
+  },
+  {
+    "name": "Schmaarek",
+    "minigame": "Elytrarennen",
+    "scores": {
+      "Canyon": 48.204,
+      "Death Star": 51.907
+    },
+    "best_score": 51.907
   },
   {
     "name": "ScreamingBlatz",
@@ -9168,6 +9233,17 @@
     "best_score": 44.46
   },
   {
+    "name": "Schmaarek",
+    "minigame": "Freier Fall",
+    "scores": {
+      "Brutalism": 48.145,
+      "Snowy Cave": 28.775,
+      "Underground": 21.093,
+      "Waterfalls": 35.212
+    },
+    "best_score": 48.145
+  },
+  {
     "name": "ScreamingBlatz",
     "minigame": "Freier Fall",
     "scores": {
@@ -10141,6 +10217,11 @@
   },
   {
     "name": "SB387",
+    "minigame": "Frostiger Pfad",
+    "scores": {}
+  },
+  {
+    "name": "Schmaarek",
     "minigame": "Frostiger Pfad",
     "scores": {}
   },
@@ -11139,6 +11220,14 @@
       "Global": 50.238
     },
     "best_score": 50.238
+  },
+  {
+    "name": "Schmaarek",
+    "minigame": "Hoch hinaus",
+    "scores": {
+      "Global": 45.718
+    },
+    "best_score": 45.718
   },
   {
     "name": "ScreamingBlatz",
@@ -12375,6 +12464,16 @@
     "best_score": 64.311
   },
   {
+    "name": "Schmaarek",
+    "minigame": "Jump and Run",
+    "scores": {
+      "Canyon": 62.958,
+      "Sky City": 45.068,
+      "Wet Cave": 49.449
+    },
+    "best_score": 62.958
+  },
+  {
     "name": "ScreamingBlatz",
     "minigame": "Jump and Run",
     "scores": {
@@ -13561,6 +13660,15 @@
       "Inka": 46.861
     },
     "best_score": 48.692
+  },
+  {
+    "name": "Schmaarek",
+    "minigame": "Kletter-K\u00f6nig",
+    "scores": {
+      "Garden": 42.671,
+      "Inka": 43.614
+    },
+    "best_score": 43.614
   },
   {
     "name": "ScreamingBlatz",
@@ -14824,6 +14932,16 @@
     "best_score": 30.0
   },
   {
+    "name": "Schmaarek",
+    "minigame": "Lasertag",
+    "scores": {
+      "Factory": 41.0,
+      "Neon": 37.0,
+      "Port": 29.0
+    },
+    "best_score": 41.0
+  },
+  {
     "name": "ScreamingBlatz",
     "minigame": "Lasertag",
     "scores": {
@@ -16067,6 +16185,16 @@
       "Nether": 25.656
     },
     "best_score": 25.951
+  },
+  {
+    "name": "Schmaarek",
+    "minigame": "Minenfeld",
+    "scores": {
+      "Desert": 24.327,
+      "Ice Cave": 41.774,
+      "Nether": 25.089
+    },
+    "best_score": 41.774
   },
   {
     "name": "ScreamingBlatz",
@@ -17340,6 +17468,16 @@
       "Ruin": 6.0
     },
     "best_score": 6.0
+  },
+  {
+    "name": "Schmaarek",
+    "minigame": "Minengefecht",
+    "scores": {
+      "Nether": 9.0,
+      "Overworld": 10.0,
+      "Ruin": 11.0
+    },
+    "best_score": 11.0
   },
   {
     "name": "ScreamingBlatz",
@@ -18665,6 +18803,17 @@
     "best_score": 5.0
   },
   {
+    "name": "Schmaarek",
+    "minigame": "Mini Skywars",
+    "scores": {
+      "Asia": 9.0,
+      "Rust": 5.0,
+      "Swamp": 8.0,
+      "Wild West": 10.0
+    },
+    "best_score": 10.0
+  },
+  {
     "name": "ScreamingBlatz",
     "minigame": "Mini Skywars",
     "scores": {
@@ -19895,6 +20044,15 @@
     "scores": {
       "Canyon": 11.0,
       "Winter Village": 6.0
+    },
+    "best_score": 11.0
+  },
+  {
+    "name": "Schmaarek",
+    "minigame": "Mini Survivalgames",
+    "scores": {
+      "Canyon": 10.0,
+      "Winter Village": 11.0
     },
     "best_score": 11.0
   },
@@ -21175,6 +21333,16 @@
       "Modern": 11.0
     },
     "best_score": 21.0
+  },
+  {
+    "name": "Schmaarek",
+    "minigame": "Paintball",
+    "scores": {
+      "Arabic": 23.0,
+      "Cyber Arena": 21.0,
+      "Modern": 22.0
+    },
+    "best_score": 23.0
   },
   {
     "name": "ScreamingBlatz",
@@ -22741,6 +22909,19 @@
       "s Arena": 67.963
     },
     "best_score": 95.194
+  },
+  {
+    "name": "Schmaarek",
+    "minigame": "Pferderennen",
+    "scores": {
+      "Ancient Falls": 86.895,
+      "Cheep Beach": 90.486,
+      "City": 64.311,
+      "Jungle": 71.19200000000001,
+      "Rainbow": 92.57300000000001,
+      "s Arena": 66.349
+    },
+    "best_score": 92.57300000000001
   },
   {
     "name": "ScreamingBlatz",
@@ -30503,6 +30684,113 @@
     "best_score": 2923.8550000000005
   },
   {
+    "name": "Schmaarek",
+    "minigame": "Replika",
+    "scores": {
+      "Sum": 2351.7769999999996,
+      "Among Us": 24.944,
+      "Apple": 28.576,
+      "Arrow": 18.334,
+      "Baby Yoda": 21.787,
+      "Bee": 17.192,
+      "Blinky": 24.689,
+      "Blue Monster": 32.509,
+      "Cake": 29.65,
+      "Camera": 20.316,
+      "Carrot": 14.147,
+      "Caterpie": 17.234,
+      "Charizard": 29.257,
+      "Cherry": 21.479,
+      "Chicken": 19.733,
+      "Coffee": 17.339,
+      "Controller": 23.556,
+      "Cookie": 19.721,
+      "Cow": 30.335,
+      "Cowboy": 16.444,
+      "Creeper": 50.408,
+      "Cytooxien": 15.811,
+      "Deadpool": 39.121,
+      "Diskette": 21.222,
+      "Doge": 34.311,
+      "Duck": 14.834,
+      "Eevee": 20.792,
+      "Egg": 24.38,
+      "Ender Pearl": 36.869,
+      "Excavator": 20.081,
+      "Fox": 21.842,
+      "French Fries": 27.264,
+      "Frog": 19.992,
+      "Galaxian Alien": 27.346,
+      "Ghost": 15.423,
+      "Globe": 23.419,
+      "Gold Ingot": 20.054,
+      "Guardian": 27.828,
+      "Heart": 24.686,
+      "Hourglass": 24.644,
+      "House": 16.208,
+      "Instagram": 28.87,
+      "Iron Ingot": 17.358,
+      "Kirby": 28.843,
+      "Kitty": 27.731,
+      "Koopa": 20.861,
+      "Krabs": 18.571,
+      "Mario": 20.569,
+      "Mooshroom": 30.432,
+      "Mountain": 24.24,
+      "Mouse": 26.731,
+      "Netherite Ingot": 15.686,
+      "Pacman Ghost": 19.742,
+      "Parrot": 23.574,
+      "Penguin": 22.749,
+      "Perry": 13.844,
+      "Pikachu": 35.215,
+      "Piranha Plant": 35.484,
+      "Pirate": 15.565,
+      "Pizza": 20.471,
+      "Poke Ball": 18.711,
+      "Poppy": 16.894,
+      "Princess": 26.457,
+      "Random 1": 13.12,
+      "Random 2": 15.333,
+      "Robin Hood": 26.082,
+      "Rocket": 14.814,
+      "Sheep": 21.736,
+      "Skeleton": 20.641,
+      "Skeleton Skull": 30.61,
+      "Slime": 31.096,
+      "Smurf": 28.776,
+      "Snake": 13.753,
+      "Sonic": 21.496,
+      "Spider": 23.413,
+      "Sword": 14.88,
+      "TNT": 28.283,
+      "Target": 13.408,
+      "Tetris": 17.886,
+      "The Sea": 21.922,
+      "Thinking": 20.292,
+      "Thinking 2": 30.914,
+      "Toad": 34.069,
+      "Tree": 19.281,
+      "Turtle": 24.962,
+      "Twitch": 20.541,
+      "Twitter": 22.957,
+      "Unicorn": 17.508,
+      "Up": 23.786,
+      "Water Temple": 19.814,
+      "Windows": 17.52,
+      "Wizard": 22.83,
+      "YouTube": 17.37,
+      "Zombie": 25.416,
+      "ms Arrow": 18.334,
+      "muss los": 28.769,
+      "of Meat": 23.278,
+      "omb": 20.135,
+      "ppHop 1": 27.17,
+      "ppHop 2": 22.207
+    },
+    "best_score": 2351.7769999999996
+  },
+  {
     "name": "ScreamingBlatz",
     "minigame": "Replika",
     "scores": {
@@ -35384,6 +35672,35 @@
     "best_score": 478.0
   },
   {
+    "name": "Schmaarek",
+    "minigame": "Sammelwahn",
+    "scores": {
+      "Sum": 608.0,
+      "Dichter Wald": 28.0,
+      "Lichter Dschungel": 27.0,
+      " Bambusdschungel": 25.0,
+      " Birkenwald": 30.0,
+      " Blumenwald": 34.0,
+      " Dschungel": 31.0,
+      " Ebene": 31.0,
+      " Karmesinwald": 10.0,
+      " Kirschberghain": 30.0,
+      " Savanne": 31.0,
+      " Savannenhochebene": 33.0,
+      " Sumpf": 30.0,
+      " Taiga": 28.0,
+      " Wald": 30.0,
+      "Sonnenblumenebene": 33.0,
+      "Urtaiga": 27.0,
+      "Urwald": 32.0,
+      "Verschneite Ebene": 26.0,
+      "Verschneite Taiga": 32.0,
+      "Zerzauste H\u00fcgel": 29.0,
+      "Zerzauste Savanne": 31.0
+    },
+    "best_score": 608.0
+  },
+  {
     "name": "ScreamingBlatz",
     "minigame": "Sammelwahn",
     "scores": {
@@ -37212,6 +37529,16 @@
     "best_score": 219.0
   },
   {
+    "name": "Schmaarek",
+    "minigame": "Schie\u00dfstand",
+    "scores": {
+      "City": 355.0,
+      "Farm": 385.0,
+      "Punkte Jungle": 342.0
+    },
+    "best_score": 385.0
+  },
+  {
     "name": "ScreamingBlatz",
     "minigame": "Schie\u00dfstand",
     "scores": {
@@ -38410,6 +38737,15 @@
     "best_score": 5.0
   },
   {
+    "name": "Schmaarek",
+    "minigame": "Spleef",
+    "scores": {
+      "Jungle": 6.0,
+      "Mountains": 6.0
+    },
+    "best_score": 6.0
+  },
+  {
     "name": "ScreamingBlatz",
     "minigame": "Spleef",
     "scores": {
@@ -39483,6 +39819,14 @@
     "best_score": 58.187
   },
   {
+    "name": "Schmaarek",
+    "minigame": "Todesw\u00fcrfel",
+    "scores": {
+      "Street": 32.466
+    },
+    "best_score": 32.466
+  },
+  {
     "name": "ScreamingBlatz",
     "minigame": "Todesw\u00fcrfel",
     "scores": {
@@ -40489,6 +40833,14 @@
       "Default": 56.984
     },
     "best_score": 56.984
+  },
+  {
+    "name": "Schmaarek",
+    "minigame": "Waffenfolge",
+    "scores": {
+      "Default": 25.646
+    },
+    "best_score": 25.646
   },
   {
     "name": "ScreamingBlatz",
@@ -41711,6 +42063,16 @@
       "Vulcano": 4.0
     },
     "best_score": 7.0
+  },
+  {
+    "name": "Schmaarek",
+    "minigame": "Walls",
+    "scores": {
+      "Garden": 9.0,
+      "Grass": 8.0,
+      "Vulcano": 9.0
+    },
+    "best_score": 9.0
   },
   {
     "name": "ScreamingBlatz",
@@ -43182,6 +43544,18 @@
       "Snow": 47.524
     },
     "best_score": 83.388
+  },
+  {
+    "name": "Schmaarek",
+    "minigame": "Wettrennen",
+    "scores": {
+      "Blossom Canyon": 80.10300000000001,
+      "Cyberpunk": 77.231,
+      "Green Hills": 68.099,
+      "Islands": 73.686,
+      "Snow": 45.03
+    },
+    "best_score": 80.10300000000001
   },
   {
     "name": "ScreamingBlatz",
