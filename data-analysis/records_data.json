@@ -171,6 +171,15 @@
     "best_score": 23.082
   },
   {
+    "name": "Cytoox",
+    "minigame": "Ampelrennen",
+    "scores": {
+      "Castle": 24.897,
+      "Street": 27.73
+    },
+    "best_score": 27.73
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Ampelrennen",
     "scores": {
@@ -492,6 +501,15 @@
     "best_score": 23.357
   },
   {
+    "name": "Juti0n",
+    "minigame": "Ampelrennen",
+    "scores": {
+      "Castle": 21.682,
+      "Street": 26.473
+    },
+    "best_score": 26.473
+  },
+  {
     "name": "juvona",
     "minigame": "Ampelrennen",
     "scores": {
@@ -757,6 +775,11 @@
     "best_score": 23.915
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Ampelrennen",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Ampelrennen",
     "scores": {
@@ -809,6 +832,11 @@
       "Street": 21.78
     },
     "best_score": 21.78
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Ampelrennen",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -892,6 +920,15 @@
     "best_score": 23.339
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Ampelrennen",
+    "scores": {
+      "Castle": 22.368,
+      "Street": 25.488
+    },
+    "best_score": 25.488
+  },
+  {
     "name": "SB387",
     "minigame": "Ampelrennen",
     "scores": {
@@ -926,6 +963,14 @@
       "Street": 22.979
     },
     "best_score": 22.979
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Ampelrennen",
+    "scores": {
+      "Castle": 24.416
+    },
+    "best_score": 24.416
   },
   {
     "name": "Seemops_8",
@@ -1337,6 +1382,14 @@
     "best_score": 28.363
   },
   {
+    "name": "Cytoox",
+    "minigame": "Blockh\u00fcpfer",
+    "scores": {
+      "City": 112.473
+    },
+    "best_score": 112.473
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Blockh\u00fcpfer",
     "scores": {
@@ -1624,6 +1677,14 @@
     "best_score": 30.509
   },
   {
+    "name": "Juti0n",
+    "minigame": "Blockh\u00fcpfer",
+    "scores": {
+      "City": 24.235
+    },
+    "best_score": 24.235
+  },
+  {
     "name": "juvona",
     "minigame": "Blockh\u00fcpfer",
     "scores": {
@@ -1864,6 +1925,11 @@
     "best_score": 29.461
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Blockh\u00fcpfer",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Blockh\u00fcpfer",
     "scores": {
@@ -1910,6 +1976,11 @@
       "City": 23.851
     },
     "best_score": 23.851
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Blockh\u00fcpfer",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -1984,6 +2055,14 @@
     "best_score": 26.521
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Blockh\u00fcpfer",
+    "scores": {
+      "City": 27.976
+    },
+    "best_score": 27.976
+  },
+  {
     "name": "SB387",
     "minigame": "Blockh\u00fcpfer",
     "scores": {
@@ -2014,6 +2093,14 @@
       "City": 34.307
     },
     "best_score": 34.307
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Blockh\u00fcpfer",
+    "scores": {
+      "City": 55.157
+    },
+    "best_score": 55.157
   },
   {
     "name": "Seemops_8",
@@ -2416,6 +2503,15 @@
     "best_score": 26.0
   },
   {
+    "name": "Cytoox",
+    "minigame": "Buntes Chaos",
+    "scores": {
+      "Cyberpunk": 15.0,
+      "Structure": 11.0
+    },
+    "best_score": 15.0
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Buntes Chaos",
     "scores": {
@@ -2749,6 +2845,15 @@
     "best_score": 23.0
   },
   {
+    "name": "Juti0n",
+    "minigame": "Buntes Chaos",
+    "scores": {
+      "Cyberpunk": 19.0,
+      "Structure": 21.0
+    },
+    "best_score": 21.0
+  },
+  {
     "name": "juvona",
     "minigame": "Buntes Chaos",
     "scores": {
@@ -3019,6 +3124,15 @@
     "best_score": 23.0
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Buntes Chaos",
+    "scores": {
+      "Cyberpunk": 0.0,
+      "Structure": 0.0
+    },
+    "best_score": 0.0
+  },
+  {
     "name": "Navex",
     "minigame": "Buntes Chaos",
     "scores": {
@@ -3071,6 +3185,15 @@
       "Structure": 36.0
     },
     "best_score": 36.0
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Buntes Chaos",
+    "scores": {
+      "Cyberpunk": 8.0,
+      "Structure": 16.0
+    },
+    "best_score": 16.0
   },
   {
     "name": "Picutar",
@@ -3154,6 +3277,15 @@
     "best_score": 26.0
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Buntes Chaos",
+    "scores": {
+      "Cyberpunk": 23.0,
+      "Structure": 21.0
+    },
+    "best_score": 23.0
+  },
+  {
     "name": "SB387",
     "minigame": "Buntes Chaos",
     "scores": {
@@ -3188,6 +3320,15 @@
       "Structure": 23.0
     },
     "best_score": 23.0
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Buntes Chaos",
+    "scores": {
+      "Cyberpunk": 13.0,
+      "Structure": 13.0
+    },
+    "best_score": 13.0
   },
   {
     "name": "Seemops_8",
@@ -3662,6 +3803,17 @@
     "best_score": 167.249
   },
   {
+    "name": "Cytoox",
+    "minigame": "Drachenflucht",
+    "scores": {
+      "Ancient City": 24.143,
+      "Chaotic Cubes": 40.142,
+      "Factory": 20.999,
+      "Temple": 135.799
+    },
+    "best_score": 135.799
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Drachenflucht",
     "scores": {
@@ -4062,6 +4214,17 @@
     "best_score": 158.07
   },
   {
+    "name": "Juti0n",
+    "minigame": "Drachenflucht",
+    "scores": {
+      "Ancient City": 119.65299999999999,
+      "Factory": 152.813,
+      "Hills": 150.561,
+      "Temple": 153.32
+    },
+    "best_score": 153.32
+  },
+  {
     "name": "juvona",
     "minigame": "Drachenflucht",
     "scores": {
@@ -4402,6 +4565,16 @@
     "best_score": 157.156
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Drachenflucht",
+    "scores": {
+      "Factory": 30.195,
+      "Hills": 67.839,
+      "Temple": 68.209
+    },
+    "best_score": 68.209
+  },
+  {
     "name": "Navex",
     "minigame": "Drachenflucht",
     "scores": {
@@ -4468,6 +4641,15 @@
       "Temple": 157.756
     },
     "best_score": 180.737
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Drachenflucht",
+    "scores": {
+      "Hills": 120.407,
+      "Temple": 134.472
+    },
+    "best_score": 134.472
   },
   {
     "name": "Picutar",
@@ -4570,6 +4752,16 @@
     "best_score": 156.513
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Drachenflucht",
+    "scores": {
+      "Factory": 137.88,
+      "Hills": 150.57999999999998,
+      "Temple": 128.117
+    },
+    "best_score": 150.57999999999998
+  },
+  {
     "name": "SB387",
     "minigame": "Drachenflucht",
     "scores": {
@@ -4607,6 +4799,11 @@
   },
   {
     "name": "Sebi1801",
+    "minigame": "Drachenflucht",
+    "scores": {}
+  },
+  {
+    "name": "SecretAgent_K",
     "minigame": "Drachenflucht",
     "scores": {}
   },
@@ -5088,6 +5285,14 @@
     "best_score": 17.0
   },
   {
+    "name": "Cytoox",
+    "minigame": "Duelle",
+    "scores": {
+      "Default": 17.0
+    },
+    "best_score": 17.0
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Duelle",
     "scores": {
@@ -5384,6 +5589,14 @@
     "best_score": 21.0
   },
   {
+    "name": "Juti0n",
+    "minigame": "Duelle",
+    "scores": {
+      "Default": 24.0
+    },
+    "best_score": 24.0
+  },
+  {
     "name": "juvona",
     "minigame": "Duelle",
     "scores": {
@@ -5624,6 +5837,14 @@
     "best_score": 26.0
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Duelle",
+    "scores": {
+      "Default": 0.0
+    },
+    "best_score": 0.0
+  },
+  {
     "name": "Navex",
     "minigame": "Duelle",
     "scores": {
@@ -5670,6 +5891,14 @@
       "Default": 28.0
     },
     "best_score": 28.0
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Duelle",
+    "scores": {
+      "Default": 0.0
+    },
+    "best_score": 0.0
   },
   {
     "name": "Picutar",
@@ -5744,6 +5973,14 @@
     "best_score": 24.0
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Duelle",
+    "scores": {
+      "Default": 25.0
+    },
+    "best_score": 25.0
+  },
+  {
     "name": "SB387",
     "minigame": "Duelle",
     "scores": {
@@ -5774,6 +6011,14 @@
       "Default": 31.0
     },
     "best_score": 31.0
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Duelle",
+    "scores": {
+      "Default": 0.0
+    },
+    "best_score": 0.0
   },
   {
     "name": "Seemops_8",
@@ -6195,6 +6440,15 @@
     "best_score": 22.0
   },
   {
+    "name": "Cytoox",
+    "minigame": "Einer im K\u00f6cher",
+    "scores": {
+      "Asia": 23.0,
+      "T\u00f6tungen Japan": 9.0
+    },
+    "best_score": 23.0
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Einer im K\u00f6cher",
     "scores": {
@@ -6554,6 +6808,16 @@
     "best_score": 19.0
   },
   {
+    "name": "Juti0n",
+    "minigame": "Einer im K\u00f6cher",
+    "scores": {
+      "Asia": 22.0,
+      "Fall": 19.0,
+      "T\u00f6tungen Japan": 16.0
+    },
+    "best_score": 22.0
+  },
+  {
     "name": "juvona",
     "minigame": "Einer im K\u00f6cher",
     "scores": {
@@ -6841,6 +7105,14 @@
     "best_score": 21.0
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Einer im K\u00f6cher",
+    "scores": {
+      "Asia": 6.0
+    },
+    "best_score": 6.0
+  },
+  {
     "name": "Navex",
     "minigame": "Einer im K\u00f6cher",
     "scores": {
@@ -6898,6 +7170,14 @@
       "T\u00f6tungen Japan": 28.0
     },
     "best_score": 28.0
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Einer im K\u00f6cher",
+    "scores": {
+      "Asia": 11.0
+    },
+    "best_score": 11.0
   },
   {
     "name": "Picutar",
@@ -6990,6 +7270,16 @@
     "best_score": 26.0
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Einer im K\u00f6cher",
+    "scores": {
+      "Asia": 20.0,
+      "Fall": 10.0,
+      "T\u00f6tungen Japan": 17.0
+    },
+    "best_score": 20.0
+  },
+  {
     "name": "SB387",
     "minigame": "Einer im K\u00f6cher",
     "scores": {
@@ -7028,6 +7318,15 @@
       "T\u00f6tungen Japan": 22.0
     },
     "best_score": 23.0
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Einer im K\u00f6cher",
+    "scores": {
+      "Asia": 17.0,
+      "T\u00f6tungen Japan": 8.0
+    },
+    "best_score": 17.0
   },
   {
     "name": "Seemops_8",
@@ -7449,6 +7748,14 @@
     "scores": {}
   },
   {
+    "name": "Cytoox",
+    "minigame": "Elytrarennen",
+    "scores": {
+      "Canyon": 48.979
+    },
+    "best_score": 48.979
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Elytrarennen",
     "scores": {}
@@ -7721,6 +8028,14 @@
     "scores": {}
   },
   {
+    "name": "Juti0n",
+    "minigame": "Elytrarennen",
+    "scores": {
+      "Canyon": 47.501
+    },
+    "best_score": 47.501
+  },
+  {
     "name": "juvona",
     "minigame": "Elytrarennen",
     "scores": {
@@ -7958,6 +8273,11 @@
     "best_score": 53.996
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Elytrarennen",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Elytrarennen",
     "scores": {
@@ -8001,6 +8321,11 @@
       "River": 41.085
     },
     "best_score": 46.675
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Elytrarennen",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -8061,6 +8386,16 @@
     "scores": {}
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Elytrarennen",
+    "scores": {
+      "Canyon": 45.508,
+      "Death Star": 58.361,
+      "River": 47.693
+    },
+    "best_score": 58.361
+  },
+  {
     "name": "SB387",
     "minigame": "Elytrarennen",
     "scores": {
@@ -8089,6 +8424,11 @@
   },
   {
     "name": "Sebi1801",
+    "minigame": "Elytrarennen",
+    "scores": {}
+  },
+  {
+    "name": "SecretAgent_K",
     "minigame": "Elytrarennen",
     "scores": {}
   },
@@ -8497,6 +8837,15 @@
     "best_score": 39.124
   },
   {
+    "name": "Cytoox",
+    "minigame": "Freier Fall",
+    "scores": {
+      "Brutalism": 56.938,
+      "Waterfalls": 47.092
+    },
+    "best_score": 56.938
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Freier Fall",
     "scores": {
@@ -8875,6 +9224,16 @@
     "best_score": 37.249
   },
   {
+    "name": "Juti0n",
+    "minigame": "Freier Fall",
+    "scores": {
+      "Snowy Cave": 31.499,
+      "Underground": 32.398,
+      "Waterfalls": 38.742
+    },
+    "best_score": 38.742
+  },
+  {
     "name": "juvona",
     "minigame": "Freier Fall",
     "scores": {
@@ -9186,6 +9545,11 @@
     "best_score": 50.649
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Freier Fall",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Freier Fall",
     "scores": {
@@ -9247,6 +9611,11 @@
       "Waterfalls": 33.11
     },
     "best_score": 33.11
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Freier Fall",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -9343,6 +9712,17 @@
     "best_score": 36.746
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Freier Fall",
+    "scores": {
+      "Brutalism": 59.996,
+      "Snowy Cave": 40.063,
+      "Underground": 72.009,
+      "Waterfalls": 49.843
+    },
+    "best_score": 72.009
+  },
+  {
     "name": "SB387",
     "minigame": "Freier Fall",
     "scores": {
@@ -9383,6 +9763,11 @@
       "Waterfalls": 35.958
     },
     "best_score": 35.958
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Freier Fall",
+    "scores": {}
   },
   {
     "name": "Seemops_8",
@@ -9803,6 +10188,11 @@
     "scores": {}
   },
   {
+    "name": "Cytoox",
+    "minigame": "Frostiger Pfad",
+    "scores": {}
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Frostiger Pfad",
     "scores": {}
@@ -10054,6 +10444,11 @@
     "scores": {}
   },
   {
+    "name": "Juti0n",
+    "minigame": "Frostiger Pfad",
+    "scores": {}
+  },
+  {
     "name": "juvona",
     "minigame": "Frostiger Pfad",
     "scores": {
@@ -10258,6 +10653,11 @@
     "best_score": 68.70400000000001
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Frostiger Pfad",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Frostiger Pfad",
     "scores": {
@@ -10298,6 +10698,11 @@
       "Icy Lake": 59.219
     },
     "best_score": 59.219
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Frostiger Pfad",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -10354,6 +10759,14 @@
     "scores": {}
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Frostiger Pfad",
+    "scores": {
+      "Icy Lake": 60.859
+    },
+    "best_score": 60.859
+  },
+  {
     "name": "SB387",
     "minigame": "Frostiger Pfad",
     "scores": {}
@@ -10376,6 +10789,11 @@
   },
   {
     "name": "Sebi1801",
+    "minigame": "Frostiger Pfad",
+    "scores": {}
+  },
+  {
+    "name": "SecretAgent_K",
     "minigame": "Frostiger Pfad",
     "scores": {}
   },
@@ -10722,6 +11140,14 @@
     "best_score": 49.639
   },
   {
+    "name": "Cytoox",
+    "minigame": "Hoch hinaus",
+    "scores": {
+      "Global": 82.863
+    },
+    "best_score": 82.863
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Hoch hinaus",
     "scores": {
@@ -11009,6 +11435,14 @@
     "best_score": 53.206
   },
   {
+    "name": "Juti0n",
+    "minigame": "Hoch hinaus",
+    "scores": {
+      "Global": 52.147
+    },
+    "best_score": 52.147
+  },
+  {
     "name": "juvona",
     "minigame": "Hoch hinaus",
     "scores": {
@@ -11246,6 +11680,11 @@
     "best_score": 49.615
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Hoch hinaus",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Hoch hinaus",
     "scores": {
@@ -11292,6 +11731,11 @@
       "Global": 41.464
     },
     "best_score": 41.464
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Hoch hinaus",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -11366,6 +11810,14 @@
     "best_score": 47.988
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Hoch hinaus",
+    "scores": {
+      "Global": 51.906
+    },
+    "best_score": 51.906
+  },
+  {
     "name": "SB387",
     "minigame": "Hoch hinaus",
     "scores": {
@@ -11391,6 +11843,11 @@
   },
   {
     "name": "Sebi1801",
+    "minigame": "Hoch hinaus",
+    "scores": {}
+  },
+  {
+    "name": "SecretAgent_K",
     "minigame": "Hoch hinaus",
     "scores": {}
   },
@@ -11816,6 +12273,15 @@
     "best_score": 66.76
   },
   {
+    "name": "Cytoox",
+    "minigame": "Jump and Run",
+    "scores": {
+      "Sky City": 88.362,
+      "Wet Cave": 82.69800000000001
+    },
+    "best_score": 88.362
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Jump and Run",
     "scores": {
@@ -12172,6 +12638,16 @@
     "best_score": 68.655
   },
   {
+    "name": "Juti0n",
+    "minigame": "Jump and Run",
+    "scores": {
+      "Canyon": 69.638,
+      "Sky City": 50.936,
+      "Wet Cave": 52.671
+    },
+    "best_score": 69.638
+  },
+  {
     "name": "juvona",
     "minigame": "Jump and Run",
     "scores": {
@@ -12464,6 +12940,11 @@
     "best_score": 71.044
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Jump and Run",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Jump and Run",
     "scores": {
@@ -12521,6 +13002,11 @@
       "Wet Cave": 48.963
     },
     "best_score": 62.615
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Jump and Run",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -12613,6 +13099,16 @@
     "best_score": 68.536
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Jump and Run",
+    "scores": {
+      "Canyon": 73.291,
+      "Sky City": 50.323,
+      "Wet Cave": 57.15
+    },
+    "best_score": 73.291
+  },
+  {
     "name": "SB387",
     "minigame": "Jump and Run",
     "scores": {
@@ -12650,6 +13146,14 @@
       "Wet Cave": 55.645
     },
     "best_score": 55.645
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Jump and Run",
+    "scores": {
+      "Wet Cave": 90.009
+    },
+    "best_score": 90.009
   },
   {
     "name": "Seemops_8",
@@ -13105,6 +13609,14 @@
     "best_score": 54.798
   },
   {
+    "name": "Cytoox",
+    "minigame": "Kletter-K\u00f6nig",
+    "scores": {
+      "Garden": 81.787
+    },
+    "best_score": 81.787
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Kletter-K\u00f6nig",
     "scores": {
@@ -13425,6 +13937,15 @@
     "best_score": 46.817
   },
   {
+    "name": "Juti0n",
+    "minigame": "Kletter-K\u00f6nig",
+    "scores": {
+      "Garden": 44.016,
+      "Inka": 51.829
+    },
+    "best_score": 51.829
+  },
+  {
     "name": "juvona",
     "minigame": "Kletter-K\u00f6nig",
     "scores": {
@@ -13688,6 +14209,11 @@
     "best_score": 46.811
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Kletter-K\u00f6nig",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Kletter-K\u00f6nig",
     "scores": {
@@ -13739,6 +14265,11 @@
       "Inka": 41.339
     },
     "best_score": 41.339
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Kletter-K\u00f6nig",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -13821,6 +14352,15 @@
     "best_score": 42.933
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Kletter-K\u00f6nig",
+    "scores": {
+      "Garden": 65.694,
+      "Inka": 54.341
+    },
+    "best_score": 65.694
+  },
+  {
     "name": "SB387",
     "minigame": "Kletter-K\u00f6nig",
     "scores": {
@@ -13849,6 +14389,11 @@
   },
   {
     "name": "Sebi1801",
+    "minigame": "Kletter-K\u00f6nig",
+    "scores": {}
+  },
+  {
+    "name": "SecretAgent_K",
     "minigame": "Kletter-K\u00f6nig",
     "scores": {}
   },
@@ -14303,6 +14848,16 @@
     "best_score": 22.0
   },
   {
+    "name": "Cytoox",
+    "minigame": "Lasertag",
+    "scores": {
+      "Factory": 38.0,
+      "Neon": 27.0,
+      "Port": 11.0
+    },
+    "best_score": 38.0
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Lasertag",
     "scores": {
@@ -14662,6 +15217,16 @@
     "best_score": 33.0
   },
   {
+    "name": "Juti0n",
+    "minigame": "Lasertag",
+    "scores": {
+      "Factory": 35.0,
+      "Neon": 33.0,
+      "Port": 28.0
+    },
+    "best_score": 35.0
+  },
+  {
     "name": "juvona",
     "minigame": "Lasertag",
     "scores": {
@@ -14950,6 +15515,14 @@
     "best_score": 40.0
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Lasertag",
+    "scores": {
+      "Factory": 10.0
+    },
+    "best_score": 10.0
+  },
+  {
     "name": "Navex",
     "minigame": "Lasertag",
     "scores": {
@@ -15007,6 +15580,11 @@
       "Port": 42.0
     },
     "best_score": 47.0
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Lasertag",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -15099,6 +15677,16 @@
     "best_score": 43.0
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Lasertag",
+    "scores": {
+      "Factory": 34.0,
+      "Neon": 26.0,
+      "Port": 20.0
+    },
+    "best_score": 34.0
+  },
+  {
     "name": "SB387",
     "minigame": "Lasertag",
     "scores": {
@@ -15136,6 +15724,14 @@
       "Neon": 32.0
     },
     "best_score": 33.0
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Lasertag",
+    "scores": {
+      "Factory": 24.0
+    },
+    "best_score": 24.0
   },
   {
     "name": "Seemops_8",
@@ -15601,6 +16197,14 @@
     "best_score": 28.224
   },
   {
+    "name": "Cytoox",
+    "minigame": "Minenfeld",
+    "scores": {
+      "Desert": 31.797
+    },
+    "best_score": 31.797
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Minenfeld",
     "scores": {
@@ -15945,6 +16549,15 @@
     "best_score": 26.618
   },
   {
+    "name": "Juti0n",
+    "minigame": "Minenfeld",
+    "scores": {
+      "Desert": 27.742,
+      "Nether": 25.393
+    },
+    "best_score": 27.742
+  },
+  {
     "name": "juvona",
     "minigame": "Minenfeld",
     "scores": {
@@ -16226,6 +16839,11 @@
     "best_score": 33.64
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Minenfeld",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Minenfeld",
     "scores": {
@@ -16282,6 +16900,11 @@
       "Nether": 24.492
     },
     "best_score": 30.357
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Minenfeld",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -16368,6 +16991,16 @@
     "best_score": 25.75
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Minenfeld",
+    "scores": {
+      "Desert": 29.744,
+      "Ice Cave": 41.04,
+      "Nether": 32.067
+    },
+    "best_score": 41.04
+  },
+  {
     "name": "SB387",
     "minigame": "Minenfeld",
     "scores": {
@@ -16404,6 +17037,15 @@
       "Nether": 25.271
     },
     "best_score": 25.271
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Minenfeld",
+    "scores": {
+      "Desert": 25.305,
+      "Nether": 30.074
+    },
+    "best_score": 30.074
   },
   {
     "name": "Seemops_8",
@@ -16866,6 +17508,15 @@
     "best_score": 5.0
   },
   {
+    "name": "Cytoox",
+    "minigame": "Minengefecht",
+    "scores": {
+      "Overworld": 5.0,
+      "Ruin": 1.0
+    },
+    "best_score": 5.0
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Minengefecht",
     "scores": {
@@ -17227,6 +17878,16 @@
     "best_score": 7.0
   },
   {
+    "name": "Juti0n",
+    "minigame": "Minengefecht",
+    "scores": {
+      "Nether": 7.0,
+      "Overworld": 5.0,
+      "Ruin": 7.0
+    },
+    "best_score": 7.0
+  },
+  {
     "name": "juvona",
     "minigame": "Minengefecht",
     "scores": {
@@ -17512,6 +18173,11 @@
     "best_score": 9.0
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Minengefecht",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Minengefecht",
     "scores": {
@@ -17568,6 +18234,11 @@
       "Ruin": 8.0
     },
     "best_score": 10.0
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Minengefecht",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -17660,6 +18331,16 @@
     "best_score": 6.0
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Minengefecht",
+    "scores": {
+      "Nether": 5.0,
+      "Overworld": 6.0,
+      "Ruin": 5.0
+    },
+    "best_score": 6.0
+  },
+  {
     "name": "SB387",
     "minigame": "Minengefecht",
     "scores": {
@@ -17696,6 +18377,14 @@
       "Overworld": 9.0
     },
     "best_score": 9.0
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Minengefecht",
+    "scores": {
+      "Overworld": 4.0
+    },
+    "best_score": 4.0
   },
   {
     "name": "Seemops_8",
@@ -18177,6 +18866,14 @@
     "best_score": 6.0
   },
   {
+    "name": "Cytoox",
+    "minigame": "Mini Skywars",
+    "scores": {
+      "Swamp": 2.0
+    },
+    "best_score": 2.0
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Mini Skywars",
     "scores": {
@@ -18551,6 +19248,16 @@
     "best_score": 5.0
   },
   {
+    "name": "Juti0n",
+    "minigame": "Mini Skywars",
+    "scores": {
+      "Asia": 10.0,
+      "Swamp": 5.0,
+      "Wild West": 4.0
+    },
+    "best_score": 10.0
+  },
+  {
     "name": "juvona",
     "minigame": "Mini Skywars",
     "scores": {
@@ -18850,6 +19557,11 @@
     "best_score": 7.0
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Mini Skywars",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Mini Skywars",
     "scores": {
@@ -18909,6 +19621,14 @@
       "Wild West": 10.0
     },
     "best_score": 10.0
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Mini Skywars",
+    "scores": {
+      "Swamp": 1.0
+    },
+    "best_score": 1.0
   },
   {
     "name": "Picutar",
@@ -19004,6 +19724,17 @@
     "best_score": 8.0
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Mini Skywars",
+    "scores": {
+      "Asia": 3.0,
+      "Rust": 4.0,
+      "Swamp": 4.0,
+      "Wild West": 5.0
+    },
+    "best_score": 5.0
+  },
+  {
     "name": "SB387",
     "minigame": "Mini Skywars",
     "scores": {
@@ -19043,6 +19774,11 @@
       "Wild West": 5.0
     },
     "best_score": 9.0
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Mini Skywars",
+    "scores": {}
   },
   {
     "name": "Seemops_8",
@@ -19516,6 +20252,15 @@
     "best_score": 6.0
   },
   {
+    "name": "Cytoox",
+    "minigame": "Mini Survivalgames",
+    "scores": {
+      "Canyon": 4.0,
+      "Winter Village": 3.0
+    },
+    "best_score": 4.0
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Mini Survivalgames",
     "scores": {
@@ -19853,6 +20598,15 @@
     "best_score": 7.0
   },
   {
+    "name": "Juti0n",
+    "minigame": "Mini Survivalgames",
+    "scores": {
+      "Canyon": 6.0,
+      "Winter Village": 9.0
+    },
+    "best_score": 9.0
+  },
+  {
     "name": "juvona",
     "minigame": "Mini Survivalgames",
     "scores": {
@@ -20124,6 +20878,11 @@
     "best_score": 11.0
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Mini Survivalgames",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Mini Survivalgames",
     "scores": {
@@ -20179,6 +20938,14 @@
       "Winter Village": 10.0
     },
     "best_score": 10.0
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Mini Survivalgames",
+    "scores": {
+      "Winter Village": 1.0
+    },
+    "best_score": 1.0
   },
   {
     "name": "Picutar",
@@ -20263,6 +21030,15 @@
     "best_score": 9.0
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Mini Survivalgames",
+    "scores": {
+      "Canyon": 6.0,
+      "Winter Village": 7.0
+    },
+    "best_score": 7.0
+  },
+  {
     "name": "SB387",
     "minigame": "Mini Survivalgames",
     "scores": {
@@ -20297,6 +21073,14 @@
       "Winter Village": 9.0
     },
     "best_score": 10.0
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Mini Survivalgames",
+    "scores": {
+      "Winter Village": 4.0
+    },
+    "best_score": 4.0
   },
   {
     "name": "Seemops_8",
@@ -20756,6 +21540,16 @@
     "best_score": 19.0
   },
   {
+    "name": "Cytoox",
+    "minigame": "Paintball",
+    "scores": {
+      "Arabic": 9.0,
+      "Cyber Arena": 9.0,
+      "Modern": 11.0
+    },
+    "best_score": 11.0
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Paintball",
     "scores": {
@@ -21119,6 +21913,16 @@
     "best_score": 18.0
   },
   {
+    "name": "Juti0n",
+    "minigame": "Paintball",
+    "scores": {
+      "Arabic": 13.0,
+      "Cyber Arena": 10.0,
+      "Modern": 10.0
+    },
+    "best_score": 13.0
+  },
+  {
     "name": "juvona",
     "minigame": "Paintball",
     "scores": {
@@ -21419,6 +22223,14 @@
     "best_score": 19.0
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Paintball",
+    "scores": {
+      "Cyber Arena": 2.0
+    },
+    "best_score": 2.0
+  },
+  {
     "name": "Navex",
     "minigame": "Paintball",
     "scores": {
@@ -21477,6 +22289,11 @@
       "Modern": 24.0
     },
     "best_score": 28.0
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Paintball",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -21569,6 +22386,16 @@
     "best_score": 23.0
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Paintball",
+    "scores": {
+      "Arabic": 12.0,
+      "Cyber Arena": 12.0,
+      "Modern": 10.0
+    },
+    "best_score": 12.0
+  },
+  {
     "name": "SB387",
     "minigame": "Paintball",
     "scores": {
@@ -21606,6 +22433,15 @@
       "Modern": 11.0
     },
     "best_score": 12.0
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Paintball",
+    "scores": {
+      "Cyber Arena": 3.0,
+      "Modern": 8.0
+    },
+    "best_score": 8.0
   },
   {
     "name": "Seemops_8",
@@ -22136,6 +22972,17 @@
     "best_score": 95.376
   },
   {
+    "name": "Cytoox",
+    "minigame": "Pferderennen",
+    "scores": {
+      "Ancient Falls": 94.559,
+      "Cheep Beach": 97.07900000000001,
+      "Jungle": 74.993,
+      "Rainbow": 111.35300000000001
+    },
+    "best_score": 111.35300000000001
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Pferderennen",
     "scores": {
@@ -22595,6 +23442,19 @@
     "best_score": 97.394
   },
   {
+    "name": "Juti0n",
+    "minigame": "Pferderennen",
+    "scores": {
+      "Ancient Falls": 93.988,
+      "Cheep Beach": 94.72800000000001,
+      "City": 67.361,
+      "Jungle": 72.761,
+      "Rainbow": 98.946,
+      "s Arena": 69.702
+    },
+    "best_score": 98.946
+  },
+  {
     "name": "juvona",
     "minigame": "Pferderennen",
     "scores": {
@@ -22963,6 +23823,11 @@
     "best_score": 96.91
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Pferderennen",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Pferderennen",
     "scores": {
@@ -23031,6 +23896,11 @@
       "s Arena": 65.589
     },
     "best_score": 91.983
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Pferderennen",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -23150,6 +24020,18 @@
     "best_score": 95.821
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Pferderennen",
+    "scores": {
+      "Ancient Falls": 94.518,
+      "Cheep Beach": 94.842,
+      "City": 72.104,
+      "Jungle": 76.72200000000001,
+      "Rainbow": 102.666
+    },
+    "best_score": 102.666
+  },
+  {
     "name": "SB387",
     "minigame": "Pferderennen",
     "scores": {
@@ -23198,6 +24080,16 @@
       "s Arena": 68.394
     },
     "best_score": 97.715
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Pferderennen",
+    "scores": {
+      "Cheep Beach": 95.946,
+      "City": 69.85,
+      "s Arena": 74.616
+    },
+    "best_score": 95.946
   },
   {
     "name": "Seemops_8",
@@ -24871,6 +25763,15 @@
       "ppHop 2": 29.646
     },
     "best_score": 2946.370000000001
+  },
+  {
+    "name": "Cytoox",
+    "minigame": "Replika",
+    "scores": {
+      "Sum": 2560.0640000000003,
+      "Pizza": 35.064
+    },
+    "best_score": 2560.0640000000003
   },
   {
     "name": "DarkCobweb",
@@ -27660,6 +28561,90 @@
     "best_score": 2721.947000000001
   },
   {
+    "name": "Juti0n",
+    "minigame": "Replika",
+    "scores": {
+      "Sum": 2274.244,
+      "Arrow": 12.312,
+      "Baby Yoda": 23.846,
+      "Bee": 17.522,
+      "Blinky": 21.332,
+      "Blue Monster": 25.049,
+      "Cake": 23.459,
+      "Carrot": 15.019,
+      "Caterpie": 15.989,
+      "Charizard": 37.197,
+      "Chicken": 23.731,
+      "Coffee": 14.219,
+      "Controller": 17.974,
+      "Cookie": 19.999,
+      "Cow": 33.013,
+      "Cowboy": 14.226,
+      "Creeper": 37.757,
+      "Cytooxien": 17.438,
+      "Deadpool": 31.17,
+      "Diskette": 19.057,
+      "Doge": 22.815,
+      "Duck": 13.21,
+      "Eevee": 22.158,
+      "Ender Pearl": 29.211,
+      "Fox": 18.096,
+      "Frog": 16.798000000000002,
+      "Galaxian Alien": 17.648,
+      "Ghost": 11.987,
+      "Globe": 27.347,
+      "Guardian": 31.895,
+      "Heart": 20.26,
+      "Hourglass": 24.964,
+      "Instagram": 23.496,
+      "Iron Ingot": 18.145,
+      "Kirby": 26.749,
+      "Koopa": 17.338,
+      "Krabs": 14.456,
+      "Mario": 16.728,
+      "Mooshroom": 24.258,
+      "Mountain": 18.155,
+      "Mouse": 30.219,
+      "Parrot": 20.413,
+      "Penguin": 22.092,
+      "Pikachu": 27.311,
+      "Piranha Plant": 42.761,
+      "Pirate": 15.361,
+      "Poke Ball": 18.659,
+      "Princess": 31.411,
+      "Random 1": 11.322,
+      "Robin Hood": 28.711,
+      "Rocket": 19.939,
+      "Skeleton": 24.039,
+      "Slime": 25.849,
+      "Smurf": 35.867,
+      "Snake": 7.691,
+      "Sonic": 18.672,
+      "Spider": 24.612,
+      "Sword": 13.906,
+      "TNT": 23.193,
+      "Thinking": 19.898,
+      "Thinking 2": 20.138,
+      "Toad": 25.762,
+      "Tree": 19.147,
+      "Turtle": 29.261,
+      "Twitch": 19.224,
+      "Twitter": 19.955,
+      "Unicorn": 11.697,
+      "Up": 18.04,
+      "Water Temple": 18.499,
+      "Windows": 15.743,
+      "Wizard": 21.07,
+      "Zombie": 20.348,
+      "ms Arrow": 12.312,
+      "of Meat": 15.406,
+      "omb": 16.586,
+      "ppHop 1": 22.064,
+      "ppHop 2": 21.043
+    },
+    "best_score": 2274.244
+  },
+  {
     "name": "juvona",
     "minigame": "Replika",
     "scores": {
@@ -29848,6 +30833,14 @@
     "best_score": 2661.8239999999996
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Replika",
+    "scores": {
+      "Sum": 2550.0
+    },
+    "best_score": 2550.0
+  },
+  {
     "name": "Navex",
     "minigame": "Replika",
     "scores": {
@@ -30257,6 +31250,14 @@
       "ppHop 2": 15.067
     },
     "best_score": 1614.3329999999999
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Replika",
+    "scores": {
+      "Sum": 2550.0
+    },
+    "best_score": 2550.0
   },
   {
     "name": "Picutar",
@@ -30923,6 +31924,27 @@
     "best_score": 2699.848000000001
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Replika",
+    "scores": {
+      "Sum": 2610.181,
+      "Cake": 33.725,
+      "Carrot": 26.239,
+      "Charizard": 35.476,
+      "Duck": 15.566,
+      "Mooshroom": 41.62,
+      "Piranha Plant": 45.169,
+      "Pizza": 36.699,
+      "Poppy": 30.207,
+      "Random 1": 16.416,
+      "Rocket": 24.111,
+      "Snake": 19.424,
+      "Water Temple": 27.968,
+      "Wizard": 32.561
+    },
+    "best_score": 2610.181
+  },
+  {
     "name": "SB387",
     "minigame": "Replika",
     "scores": {
@@ -31187,6 +32209,14 @@
   },
   {
     "name": "Sebi1801",
+    "minigame": "Replika",
+    "scores": {
+      "Sum": 2550.0
+    },
+    "best_score": 2550.0
+  },
+  {
+    "name": "SecretAgent_K",
     "minigame": "Replika",
     "scores": {
       "Sum": 2550.0
@@ -33850,6 +34880,31 @@
     "best_score": 549.0
   },
   {
+    "name": "Cytoox",
+    "minigame": "Sammelwahn",
+    "scores": {
+      "Sum": 326.0,
+      "Dichter Wald": 23.0,
+      "Lichter Dschungel": 18.0,
+      " Bambusdschungel": 18.0,
+      " Birkenwald": 19.0,
+      " Blumenwald": 26.0,
+      " Dschungel": 18.0,
+      " Ebene": 25.0,
+      " Karmesinwald": 11.0,
+      " Savannenhochebene": 16.0,
+      " Taiga": 18.0,
+      " Wald": 19.0,
+      " Wirrwald": 19.0,
+      "Sonnenblumenebene": 23.0,
+      "Urtaiga": 16.0,
+      "Urwald": 21.0,
+      "Verschneite Ebene": 19.0,
+      "\u00dcppige H\u00f6hlen": 17.0
+    },
+    "best_score": 326.0
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Sammelwahn",
     "scores": {
@@ -34849,6 +35904,34 @@
     "best_score": 509.0
   },
   {
+    "name": "Juti0n",
+    "minigame": "Sammelwahn",
+    "scores": {
+      "Sum": 475.0,
+      "Dichter Wald": 22.0,
+      "Lichter Dschungel": 31.0,
+      " Bambusdschungel": 25.0,
+      " Birkenwald": 22.0,
+      " Blumenwald": 28.0,
+      " Dschungel": 23.0,
+      " Ebene": 25.0,
+      " Kirschberghain": 26.0,
+      " Savanne": 20.0,
+      " Savannenhochebene": 25.0,
+      " Sumpf": 26.0,
+      " Taiga": 24.0,
+      " Wald": 24.0,
+      "Sonnenblumenebene": 28.0,
+      "Urtaiga": 19.0,
+      "Urwald": 18.0,
+      "Verschneite Ebene": 22.0,
+      "Verschneite Taiga": 25.0,
+      "Zerzauste H\u00fcgel": 22.0,
+      "Zerzauste Savanne": 20.0
+    },
+    "best_score": 475.0
+  },
+  {
     "name": "juvona",
     "minigame": "Sammelwahn",
     "scores": {
@@ -35677,6 +36760,17 @@
     "best_score": 393.0
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Sammelwahn",
+    "scores": {
+      "Sum": 46.0,
+      " Savanne": 13.0,
+      "Sonnenblumenebene": 21.0,
+      "Urwald": 12.0
+    },
+    "best_score": 46.0
+  },
+  {
     "name": "Navex",
     "minigame": "Sammelwahn",
     "scores": {
@@ -35829,6 +36923,17 @@
       "Zerzauste Savanne": 30.0
     },
     "best_score": 656.0
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Sammelwahn",
+    "scores": {
+      "Sum": 50.0,
+      " Dschungel": 14.0,
+      "Savanne": 23.0,
+      "Verschneite Ebene": 13.0
+    },
+    "best_score": 50.0
   },
   {
     "name": "Picutar",
@@ -36079,6 +37184,31 @@
     "best_score": 566.0
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Sammelwahn",
+    "scores": {
+      "Sum": 303.0,
+      "Dichter Wald": 17.0,
+      "Lichter Dschungel": 17.0,
+      " Bambusdschungel": 19.0,
+      " Birkenwald": 13.0,
+      " Ebene": 17.0,
+      " Kirschberghain": 14.0,
+      " Savanne": 20.0,
+      " Savannenhochebene": 22.0,
+      " Sumpf": 17.0,
+      " Taiga": 15.0,
+      " Wald": 18.0,
+      "Sonnenblumenebene": 19.0,
+      "Urtaiga": 15.0,
+      "Urwald": 21.0,
+      "Verschneite Ebene": 18.0,
+      "Zerzauste H\u00fcgel": 18.0,
+      "Zerzauste Savanne": 23.0
+    },
+    "best_score": 303.0
+  },
+  {
     "name": "SB387",
     "minigame": "Sammelwahn",
     "scores": {
@@ -36186,6 +37316,17 @@
       "Verschneite Taiga": 22.0
     },
     "best_score": 329.0
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Sammelwahn",
+    "scores": {
+      "Sum": 53.0,
+      "Blumenwald": 23.0,
+      " Dschungel": 19.0,
+      " Karmesinwald": 11.0
+    },
+    "best_score": 53.0
   },
   {
     "name": "Seemops_8",
@@ -37182,6 +38323,16 @@
     "best_score": 294.0
   },
   {
+    "name": "Cytoox",
+    "minigame": "Schie\u00dfstand",
+    "scores": {
+      "City": 208.0,
+      "Farm": 249.0,
+      "Punkte Jungle": 172.0
+    },
+    "best_score": 249.0
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Schie\u00dfstand",
     "scores": {
@@ -37545,6 +38696,16 @@
     "best_score": 287.0
   },
   {
+    "name": "Juti0n",
+    "minigame": "Schie\u00dfstand",
+    "scores": {
+      "City": 246.0,
+      "Farm": 432.0,
+      "Punkte Jungle": 228.0
+    },
+    "best_score": 432.0
+  },
+  {
     "name": "juvona",
     "minigame": "Schie\u00dfstand",
     "scores": {
@@ -37844,6 +39005,16 @@
     "best_score": 279.0
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Schie\u00dfstand",
+    "scores": {
+      "City": 86.0,
+      "Farm": 44.0,
+      "Punkte Jungle": 36.0
+    },
+    "best_score": 86.0
+  },
+  {
     "name": "Navex",
     "minigame": "Schie\u00dfstand",
     "scores": {
@@ -37902,6 +39073,15 @@
       "Punkte Jungle": 348.0
     },
     "best_score": 441.0
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Schie\u00dfstand",
+    "scores": {
+      "City": 88.0,
+      "Farm": 172.0
+    },
+    "best_score": 172.0
   },
   {
     "name": "Picutar",
@@ -37994,6 +39174,16 @@
     "best_score": 327.0
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Schie\u00dfstand",
+    "scores": {
+      "City": 267.0,
+      "Farm": 284.0,
+      "Punkte Jungle": 227.0
+    },
+    "best_score": 284.0
+  },
+  {
     "name": "SB387",
     "minigame": "Schie\u00dfstand",
     "scores": {
@@ -38031,6 +39221,14 @@
       "Farm": 242.0
     },
     "best_score": 286.0
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Schie\u00dfstand",
+    "scores": {
+      "City": 194.0
+    },
+    "best_score": 194.0
   },
   {
     "name": "Seemops_8",
@@ -38492,6 +39690,15 @@
     "best_score": 7.0
   },
   {
+    "name": "Cytoox",
+    "minigame": "Spleef",
+    "scores": {
+      "Jungle": 3.0,
+      "Mountains": 2.0
+    },
+    "best_score": 3.0
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Spleef",
     "scores": {
@@ -38817,6 +40024,15 @@
     "best_score": 4.0
   },
   {
+    "name": "Juti0n",
+    "minigame": "Spleef",
+    "scores": {
+      "Jungle": 6.0,
+      "Mountains": 6.0
+    },
+    "best_score": 6.0
+  },
+  {
     "name": "juvona",
     "minigame": "Spleef",
     "scores": {
@@ -39087,6 +40303,11 @@
     "best_score": 5.0
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Spleef",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Spleef",
     "scores": {
@@ -39139,6 +40360,11 @@
       "Mountains": 11.0
     },
     "best_score": 11.0
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Spleef",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -39222,6 +40448,15 @@
     "best_score": 6.0
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Spleef",
+    "scores": {
+      "Jungle": 4.0,
+      "Mountains": 3.0
+    },
+    "best_score": 4.0
+  },
+  {
     "name": "SB387",
     "minigame": "Spleef",
     "scores": {
@@ -39256,6 +40491,11 @@
       "Mountains": 7.0
     },
     "best_score": 7.0
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Spleef",
+    "scores": {}
   },
   {
     "name": "Seemops_8",
@@ -39670,6 +40910,14 @@
     "best_score": 43.308
   },
   {
+    "name": "Cytoox",
+    "minigame": "Todesw\u00fcrfel",
+    "scores": {
+      "Street": 109.864
+    },
+    "best_score": 109.864
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Todesw\u00fcrfel",
     "scores": {
@@ -39960,6 +41208,14 @@
     "best_score": 42.263
   },
   {
+    "name": "Juti0n",
+    "minigame": "Todesw\u00fcrfel",
+    "scores": {
+      "Street": 38.31
+    },
+    "best_score": 38.31
+  },
+  {
     "name": "juvona",
     "minigame": "Todesw\u00fcrfel",
     "scores": {
@@ -40200,6 +41456,11 @@
     "best_score": 40.536
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Todesw\u00fcrfel",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Todesw\u00fcrfel",
     "scores": {
@@ -40246,6 +41507,11 @@
       "Street": 28.832
     },
     "best_score": 28.832
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Todesw\u00fcrfel",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -40320,6 +41586,14 @@
     "best_score": 34.966
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Todesw\u00fcrfel",
+    "scores": {
+      "Street": 36.269
+    },
+    "best_score": 36.269
+  },
+  {
     "name": "SB387",
     "minigame": "Todesw\u00fcrfel",
     "scores": {
@@ -40350,6 +41624,11 @@
       "Street": 35.545
     },
     "best_score": 35.545
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Todesw\u00fcrfel",
+    "scores": {}
   },
   {
     "name": "Seemops_8",
@@ -40727,6 +42006,11 @@
     "best_score": 65.156
   },
   {
+    "name": "Cytoox",
+    "minigame": "Waffenfolge",
+    "scores": {}
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Waffenfolge",
     "scores": {
@@ -41002,6 +42286,14 @@
     "best_score": 79.336
   },
   {
+    "name": "Juti0n",
+    "minigame": "Waffenfolge",
+    "scores": {
+      "Default": 28.722
+    },
+    "best_score": 28.722
+  },
+  {
     "name": "juvona",
     "minigame": "Waffenfolge",
     "scores": {}
@@ -41227,6 +42519,11 @@
     "best_score": 21.658
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Waffenfolge",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Waffenfolge",
     "scores": {
@@ -41270,6 +42567,11 @@
       "Default": 17.459
     },
     "best_score": 17.459
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Waffenfolge",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -41344,6 +42646,14 @@
     "best_score": 27.28
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Waffenfolge",
+    "scores": {
+      "Default": 19.963
+    },
+    "best_score": 19.963
+  },
+  {
     "name": "SB387",
     "minigame": "Waffenfolge",
     "scores": {
@@ -41369,6 +42679,11 @@
   },
   {
     "name": "Sebi1801",
+    "minigame": "Waffenfolge",
+    "scores": {}
+  },
+  {
+    "name": "SecretAgent_K",
     "minigame": "Waffenfolge",
     "scores": {}
   },
@@ -41785,6 +43100,16 @@
     "best_score": 6.0
   },
   {
+    "name": "Cytoox",
+    "minigame": "Walls",
+    "scores": {
+      "Garden": 3.0,
+      "Grass": 8.0,
+      "Vulcano": 2.0
+    },
+    "best_score": 8.0
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Walls",
     "scores": {
@@ -42143,6 +43468,16 @@
     "best_score": 5.0
   },
   {
+    "name": "Juti0n",
+    "minigame": "Walls",
+    "scores": {
+      "Garden": 6.0,
+      "Grass": 6.0,
+      "Vulcano": 6.0
+    },
+    "best_score": 6.0
+  },
+  {
     "name": "juvona",
     "minigame": "Walls",
     "scores": {
@@ -42441,6 +43776,11 @@
     "best_score": 7.0
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Walls",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Walls",
     "scores": {
@@ -42497,6 +43837,14 @@
       "Vulcano": 12.0
     },
     "best_score": 12.0
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Walls",
+    "scores": {
+      "Garden": 1.0
+    },
+    "best_score": 1.0
   },
   {
     "name": "Picutar",
@@ -42589,6 +43937,16 @@
     "best_score": 7.0
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Walls",
+    "scores": {
+      "Garden": 3.0,
+      "Grass": 7.0,
+      "Vulcano": 6.0
+    },
+    "best_score": 7.0
+  },
+  {
     "name": "SB387",
     "minigame": "Walls",
     "scores": {
@@ -42626,6 +43984,15 @@
       "Grass": 8.0
     },
     "best_score": 10.0
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Walls",
+    "scores": {
+      "Garden": 1.0,
+      "Grass": 2.0
+    },
+    "best_score": 2.0
   },
   {
     "name": "Seemops_8",
@@ -43133,6 +44500,18 @@
     "best_score": 83.377
   },
   {
+    "name": "Cytoox",
+    "minigame": "Wettrennen",
+    "scores": {
+      "Blossom Canyon": 98.35499999999999,
+      "Cyberpunk": 87.861,
+      "Green Hills": 67.179,
+      "Islands": 77.763,
+      "Snow": 49.938
+    },
+    "best_score": 98.35499999999999
+  },
+  {
     "name": "DarkCobweb",
     "minigame": "Wettrennen",
     "scores": {
@@ -43554,6 +44933,18 @@
     "best_score": 85.777
   },
   {
+    "name": "Juti0n",
+    "minigame": "Wettrennen",
+    "scores": {
+      "Blossom Canyon": 92.904,
+      "Cyberpunk": 88.414,
+      "Green Hills": 74.239,
+      "Islands": 78.338,
+      "Snow": 49.818
+    },
+    "best_score": 92.904
+  },
+  {
     "name": "juvona",
     "minigame": "Wettrennen",
     "scores": {
@@ -43899,6 +45290,11 @@
     "best_score": 90.80799999999999
   },
   {
+    "name": "NanamiElvi",
+    "minigame": "Wettrennen",
+    "scores": {}
+  },
+  {
     "name": "Navex",
     "minigame": "Wettrennen",
     "scores": {
@@ -43964,6 +45360,11 @@
       "Snow": 45.243
     },
     "best_score": 79.354
+  },
+  {
+    "name": "Persidieus",
+    "minigame": "Wettrennen",
+    "scores": {}
   },
   {
     "name": "Picutar",
@@ -44074,6 +45475,18 @@
     "best_score": 84.44200000000001
   },
   {
+    "name": "SatzdesPytag0ras",
+    "minigame": "Wettrennen",
+    "scores": {
+      "Blossom Canyon": 89.105,
+      "Cyberpunk": 93.941,
+      "Green Hills": 72.42699999999999,
+      "Islands": 76.98,
+      "Snow": 53.141
+    },
+    "best_score": 93.941
+  },
+  {
     "name": "SB387",
     "minigame": "Wettrennen",
     "scores": {
@@ -44118,6 +45531,15 @@
       "Snow": 48.047
     },
     "best_score": 80.624
+  },
+  {
+    "name": "SecretAgent_K",
+    "minigame": "Wettrennen",
+    "scores": {
+      "Green Hills": 72.799,
+      "Islands": 88.201
+    },
+    "best_score": 88.201
   },
   {
     "name": "Seemops_8",
