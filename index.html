@@ -685,7 +685,7 @@
                 dataAsOf: "Data as of",
                 loading: "Loading data and avatars...",
                 searchPlaceholder: "records(<player>)",
-                tableSearchPlaceholder: "Search players...",
+                tableSearchPlaceholder: "filter scoreboard...",
                 githubLink: "GitHub Repository",
                 contact: "Contact",
                 minigames: {
@@ -1351,13 +1351,29 @@ function getRankClass(rank) {
                 // Update the document title
                 document.title = `MCPR(${playerName})`;
 
-                setTimeout(() => {
-                    content.innerHTML = createPlayerProfile(playerName);
-                    
-                    loader.style.display = 'none';
-                    content.style.display = 'block';
-                }, 500);
-            }
+                // Create a new Image object to preload the avatar
+                const avatarImg = new Image();
+                avatarImg.src = `https://crafatar.com/renders/head/${playerUUIDs[playerName] || '8667ba71-b85a-4004-af54-457a9734eed7'}?&overlay`;
+
+                avatarImg.onload = () => {
+                    setTimeout(() => {
+                        content.innerHTML = createPlayerProfile(playerName);
+                        
+                        loader.style.display = 'none';
+                        content.style.display = 'block';
+                    }, 500);
+                };
+
+    avatarImg.onerror = () => {
+        // If there's an error loading the avatar, still show the profile
+        setTimeout(() => {
+            content.innerHTML = createPlayerProfile(playerName);
+            
+            loader.style.display = 'none';
+            content.style.display = 'block';
+        }, 500);
+    };
+}
 
             window.showPlayerProfile = showPlayerProfile;
 
