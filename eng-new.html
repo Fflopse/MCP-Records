@@ -820,6 +820,8 @@
                 <span class="footer-separator">|</span>
                 <a href="https://github.com/Fflopse/MCP-Records" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
                 <span class="footer-separator">|</span>
+                <a href="https://github.com/Fflopse/MCP-Records/blob/main/data-analysis/records_data.json">Raw Data</a>
+                <span class="footer-separator">|</span>
                 <a href="mailto:contact@fflopse.de">Contact</a>
             </div>
         </footer>
@@ -836,6 +838,7 @@
                 tableSearchPlaceholder: "filter scoreboard...",
                 githubLink: "GitHub Repository",
                 contact: "Contact",
+                raw: "JSON data",
                 minigames: {
                     "Blockhüpfer": "Block Jump",
                     "Buntes Chaos": "Colorful Chaos",
@@ -875,6 +878,7 @@
                 tableSearchPlaceholder: "Spieler suchen...",
                 githubLink: "GitHub Repository",
                 contact: "Kontakt",
+                raw: "JSON",
                 minigames: {
                     "Blockhüpfer": "Blockhüpfer",
                     "Buntes Chaos": "Buntes Chaos",
@@ -1067,7 +1071,7 @@
             videoLinksContainer.innerHTML = '';
 
             if (!videoLinks[minigame] || Object.keys(videoLinks[minigame]).length === 0) {
-                videoLinksContainer.innerHTML = '<p>No videos available for this minigame.</p>';
+                videoLinksContainer.innerHTML = '';
                 return;
             }
 
