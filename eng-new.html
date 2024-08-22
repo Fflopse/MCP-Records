@@ -676,6 +676,21 @@
             color:rgb(168, 168, 168);
         }
 
+        .video-link {
+            color: inherit; 
+            text-decoration: underline; 
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-link:hover {
+            opacity: 0.7; 
+        }
+
+        .video-link:visited {
+            color: inherit;
+        }
+
         .video-links-container {
             margin-top: 20px;
             padding: 20px;
@@ -1381,11 +1396,10 @@
                             
                             const formattedValue = typeof value === 'number' ? value.toFixed(3) : value;
                             
-                            // Check if there's a video link for this score
                             const playerName = cell.getRow().getData().name;
                             const videoInfo = videoLinks[currentMinigame] && 
                                             videoLinks[currentMinigame][mapName] && 
-                                            videoLinks[currentMinigame][mapName].find(v => v.player === playerName && v.time === value);
+                                            videoLinks[currentMinigame][mapName].find(v => v.player === playerName && v.time === formattedValue);
                             
                             if (videoInfo) {
                                 return `<a href="${videoInfo.link}" target="_blank" class="video-link">${formattedValue}</a>`;
