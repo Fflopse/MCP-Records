@@ -675,6 +675,53 @@
             margin-top: 10px;
             color:rgb(168, 168, 168);
         }
+
+        .video-links-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .video-links-container h3 {
+            color: var(--accent-color-1);
+            margin-bottom: 15px;
+        }
+
+        .video-links-container h4 {
+            color: var(--accent-color-2);
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .video-links-container ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .video-links-container li {
+            margin-bottom: 5px;
+        }
+
+        .video-links-container a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .video-links-container a:hover {
+            color: var(--accent-color-1);
+        }
+
+        .video-link {
+            color: var(--accent-color-3);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .video-link:hover {
+            color: var(--accent-color-2);
+        }
     </style>
 
 
@@ -738,6 +785,7 @@
             <p id="loading-text">Loading data and avatars...</p>
         </div>
         <div id="records-table"></div>
+        <div id="video-links-container" class="video-links-container"></div>
         <div id="player-profile-modal" class="modal">
             <div class="modal-content">
                 <span class="close" id="close-modal" onclick="closeModal()">&times;</span>
@@ -867,7 +915,21 @@
                 "Ice Cave" : 24.0
             }
         };
-    
+
+        const videoLinks = {
+            "Blockhüpfer": {
+                "City": [
+                    { time: 20.577, player: "ReichesBrot", link: "https://youtu.be/j1H_UUSPEWk" },
+                    // { time: 13.456, player: "PlayerName2", link: "https://youtube.com/watch?v=def456" }
+                ]
+            },
+            "Schießstand": {
+                "City": [
+                    { time: 479, player: "Fflopse", link: "https://youtu.be/JXs1dn8vZwc" }
+                ]
+            }
+        };
+
         var playerUUIDs = {};
         var avatarsLoaded = 0;
         var totalAvatars = 0;
@@ -979,6 +1041,27 @@
             const uuid = playerUUIDs[name] || "8667ba71-b85a-4004-af54-457a9734eed7";
             const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
             return `<img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar"> <span class="player-name" onclick="window.showPlayerProfile('${name}')">${name}</span>`;
+        }
+
+        function displayVideoLinks(minigame) {
+            const videoLinksContainer = document.getElementById('video-links-container');
+            videoLinksContainer.innerHTML = '';
+
+            if (!videoLinks[minigame]) {
+                videoLinksContainer.innerHTML = '<p>No videos available for this minigame.</p>';
+                return;
+            }
+
+            let html = '<h3>Video Links</h3>';
+            for (const [map, videos] of Object.entries(videoLinks[minigame])) {
+                html += `<h4>${map}</h4><ul>`;
+                for (const video of videos) {
+                    html += `<li><a href="${video.link}" target="_blank">${video.player}: ${video.time.toFixed(3)}</a></li>`;
+                }
+                html += '</ul>';
+            }
+
+            videoLinksContainer.innerHTML = html;
         }
     
         function initializeTable(data) {
@@ -1105,6 +1188,8 @@
                 
                 const tableElement = document.getElementById("records-table");
                 tableElement.classList.add('fade-out');
+
+                displayVideoLinks(minigame);
                 
                 setTimeout(() => {
                     if (table) {
@@ -1252,6 +1337,16 @@
                             if (value === undefined || value === null) return "-";
                             
                             const formattedValue = typeof value === 'number' ? value.toFixed(3) : value;
+                            
+                            // Check if there's a video link for this score
+                            const playerName = cell.getRow().getData().name;
+                            const videoInfo = videoLinks[currentMinigame] && 
+                                            videoLinks[currentMinigame][mapName] && 
+                                            videoLinks[currentMinigame][mapName].find(v => v.player === playerName && v.time === value);
+                            
+                            if (videoInfo) {
+                                return `<a href="${videoInfo.link}" target="_blank" class="video-link">${formattedValue}</a>`;
+                            }
                             
                             // Check if the value is better than the cutoff
                             const cutoff = cutoffValues[currentMinigame] && cutoffValues[currentMinigame][mapName];
