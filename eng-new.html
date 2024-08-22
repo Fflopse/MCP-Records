@@ -694,33 +694,52 @@
             margin-bottom: 10px;
         }
 
-        .video-links-container ul {
-            list-style-type: none;
-            padding-left: 0;
+        .video-links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        .video-links-container li {
-            margin-bottom: 5px;
+        .video-link-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
-        .video-links-container a {
+        .video-link-item:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .video-link-item .player-avatar {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
+
+        .video-link-player {
+            flex-grow: 1;
             color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
         }
 
-        .video-links-container a:hover {
-            color: var(--accent-color-1);
-        }
-
-        .video-link {
+        .video-link-time {
+            margin-right: 15px;
             color: var(--accent-color-3);
-            text-decoration: underline;
-            cursor: pointer;
         }
 
-        .video-link:hover {
-            color: var(--accent-color-2);
+        .video-link-button {
+            padding: 5px 10px;
+            background-color: var(--accent-color-1);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+
+        .video-link-button:hover {
+            background-color: var(--accent-color-2);
         }
     </style>
 
@@ -1047,18 +1066,28 @@
             const videoLinksContainer = document.getElementById('video-links-container');
             videoLinksContainer.innerHTML = '';
 
-            if (!videoLinks[minigame]) {
+            if (!videoLinks[minigame] || Object.keys(videoLinks[minigame]).length === 0) {
                 videoLinksContainer.innerHTML = '<p>No videos available for this minigame.</p>';
                 return;
             }
 
             let html = '<h3>Video Links</h3>';
             for (const [map, videos] of Object.entries(videoLinks[minigame])) {
-                html += `<h4>${map}</h4><ul>`;
+                html += `<h4>${map}</h4>`;
+                html += '<div class="video-links-list">';
                 for (const video of videos) {
-                    html += `<li><a href="${video.link}" target="_blank">${video.player}: ${video.time.toFixed(3)}</a></li>`;
+                    const uuid = playerUUIDs[video.player] || "8667ba71-b85a-4004-af54-457a9734eed7";
+                    const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
+                    html += `
+                        <div class="video-link-item">
+                            <img src="${avatarUrl}" alt="${video.player}'s avatar" class="player-avatar">
+                            <span class="video-link-player">${video.player}</span>
+                            <span class="video-link-time">${video.time.toFixed(3)}</span>
+                            <a href="${video.link}" target="_blank" class="video-link-button">Watch</a>
+                        </div>
+                    `;
                 }
-                html += '</ul>';
+                html += '</div>';
             }
 
             videoLinksContainer.innerHTML = html;
