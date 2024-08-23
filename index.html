@@ -573,7 +573,6 @@
             }
         }
         
-        /* Additional styles for better responsiveness */
         @media (max-width: 480px) {
             body {
                 padding: 10px;
@@ -611,7 +610,6 @@
             border: 0;
         }
         
-        /* Focus styles for better keyboard navigation */
         a:focus,
         button:focus,
         input:focus,
@@ -620,13 +618,11 @@
             outline-offset: 2px;
         }
         
-        /* Hover effects for interactive elements */
         .search-result-item:hover,
         .language-selector button:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
         
-        /* Transition for smooth color changes */
         .tabulator .tabulator-row .tabulator-cell,
         .close,
         .site-footer a,
@@ -634,7 +630,6 @@
             transition: color 0.3s ease, background-color 0.3s ease;
         }
         
-        /* Custom scrollbar for webkit browsers */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -652,7 +647,6 @@
             background: var(--accent-color-2);
         }
         
-        /* Print styles */
         @media print {
             body {
                 background: white;
@@ -958,7 +952,6 @@
             "Blockhüpfer": {
                 "City": [
                     { time: 20.577, player: "ReichesBrot", link: "https://youtu.be/I-v4fahzt00" },
-                    // { time: 13.456, player: "PlayerName2", link: "https://youtube.com/watch?v=def456" }
                 ]
             },
             "Schießstand": {
@@ -1174,7 +1167,7 @@
                 })
                 .catch(error => {
                     console.error("Error loading player info:", error);
-                    playerInfoData = {}; // Ensure it's an empty object if loading fails
+                    playerInfoData = {}; // empty object if loading fails
                 });
     
             const minigameSortDirections = {
@@ -1565,7 +1558,7 @@
                             
                             const formattedValue = typeof value === 'number' ? value.toFixed(3) : value;
                             
-                            // Check if the value is better than the cutoff
+                            // Check if value is better than the cutoff
                             const cutoff = cutoffValues[currentMinigame] && cutoffValues[currentMinigame][cell.getColumn().getField().split('.')[1]];
                             if (cutoff !== undefined) {
                                 const sortDirection = minigameSortDirections[currentMinigame] || "desc";
