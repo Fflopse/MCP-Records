@@ -5,4 +5,4 @@
 2. Data Analysis in Python using Regex and Pandas (data-analysis/analysis-v2.ipynb)
 3. HTML implementation using Tabulator with custom layout and sorting features, avatar fetching via the [crafatar](https://crafatar.com) API. Loading data from repo-stored JSON. Hosted through Github Pages.
 
-### find the scoreboard [here](https://fflopse.de/eng-new.html) ###
+### find the scoreboard [here](https://sb.fflopse.de) ###
