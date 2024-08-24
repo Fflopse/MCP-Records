@@ -750,6 +750,24 @@
         .video-link-button:hover {
             background-color: var(--accent-color-2);
         }
+
+        .highlighted-video {
+            background-color: rgba(14, 197, 197, 0.1); /* Adjust the color and opacity as needed */
+            transition: background-color 0.3s ease;
+        }
+
+        .has-video {
+            position: relative;
+        }
+
+        .has-video::after {
+            content: '▶';
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            font-size: 10px;
+            color: var(--accent-color-1);
+        }
     </style>
 
 
