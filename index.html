@@ -154,7 +154,15 @@
             flex: 1;
             max-width: calc(50% - 10px);
         }
-        
+
+        .player-prefix {
+            font-weight: bold;
+            margin-right: 5px;
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: white;
+        }
+
         #minigame-select, #player-search {
             width: 100%;
             padding: 10px;
@@ -165,72 +173,72 @@
             font-size: 16px;
             box-sizing: border-box;
         }
-        
+
         #minigame-select:focus, #player-search:focus {
             outline: none;
             box-shadow: 0 0 0 2px rgba(168, 216, 234, 0.5);
         }
-        
+
         .tabulator {
             background-color: var(--secondary-color);
             border: none;
             width: 100% !important;
         }
-        
+
         .tabulator .tabulator-header {
             background-color: #000000;
             color: var(--text-color);
             font-weight: bold;
         }
-        
+
         .tabulator .tabulator-header .tabulator-col {
             background-color: #000000;
             border-right: 1px solid var(--secondary-color);
         }
-        
+
         .tabulator .tabulator-header .tabulator-col.tabulator-sortable:hover {
             background-color: #1a1a1a;
         }
-        
+
         .tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort],
         .tabulator .tabulator-header .tabulator-col.sorted {
             background-color: var(--accent-color-1);
             color: var(--primary-color);
         }
-        
+
         .tabulator .tabulator-row {
             color: var(--text-color);
             transition: background-color 0.15s ease;
         }
-        
+
         .tabulator .tabulator-row.tabulator-row-even {
             background-color: var(--secondary-color);
         }
-        
+
         .tabulator .tabulator-row.tabulator-row-odd {
             background-color: #333333;
         }
-        
+
         .tabulator .tabulator-row:hover {
             background-color: rgba(255, 255, 255, 0.05);
         }
-        
+
         .tabulator .tabulator-row.tabulator-row-even:hover {
             background-color: rgba(42, 42, 42, 0.95);
         }
-        
+
         .tabulator .tabulator-row.tabulator-row-odd:hover {
             background-color: rgba(51, 51, 51, 0.95);
         }
-        
+
         .tabulator .tabulator-row .tabulator-cell {
             transition: color 0.15s ease;
         }
-        
+
         .tabulator .tabulator-row:hover .tabulator-cell {
             color: var(--accent-color-2);
         }
-        
+
         .tabulator .tabulator-header .tabulator-col.tabulator-frozen,
         .tabulator .tabulator-row .tabulator-cell.tabulator-frozen {
             position: sticky;
@@ -238,18 +246,18 @@
             z-index: 2;
             background-color: inherit;
         }
-        
+
         .tabulator .tabulator-row .tabulator-cell.tabulator-frozen {
             box-shadow: 2px 0px 3px rgba(0,0,0,0.1);
         }
-        
+
         .player-avatar {
             width: 32px;
             height: 32px;
             vertical-align: middle;
             margin-right: 10px;
         }
-        
+
         .loading {
             display: flex;
             flex-direction: column;
@@ -257,7 +265,7 @@
             justify-content: center;
             height: 200px;
         }
-        
+
         .spinner {
             border: 4px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
@@ -266,27 +274,27 @@
             height: 40px;
             animation: spin 1s linear infinite;
         }
-        
+
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        
+
         #records-table {
             opacity: 0;
             transition: opacity 0.15s ease-in-out;
             width: 100%;
         }
-        
+
         #records-table.loaded,
         #records-table.fade-in {
             opacity: 1;
         }
-        
+
         #records-table.fade-out {
             opacity: 0;
         }
-        
+
         .modal {
             display: none;
             position: fixed;
@@ -298,7 +306,7 @@
             overflow: auto;
             background-color: rgba(0,0,0,0.4);
         }
-        
+
         .modal-content {
             background-color: var(--secondary-color);
             margin: 5% auto;
@@ -310,14 +318,14 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: relative;
         }
-        
+
         .modal-loader {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 200px;
         }
-        
+
         .modal-spinner {
             border: 4px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
@@ -326,7 +334,7 @@
             height: 40px;
             animation: spin 1s linear infinite;
         }
-        
+
         .close {
             color: #aaa;
             position: absolute;
@@ -336,13 +344,13 @@
             font-weight: bold;
             cursor: pointer;
         }
-        
+
         .close:hover,
         .close:focus {
             color: var(--accent-color-2);
             text-decoration: none;
         }
-        
+
         .player-profile-header {
             display: flex;
             justify-content: space-between;
@@ -350,75 +358,75 @@
             margin-bottom: 20px;
             padding-right: 40px;
         }
-        
+
         .player-avatar-name {
             display: flex;
             align-items: center;
         }
-        
+
         .player-avatar-name img {
             width: 100px;
             height: 100px;
             margin-right: 20px;
             border-radius: 8px;
         }
-        
+
         .player-avatar-name h2 {
             margin: 0;
             font-size: 24px;
         }
-        
+
         .player-stats {
             text-align: right;
         }
-        
+
         .player-stats p {
             margin: 5px 0;
             font-size: 14px;
         }
-        
+
         .player-stats p strong {
             color: var(--accent-color-1);
         }
-        
+
         .profile-table {
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
             margin-top: 20px;
         }
-        
+
         .profile-table th,
         .profile-table td {
             border: 1px solid #444;
             padding: 10px;
             text-align: left;
         }
-        
+
         .profile-table th {
             background-color: var(--primary-color);
             font-weight: bold;
         }
-        
+
         .profile-table tr:nth-child(even) {
             background-color: rgba(255, 255, 255, 0.05);
         }
-        
+
         .minigame-section {
             margin-top: 30px;
         }
-        
+
         .minigame-section h3 {
             color: var(--accent-color-2);
             margin-bottom: 10px;
         }
-        
+
         .language-selector {
             position: absolute;
             top: 10px;
             right: 10px;
         }
-        
+
         .language-selector button {
             background-color: #333;
             color: #fff;
@@ -429,33 +437,33 @@
             margin-left: 10px;
             transition: background-color 0.3s, color 0.3s;
         }
-        
+
         .language-selector button:hover,
         .language-selector button:focus,
         .language-selector button[aria-pressed="true"] {
             background-color: var(--accent-color-1);
             color: var(--primary-color);
         }
-        
+
         .table-controls {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
         }
-        
+
         .dropdown, .search-container {
             flex: 1;
         }
-        
+
         .dropdown {
             margin-right: 10px;
         }
-        
+
         .search-container {
             margin-left: 10px;
         }
-        
+
         #minigame-select {
             appearance: none;
             -webkit-appearance: none;
@@ -465,36 +473,36 @@
             background-position: right 10px center;
             padding-right: 30px;
         }
-        
+
         #player-search::placeholder {
             color: #aaa;
         }
-        
-        .rank-1 { 
+
+        .rank-1 {
             color: rgb(226, 173, 0);
-            font-weight: bold; 
+            font-weight: bold;
             text-shadow: 0 0 5px rgba(226, 155, 0, 0.5);
         }
-        .rank-2 { 
+        .rank-2 {
             color: rgb(214, 237, 243);
-            font-weight: bold; 
+            font-weight: bold;
             text-shadow: 0 0 4px rgba(212, 246, 255, 0.5);
         }
-        .rank-3 { 
+        .rank-3 {
             color: rgb(175, 106, 2);
-            font-weight: bold; 
+            font-weight: bold;
             text-shadow: 0 0 3px rgba(182, 111, 4, 0.5);
         }
         .rank-other {
             color: #A0A0A0;
         }
-        
+
         .title-container {
             margin-bottom: 30px;
             padding: 10px 0;
             border-bottom: 2px solid var(--secondary-color);
         }
-        
+
         .main-title {
             font-family: Arial, sans-serif;
             font-size: 2rem;
@@ -504,18 +512,18 @@
             padding: 0;
             transition: text-shadow 0.3s ease;
         }
-        
+
         .main-title:hover {
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
         }
-        
+
         .site-footer {
             margin-top: 40px;
             padding: 20px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             background-color: rgba(0, 0, 0, 0.2);
         }
-        
+
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -523,80 +531,80 @@
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.7);
         }
-        
+
         .footer-separator {
             margin: 0 10px;
             color: rgba(255, 255, 255, 0.3);
         }
-        
+
         .site-footer a {
             color: var(--accent-color-1);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
+
         .site-footer a:hover {
             color: var(--accent-color-2);
         }
-        
+
         @media (max-width: 768px) {
             .controls-container {
                 flex-direction: column;
                 align-items: stretch;
             }
-        
+
             .dropdown,
             .search-container {
                 max-width: none;
                 margin-bottom: 10px;
             }
-        
+
             .player-profile-header {
                 flex-direction: column;
             }
-        
+
             .player-stats {
                 text-align: left;
                 margin-top: 15px;
             }
-        
+
             .main-title {
                 font-size: 1.5rem;
             }
-        
+
             .footer-content {
                 font-size: 0.8rem;
             }
-            
+
             .footer-separator {
                 margin: 0 5px;
             }
         }
-        
+
         @media (max-width: 480px) {
             body {
                 padding: 10px;
             }
-        
+
             .container {
                 padding: 0 10px;
             }
-        
+
             .modal-content {
                 width: 95%;
                 padding: 20px;
             }
-        
+
             .player-avatar-name img {
                 width: 80px;
                 height: 80px;
             }
-        
+
             .player-avatar-name h2 {
                 font-size: 20px;
             }
         }
-        
+
         /* Accessibility improvements */
         .visually-hidden {
             position: absolute;
@@ -609,7 +617,7 @@
             white-space: nowrap;
             border: 0;
         }
-        
+
         a:focus,
         button:focus,
         input:focus,
@@ -617,46 +625,46 @@
             outline: 2px solid var(--accent-color-1);
             outline-offset: 2px;
         }
-        
+
         .search-result-item:hover,
         .language-selector button:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-        
+
         .tabulator .tabulator-row .tabulator-cell,
         .close,
         .site-footer a,
         .language-selector button {
             transition: color 0.3s ease, background-color 0.3s ease;
         }
-        
+
         ::-webkit-scrollbar {
             width: 10px;
         }
-        
+
         ::-webkit-scrollbar-track {
             background: var(--secondary-color);
         }
-        
+
         ::-webkit-scrollbar-thumb {
             background: var(--accent-color-1);
             border-radius: 5px;
         }
-        
+
         ::-webkit-scrollbar-thumb:hover {
             background: var(--accent-color-2);
         }
-        
+
         @media print {
             body {
                 background: white;
                 color: black;
             }
-        
+
             .no-print {
                 display: none;
             }
-        
+
             .tabulator-print-header, .tabulator-print-footer {
                 display: none;
             }
@@ -671,14 +679,14 @@
         }
 
         .video-link {
-            color: inherit; 
-            text-decoration: underline; 
+            color: inherit;
+            text-decoration: underline;
             cursor: pointer;
             transition: opacity 0.3s ease;
         }
 
         .video-link:hover {
-            opacity: 0.7; 
+            opacity: 0.7;
         }
 
         .video-link:visited {
@@ -780,7 +788,7 @@
           Cytooxien Minecraft Party Records
         </h1>
     </div>
-    
+
     <div class="search-section">
         <div class="search-subheading">
             <span class="arrow">
@@ -788,7 +796,7 @@
             </span>
         </div>
         <input type="text" id="global-player-search" placeholder="records(<player>)">
-    </div> 
+    </div>
 
     <div class="controls-container">
         <div class="dropdown">
@@ -960,7 +968,7 @@
             },
             "Pferderennen": {
                 "Jungle" : 69.7
-            }, 
+            },
             "Minenfeld": {
                 "Ice Cave" : 24.0
             },
@@ -1018,10 +1026,20 @@
             },
         };
 
+        const prefixData = {
+            "bauteam": {"prefix":"§f","name":"Builder","color":"§x§f§f§d§3§0§0"},
+            "supporter": {"prefix":"§f","name":"Supporter","color":"§x§5§4§c§9§f§f"},
+            "default": {"prefix":"§f","name":"Player","color":"§x§9§0§9§7§a§0"},
+            "premium": {"prefix":"§f","name":"Premium","color":"§x§7§1§d§5§1§2"},
+            "premium+": {"prefix":"§f","name":"Premium+","color":"§x§4§4§8§e§0§0"},
+            "developer": {"prefix":"§f","name":"Developer","color":"§x§e§6§1§7§3§d"},
+            "content": {"prefix":"§f","name":"Content","color":"§x§f§f§0§b§7§4"}
+        };
+
         var playerUUIDs = {};
         var avatarsLoaded = 0;
         var totalAvatars = 0;
-        let playerInfoData = {};  
+        let playerInfoData = {};
 
         function detectLanguage() {
             const userLang = navigator.language || navigator.userLanguage;
@@ -1034,20 +1052,29 @@
             currentLanguage = lang;
             document.documentElement.lang = lang;
             updateTexts();
-    
+
             document.querySelectorAll('.language-selector button').forEach(button => {
                 button.setAttribute('aria-pressed', 'false');
             });
             document.querySelector(`.language-selector button[onclick="changeLanguage('${lang}')"]`)
                 .setAttribute('aria-pressed', 'true');
         }
-    
+
+        function minecraftColorToCSS(colorCode) {
+            if (colorCode.startsWith('§x')) {
+                const hex = colorCode.substr(2).split('§').join('');
+                return `#${hex}`;
+            }
+            // Add more color conversions if needed
+            return '';
+        }
+
         function updateTexts() {
             document.querySelector('.main-title').textContent = translations[currentLanguage].title;
             document.getElementById('global-player-search').placeholder = translations[currentLanguage].searchPlaceholder;
             document.getElementById('player-search').placeholder = translations[currentLanguage].tableSearchPlaceholder;
             document.getElementById('loading-text').textContent = translations[currentLanguage].loading;
-            
+
             const select = document.getElementById('minigame-select');
             Array.from(select.options).forEach(option => {
                 option.textContent = translations[currentLanguage].minigames[option.value] || option.value;
@@ -1056,24 +1083,24 @@
             // Update footer
             document.querySelector('.site-footer a[href^="https://github.com"]').textContent = translations[currentLanguage].githubLink;
             document.querySelector('.site-footer a[href^="mailto:"]').textContent = translations[currentLanguage].contact;
-            
+
             // Update "Data as of" text
             const dataAsOfElement = document.getElementById('data-as-of');
             const currentDate = new Date();
-            const formattedDate = currentDate.toLocaleString(currentLanguage, { 
-                year: 'numeric', 
-                month: 'short', 
+            const formattedDate = currentDate.toLocaleString(currentLanguage, {
+                year: 'numeric',
+                month: 'short',
                 day: 'numeric',
                 hour: 'numeric',
                 minute: 'numeric'
             });
         }
-    
+
         function showLoading() {
             document.getElementById('loading-animation').style.display = 'flex';
             document.getElementById('records-table').style.display = 'none';
         }
-    
+
         function hideLoading() {
             document.getElementById('loading-animation').style.display = 'none';
             document.getElementById('records-table').style.display = 'block';
@@ -1081,11 +1108,11 @@
                 document.getElementById('records-table').classList.add('loaded');
             }, 0);
         }
-    
+
         function preloadAvatars(data) {
             const uniqueNames = [...new Set(data.map(record => record.name))];
             totalAvatars = uniqueNames.length;
-            
+
             return Promise.all(uniqueNames.map(name => {
                 const uuid = playerUUIDs[name] || "8667ba71-b85a-4004-af54-457a9734eed7";
                 const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
@@ -1100,9 +1127,9 @@
                 });
             }));
         }
-    
+
         showLoading();
-    
+
         fetch('data-analysis/player_uuids.json')
             .then(response => response.json())
             .then(data => {
@@ -1123,12 +1150,16 @@
                 hideLoading();
                 initializeTable([]);
             });
-    
+
         function avatarFormatter(cell) {
             const {name} = cell.getData();
             const uuid = playerUUIDs[name] || "8667ba71-b85a-4004-af54-457a9734eed7";
             const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
-            return `<img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar"> <span class="player-name" onclick="window.showPlayerProfile('${name}')">${name}</span>`;
+
+            return `
+                <img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar">
+                <span class="player-name" onclick="window.showPlayerProfile('${name}')">${name}</span>
+            `;
         }
 
         function displayVideoLinks(minigame) {
@@ -1156,12 +1187,12 @@
                         </div>
                     `;
                 }
-                html += '</div>';
+                 html += '</div>';
             }
 
             videoLinksContainer.innerHTML = html;
         }
-    
+
         function initializeTable(data) {
             const initialData = data;
             console.log("Initializing table with data:", initialData);
@@ -1187,7 +1218,7 @@
                     console.error("Error loading player info:", error);
                     playerInfoData = {}; // empty object if loading fails
                 });
-    
+
             const minigameSortDirections = {
                 "Blockhüpfer": "asc",
                 "Buntes Chaos": "desc",
@@ -1216,11 +1247,11 @@
                 "Hoch hinaus": "asc",
                 "Walls": "desc"
             };
-    
+
             function customFilter(data) {
                 return data.name.toLowerCase().includes(searchTerm.toLowerCase());
             }
-    
+
             function setupSearch() {
                 const searchInput = document.getElementById("player-search");
                 if (searchInput) {
@@ -1232,7 +1263,7 @@
                     });
                 }
             }
-    
+
             function highlightSortedColumn(column) {
                 if (table) {
                     table.getColumns().forEach(col => {
@@ -1245,26 +1276,26 @@
                     }
                 }
             }
-    
+
             function adjustColumnWidths() {
                 if (table) {
                     const tableWidth = table.element.clientWidth;
                     const frozenColumn = table.getColumn("name");
                     const frozenWidth = frozenColumn ? frozenColumn.getWidth() : 200;
                     const availableWidth = tableWidth - frozenWidth;
-    
+
                     const columns = table.getColumns();
                     const nonFrozenColumns = columns.filter(column => column.getField() !== "name" && column.getField() !== "rank");
                     const columnCount = nonFrozenColumns.length;
-    
+
                     if (columnCount > 0) {
                         let newWidth = Math.floor(availableWidth / columnCount);
                         newWidth = Math.max(newWidth, MIN_COLUMN_WIDTH);
-    
+
                         nonFrozenColumns.forEach((column) => {
                             column.setWidth(newWidth);
                         });
-    
+
                         const totalWidth = frozenWidth + (newWidth * columnCount);
                         if (totalWidth < tableWidth && nonFrozenColumns.length > 0) {
                             const lastColumn = nonFrozenColumns[nonFrozenColumns.length - 1];
@@ -1273,30 +1304,30 @@
                     }
                 }
             }
-    
+
             function updateTable(minigame) {
                 console.log("Updating table for minigame:", minigame);
                 currentMinigame = minigame;
-                
+
                 const searchInput = document.getElementById("player-search");
                 if (searchInput) {
                     searchInput.value = "";
                     searchTerm = "";
                 }
-                
+
                 const tableElement = document.getElementById("records-table");
                 tableElement.classList.add('fade-out');
 
                 displayVideoLinks(minigame);
-                
+
                 setTimeout(() => {
                     if (table) {
                         table.destroy();
                         table = null;
                     }
-                    
+
                     createTable();
-                    
+
                     // Remove existing legend after creating the new table
                     const existingLegend = document.querySelector('.legend');
                     if (existingLegend) {
@@ -1340,7 +1371,7 @@
                             return;
                         }
 
-                        const matchingPlayers = Object.keys(playerUUIDs).filter(name => 
+                        const matchingPlayers = Object.keys(playerUUIDs).filter(name =>
                             name.toLowerCase().includes(searchTerm)
                         ).slice(0, 5); // Limit to 5 results
 
@@ -1364,11 +1395,11 @@
                             globalSearchResults.style.display = 'none';
                         }
                     });
-                    
+
                     if (table) {
                         tableElement.classList.remove('fade-out');
                         tableElement.classList.add('fade-in');
-                        
+
                         setTimeout(() => {
                             const firstMapName = Array.from(new Set(initialData.filter(record => record.minigame === currentMinigame)
                                 .flatMap(record => Object.keys(record.scores)))).sort()[0];
@@ -1377,7 +1408,7 @@
                                 highlightSortedColumn(initialColumn);
                             }
                             adjustColumnWidths();
-                            
+
                             setTimeout(() => {
                                 tableElement.classList.remove('fade-in');
                             }, 150);
@@ -1385,12 +1416,12 @@
                     }
                 }, 150);
             }
-    
+
             function createTable() {
                 console.log("Creating table for minigame:", currentMinigame);
                 const filteredData = initialData.filter(record => record.minigame === currentMinigame);
                 console.log("Filtered data:", filteredData);
-    
+
                 if (filteredData.length === 0) {
                     console.log("No data for this minigame");
                     if (table) {
@@ -1398,32 +1429,32 @@
                     }
                     return;
                 }
-    
+
                 const allMapNames = new Set();
                 filteredData.forEach(record => {
                     Object.keys(record.scores).forEach(mapName => {
                         allMapNames.add(mapName);
                     });
                 });
-    
+
                 const columns = [
                     {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false, frozen: true, width: 200},
                     {title: "Rank", field: "rank", headerSort: false, width: 70},
                 ];
-    
+
                 const sortDirection = minigameSortDirections[currentMinigame] || "desc";
-    
+
                 function compareScores(a, b, mapName) {
                     const aScore = a.scores[mapName];
                     const bScore = b.scores[mapName];
-    
+
                     if (aScore === undefined || aScore === null || aScore === "-") return 1;
                     if (bScore === undefined || bScore === null || bScore === "-") return -1;
                     if (aScore === bScore) return 0;
-    
+
                     return sortDirection === "asc" ? aScore - bScore : bScore - aScore;
                 }
-    
+
                 Array.from(allMapNames).sort().forEach(mapName => {
                     columns.push({
                         title: mapName,
@@ -1433,18 +1464,18 @@
                         formatter: function(cell) {
                             const value = cell.getValue();
                             if (value === undefined || value === null) return "-";
-                            
+
                             const formattedValue = typeof value === 'number' ? value.toFixed(3) : value;
-                            
+
                             const playerName = cell.getRow().getData().name;
-                            const videoInfo = videoLinks[currentMinigame] && 
-                                            videoLinks[currentMinigame][mapName] && 
+                            const videoInfo = videoLinks[currentMinigame] &&
+                                            videoLinks[currentMinigame][mapName] &&
                                             videoLinks[currentMinigame][mapName].find(v => v.player === playerName && v.time === formattedValue);
-                            
+
                             if (videoInfo) {
                                 return `<a href="${videoInfo.link}" target="_blank" class="video-link">${formattedValue}</a>`;
                             }
-                            
+
                             // Check if the value is better than the cutoff
                             const cutoff = cutoffValues[currentMinigame] && cutoffValues[currentMinigame][mapName];
                             if (cutoff !== undefined) {
@@ -1453,38 +1484,38 @@
                                     return `<span style="font-style: italic;">${formattedValue}*</span>`;
                                 }
                             }
-                            
+
                             return formattedValue;
                         }
                     });
                 });
-    
+
                 const firstMapName = Array.from(allMapNames)[0];
                 filteredData.sort((a, b) => compareScores(a, b, firstMapName));
-    
+
                 sortedColumn = firstMapName;
-    
+
                 function updateRanks() {
                     let rank = 1;
                     let lastScore = null;
                     let tieCount = 0;
-                    
+
                     const rows = table.getRows();
                     rows.forEach((row, index) => {
                         const score = row.getData().scores[sortedColumn];
-                        
+
                         if (lastScore !== null && score !== lastScore) {
                             rank += tieCount + 1;
                             tieCount = 0;
                         } else if (lastScore !== null) {
                             tieCount++;
                         }
-                        
+
                         row.update({rank: rank});
                         lastScore = score;
                     });
                 }
-    
+
                 const tableOptions = {
                     data: filteredData,
                     columns: columns,
@@ -1504,7 +1535,7 @@
                 };
 
                 function hasAnnotatedRecords(data) {
-                    return data.some(row => 
+                    return data.some(row =>
                         Object.entries(row.scores).some(([map, score]) => {
                             const cutoff = cutoffValues[currentMinigame] && cutoffValues[currentMinigame][map];
                             if (cutoff !== undefined) {
@@ -1524,7 +1555,7 @@
                     }
 
                     // Check if any records are annotated
-                    const hasAnnotatedRecords = data.some(row => 
+                    const hasAnnotatedRecords = data.some(row =>
                         Object.entries(row.scores).some(([map, score]) => {
                             const cutoff = cutoffValues[currentMinigame] && cutoffValues[currentMinigame][map];
                             if (cutoff !== undefined) {
@@ -1535,7 +1566,7 @@
                         })
                     );
                 }
-    
+
                 table = new Tabulator("#records-table", tableOptions);
 
                 table.on("renderComplete", function(){
@@ -1573,9 +1604,9 @@
                         formatter: function(cell) {
                             const value = cell.getValue();
                             if (value === undefined || value === null) return "-";
-                            
+
                             const formattedValue = typeof value === 'number' ? value.toFixed(3) : value;
-                            
+
                             // Check if value is better than the cutoff
                             const cutoff = cutoffValues[currentMinigame] && cutoffValues[currentMinigame][cell.getColumn().getField().split('.')[1]];
                             if (cutoff !== undefined) {
@@ -1584,7 +1615,7 @@
                                     return `<span style="font-style: italic;">${formattedValue}*</span>`;
                                 }
                             }
-                            
+
                             return formattedValue;
                         }
                     });
@@ -1598,7 +1629,7 @@
                 document.getElementById("records-table").insertAdjacentHTML('afterend', legendHTML);
 
                 table.on("dataLoaded", updateRanks);
-                
+
                 table.on("dataSorted", function() {
                     updateRanks();
                     addLegend(this.getData());
@@ -1615,41 +1646,33 @@
                 updateTexts();
             }
 
+
             function createPlayerProfile(playerName) {
                 const playerData = initialData.filter(record => record.name === playerName);
                 const playerInfo = playerInfoData[playerName];
 
-                const rankColors = {
-                    'Bauteam': '#FFD300FF',
-                    'VIP': '#ad00fe',
-                    'Content': '#e6176d',
-                    'Entwickler': '#e6173d',
-                    'Spieler': '#9097a0',
-                    'Premium': '#54b400',
-                    'Premium+': '#006400',
-                    'Supporter': '#38b3fa',
-                    'Moderator': '#165b82',
-                    'Owner': '#57000a'
-                };
+                // Determine the correct prefix
+                const prefixInfo = playerInfo && prefixData[playerInfo.rank.toLowerCase()]
+                    ? prefixData[playerInfo.rank.toLowerCase()]
+                    : prefixData.default;
+                const prefixColor = minecraftColorToCSS(prefixInfo.color);
 
                 let profileHTML = `
-                <div class="player-profile-header">
-                    <div class="player-avatar-name">
-                        <img src="https://crafatar.com/renders/head/${playerUUIDs[playerName] || '8667ba71-b85a-4004-af54-457a9734eed7'}?&overlay" alt="${playerName}'s head">`;
+            <div class="player-profile-header">
+                <div class="player-avatar-name">
+                    <img src="https://crafatar.com/renders/head/${playerUUIDs[playerName] || '8667ba71-b85a-4004-af54-457a9734eed7'}?&overlay" alt="${playerName}'s head">
+                    <h2>
+                        <span class="player-prefix" style="background-color: ${prefixColor};">${prefixInfo.name}</span>
+                        ${playerName}
+                    </h2>
+                </div>`;
 
-                if (playerInfo && playerInfo.rank) {
-                    const rankColor = rankColors[playerInfo.rank] || '#FFFFFF';
-                    profileHTML += `<h2 style="color: ${rankColor};">${playerName}</h2>`;
-                } else {
-                    profileHTML += `<h2>${playerName}</h2>`;
-                }
-
-                profileHTML += `</div>`;
+                // profileHTML += `</div>`;
 
                 if (playerInfo && playerInfo.minecraft_party) {
                     const gameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Spiele'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Spiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
                     const minigameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Minispiele'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Minispiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
-                    
+
                     profileHTML += `
                     <div class="player-stats">
                         <p><strong>alltime#:</strong> ${playerInfo.minecraft_party['Position (Punkte)']}</p>
@@ -1661,14 +1684,14 @@
                 profileHTML += `</div>`; // Close player-profile-header
 
                 const minigames = [...new Set(playerData.map(record => record.minigame))];
-                
+
                 let hasAnnotatedRecords = false;
 
                 minigames.forEach(minigame => {
                     const minigameData = playerData.find(record => record.minigame === minigame);
                     if (minigameData) {
                         const allPlayersData = initialData.filter(record => record.minigame === minigame);
-                        
+
                         profileHTML += `
                         <div class="minigame-section">
                             <h3>${minigame}</h3>
@@ -1685,19 +1708,19 @@
                         Object.entries(minigameData.scores).forEach(([map, score]) => {
                             const sortDirection = minigameSortDirections[minigame] || "desc";
                             const playerRank = calculateRank(allPlayersData, map, score, sortDirection);
-                            
+
                             const rankClass = getRankClass(playerRank);
-                            
+
                             // Check if the score is better than the cutoff
                             const cutoff = cutoffValues[minigame] && cutoffValues[minigame][map];
                             let scoreDisplay = score;
-                            if (cutoff !== undefined && 
-                                ((sortDirection === "asc" && score < cutoff) || 
+                            if (cutoff !== undefined &&
+                                ((sortDirection === "asc" && score < cutoff) ||
                                 (sortDirection === "desc" && score > cutoff))) {
                                 scoreDisplay = `<span style="font-style: italic;">${score}*</span>`;
                                 hasAnnotatedRecords = true;
                             }
-                            
+
                             profileHTML += `
                                 <tr>
                                     <td>${map}</td>
@@ -1724,17 +1747,17 @@
 
                 return profileHTML;
             }
-    
+
 
 
 function calculateRank(allPlayersData, map, playerScore, sortDirection) {
     const validScores = allPlayersData
         .map(player => player.scores[map])
         .filter(score => score !== undefined && score !== null && score !== "-");
-    
+
     const uniqueScores = [...new Set(validScores)];
     uniqueScores.sort((a, b) => sortDirection === "asc" ? a - b : b - a);
-    
+
     const playerRank = uniqueScores.indexOf(playerScore) + 1;
     return playerRank;
 }
@@ -1749,10 +1772,10 @@ function getRankClass(rank) {
                 const validScores = allPlayersData
                     .map(player => player.scores[map])
                     .filter(score => score !== undefined && score !== null && score !== "-");
-                
+
                 const uniqueScores = [...new Set(validScores)];
                 uniqueScores.sort((a, b) => sortDirection === "asc" ? a - b : b - a);
-                
+
                 const playerRank = uniqueScores.indexOf(playerScore) + 1;
                 return playerRank;
             }
@@ -1783,7 +1806,7 @@ function getRankClass(rank) {
                 avatarImg.onload = () => {
                     setTimeout(() => {
                         content.innerHTML = createPlayerProfile(playerName);
-                        
+
                         loader.style.display = 'none';
                         content.style.display = 'block';
                     }, 500);
@@ -1793,7 +1816,7 @@ function getRankClass(rank) {
         // If there's an error loading the avatar, still show the profile
         setTimeout(() => {
             content.innerHTML = createPlayerProfile(playerName);
-            
+
             loader.style.display = 'none';
             content.style.display = 'block';
         }, 500);
@@ -1811,22 +1834,22 @@ function getRankClass(rank) {
             updateTable(currentMinigame);
         }
 
-        document.getElementById('current-date').textContent = new Date().toLocaleString('en-US', { 
-            year: 'numeric', 
-            month: 'short', 
+        document.getElementById('current-date').textContent = new Date().toLocaleString('en-US', {
+            year: 'numeric',
+            month: 'short',
             day: 'numeric',
             hour: 'numeric',
             minute: 'numeric'
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-            
+
         });
 
         function closeModal() {
             const modal = document.getElementById('player-profile-modal');
             modal.style.display = "none";
-            
+
             // Reset the document title
             document.title = "MCPR";
         }
@@ -1841,7 +1864,7 @@ function getRankClass(rank) {
                 return;
             }
 
-            const matchingPlayers = Object.keys(playerUUIDs).filter(name => 
+            const matchingPlayers = Object.keys(playerUUIDs).filter(name =>
                 name.toLowerCase().includes(searchTerm)
             ).slice(0, 5); // Limit to 5 results
 
@@ -1945,5 +1968,5 @@ function getRankClass(rank) {
         window.closeModal = closeModal;
 
     </script>
-</body>
+</head>
 </html>
