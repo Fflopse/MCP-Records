@@ -563,15 +563,6 @@
     "best_score": 23.616
   },
   {
-    "name": "KMaxN",
-    "minigame": "Ampelrennen",
-    "scores": {
-      "Castle": 29.014,
-      "Street": 30.387
-    },
-    "best_score": 30.387
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Ampelrennen",
     "scores": {
@@ -588,6 +579,15 @@
       "Street": 23.061
     },
     "best_score": 23.061
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Ampelrennen",
+    "scores": {
+      "Castle": 29.014,
+      "Street": 30.387
+    },
+    "best_score": 30.387
   },
   {
     "name": "Krusti",
@@ -1847,14 +1847,6 @@
     "best_score": 27.244
   },
   {
-    "name": "KMaxN",
-    "minigame": "Blockh\u00fcpfer",
-    "scores": {
-      "City": 35.651
-    },
-    "best_score": 35.651
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Blockh\u00fcpfer",
     "scores": {
@@ -1869,6 +1861,14 @@
       "City": 31.791
     },
     "best_score": 31.791
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Blockh\u00fcpfer",
+    "scores": {
+      "City": 35.651
+    },
+    "best_score": 35.651
   },
   {
     "name": "Krusti",
@@ -3120,15 +3120,6 @@
     "best_score": 31.0
   },
   {
-    "name": "KMaxN",
-    "minigame": "Buntes Chaos",
-    "scores": {
-      "Cyberpunk": 13.0,
-      "Structure": 19.0
-    },
-    "best_score": 19.0
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Buntes Chaos",
     "scores": {
@@ -3145,6 +3136,15 @@
       "Structure": 20.0
     },
     "best_score": 22.0
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Buntes Chaos",
+    "scores": {
+      "Cyberpunk": 13.0,
+      "Structure": 19.0
+    },
+    "best_score": 19.0
   },
   {
     "name": "Krusti",
@@ -4624,16 +4624,6 @@
     "best_score": 153.857
   },
   {
-    "name": "KMaxN",
-    "minigame": "Drachenflucht",
-    "scores": {
-      "Factory": 129.544,
-      "Hills": 142.377,
-      "Temple": 104.751
-    },
-    "best_score": 142.377
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Drachenflucht",
     "scores": {
@@ -4653,6 +4643,16 @@
       "Temple": 155.007
     },
     "best_score": 155.007
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Drachenflucht",
+    "scores": {
+      "Factory": 129.544,
+      "Hills": 142.377,
+      "Temple": 104.751
+    },
+    "best_score": 142.377
   },
   {
     "name": "Krusti",
@@ -6115,14 +6115,6 @@
     "best_score": 24.0
   },
   {
-    "name": "KMaxN",
-    "minigame": "Duelle",
-    "scores": {
-      "Default": 15.0
-    },
-    "best_score": 15.0
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Duelle",
     "scores": {
@@ -6137,6 +6129,14 @@
       "Default": 20.0
     },
     "best_score": 20.0
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Duelle",
+    "scores": {
+      "Default": 15.0
+    },
+    "best_score": 15.0
   },
   {
     "name": "Krusti",
@@ -7451,15 +7451,6 @@
     "best_score": 25.0
   },
   {
-    "name": "KMaxN",
-    "minigame": "Einer im K\u00f6cher",
-    "scores": {
-      "Asia": 16.0,
-      "Japan": 12.0
-    },
-    "best_score": 16.0
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Einer im K\u00f6cher",
     "scores": {
@@ -7478,6 +7469,15 @@
       "Japan": 19.0
     },
     "best_score": 19.0
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Einer im K\u00f6cher",
+    "scores": {
+      "Asia": 16.0,
+      "Japan": 12.0
+    },
+    "best_score": 16.0
   },
   {
     "name": "Krusti",
@@ -8825,11 +8825,6 @@
     "best_score": 55.492
   },
   {
-    "name": "KMaxN",
-    "minigame": "Elytrarennen",
-    "scores": {}
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Elytrarennen",
     "scores": {}
@@ -8841,6 +8836,11 @@
       "Death Star": 59.389
     },
     "best_score": 59.389
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Elytrarennen",
+    "scores": {}
   },
   {
     "name": "Krusti",
@@ -10163,15 +10163,6 @@
     "best_score": 41.537
   },
   {
-    "name": "KMaxN",
-    "minigame": "Freier Fall",
-    "scores": {
-      "Underground": 47.111,
-      "Waterfalls": 54.357
-    },
-    "best_score": 54.357
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Freier Fall",
     "scores": {
@@ -10190,6 +10181,15 @@
       "Waterfalls": 40.675
     },
     "best_score": 40.675
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Freier Fall",
+    "scores": {
+      "Underground": 47.111,
+      "Waterfalls": 54.357
+    },
+    "best_score": 54.357
   },
   {
     "name": "Krusti",
@@ -11511,11 +11511,6 @@
     "best_score": 68.678
   },
   {
-    "name": "KMaxN",
-    "minigame": "Frostiger Pfad",
-    "scores": {}
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Frostiger Pfad",
     "scores": {}
@@ -11527,6 +11522,11 @@
       "Icy Lake": 87.217
     },
     "best_score": 87.217
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Frostiger Pfad",
+    "scores": {}
   },
   {
     "name": "Krusti",
@@ -12609,14 +12609,6 @@
     "best_score": 46.277
   },
   {
-    "name": "KMaxN",
-    "minigame": "Hoch hinaus",
-    "scores": {
-      "Global": 103.116
-    },
-    "best_score": 103.116
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Hoch hinaus",
     "scores": {
@@ -12631,6 +12623,14 @@
       "Global": 51.682
     },
     "best_score": 51.682
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Hoch hinaus",
+    "scores": {
+      "Global": 103.116
+    },
+    "best_score": 103.116
   },
   {
     "name": "Krusti",
@@ -13919,16 +13919,6 @@
     "best_score": 66.382
   },
   {
-    "name": "KMaxN",
-    "minigame": "Jump and Run",
-    "scores": {
-      "Canyon": 88.822,
-      "Sky City": 54.193,
-      "Wet Cave": 72.805
-    },
-    "best_score": 88.822
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Jump and Run",
     "scores": {
@@ -13947,6 +13937,16 @@
       "Wet Cave": 66.794
     },
     "best_score": 70.641
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Jump and Run",
+    "scores": {
+      "Canyon": 88.822,
+      "Sky City": 54.193,
+      "Wet Cave": 72.805
+    },
+    "best_score": 88.822
   },
   {
     "name": "Krusti",
@@ -15342,14 +15342,6 @@
     "best_score": 47.502
   },
   {
-    "name": "KMaxN",
-    "minigame": "Kletter-K\u00f6nig",
-    "scores": {
-      "Inka": 59.333
-    },
-    "best_score": 59.333
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Kletter-K\u00f6nig",
     "scores": {
@@ -15366,6 +15358,14 @@
       "Inka": 63.656
     },
     "best_score": 63.656
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Kletter-K\u00f6nig",
+    "scores": {
+      "Inka": 59.333
+    },
+    "best_score": 59.333
   },
   {
     "name": "Krusti",
@@ -16740,16 +16740,6 @@
     "best_score": 33.0
   },
   {
-    "name": "KMaxN",
-    "minigame": "Lasertag",
-    "scores": {
-      "Factory": 33.0,
-      "Neon": 29.0,
-      "Port": 15.0
-    },
-    "best_score": 33.0
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Lasertag",
     "scores": {
@@ -16768,6 +16758,16 @@
       "Port": 16.0
     },
     "best_score": 19.0
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Lasertag",
+    "scores": {
+      "Factory": 33.0,
+      "Neon": 29.0,
+      "Port": 15.0
+    },
+    "best_score": 33.0
   },
   {
     "name": "Krusti",
@@ -18215,15 +18215,6 @@
     "best_score": 34.646
   },
   {
-    "name": "KMaxN",
-    "minigame": "Minenfeld",
-    "scores": {
-      "Desert": 30.005,
-      "Nether": 29.496
-    },
-    "best_score": 30.005
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Minenfeld",
     "scores": {
@@ -18240,6 +18231,15 @@
       "Nether": 29.999
     },
     "best_score": 29.999
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Minenfeld",
+    "scores": {
+      "Desert": 30.005,
+      "Nether": 29.496
+    },
+    "best_score": 30.005
   },
   {
     "name": "Krusti",
@@ -19676,14 +19676,6 @@
     "best_score": 7.0
   },
   {
-    "name": "KMaxN",
-    "minigame": "Minengefecht",
-    "scores": {
-      "Overworld": 4.0
-    },
-    "best_score": 4.0
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Minengefecht",
     "scores": {
@@ -19702,6 +19694,14 @@
       "Ruin": 6.0
     },
     "best_score": 6.0
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Minengefecht",
+    "scores": {
+      "Overworld": 4.0
+    },
+    "best_score": 4.0
   },
   {
     "name": "Krusti",
@@ -21194,16 +21194,6 @@
     "best_score": 6.0
   },
   {
-    "name": "KMaxN",
-    "minigame": "Mini Skywars",
-    "scores": {
-      "Asia": 2.0,
-      "Swamp": 4.0,
-      "Wild West": 2.0
-    },
-    "best_score": 4.0
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Mini Skywars",
     "scores": {
@@ -21215,6 +21205,16 @@
   },
   {
     "name": "Kopfradio",
+    "minigame": "Mini Skywars",
+    "scores": {
+      "Asia": 2.0,
+      "Swamp": 4.0,
+      "Wild West": 2.0
+    },
+    "best_score": 4.0
+  },
+  {
+    "name": "Kosmaxnaut",
     "minigame": "Mini Skywars",
     "scores": {
       "Asia": 2.0,
@@ -22702,15 +22702,6 @@
     "best_score": 8.0
   },
   {
-    "name": "KMaxN",
-    "minigame": "Mini Survivalgames",
-    "scores": {
-      "Canyon": 2.0,
-      "Winter Village": 3.0
-    },
-    "best_score": 3.0
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Mini Survivalgames",
     "scores": {
@@ -22727,6 +22718,15 @@
       "Winter Village": 4.0
     },
     "best_score": 4.0
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Mini Survivalgames",
+    "scores": {
+      "Canyon": 2.0,
+      "Winter Village": 3.0
+    },
+    "best_score": 3.0
   },
   {
     "name": "Krusti",
@@ -24155,16 +24155,6 @@
     "best_score": 20.0
   },
   {
-    "name": "KMaxN",
-    "minigame": "Paintball",
-    "scores": {
-      "Arabic": 7.0,
-      "Cyber Arena": 7.0,
-      "Modern": 5.0
-    },
-    "best_score": 7.0
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Paintball",
     "scores": {
@@ -24183,6 +24173,16 @@
       "Modern": 9.0
     },
     "best_score": 11.0
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Paintball",
+    "scores": {
+      "Arabic": 7.0,
+      "Cyber Arena": 7.0,
+      "Modern": 5.0
+    },
+    "best_score": 7.0
   },
   {
     "name": "Krusti",
@@ -25823,15 +25823,6 @@
     "best_score": 95.212
   },
   {
-    "name": "KMaxN",
-    "minigame": "Pferderennen",
-    "scores": {
-      "City": 70.85,
-      "Wario's Arena": 71.5
-    },
-    "best_score": 71.5
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Pferderennen",
     "scores": {
@@ -25855,6 +25846,15 @@
       "Wario's Arena": 70.78
     },
     "best_score": 97.407
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Pferderennen",
+    "scores": {
+      "City": 70.85,
+      "Wario's Arena": 71.5
+    },
+    "best_score": 71.5
   },
   {
     "name": "Krusti",
@@ -31511,15 +31511,6 @@
     "best_score": 2652.2559999999994
   },
   {
-    "name": "KMaxN",
-    "minigame": "Replika",
-    "scores": {
-      "Sum": 2548.605,
-      "Random 2": 23.605
-    },
-    "best_score": 2548.605
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Replika",
     "scores": {
@@ -31634,6 +31625,15 @@
       "ppHop 1": 32.922
     },
     "best_score": 2850.084
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Replika",
+    "scores": {
+      "Sum": 2548.605,
+      "Random 2": 23.605
+    },
+    "best_score": 2548.605
   },
   {
     "name": "Krusti",
@@ -39286,25 +39286,6 @@
     "best_score": 528.0
   },
   {
-    "name": "KMaxN",
-    "minigame": "Sammelwahn",
-    "scores": {
-      "Sum": 179.0,
-      "Dichter Wald": 20.0,
-      " Bambusdschungel": 17.0,
-      " Birkenwald": 11.0,
-      " Dschungel": 17.0,
-      " Ebene": 20.0,
-      " Karmesinwald": 11.0,
-      " Kirschberghain": 19.0,
-      " Wald": 12.0,
-      " Wirrwald": 14.0,
-      "Sonnenblumenebene": 18.0,
-      "Verschneite Taiga": 20.0
-    },
-    "best_score": 179.0
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Sammelwahn",
     "scores": {
@@ -39357,6 +39338,25 @@
       "Zerzauste Savanne": 21.0
     },
     "best_score": 454.0
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Sammelwahn",
+    "scores": {
+      "Sum": 179.0,
+      "Dichter Wald": 20.0,
+      " Bambusdschungel": 17.0,
+      " Birkenwald": 11.0,
+      " Dschungel": 17.0,
+      " Ebene": 20.0,
+      " Karmesinwald": 11.0,
+      " Kirschberghain": 19.0,
+      " Wald": 12.0,
+      " Wirrwald": 14.0,
+      "Sonnenblumenebene": 18.0,
+      "Verschneite Taiga": 20.0
+    },
+    "best_score": 179.0
   },
   {
     "name": "Krusti",
@@ -42292,16 +42292,6 @@
     "best_score": 290.0
   },
   {
-    "name": "KMaxN",
-    "minigame": "Schie\u00dfstand",
-    "scores": {
-      "City": 152.0,
-      "Farm": 160.0,
-      "Jungle": 80.0
-    },
-    "best_score": 160.0
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Schie\u00dfstand",
     "scores": {
@@ -42320,6 +42310,16 @@
       "Jungle": 228.0
     },
     "best_score": 274.0
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Schie\u00dfstand",
+    "scores": {
+      "City": 152.0,
+      "Farm": 160.0,
+      "Jungle": 80.0
+    },
+    "best_score": 160.0
   },
   {
     "name": "Krusti",
@@ -43740,15 +43740,6 @@
     "best_score": 7.0
   },
   {
-    "name": "KMaxN",
-    "minigame": "Spleef",
-    "scores": {
-      "Jungle": 2.0,
-      "Mountains": 2.0
-    },
-    "best_score": 2.0
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Spleef",
     "scores": {
@@ -43765,6 +43756,15 @@
       "Mountains": 5.0
     },
     "best_score": 5.0
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Spleef",
+    "scores": {
+      "Jungle": 2.0,
+      "Mountains": 2.0
+    },
+    "best_score": 2.0
   },
   {
     "name": "Krusti",
@@ -45034,14 +45034,6 @@
     "best_score": 45.586
   },
   {
-    "name": "KMaxN",
-    "minigame": "Todesw\u00fcrfel",
-    "scores": {
-      "Street": 79.968
-    },
-    "best_score": 79.968
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Todesw\u00fcrfel",
     "scores": {
@@ -45056,6 +45048,14 @@
       "Street": 67.079
     },
     "best_score": 67.079
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Todesw\u00fcrfel",
+    "scores": {
+      "Street": 79.968
+    },
+    "best_score": 79.968
   },
   {
     "name": "Krusti",
@@ -46210,11 +46210,6 @@
     "best_score": 25.223
   },
   {
-    "name": "KMaxN",
-    "minigame": "Waffenfolge",
-    "scores": {}
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Waffenfolge",
     "scores": {
@@ -46224,6 +46219,11 @@
   },
   {
     "name": "Kopfradio",
+    "minigame": "Waffenfolge",
+    "scores": {}
+  },
+  {
+    "name": "Kosmaxnaut",
     "minigame": "Waffenfolge",
     "scores": {}
   },
@@ -47497,15 +47497,6 @@
     "best_score": 10.0
   },
   {
-    "name": "KMaxN",
-    "minigame": "Walls",
-    "scores": {
-      "Garden": 3.0,
-      "Grass": 5.0
-    },
-    "best_score": 5.0
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Walls",
     "scores": {
@@ -47524,6 +47515,15 @@
       "Vulcano": 6.0
     },
     "best_score": 6.0
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Walls",
+    "scores": {
+      "Garden": 3.0,
+      "Grass": 5.0
+    },
+    "best_score": 5.0
   },
   {
     "name": "Krusti",
@@ -49102,15 +49102,6 @@
     "best_score": 85.742
   },
   {
-    "name": "KMaxN",
-    "minigame": "Wettrennen",
-    "scores": {
-      "Green Hills": 76.386,
-      "Islands": 88.67699999999999
-    },
-    "best_score": 88.67699999999999
-  },
-  {
     "name": "Kokochampo",
     "minigame": "Wettrennen",
     "scores": {
@@ -49133,6 +49124,15 @@
       "Snow": 47.123
     },
     "best_score": 95.01599999999999
+  },
+  {
+    "name": "Kosmaxnaut",
+    "minigame": "Wettrennen",
+    "scores": {
+      "Green Hills": 76.386,
+      "Islands": 88.67699999999999
+    },
+    "best_score": 88.67699999999999
   },
   {
     "name": "Krusti",
