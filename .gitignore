@@ -3,3 +3,6 @@ data-analysis/full-analysis-old.ipynb
 .idea
 archive
 index_archive.html
+out/
+!out/ranks.txt
+!out/allSwarm.png
