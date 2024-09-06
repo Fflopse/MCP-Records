@@ -775,6 +775,29 @@
             font-size: 10px;
             color: var(--accent-color-1);
         }
+
+        .hidden-row {
+            display: none;
+        }
+
+        .expand-button {
+            background: none;
+            border: none;
+            color: var(--accent-color-1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .expand-button:hover {
+            color: var(--accent-color-2);
+        }
+
+        .expand-icon {
+            margin-right: 5px;
+        }
     </style>
 
 
@@ -1069,6 +1092,26 @@
             }
             // Add more color conversions if needed
             return '';
+        }
+
+        function toggleRows(tableId) {
+            const table = document.getElementById(tableId);
+            const rows = table.querySelectorAll('tr');
+            const button = table.nextElementSibling;
+
+            const isExpanded = button.textContent.includes('Show Less');
+            
+            rows.forEach((row, index) => {
+                if (index > 5) {
+                    row.style.display = isExpanded ? 'none' : 'table-row';
+                }
+            });
+
+            if (isExpanded) {
+                button.innerHTML = '<span class="expand-icon">▼</span> Show More';
+            } else {
+                button.innerHTML = '<span class="expand-icon">▲</span> Show Less';
+            }
         }
 
         function updateTexts() {
@@ -1660,16 +1703,16 @@
                 const prefixColor = minecraftColorToCSS(prefixInfo.color);
 
                 let profileHTML = `
-            <div class="player-profile-header">
-                <div class="player-avatar-name">
-                    <img src="https://starlightskins.lunareclipse.studio/render/ultimate/${playerUUIDs[playerName]}/face" alt="${playerName}'s head">
-                    <h2>
-                        <span class="player-prefix" style="background-color: ${prefixColor};">${prefixInfo.name}</span>
-                        ${playerName}
-                    </h2>
-                </div>`;
-
-                // profileHTML += `</div>`;
+                <div class="player-profile-header">
+                    <div class="player-avatar-name">
+                        <img src="https://starlightskins.lunareclipse.studio/render/default/${playerUUIDs[playerName]}/face" 
+                            alt="${playerName}'s head"
+                            onerror="this.src='https://starlightskins.lunareclipse.studio/render/default/Alex/face'">
+                        <h2>
+                            <span class="player-prefix" style="background-color: ${prefixColor};">${prefixInfo.name}</span>
+                            ${playerName}
+                        </h2>
+                    </div>`;
 
                 if (playerInfo && playerInfo.minecraft_party) {
                     const gameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Spiele'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Spiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
@@ -1689,7 +1732,7 @@
 
                 let hasAnnotatedRecords = false;
 
-                minigames.forEach(minigame => {
+                minigames.forEach((minigame, index) => {
                     const minigameData = playerData.find(record => record.minigame === minigame);
                     if (minigameData) {
                         const allPlayersData = initialData.filter(record => record.minigame === minigame);
@@ -1697,7 +1740,7 @@
                         profileHTML += `
                         <div class="minigame-section">
                             <h3>${minigame}</h3>
-                            <table class="profile-table">
+                            <table class="profile-table" id="minigame-table-${index}">
                                 <thead>
                                     <tr>
                                         <th>Map</th>
@@ -1707,7 +1750,7 @@
                                 </thead>
                                 <tbody>`;
 
-                        Object.entries(minigameData.scores).forEach(([map, score]) => {
+                        Object.entries(minigameData.scores).forEach(([map, score], rowIndex) => {
                             const sortDirection = minigameSortDirections[minigame] || "desc";
                             const playerRank = calculateRank(allPlayersData, map, score, sortDirection);
 
@@ -1724,17 +1767,25 @@
                             }
 
                             profileHTML += `
-                                <tr>
-                                    <td>${map}</td>
-                                    <td>${scoreDisplay}</td>
-                                    <td class="${rankClass}">${playerRank}</td>
-                                </tr>`;
-                        });
+                                    <tr>
+                                        <td>${map}</td>
+                                        <td>${scoreDisplay}</td>
+                                        <td class="${rankClass}">${playerRank}</td>
+                                    </tr>`;
+                            });
 
-                        profileHTML += `
-                                </tbody>
-                            </table>
-                        </div>`;
+                            profileHTML += `
+                                    </tbody>
+                                </table>`;
+
+                            if (Object.keys(minigameData.scores).length > 5) {
+                                profileHTML += `
+                                <button class="expand-button" data-table-id="minigame-table-${index}">
+                                    <span class="expand-icon">▲</span> Show Less
+                                </button>`;
+                            }
+
+                        profileHTML += `</div>`;
                     }
                 });
 
@@ -1749,8 +1800,6 @@
 
                 return profileHTML;
             }
-
-
 
 function calculateRank(allPlayersData, map, playerScore, sortDirection) {
     const validScores = allPlayersData
@@ -1798,10 +1847,8 @@ function getRankClass(rank) {
                 loader.style.display = 'flex';
                 content.style.display = 'none';
 
-                // Update the document title
                 document.title = `MCPR(${playerName})`;
 
-                // Create a new Image object to preload the avatar
                 const avatarImg = new Image();
                 avatarImg.src = `https://starlightskins.lunareclipse.studio/render/ultimate/${playerUUIDs[playerName]}/face`;
                 avatarImg.alt = `${playerName}'s head`;
@@ -1810,21 +1857,49 @@ function getRankClass(rank) {
                     setTimeout(() => {
                         content.innerHTML = createPlayerProfile(playerName);
 
+                        // Set up event listeners for expand buttons
+                        const expandButtons = content.querySelectorAll('.expand-button');
+                        expandButtons.forEach(button => {
+                            button.addEventListener('click', function() {
+                                const tableId = this.getAttribute('data-table-id');
+                                toggleRows(tableId);
+                                // toggleRows(tableId);
+                            });
+                        });
+
+                        loader.style.display = 'none';
+                        content.style.display = 'block';
+
+                        // toggle rows initially
+                        const tables = content.querySelectorAll('.profile-table');
+                        tables.forEach((table, index) => {
+                            if (table.rows.length > 5) {
+                                toggleRows(`minigame-table-${index}`);
+                            }
+                        });
+                        
+                    }, 500);
+
+                };
+
+                avatarImg.onerror = () => {
+                    setTimeout(() => {
+                        content.innerHTML = createPlayerProfile(playerName);
+
+                        // Set up event listeners for expand buttons (same as above)
+                        const expandButtons = content.querySelectorAll('.expand-button');
+                        expandButtons.forEach(button => {
+                            button.addEventListener('click', function() {
+                                const tableId = this.getAttribute('data-table-id');
+                                toggleRows(tableId);
+                            });
+                        });
+
                         loader.style.display = 'none';
                         content.style.display = 'block';
                     }, 500);
                 };
-
-    avatarImg.onerror = () => {
-        // If there's an error loading the avatar, still show the profile
-        setTimeout(() => {
-            content.innerHTML = createPlayerProfile(playerName);
-
-            loader.style.display = 'none';
-            content.style.display = 'block';
-        }, 500);
-    };
-}
+            }
 
             window.showPlayerProfile = showPlayerProfile;
 
