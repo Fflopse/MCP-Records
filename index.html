@@ -10,9 +10,9 @@
         :root {
             --primary-color: #1a1a1a;
             --secondary-color: #2a2a2a;
-            --accent-color-1: #0ec5c56b;  /* Soft blue */
-            --accent-color-2: #ffdab9;  /* Peach */
-            --accent-color-3: #d0f0c0;  /* Mint green */
+            --accent-color-1: #0ec5c56b;  
+            --accent-color-2: #ffdab9;  
+            --accent-color-3: #d0f0c0; 
             --text-color: #ffffff;
         }
         
@@ -605,7 +605,6 @@
             }
         }
 
-        /* Accessibility improvements */
         .visually-hidden {
             position: absolute;
             width: 1px;
@@ -760,7 +759,7 @@
         }
 
         .highlighted-video {
-            background-color: rgba(14, 197, 197, 0.1); /* Adjust the color and opacity as needed */
+            background-color: rgba(14, 197, 197, 0.1); 
             transition: background-color 0.3s ease;
         }
 
@@ -1663,7 +1662,7 @@
                 let profileHTML = `
             <div class="player-profile-header">
                 <div class="player-avatar-name">
-                    <img src="https://crafatar.com/renders/head/${playerUUIDs[playerName] || '8667ba71-b85a-4004-af54-457a9734eed7'}?&overlay" alt="${playerName}'s head">
+                    <img src="https://starlightskins.lunareclipse.studio/render/ultimate/${playerUUIDs[playerName]}/face" alt="${playerName}'s head">
                     <h2>
                         <span class="player-prefix" style="background-color: ${prefixColor};">${prefixInfo.name}</span>
                         ${playerName}
@@ -1804,7 +1803,8 @@ function getRankClass(rank) {
 
                 // Create a new Image object to preload the avatar
                 const avatarImg = new Image();
-                avatarImg.src = `https://crafatar.com/renders/head/${playerUUIDs[playerName] || '8667ba71-b85a-4004-af54-457a9734eed7'}?&overlay`;
+                avatarImg.src = `https://starlightskins.lunareclipse.studio/render/ultimate/${playerUUIDs[playerName]}/face`;
+                avatarImg.alt = `${playerName}'s head`;
 
                 avatarImg.onload = () => {
                     setTimeout(() => {
@@ -1899,13 +1899,13 @@ function getRankClass(rank) {
 
             showLoading();
 
-            // First, fetch player UUIDs
+            // fetch player UUIDs
             fetch('data-analysis/player_uuids.json')
                 .then(response => response.json())
                 .then(data => {
                     console.log("player_uuids.json loaded");
                     playerUUIDs = data;
-                    // Now fetch the records data
+                    // fetch the records data
                     return fetch("data-analysis/records_data.json");
                 })
                 .then(response => response.json())
@@ -1916,13 +1916,13 @@ function getRankClass(rank) {
                 })
                 .then(data => {
                     console.log("Avatars preloaded");
-                    // Now fetch the player info data
+                    // fetch the player info data
                     return fetch('data-analysis/player_data.json')
                         .then(response => response.json())
                         .then(infoData => {
                             console.log("player_data.json loaded");
                             playerInfoData = infoData;
-                            return data;  // Return the original data
+                            return data;  // Return original data
                         });
                 })
                 .then(data => {
@@ -1939,17 +1939,14 @@ function getRankClass(rank) {
                 const modal = document.getElementById('player-profile-modal');
                 const closeBtn = document.getElementById('close-modal');
 
-                // Close the modal when clicking the close button
                 closeBtn.addEventListener('click', closeModal);
 
-                // Close the modal when clicking outside of it
                 modal.addEventListener('click', function(event) {
                     if (event.target === modal) {
                         closeModal();
                     }
                 });
 
-                // Close the modal when pressing the Escape key
                 document.addEventListener('click', function(event) {
                     const modal = document.getElementById('player-profile-modal');
                     if (event.target === modal) {
@@ -1967,7 +1964,6 @@ function getRankClass(rank) {
                     .setAttribute('aria-pressed', 'true');
         });
 
-        // Make closeModal function globally accessible
         window.closeModal = closeModal;
 
     </script>
