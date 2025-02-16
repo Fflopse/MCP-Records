@@ -1109,6 +1109,11 @@
     "best_score": 26.714
   },
   {
+    "name": "Nervigerr",
+    "minigame": "Ampelrennen",
+    "scores": {}
+  },
+  {
     "name": "NiklasMoWo",
     "minigame": "Ampelrennen",
     "scores": {}
@@ -4526,6 +4531,11 @@
       "Temple": 124.068
     },
     "best_score": 124.068
+  },
+  {
+    "name": "Nervigerr",
+    "minigame": "Drachenflucht",
+    "scores": {}
   },
   {
     "name": "NiklasMoWo",
@@ -9614,6 +9624,11 @@
     "best_score": 57.428
   },
   {
+    "name": "Nervigerr",
+    "minigame": "Elytrarennen",
+    "scores": {}
+  },
+  {
     "name": "NiklasMoWo",
     "minigame": "Elytrarennen",
     "scores": {}
@@ -10823,6 +10838,11 @@
   },
   {
     "name": "Navex",
+    "minigame": "Freier Fall",
+    "scores": {}
+  },
+  {
+    "name": "Nervigerr",
     "minigame": "Freier Fall",
     "scores": {}
   },
@@ -12082,6 +12102,11 @@
       "Icy Lake": 58.054
     },
     "best_score": 58.054
+  },
+  {
+    "name": "Nervigerr",
+    "minigame": "Frostiger Pfad",
+    "scores": {}
   },
   {
     "name": "NiklasMoWo",
@@ -13552,6 +13577,11 @@
       "Global": 54.818
     },
     "best_score": 54.818
+  },
+  {
+    "name": "Nervigerr",
+    "minigame": "Hoch hinaus",
+    "scores": {}
   },
   {
     "name": "NiklasMoWo",
@@ -15332,6 +15362,16 @@
       "Wet Cave": 53.656
     },
     "best_score": 68.314
+  },
+  {
+    "name": "Nervigerr",
+    "minigame": "Jump and Run",
+    "scores": {
+      "Canyon": 69.012,
+      "Sky City": 50.61,
+      "Wet Cave": 55.893
+    },
+    "best_score": 69.012
   },
   {
     "name": "NiklasMoWo",
@@ -17145,6 +17185,11 @@
       "Inka": 49.245
     },
     "best_score": 49.245
+  },
+  {
+    "name": "Nervigerr",
+    "minigame": "Kletter-K\u00f6nig",
+    "scores": {}
   },
   {
     "name": "NiklasMoWo",
@@ -19006,6 +19051,16 @@
       "Port": 25.0
     },
     "best_score": 31.0
+  },
+  {
+    "name": "Nervigerr",
+    "minigame": "Lasertag",
+    "scores": {
+      "Factory": 34.0,
+      "Kills Neon": 32.0,
+      "Kills Port": 24.0
+    },
+    "best_score": 34.0
   },
   {
     "name": "NiklasMoWo",
@@ -20901,6 +20956,11 @@
       "Nether": 29.356
     },
     "best_score": 45.408
+  },
+  {
+    "name": "Nervigerr",
+    "minigame": "Minenfeld",
+    "scores": {}
   },
   {
     "name": "NiklasMoWo",
@@ -24613,6 +24673,16 @@
     "best_score": 11.0
   },
   {
+    "name": "Nervigerr",
+    "minigame": "Mini Survivalgames",
+    "scores": {
+      "Kills Prison": 5.0,
+      "Oasis": 5.0,
+      "Winter Village": 6.0
+    },
+    "best_score": 6.0
+  },
+  {
     "name": "NiklasMoWo",
     "minigame": "Mini Survivalgames",
     "scores": {}
@@ -26762,6 +26832,11 @@
       "Wario's Arena": 69.657
     },
     "best_score": 101.186
+  },
+  {
+    "name": "Nervigerr",
+    "minigame": "Pferderennen",
+    "scores": {}
   },
   {
     "name": "NiklasMoWo",
@@ -35796,6 +35871,14 @@
     "best_score": 2649.046
   },
   {
+    "name": "Nervigerr",
+    "minigame": "Replika",
+    "scores": {
+      "Sum": 2550.0
+    },
+    "best_score": 2550.0
+  },
+  {
     "name": "NiklasMoWo",
     "minigame": "Replika",
     "scores": {
@@ -41597,6 +41680,11 @@
   },
   {
     "name": "Navex",
+    "minigame": "Runterpurzeln",
+    "scores": {}
+  },
+  {
+    "name": "Nervigerr",
     "minigame": "Runterpurzeln",
     "scores": {}
   },
@@ -49659,6 +49747,14 @@
     "scores": {}
   },
   {
+    "name": "Nervigerr",
+    "minigame": "Spleef",
+    "scores": {
+      "Snow Valley": 3.0
+    },
+    "best_score": 3.0
+  },
+  {
     "name": "NiklasMoWo",
     "minigame": "Spleef",
     "scores": {}
@@ -50763,6 +50859,11 @@
   },
   {
     "name": "Navex",
+    "minigame": "Todesw\u00fcrfel",
+    "scores": {}
+  },
+  {
+    "name": "Nervigerr",
     "minigame": "Todesw\u00fcrfel",
     "scores": {}
   },
@@ -52076,6 +52177,11 @@
       "Default": 32.898
     },
     "best_score": 32.898
+  },
+  {
+    "name": "Nervigerr",
+    "minigame": "Waffenfolge",
+    "scores": {}
   },
   {
     "name": "NiklasMoWo",
@@ -53833,6 +53939,16 @@
       "Vulcano": 10.0
     },
     "best_score": 10.0
+  },
+  {
+    "name": "Nervigerr",
+    "minigame": "Walls",
+    "scores": {
+      "Garden": 7.0,
+      "Kills Grass": 5.0,
+      "Kills Vulcano": 5.0
+    },
+    "best_score": 7.0
   },
   {
     "name": "NiklasMoWo",
@@ -55857,6 +55973,11 @@
       "Islands": 78.136
     },
     "best_score": 92.501
+  },
+  {
+    "name": "Nervigerr",
+    "minigame": "Wettrennen",
+    "scores": {}
   },
   {
     "name": "NiklasMoWo",
