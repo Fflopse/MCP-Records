@@ -1521,6 +1521,15 @@
     "best_score": 23.025
   },
   {
+    "name": "TAMISH009",
+    "minigame": "Ampelrennen",
+    "scores": {
+      "Castle": 21.93,
+      "Street": 22.5
+    },
+    "best_score": 22.5
+  },
+  {
     "name": "Tammywood",
     "minigame": "Ampelrennen",
     "scores": {}
@@ -3411,6 +3420,15 @@
     "best_score": 36.0
   },
   {
+    "name": "TAMISH009",
+    "minigame": "Buntes Chaos",
+    "scores": {
+      "Cyberpunk": 29.0,
+      "Structure": 27.0
+    },
+    "best_score": 29.0
+  },
+  {
     "name": "Tammywood",
     "minigame": "Buntes Chaos",
     "scores": {
@@ -4025,7 +4043,7 @@
     "minigame": "Drachenflucht",
     "scores": {
       "Factory": 125.99,
-      "Hills": 77.958
+      "Hills": 98.295
     },
     "best_score": 125.99
   },
@@ -4103,7 +4121,10 @@
   {
     "name": "ForceFox",
     "minigame": "Drachenflucht",
-    "scores": {}
+    "scores": {
+      "Factory": 23.879
+    },
+    "best_score": 23.879
   },
   {
     "name": "Freeeedom",
@@ -5118,6 +5139,16 @@
       "Temple": 125.195
     },
     "best_score": 126.014
+  },
+  {
+    "name": "TAMISH009",
+    "minigame": "Drachenflucht",
+    "scores": {
+      "Factory": 125.078,
+      "Hills": 124.245,
+      "Temple": 110.812
+    },
+    "best_score": 125.078
   },
   {
     "name": "Tammywood",
@@ -6798,6 +6829,14 @@
       "Default": 22.0
     },
     "best_score": 22.0
+  },
+  {
+    "name": "TAMISH009",
+    "minigame": "Duelle",
+    "scores": {
+      "Default": 20.0
+    },
+    "best_score": 20.0
   },
   {
     "name": "Tammywood",
@@ -8742,6 +8781,16 @@
     "best_score": 21.0
   },
   {
+    "name": "TAMISH009",
+    "minigame": "Einer im K\u00f6cher",
+    "scores": {
+      "Asia": 25.0,
+      "Fall": 16.0,
+      "Japan": 27.0
+    },
+    "best_score": 27.0
+  },
+  {
     "name": "Tammywood",
     "minigame": "Einer im K\u00f6cher",
     "scores": {}
@@ -10389,6 +10438,16 @@
     "best_score": 49.654
   },
   {
+    "name": "TAMISH009",
+    "minigame": "Elytrarennen",
+    "scores": {
+      "Canyon": 39.38,
+      "Death Star": 50.903,
+      "River": 38.73
+    },
+    "best_score": 50.903
+  },
+  {
     "name": "Tammywood",
     "minigame": "Elytrarennen",
     "scores": {}
@@ -10397,7 +10456,7 @@
     "name": "Teesily",
     "minigame": "Elytrarennen",
     "scores": {
-      "Canyon": 40.411,
+      "Canyon": 40.356,
       "Death Star": 47.178,
       "River": 39.637
     },
@@ -10458,7 +10517,7 @@
     "name": "Umgfoin",
     "minigame": "Elytrarennen",
     "scores": {
-      "Canyon": 41.227,
+      "Canyon": 40.918,
       "Death Star": 47.087,
       "River": 41.535
     },
@@ -11519,6 +11578,11 @@
   },
   {
     "name": "Stockinqs",
+    "minigame": "Freier Fall",
+    "scores": {}
+  },
+  {
+    "name": "TAMISH009",
     "minigame": "Freier Fall",
     "scores": {}
   },
@@ -12903,6 +12967,14 @@
       "Icy Lake": 56.189
     },
     "best_score": 56.189
+  },
+  {
+    "name": "TAMISH009",
+    "minigame": "Frostiger Pfad",
+    "scores": {
+      "Icy Lake": 57.924
+    },
+    "best_score": 57.924
   },
   {
     "name": "Tammywood",
@@ -14443,6 +14515,14 @@
     "best_score": 51.143
   },
   {
+    "name": "TAMISH009",
+    "minigame": "Hoch hinaus",
+    "scores": {
+      "Global": 46.666
+    },
+    "best_score": 46.666
+  },
+  {
     "name": "Tammywood",
     "minigame": "Hoch hinaus",
     "scores": {}
@@ -15085,7 +15165,7 @@
     "minigame": "Jump and Run",
     "scores": {
       "Canyon": 65.735,
-      "Sky City": 47.374,
+      "Sky City": 46.761,
       "Wet Cave": 52.249
     },
     "best_score": 65.735
@@ -15737,11 +15817,11 @@
     "name": "Luis_XYZ",
     "minigame": "Jump and Run",
     "scores": {
-      "Canyon": 64.072,
+      "Canyon": 64.013,
       "Sky City": 46.453,
       "Wet Cave": 49.881
     },
-    "best_score": 64.072
+    "best_score": 64.013
   },
   {
     "name": "Lutorix",
@@ -16350,6 +16430,16 @@
       "Wet Cave": 53.329
     },
     "best_score": 65.162
+  },
+  {
+    "name": "TAMISH009",
+    "minigame": "Jump and Run",
+    "scores": {
+      "Canyon": 62.943,
+      "Sky City": 43.59,
+      "Wet Cave": 53.161
+    },
+    "best_score": 62.943
   },
   {
     "name": "Tammywood",
@@ -17617,10 +17707,11 @@
     "name": "Luis_XYZ",
     "minigame": "Kletter-K\u00f6nig",
     "scores": {
+      "Frosty": 58.891,
       "Garden": 38.643,
       "Inka": 43.078
     },
-    "best_score": 43.078
+    "best_score": 58.891
   },
   {
     "name": "Lutorix",
@@ -17812,11 +17903,11 @@
     "name": "NewNormal0947",
     "minigame": "Kletter-K\u00f6nig",
     "scores": {
-      "Frosty": 48.024,
+      "Frosty": 45.224,
       "Garden": 43.947,
       "Inka": 45.157
     },
-    "best_score": 48.024
+    "best_score": 45.224
   },
   {
     "name": "NiklasMoWo",
@@ -18193,6 +18284,16 @@
       "Inka": 48.18
     },
     "best_score": 78.806
+  },
+  {
+    "name": "TAMISH009",
+    "minigame": "Kletter-K\u00f6nig",
+    "scores": {
+      "Frosty": 36.511,
+      "Garden": 45.908,
+      "Inka": 42.361
+    },
+    "best_score": 45.908
   },
   {
     "name": "Tammywood",
@@ -18575,7 +18676,8 @@
     "minigame": "Lasertag",
     "scores": {
       "Factory": 19.0,
-      "Neon": 17.0
+      "Neon": 17.0,
+      "Port": 9.0
     },
     "best_score": 19.0
   },
@@ -20164,6 +20266,16 @@
     "best_score": 32.0
   },
   {
+    "name": "TAMISH009",
+    "minigame": "Lasertag",
+    "scores": {
+      "Factory": 38.0,
+      "Neon": 34.0,
+      "Port": 25.0
+    },
+    "best_score": 38.0
+  },
+  {
     "name": "Tammywood",
     "minigame": "Lasertag",
     "scores": {}
@@ -21504,7 +21616,7 @@
     "scores": {
       "Desert": 24.605,
       "Ice Cave": 30.113,
-      "Nether": 28.658
+      "Nether": 27.858
     },
     "best_score": 30.113
   },
@@ -22111,6 +22223,16 @@
       "Nether": 26.89
     },
     "best_score": 37.841
+  },
+  {
+    "name": "TAMISH009",
+    "minigame": "Minenfeld",
+    "scores": {
+      "Desert": 26.408,
+      "Ice Cave": 30.943,
+      "Nether": 25.844
+    },
+    "best_score": 30.943
   },
   {
     "name": "Tammywood",
@@ -24084,6 +24206,16 @@
     "best_score": 7.0
   },
   {
+    "name": "TAMISH009",
+    "minigame": "Minengefecht",
+    "scores": {
+      "Nether": 8.0,
+      "Overworld": 6.0,
+      "Ruin": 7.0
+    },
+    "best_score": 8.0
+  },
+  {
     "name": "Tammywood",
     "minigame": "Minengefecht",
     "scores": {}
@@ -24482,6 +24614,7 @@
     "name": "Bartschii",
     "minigame": "Mini Survivalgames",
     "scores": {
+      "Oasis": 1.0,
       "Winter Village": 3.0
     },
     "best_score": 3.0
@@ -25370,7 +25503,7 @@
     "name": "Luis_XYZ",
     "minigame": "Mini Survivalgames",
     "scores": {
-      "Oasis": 5.0,
+      "Oasis": 6.0,
       "T\u00f6tungen Prison": 4.0,
       "Winter Village": 11.0
     },
@@ -25955,6 +26088,16 @@
       "Winter Village": 6.0
     },
     "best_score": 6.0
+  },
+  {
+    "name": "TAMISH009",
+    "minigame": "Mini Survivalgames",
+    "scores": {
+      "Oasis": 8.0,
+      "T\u00f6tungen Prison": 7.0,
+      "Winter Village": 6.0
+    },
+    "best_score": 8.0
   },
   {
     "name": "Tammywood",
@@ -27170,7 +27313,7 @@
     "name": "JennieKim",
     "minigame": "Pferderennen",
     "scores": {
-      "Ancient Falls": 88.629,
+      "Ancient Falls": 82.852,
       "Cheep Beach": 89.749,
       "City": 67.49,
       "Jungle": 72.543,
@@ -27544,14 +27687,14 @@
     "name": "Luis_XYZ",
     "minigame": "Pferderennen",
     "scores": {
-      "Ancient Falls": 87.334,
+      "Ancient Falls": 87.168,
       "Cheep Beach": 91.709,
       "City": 64.297,
       "Jungle": 71.345,
-      "Rainbow": 92.995,
+      "Rainbow": 92.941,
       "Wario's Arena": 67.091
     },
-    "best_score": 92.995
+    "best_score": 92.941
   },
   {
     "name": "Lutorix",
@@ -27579,10 +27722,10 @@
       "Cheep Beach": 97.89500000000001,
       "City": 69.92699999999999,
       "Jungle": 77.318,
-      "Rainbow": 104.358,
+      "Rainbow": 98.699,
       "Wario's Arena": 72.172
     },
-    "best_score": 104.358
+    "best_score": 98.699
   },
   {
     "name": "M0orey_0",
@@ -28318,6 +28461,19 @@
       "Wario's Arena": 69.318
     },
     "best_score": 95.85499999999999
+  },
+  {
+    "name": "TAMISH009",
+    "minigame": "Pferderennen",
+    "scores": {
+      "Ancient Falls": 85.78,
+      "Cheep Beach": 92.73400000000001,
+      "City": 68.08500000000001,
+      "Jungle": 70.311,
+      "Rainbow": 89.889,
+      "Wario's Arena": 67.243
+    },
+    "best_score": 92.73400000000001
   },
   {
     "name": "Tammywood",
@@ -29059,9 +29215,9 @@
     "name": "Allooy",
     "minigame": "Replika",
     "scores": {
-      "Sum": 1345.917,
+      "Sum": 1339.5029999999997,
       "Among Us": 13.361,
-      "Apple": 13.817,
+      "Apple": 10.542,
       "Arrow": 8.888,
       "Baby Yoda": 9.046,
       "Bee": 7.207,
@@ -29104,7 +29260,7 @@
       "Iron Ingot": 7.963,
       "Kirby": 15.424,
       "Kitty": 15.037,
-      "Koopa": 14.565,
+      "Koopa": 12.8,
       "Krabs": 9.804,
       "Mario": 13.456,
       "Mooshroom": 16.207,
@@ -29148,7 +29304,7 @@
       "Twitter": 13.024,
       "Unicorn": 8.631,
       "Up": 14.304,
-      "Water Temple": 11.996,
+      "Water Temple": 10.622,
       "Windows": 11.857,
       "Wizard": 10.96,
       "YouTube": 11.304,
@@ -29160,7 +29316,7 @@
       "ppHop 1": 13.162,
       "ppHop 2": 17.507
     },
-    "best_score": 1345.917
+    "best_score": 1339.5029999999997
   },
   {
     "name": "Anni808",
@@ -29294,9 +29450,12 @@
     "name": "Bartschii",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2550.0
+      "Sum": 2562.3900000000003,
+      "Arrow": 20.402,
+      "Iron Ingot": 24.835,
+      "Robin Hood": 42.153
     },
-    "best_score": 2550.0
+    "best_score": 2562.3900000000003
   },
   {
     "name": "BastiGHG",
@@ -29881,7 +30040,7 @@
     "name": "cediiiiii_10",
     "minigame": "Replika",
     "scores": {
-      "Sum": 1382.4519999999995,
+      "Sum": 1378.8869999999997,
       "Among Us": 14.679,
       "Apple": 10.893,
       "Arrow": 10.076,
@@ -29918,10 +30077,10 @@
       "Ghost": 9.97,
       "Globe": 17.823,
       "Gold Ingot": 8.077,
-      "Guardian": 17.39,
+      "Guardian": 17.103,
       "Heart": 14.512,
       "Hourglass": 15.136,
-      "House": 11.33,
+      "House": 10.96,
       "Instagram": 15.132,
       "Iron Ingot": 9.107,
       "Kirby": 17.322,
@@ -29935,7 +30094,7 @@
       "Netherite Ingot": 9.563,
       "Pacman Ghost": 10.585,
       "Parrot": 13.199,
-      "Penguin": 11.889,
+      "Penguin": 11.103,
       "Perry": 8.847,
       "Pikachu": 15.923,
       "Piranha Plant": 17.709,
@@ -29948,7 +30107,7 @@
       "Random 2": 8.214,
       "Robin Hood": 18.655,
       "Rocket": 9.529,
-      "Sheep": 13.867,
+      "Sheep": 12.407,
       "Skeleton": 16.141,
       "Skeleton Skull": 14.886,
       "Slime": 15.684,
@@ -29960,12 +30119,12 @@
       "TNT": 16.672,
       "Target": 9.116,
       "Tetris": 9.906,
-      "The Sea": 12.176,
+      "The Sea": 12.064,
       "Thinking": 14.435,
       "Thinking 2": 13.425,
       "Toad": 16.212,
       "Tree": 14.908,
-      "Turtle": 15.71,
+      "Turtle": 15.16,
       "Twitch": 11.949,
       "Twitter": 12.357,
       "Unicorn": 6.184,
@@ -29982,7 +30141,7 @@
       "ppHop 1": 17.629,
       "ppHop 2": 14.512
     },
-    "best_score": 1382.4519999999995
+    "best_score": 1378.8869999999997
   },
   {
     "name": "Chander24",
@@ -31143,7 +31302,7 @@
     "name": "Falke23_5",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2373.6530000000002,
+      "Sum": 2367.034,
       "Among Us": 23.855,
       "Arrow": 17.35,
       "Baby Yoda": 19.896,
@@ -31161,7 +31320,7 @@
       "Creeper": 48.234,
       "Cytooxien": 14.996,
       "Deadpool": 37.796,
-      "Diskette": 18.163,
+      "Diskette": 18.085,
       "Doge": 32.183,
       "Duck": 13.998,
       "Eevee": 22.615,
@@ -31191,7 +31350,7 @@
       "Piranha Plant": 34.166,
       "Pirate": 14.583,
       "Princess": 25.245,
-      "Robin Hood": 29.625,
+      "Robin Hood": 23.084,
       "Sheep": 24.044,
       "Skeleton": 21.444,
       "Slime": 26.237,
@@ -31220,7 +31379,7 @@
       "of Meat": 21.234,
       "ppHop 2": 19.499
     },
-    "best_score": 2373.6530000000002
+    "best_score": 2367.034
   },
   {
     "name": "Falke_01",
@@ -31354,7 +31513,7 @@
     "name": "Fflopse",
     "minigame": "Replika",
     "scores": {
-      "Sum": 1595.9060000000004,
+      "Sum": 1594.7910000000004,
       "Among Us": 20.522,
       "Apple": 18.257,
       "Arrow": 11.809,
@@ -31393,7 +31552,7 @@
       "Gold Ingot": 8.126,
       "Guardian": 20.018,
       "Heart": 16.768,
-      "Hourglass": 16.775,
+      "Hourglass": 15.66,
       "House": 14.616,
       "Instagram": 19.991,
       "Iron Ingot": 7.234,
@@ -31455,7 +31614,7 @@
       "ppHop 1": 17.211,
       "ppHop 2": 18.293
     },
-    "best_score": 1595.9060000000004
+    "best_score": 1594.7910000000004
   },
   {
     "name": "Flitzi_Dino",
@@ -31794,7 +31953,7 @@
     "name": "FrozenNoah",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2100.498000000001,
+      "Sum": 2100.4980000000005,
       "Among Us": 24.558,
       "Apple": 27.477,
       "Arrow": 12.731,
@@ -31895,7 +32054,7 @@
       "ppHop 1": 19.059,
       "ppHop 2": 17.514
     },
-    "best_score": 2100.498000000001
+    "best_score": 2100.4980000000005
   },
   {
     "name": "frutigall",
@@ -35786,10 +35945,12 @@
     "name": "Luis_XYZ",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2393.1349999999998,
+      "Sum": 2308.2239999999997,
       "Among Us": 21.079,
       "Arrow": 13.689,
+      "Bee": 14.097,
       "Blinky": 25.847,
+      "Camera": 16.984,
       "Carrot": 16.137,
       "Caterpie": 13.518,
       "Cherry": 29.274,
@@ -35802,6 +35963,7 @@
       "Deadpool": 34.185,
       "Diskette": 15.038,
       "Doge": 24.823,
+      "Duck": 12.035,
       "French Fries": 23.064,
       "Frog": 18.742,
       "Ghost": 14.862,
@@ -35814,26 +35976,27 @@
       "Koopa": 19.809,
       "Krabs": 19.155,
       "Mario": 20.349,
-      "Mooshroom": 27.885,
+      "Mooshroom": 22.132,
       "Mouse": 36.157,
-      "Netherite Ingot": 13.881,
+      "Netherite Ingot": 10.144,
       "Pacman Ghost": 21.863,
       "Parrot": 17.61,
       "Penguin": 18.92,
       "Pikachu": 30.641,
-      "Piranha Plant": 28.666,
+      "Piranha Plant": 25.937,
+      "Pirate": 12.15,
       "Pizza": 28.945,
       "Princess": 33.528,
       "Random 1": 15.883,
-      "Random 2": 18.42,
+      "Random 2": 13.621,
       "Robin Hood": 23.875,
       "Rocket": 14.857,
       "Skeleton": 24.091,
-      "Smurf": 22.911,
+      "Smurf": 17.52,
       "Spider": 28.845,
       "Sword": 14.019,
-      "TNT": 27.737,
-      "The Sea": 17.3,
+      "TNT": 25.037,
+      "The Sea": 13.028,
       "Toad": 34.141,
       "Turtle": 17.998,
       "Twitch": 24.706,
@@ -35843,11 +36006,11 @@
       "Windows": 19.318,
       "Wizard": 19.914,
       "YouTube": 21.008,
-      "muss los": 29.932,
+      "muss los": 19.136,
       "omb": 13.589,
       "ppHop 1": 23.479
     },
-    "best_score": 2393.1349999999998
+    "best_score": 2308.2239999999997
   },
   {
     "name": "Lutorix",
@@ -37174,7 +37337,7 @@
     "name": "NewNormal0947",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2323.4519999999993,
+      "Sum": 2318.518,
       "Among Us": 25.359,
       "Apple": 26.05,
       "Arrow": 17.711,
@@ -37208,11 +37371,11 @@
       "Frog": 19.537,
       "Galaxian Alien": 27.208,
       "Ghost": 18.314,
-      "Globe": 27.933,
+      "Globe": 26.05,
       "Gold Ingot": 16.143,
       "Guardian": 31.266,
       "Heart": 23.255,
-      "Hourglass": 22.769,
+      "Hourglass": 21.296,
       "House": 16.716,
       "Instagram": 23.992,
       "Iron Ingot": 14.069,
@@ -37229,7 +37392,7 @@
       "Penguin": 21.084,
       "Perry": 13.66,
       "Pikachu": 29.655,
-      "Piranha Plant": 30.209,
+      "Piranha Plant": 28.631,
       "Pirate": 14.29,
       "Pizza": 25.022,
       "Poke Ball": 18.423,
@@ -37271,7 +37434,7 @@
       "ppHop 1": 31.459,
       "ppHop 2": 19.926
     },
-    "best_score": 2323.4519999999993
+    "best_score": 2318.518
   },
   {
     "name": "NiklasMoWo",
@@ -38525,7 +38688,7 @@
     "name": "rotmann2",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2501.068,
+      "Sum": 2500.8550000000005,
       "Among Us": 24.157,
       "Apple": 26.918,
       "Arrow": 20.957,
@@ -38548,7 +38711,7 @@
       "Creeper": 66.839,
       "Cytooxien": 14.539,
       "Deadpool": 34.739,
-      "Diskette": 22.538,
+      "Diskette": 22.325,
       "Doge": 35.18,
       "Duck": 18.506,
       "Egg": 25.359,
@@ -38619,7 +38782,7 @@
       "ppHop 1": 26.25,
       "ppHop 2": 18.955
     },
-    "best_score": 2501.068
+    "best_score": 2500.8550000000005
   },
   {
     "name": "RyanxCole",
@@ -40083,6 +40246,102 @@
     "best_score": 2038.6329999999994
   },
   {
+    "name": "TAMISH009",
+    "minigame": "Replika",
+    "scores": {
+      "Sum": 2325.839,
+      "Among Us": 21.842,
+      "Arrow": 13.714,
+      "Baby Yoda": 17.908,
+      "Blinky": 38.548,
+      "Blue Monster": 26.018,
+      "Cake": 36.072,
+      "Camera": 27.414,
+      "Carrot": 16.34,
+      "Caterpie": 17.097,
+      "Charizard": 25.584,
+      "Cherry": 18.511,
+      "Chicken": 23.618,
+      "Coffee": 11.157,
+      "Controller": 19.587,
+      "Cookie": 18.355,
+      "Cow": 36.644,
+      "Cowboy": 20.157,
+      "Creeper": 44.176,
+      "Cytooxien": 16.576,
+      "Diskette": 16.701999999999998,
+      "Doge": 37.164,
+      "Duck": 12.948,
+      "Eevee": 21.861,
+      "Egg": 20.146,
+      "Ender Pearl": 23.138,
+      "Excavator": 17.414,
+      "Fox": 26.669,
+      "French Fries": 22.144,
+      "Frog": 21.683,
+      "Globe": 35.098,
+      "Gold Ingot": 11.412,
+      "Heart": 24.355,
+      "Hourglass": 22.259,
+      "House": 22.136,
+      "Instagram": 26.867,
+      "Iron Ingot": 10.341,
+      "Koopa": 17.234,
+      "Krabs": 18.387,
+      "Mario": 19.378,
+      "Mooshroom": 30.689,
+      "Mouse": 38.797,
+      "Netherite Ingot": 24.206,
+      "Pacman Ghost": 18.915,
+      "Parrot": 32.375,
+      "Penguin": 25.79,
+      "Perry": 13.98,
+      "Pikachu": 32.07,
+      "Piranha Plant": 30.534,
+      "Pirate": 17.337,
+      "Pizza": 29.901,
+      "Poke Ball": 20.946,
+      "Poppy": 16.418,
+      "Princess": 27.354,
+      "Random 1": 10.434,
+      "Random 2": 16.8,
+      "Robin Hood": 26.094,
+      "Rocket": 12.633,
+      "Sheep": 16.256,
+      "Skeleton": 28.13,
+      "Skeleton Skull": 33.112,
+      "Slime": 17.484,
+      "Smurf": 34.483,
+      "Snake": 17.429,
+      "Sonic": 15.849,
+      "Spider": 23.281,
+      "Sword": 9.805,
+      "TNT": 22.857,
+      "Target": 12.57,
+      "The Sea": 18.068,
+      "Thinking": 19.794,
+      "Thinking 2": 20.062,
+      "Toad": 32.914,
+      "Tree": 23.939,
+      "Turtle": 25.191,
+      "Twitch": 14.869,
+      "Twitter": 20.432,
+      "Unicorn": 16.711,
+      "Up": 34.864,
+      "Water Temple": 18.398,
+      "Windows": 16.746,
+      "Wizard": 27.186,
+      "YouTube": 20.254,
+      "Zombie": 21.982,
+      "ms Arrow": 13.714,
+      "muss los": 23.716,
+      "of Meat": 31.562,
+      "omb": 12.636,
+      "ppHop 2": 29.618
+    },
+    "best_score": 2325.839
+  },
+  {
     "name": "Tammywood",
     "minigame": "Replika",
     "scores": {
@@ -40699,7 +40958,7 @@
     "name": "Umgfoin",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2234.3529999999987,
+      "Sum": 2231.0719999999988,
       "Among Us": 24.014,
       "Apple": 20.147,
       "Arrow": 15.314,
@@ -40766,7 +41025,7 @@
       "Random 2": 15.027,
       "Robin Hood": 30.284,
       "Rocket": 16.942,
-      "Sheep": 23.555,
+      "Sheep": 23.194,
       "Skeleton": 25.855,
       "Skeleton Skull": 22.13,
       "Slime": 28.664,
@@ -40778,7 +41037,7 @@
       "TNT": 28.038,
       "Target": 12.095,
       "Tetris": 15.667,
-      "The Sea": 23.489,
+      "The Sea": 20.569,
       "Thinking": 24.375,
       "Thinking 2": 25.666,
       "Toad": 30.601,
@@ -40800,7 +41059,7 @@
       "ppHop 1": 26.839,
       "ppHop 2": 21.58
     },
-    "best_score": 2234.3529999999987
+    "best_score": 2231.0719999999988
   },
   {
     "name": "unausgesprochen",
@@ -42576,9 +42835,9 @@
     "name": "cediiiiii_10",
     "minigame": "Runterpurzeln",
     "scores": {
-      "Space": 46.318
+      "Space": 45.87
     },
-    "best_score": 46.318
+    "best_score": 45.87
   },
   {
     "name": "Chander24",
@@ -43526,6 +43785,14 @@
     "best_score": 84.077
   },
   {
+    "name": "TAMISH009",
+    "minigame": "Runterpurzeln",
+    "scores": {
+      "Space": 50.661
+    },
+    "best_score": 50.661
+  },
+  {
     "name": "Tammywood",
     "minigame": "Runterpurzeln",
     "scores": {}
@@ -43830,7 +44097,7 @@
     "name": "Allooy",
     "minigame": "Sammelwahn",
     "scores": {
-      "Sum": 656.0,
+      "Sum": 657.0,
       "Dichter Wald": 30.0,
       "Lichter Dschungel": 38.0,
       " Bambusdschungel": 30.0,
@@ -43845,7 +44112,7 @@
       " Sumpf": 36.0,
       " Taiga": 35.0,
       " Wald": 29.0,
-      "Sonnenblumenebene": 31.0,
+      "Sonnenblumenebene": 32.0,
       "Urtaiga": 28.0,
       "Urwald": 30.0,
       "Verschneite Ebene": 31.0,
@@ -43853,7 +44120,7 @@
       "Zerzauste H\u00fcgel": 32.0,
       "Zerzauste Savanne": 31.0
     },
-    "best_score": 656.0
+    "best_score": 657.0
   },
   {
     "name": "Anni808",
@@ -44217,7 +44484,7 @@
     "name": "cediiiiii_10",
     "minigame": "Sammelwahn",
     "scores": {
-      "Sum": 736.0,
+      "Sum": 741.0,
       "Dichter Wald": 32.0,
       "Lichter Dschungel": 38.0,
       " Bambusdschungel": 33.0,
@@ -44238,10 +44505,10 @@
       "Urwald": 30.0,
       "Verschneite Ebene": 41.0,
       "Verschneite Taiga": 40.0,
-      "Zerzauste H\u00fcgel": 32.0,
+      "Zerzauste H\u00fcgel": 37.0,
       "Zerzauste Savanne": 34.0
     },
-    "best_score": 736.0
+    "best_score": 741.0
   },
   {
     "name": "Chander24",
@@ -46505,22 +46772,23 @@
     "name": "Luis_XYZ",
     "minigame": "Sammelwahn",
     "scores": {
-      "Sum": 293.0,
+      "Sum": 325.0,
       "Dichter Wald": 24.0,
       "Lichter Dschungel": 30.0,
       " Bambusdschungel": 26.0,
       " Birkenwald": 28.0,
       " Dschungel": 4.0,
       " Kirschberghain": 19.0,
-      " Sumpf": 19.0,
+      " Sumpf": 24.0,
       " Taiga": 32.0,
       " Wald": 28.0,
       "Sonnenblumenebene": 25.0,
       "Urtaiga": 20.0,
       "Urwald": 21.0,
-      "Verschneite Taiga": 17.0
+      "Verschneite Taiga": 17.0,
+      "Zerzauste H\u00fcgel": 27.0
     },
-    "best_score": 293.0
+    "best_score": 325.0
   },
   {
     "name": "Lutorix",
@@ -46574,13 +46842,13 @@
     "name": "lvlaurin",
     "minigame": "Sammelwahn",
     "scores": {
-      "Sum": 354.0,
+      "Sum": 397.0,
       "Dichter Wald": 28.0,
-      "Lichter Dschungel": 23.0,
+      "Lichter Dschungel": 31.0,
       " Bambusdschungel": 16.0,
       " Dschungel": 28.0,
       " Ebene": 13.0,
-      " Kirschberghain": 18.0,
+      " Kirschberghain": 29.0,
       " Savanne": 19.0,
       " Savannenhochebene": 20.0,
       " Sumpf": 34.0,
@@ -46590,9 +46858,10 @@
       "Urtaiga": 28.0,
       "Urwald": 21.0,
       "Verschneite Ebene": 17.0,
-      "Verschneite Taiga": 22.0
+      "Verschneite Taiga": 22.0,
+      "Zerzauste H\u00fcgel": 24.0
     },
-    "best_score": 354.0
+    "best_score": 397.0
   },
   {
     "name": "M0orey_0",
@@ -48183,6 +48452,34 @@
       "Zerzauste Savanne": 31.0
     },
     "best_score": 599.0
+  },
+  {
+    "name": "TAMISH009",
+    "minigame": "Sammelwahn",
+    "scores": {
+      "Sum": 550.0,
+      "Dichter Wald": 30.0,
+      "Lichter Dschungel": 29.0,
+      " Bambusdschungel": 23.0,
+      " Birkenwald": 23.0,
+      " Blumenwald": 31.0,
+      " Dschungel": 23.0,
+      " Ebene": 35.0,
+      " Kirschberghain": 24.0,
+      " Savanne": 40.0,
+      " Savannenhochebene": 30.0,
+      " Sumpf": 26.0,
+      " Taiga": 28.0,
+      " Wald": 27.0,
+      "Sonnenblumenebene": 31.0,
+      "Urtaiga": 25.0,
+      "Urwald": 23.0,
+      "Verschneite Ebene": 25.0,
+      "Verschneite Taiga": 22.0,
+      "Zerzauste H\u00fcgel": 29.0,
+      "Zerzauste Savanne": 26.0
+    },
+    "best_score": 550.0
   },
   {
     "name": "Tammywood",
@@ -50127,7 +50424,7 @@
     "scores": {
       "City": 313.0,
       "Farm": 281.0,
-      "Jungle": 248.0
+      "Jungle": 294.0
     },
     "best_score": 313.0
   },
@@ -50312,10 +50609,10 @@
     "minigame": "Schie\u00dfstand",
     "scores": {
       "City": 257.0,
-      "Farm": 333.0,
+      "Farm": 382.0,
       "Jungle": 275.0
     },
-    "best_score": 333.0
+    "best_score": 382.0
   },
   {
     "name": "NiklasMoWo",
@@ -50734,6 +51031,16 @@
     "best_score": 282.0
   },
   {
+    "name": "TAMISH009",
+    "minigame": "Schie\u00dfstand",
+    "scores": {
+      "City": 352.0,
+      "Farm": 394.0,
+      "Jungle": 409.0
+    },
+    "best_score": 409.0
+  },
+  {
     "name": "Tammywood",
     "minigame": "Schie\u00dfstand",
     "scores": {}
@@ -50744,7 +51051,7 @@
     "scores": {
       "City": 346.0,
       "Farm": 342.0,
-      "Jungle": 284.0
+      "Jungle": 287.0
     },
     "best_score": 346.0
   },
@@ -51113,7 +51420,10 @@
   {
     "name": "Bartschii",
     "minigame": "Spleef",
-    "scores": {}
+    "scores": {
+      "Snow Valley": 3.0
+    },
+    "best_score": 3.0
   },
   {
     "name": "BastiGHG",
@@ -51732,9 +52042,9 @@
     "name": "Luis_XYZ",
     "minigame": "Spleef",
     "scores": {
-      "Snow Valley": 3.0
+      "Snow Valley": 4.0
     },
-    "best_score": 3.0
+    "best_score": 4.0
   },
   {
     "name": "Lutorix",
@@ -52128,6 +52438,14 @@
       "Snow Valley": 1.0
     },
     "best_score": 1.0
+  },
+  {
+    "name": "TAMISH009",
+    "minigame": "Spleef",
+    "scores": {
+      "Snow Valley": 7.0
+    },
+    "best_score": 7.0
   },
   {
     "name": "Tammywood",
@@ -53217,6 +53535,11 @@
   },
   {
     "name": "Stockinqs",
+    "minigame": "Todesw\u00fcrfel",
+    "scores": {}
+  },
+  {
+    "name": "TAMISH009",
     "minigame": "Todesw\u00fcrfel",
     "scores": {}
   },
@@ -54664,6 +54987,14 @@
       "Default": 42.958
     },
     "best_score": 42.958
+  },
+  {
+    "name": "TAMISH009",
+    "minigame": "Waffenfolge",
+    "scores": {
+      "Default": 22.504
+    },
+    "best_score": 22.504
   },
   {
     "name": "Tammywood",
@@ -56589,6 +56920,16 @@
     "best_score": 7.0
   },
   {
+    "name": "TAMISH009",
+    "minigame": "Walls",
+    "scores": {
+      "Garden": 9.0,
+      "Grass": 8.0,
+      "Vulcano": 8.0
+    },
+    "best_score": 9.0
+  },
+  {
     "name": "Tammywood",
     "minigame": "Walls",
     "scores": {}
@@ -58044,7 +58385,7 @@
     "minigame": "Wettrennen",
     "scores": {
       "Blossom Canyon": 81.416,
-      "Cyberpunk": 80.09,
+      "Cyberpunk": 77.901,
       "Green Hills": 66.189,
       "Islands": 73.091,
       "Snow": 73.906
@@ -58077,7 +58418,7 @@
     "scores": {
       "Blossom Canyon": 84.07,
       "Cyberpunk": 92.37,
-      "Green Hills": 70.156,
+      "Green Hills": 69.028,
       "Islands": 75.439,
       "Snow": 76.355
     },
@@ -58460,12 +58801,12 @@
     "minigame": "Wettrennen",
     "scores": {
       "Blossom Canyon": 81.918,
-      "Cyberpunk": 82.07300000000001,
+      "Cyberpunk": 81.81,
       "Green Hills": 66.486,
       "Islands": 73.389,
       "Snow": 74.263
     },
-    "best_score": 82.07300000000001
+    "best_score": 81.918
   },
   {
     "name": "RyanxCole",
@@ -58721,6 +59062,18 @@
       "Snow": 81.605
     },
     "best_score": 85.956
+  },
+  {
+    "name": "TAMISH009",
+    "minigame": "Wettrennen",
+    "scores": {
+      "Blossom Canyon": 82.739,
+      "Cyberpunk": 76.083,
+      "Green Hills": 64.779,
+      "Islands": 73.992,
+      "Snow": 70.12
+    },
+    "best_score": 82.739
   },
   {
     "name": "Tammywood",
