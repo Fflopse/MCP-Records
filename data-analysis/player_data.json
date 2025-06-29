@@ -77,6 +77,19 @@
             "Gewonnene Minispiele": "850"
         }
     },
+    "AnzeigeGehtRaus": {
+        "name": "AnzeigeGehtRaus",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Position (Punkte)": "81",
+            "Punkte": "32,406",
+            "Spielzeit": "17 Tage 23 Stunden",
+            "Gespielte Spiele": "1,465",
+            "Gewonnene Spiele": "394",
+            "Gespielte Minispiele": "11,234",
+            "Gewonnene Minispiele": "2,245"
+        }
+    },
     "ArthurAlchemist": {
         "name": "ArthurAlchemist",
         "rank": "Spieler",
@@ -155,6 +168,32 @@
             "Gewonnene Minispiele": "4,602"
         }
     },
+    "Bikop": {
+        "name": "Bikop",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Position (Punkte)": "584,467",
+            "Punkte": "0",
+            "Spielzeit": "-",
+            "Gespielte Spiele": "0",
+            "Gewonnene Spiele": "0",
+            "Gespielte Minispiele": "0",
+            "Gewonnene Minispiele": "0"
+        }
+    },
+    "Bildungsarten": {
+        "name": "Bildungsarten",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Position (Punkte)": "521",
+            "Punkte": "10,413",
+            "Spielzeit": "6 Tage 7 Stunden",
+            "Gespielte Spiele": "524",
+            "Gewonnene Spiele": "126",
+            "Gespielte Minispiele": "3,745",
+            "Gewonnene Minispiele": "698"
+        }
+    },
     "BunnyKiko": {
         "name": "BunnyKiko",
         "rank": "Supporter",
@@ -231,6 +270,19 @@
             "Gewonnene Spiele": "32",
             "Gespielte Minispiele": "3,881",
             "Gewonnene Minispiele": "216"
+        }
+    },
+    "CladyNoClip_": {
+        "name": "CladyNoClip_",
+        "rank": "None",
+        "minecraft_party": {
+            "Position (Punkte)": "183",
+            "Punkte": "19,053",
+            "Spielzeit": "14 Tage 5 Stunden",
+            "Gespielte Spiele": "1,149",
+            "Gewonnene Spiele": "216",
+            "Gespielte Minispiele": "8,570",
+            "Gewonnene Minispiele": "1,301"
         }
     },
     "Cytoox": {
@@ -508,8 +560,16 @@
     },
     "Freeeedom": {
         "name": "Freeeedom",
-        "rank": "None",
-        "minecraft_party": {}
+        "rank": "Premium+",
+        "minecraft_party": {
+            "Position (Punkte)": "11",
+            "Punkte": "112,066",
+            "Spielzeit": "62 Tage 1 Stunde",
+            "Gespielte Spiele": "5,135",
+            "Gewonnene Spiele": "1,383",
+            "Gespielte Minispiele": "37,619",
+            "Gewonnene Minispiele": "8,856"
+        }
     },
     "FrozenNoah": {
         "name": "FrozenNoah",
@@ -750,12 +810,12 @@
         "rank": "Premium+",
         "minecraft_party": {
             "Position (Punkte)": "3",
-            "Punkte": "222,925",
+            "Punkte": "222,935",
             "Spielzeit": "66 Tage 5 Stunden",
             "Gespielte Spiele": "5,626",
             "Gewonnene Spiele": "4,477",
-            "Gespielte Minispiele": "41,976",
-            "Gewonnene Minispiele": "22,941"
+            "Gespielte Minispiele": "41,981",
+            "Gewonnene Minispiele": "22,943"
         }
     },
     "Highsay": {
@@ -886,6 +946,19 @@
             "Gewonnene Spiele": "221",
             "Gespielte Minispiele": "9,152",
             "Gewonnene Minispiele": "1,882"
+        }
+    },
+    "Joel_the_king": {
+        "name": "Joel_the_king",
+        "rank": "Premium",
+        "minecraft_party": {
+            "Position (Punkte)": "4,199",
+            "Punkte": "2,965",
+            "Spielzeit": "4 Tage 12 Stunden",
+            "Gespielte Spiele": "339",
+            "Gewonnene Spiele": "18",
+            "Gespielte Minispiele": "2,611",
+            "Gewonnene Minispiele": "140"
         }
     },
     "Joy_8oy": {
@@ -1088,12 +1161,12 @@
         "rank": "Spieler",
         "minecraft_party": {
             "Position (Punkte)": "63",
-            "Punkte": "40,447",
-            "Spielzeit": "20 Tage 22 Stunden",
-            "Gespielte Spiele": "1,745",
-            "Gewonnene Spiele": "536",
-            "Gespielte Minispiele": "12,456",
-            "Gewonnene Minispiele": "3,069"
+            "Punkte": "40,503",
+            "Spielzeit": "20 Tage 23 Stunden",
+            "Gespielte Spiele": "1,746",
+            "Gewonnene Spiele": "537",
+            "Gespielte Minispiele": "12,464",
+            "Gewonnene Minispiele": "3,073"
         }
     },
     "Lennart0911": {
@@ -1280,29 +1353,13 @@
     },
     "MaxMitMaulkorb": {
         "name": "MaxMitMaulkorb",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Position (Punkte)": "68",
-            "Punkte": "38,269",
-            "Spielzeit": "15 Tage 23 Stunden",
-            "Gespielte Spiele": "1,454",
-            "Gewonnene Spiele": "566",
-            "Gespielte Minispiele": "10,716",
-            "Gewonnene Minispiele": "3,230"
-        }
+        "rank": "None",
+        "minecraft_party": {}
     },
     "MaxOnTheRoad": {
         "name": "MaxOnTheRoad",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Position (Punkte)": "83",
-            "Punkte": "32,160",
-            "Spielzeit": "10 Tage 18 Stunden",
-            "Gespielte Spiele": "859",
-            "Gewonnene Spiele": "647",
-            "Gespielte Minispiele": "6,949",
-            "Gewonnene Minispiele": "3,383"
-        }
+        "rank": "None",
+        "minecraft_party": {}
     },
     "Mincheeen": {
         "name": "Mincheeen",
@@ -1361,12 +1418,12 @@
         "rank": "Premium+",
         "minecraft_party": {
             "Position (Punkte)": "21",
-            "Punkte": "84,673",
+            "Punkte": "84,730",
             "Spielzeit": "21 Tage 13 Stunden",
-            "Gespielte Spiele": "1,691",
-            "Gewonnene Spiele": "1,409",
-            "Gespielte Minispiele": "12,885",
-            "Gewonnene Minispiele": "8,478"
+            "Gespielte Spiele": "1,692",
+            "Gewonnene Spiele": "1,410",
+            "Gespielte Minispiele": "12,887",
+            "Gewonnene Minispiele": "8,480"
         }
     },
     "Mvsk_": {
@@ -1473,6 +1530,19 @@
             "Gewonnene Minispiele": "4,298"
         }
     },
+    "Nor_Malo": {
+        "name": "Nor_Malo",
+        "rank": "Premium+",
+        "minecraft_party": {
+            "Position (Punkte)": "348",
+            "Punkte": "13,249",
+            "Spielzeit": "6 Tage 8 Stunden",
+            "Gespielte Spiele": "539",
+            "Gewonnene Spiele": "190",
+            "Gespielte Minispiele": "3,629",
+            "Gewonnene Minispiele": "1,133"
+        }
+    },
     "NotLennart": {
         "name": "NotLennart",
         "rank": "Spieler",
@@ -1512,6 +1582,19 @@
             "Gewonnene Minispiele": "900"
         }
     },
+    "Otronix": {
+        "name": "Otronix",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Position (Punkte)": "745",
+            "Punkte": "8,542",
+            "Spielzeit": "7 Tage 13 Stunden",
+            "Gespielte Spiele": "609",
+            "Gewonnene Spiele": "97",
+            "Gespielte Minispiele": "4,132",
+            "Gewonnene Minispiele": "630"
+        }
+    },
     "OutcroYoutube": {
         "name": "OutcroYoutube",
         "rank": "Spieler",
@@ -1525,8 +1608,8 @@
             "Gewonnene Minispiele": "130"
         }
     },
-    "Pedrozockt": {
-        "name": "Pedrozockt",
+    "PedroZockt": {
+        "name": "PedroZockt",
         "rank": "Premium+",
         "minecraft_party": {
             "Position (Punkte)": "7",
@@ -1555,13 +1638,13 @@
         "name": "Phoenix3000",
         "rank": "Premium",
         "minecraft_party": {
-            "Position (Punkte)": "496",
-            "Punkte": "10,773",
-            "Spielzeit": "9 Tage 4 Stunden",
-            "Gespielte Spiele": "744",
+            "Position (Punkte)": "495",
+            "Punkte": "10,781",
+            "Spielzeit": "9 Tage 5 Stunden",
+            "Gespielte Spiele": "745",
             "Gewonnene Spiele": "137",
-            "Gespielte Minispiele": "4,279",
-            "Gewonnene Minispiele": "879"
+            "Gespielte Minispiele": "4,289",
+            "Gewonnene Minispiele": "880"
         }
     },
     "Picutar": {
@@ -1647,12 +1730,12 @@
         "rank": "Premium",
         "minecraft_party": {
             "Position (Punkte)": "251",
-            "Punkte": "15,667",
+            "Punkte": "15,677",
             "Spielzeit": "9 Tage 21 Stunden",
             "Gespielte Spiele": "816",
             "Gewonnene Spiele": "171",
-            "Gespielte Minispiele": "6,232",
-            "Gewonnene Minispiele": "1,158"
+            "Gespielte Minispiele": "6,243",
+            "Gewonnene Minispiele": "1,159"
         }
     },
     "ReichesBrot": {
@@ -1707,11 +1790,24 @@
             "Gewonnene Minispiele": "593"
         }
     },
+    "SWLegende": {
+        "name": "SWLegende",
+        "rank": "Premium+",
+        "minecraft_party": {
+            "Position (Punkte)": "13,271",
+            "Punkte": "1,404",
+            "Spielzeit": "1 Tag 0 Stunden",
+            "Gespielte Spiele": "74",
+            "Gewonnene Spiele": "21",
+            "Gespielte Minispiele": "604",
+            "Gewonnene Minispiele": "120"
+        }
+    },
     "Sackkerl": {
         "name": "Sackkerl",
         "rank": "Spieler",
         "minecraft_party": {
-            "Position (Punkte)": "508",
+            "Position (Punkte)": "509",
             "Punkte": "10,606",
             "Spielzeit": "4 Tage 19 Stunden",
             "Gespielte Spiele": "404",
@@ -1751,12 +1847,12 @@
         "rank": "Spieler",
         "minecraft_party": {
             "Position (Punkte)": "59",
-            "Punkte": "41,477",
-            "Spielzeit": "24 Tage 17 Stunden",
-            "Gespielte Spiele": "2,293",
+            "Punkte": "41,502",
+            "Spielzeit": "24 Tage 18 Stunden",
+            "Gespielte Spiele": "2,294",
             "Gewonnene Spiele": "584",
-            "Gespielte Minispiele": "16,308",
-            "Gewonnene Minispiele": "3,353"
+            "Gespielte Minispiele": "16,318",
+            "Gewonnene Minispiele": "3,355"
         }
     },
     "Scuprum": {
@@ -1933,12 +2029,12 @@
         "rank": "Premium+",
         "minecraft_party": {
             "Position (Punkte)": "181",
-            "Punkte": "19,142",
+            "Punkte": "19,209",
             "Spielzeit": "6 Tage 16 Stunden",
-            "Gespielte Spiele": "519",
-            "Gewonnene Spiele": "305",
-            "Gespielte Minispiele": "3,825",
-            "Gewonnene Minispiele": "1,697"
+            "Gespielte Spiele": "520",
+            "Gewonnene Spiele": "306",
+            "Gespielte Minispiele": "3,838",
+            "Gewonnene Minispiele": "1,701"
         }
     },
     "StaudammAusHolz": {
@@ -2133,12 +2229,12 @@
         "rank": "Premium+",
         "minecraft_party": {
             "Position (Punkte)": "57",
-            "Punkte": "43,159",
+            "Punkte": "43,197",
             "Spielzeit": "17 Tage 6 Stunden",
-            "Gespielte Spiele": "1,442",
+            "Gespielte Spiele": "1,443",
             "Gewonnene Spiele": "620",
-            "Gespielte Minispiele": "10,397",
-            "Gewonnene Minispiele": "3,585"
+            "Gespielte Minispiele": "10,405",
+            "Gewonnene Minispiele": "3,588"
         }
     },
     "Vacted": {
@@ -2159,12 +2255,12 @@
         "rank": "Premium",
         "minecraft_party": {
             "Position (Punkte)": "152",
-            "Punkte": "21,176",
+            "Punkte": "21,181",
             "Spielzeit": "19 Tage 6 Stunden",
             "Gespielte Spiele": "1,660",
             "Gewonnene Spiele": "191",
-            "Gespielte Minispiele": "11,852",
-            "Gewonnene Minispiele": "1,253"
+            "Gespielte Minispiele": "11,856",
+            "Gewonnene Minispiele": "1,254"
         }
     },
     "VendasTM": {
@@ -2185,12 +2281,12 @@
         "rank": "Premium+",
         "minecraft_party": {
             "Position (Punkte)": "27",
-            "Punkte": "70,535",
+            "Punkte": "70,607",
             "Spielzeit": "25 Tage 1 Stunde",
-            "Gespielte Spiele": "2,113",
-            "Gewonnene Spiele": "1,115",
-            "Gespielte Minispiele": "15,063",
-            "Gewonnene Minispiele": "6,071"
+            "Gespielte Spiele": "2,114",
+            "Gewonnene Spiele": "1,116",
+            "Gespielte Minispiele": "15,074",
+            "Gewonnene Minispiele": "6,077"
         }
     },
     "WirdNichtGeladen": {
@@ -2230,6 +2326,19 @@
             "Gewonnene Spiele": "555",
             "Gespielte Minispiele": "6,994",
             "Gewonnene Minispiele": "2,741"
+        }
+    },
+    "WshPasie": {
+        "name": "WshPasie",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Position (Punkte)": "1,981",
+            "Punkte": "4,665",
+            "Spielzeit": "3 Tage 10 Stunden",
+            "Gespielte Spiele": "273",
+            "Gewonnene Spiele": "44",
+            "Gespielte Minispiele": "2,165",
+            "Gewonnene Minispiele": "359"
         }
     },
     "WuschigesEtwas": {
@@ -2273,16 +2382,8 @@
     },
     "_Einfallslos_": {
         "name": "_Einfallslos_",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Position (Punkte)": "112",
-            "Punkte": "25,290",
-            "Spielzeit": "9 Tage 8 Stunden",
-            "Gespielte Spiele": "835",
-            "Gewonnene Spiele": "449",
-            "Gespielte Minispiele": "5,917",
-            "Gewonnene Minispiele": "2,451"
-        }
+        "rank": "None",
+        "minecraft_party": {}
     },
     "_Waldi_": {
         "name": "_Waldi_",
@@ -2349,19 +2450,6 @@
             "Gewonnene Minispiele": "461"
         }
     },
-    "bikop": {
-        "name": "bikop",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Position (Punkte)": "584,467",
-            "Punkte": "0",
-            "Spielzeit": "-",
-            "Gespielte Spiele": "0",
-            "Gewonnene Spiele": "0",
-            "Gespielte Minispiele": "0",
-            "Gewonnene Minispiele": "0"
-        }
-    },
     "byTobi": {
         "name": "byTobi",
         "rank": "VIP",
@@ -2393,12 +2481,12 @@
         "rank": "Premium+",
         "minecraft_party": {
             "Position (Punkte)": "1",
-            "Punkte": "295,965",
-            "Spielzeit": "81 Tage 6 Stunden",
-            "Gespielte Spiele": "6,775",
-            "Gewonnene Spiele": "5,237",
-            "Gespielte Minispiele": "52,025",
-            "Gewonnene Minispiele": "30,080"
+            "Punkte": "296,020",
+            "Spielzeit": "81 Tage 7 Stunden",
+            "Gespielte Spiele": "6,776",
+            "Gewonnene Spiele": "5,238",
+            "Gespielte Minispiele": "52,034",
+            "Gewonnene Minispiele": "30,083"
         }
     },
     "cheesecake2901": {
@@ -2568,6 +2656,32 @@
             "Gewonnene Spiele": "11",
             "Gespielte Minispiele": "3,837",
             "Gewonnene Minispiele": "135"
+        }
+    },
+    "kfc_man069": {
+        "name": "kfc_man069",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Position (Punkte)": "937",
+            "Punkte": "7,381",
+            "Spielzeit": "9 Tage 8 Stunden",
+            "Gespielte Spiele": "752",
+            "Gewonnene Spiele": "49",
+            "Gespielte Minispiele": "5,092",
+            "Gewonnene Minispiele": "513"
+        }
+    },
+    "linastunna": {
+        "name": "linastunna",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Position (Punkte)": "238,337",
+            "Punkte": "42",
+            "Spielzeit": "8 Stunden 52 Minuten",
+            "Gespielte Spiele": "31",
+            "Gewonnene Spiele": "0",
+            "Gespielte Minispiele": "235",
+            "Gewonnene Minispiele": "0"
         }
     },
     "lizsyy": {
@@ -2752,6 +2866,19 @@
             "Gewonnene Minispiele": "472"
         }
     },
+    "sirmigorius": {
+        "name": "sirmigorius",
+        "rank": "Premium+",
+        "minecraft_party": {
+            "Position (Punkte)": "84",
+            "Punkte": "31,827",
+            "Spielzeit": "14 Tage 11 Stunden",
+            "Gespielte Spiele": "1,221",
+            "Gewonnene Spiele": "506",
+            "Gespielte Minispiele": "8,953",
+            "Gewonnene Minispiele": "2,858"
+        }
+    },
     "swiffle": {
         "name": "swiffle",
         "rank": "Supporter",
@@ -2817,6 +2944,19 @@
             "Gewonnene Minispiele": "1,159"
         }
     },
+    "xIForgotMySkill": {
+        "name": "xIForgotMySkill",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Position (Punkte)": "142",
+            "Punkte": "21,908",
+            "Spielzeit": "17 Tage 2 Stunden",
+            "Gespielte Spiele": "1,388",
+            "Gewonnene Spiele": "196",
+            "Gespielte Minispiele": "10,576",
+            "Gewonnene Minispiele": "1,443"
+        }
+    },
     "xX_Dima_ggg_Xx6": {
         "name": "xX_Dima_ggg_Xx6",
         "rank": "Spieler",
@@ -2871,29 +3011,13 @@
     },
     "y9nic": {
         "name": "y9nic",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Position (Punkte)": "485",
-            "Punkte": "10,904",
-            "Spielzeit": "5 Tage 11 Stunden",
-            "Gespielte Spiele": "473",
-            "Gewonnene Spiele": "173",
-            "Gespielte Minispiele": "3,156",
-            "Gewonnene Minispiele": "902"
-        }
+        "rank": "None",
+        "minecraft_party": {}
     },
     "yachayubin": {
         "name": "yachayubin",
-        "rank": "Premium+",
-        "minecraft_party": {
-            "Position (Punkte)": "264",
-            "Punkte": "15,304",
-            "Spielzeit": "9 Tage 2 Stunden",
-            "Gespielte Spiele": "834",
-            "Gewonnene Spiele": "188",
-            "Gespielte Minispiele": "5,803",
-            "Gewonnene Minispiele": "1,058"
-        }
+        "rank": "None",
+        "minecraft_party": {}
     },
     "yiiq": {
         "name": "yiiq",
@@ -2932,6 +3056,19 @@
             "Gewonnene Spiele": "667",
             "Gespielte Minispiele": "8,196",
             "Gewonnene Minispiele": "3,810"
+        }
+    },
+    "zLachs": {
+        "name": "zLachs",
+        "rank": "Premium",
+        "minecraft_party": {
+            "Position (Punkte)": "125",
+            "Punkte": "23,584",
+            "Spielzeit": "10 Tage 7 Stunden",
+            "Gespielte Spiele": "867",
+            "Gewonnene Spiele": "347",
+            "Gespielte Minispiele": "6,275",
+            "Gewonnene Minispiele": "1,872"
         }
     }
 }
