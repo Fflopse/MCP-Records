@@ -1,0 +1,2011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Party Records</title>
+
+    <!-- AG-Grid CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community@31.0.0/styles/ag-grid.css">
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community@31.0.0/styles/ag-theme-alpine-dark.css">
+
+    <!-- AG-Grid JS -->
+    <script src="https://unpkg.com/ag-grid-community@31.0.0/dist/ag-grid-community.min.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #0a0a0f;
+            --secondary-color: #1a1a2e;
+            --tertiary-color: #16213e;
+            --accent-color-1: #00f5ff;
+            --accent-color-2: #ff6b6b;
+            --accent-color-3: #4ecdc4;
+            --accent-color-4: #45b7d1;
+            --text-color: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0f;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                    radial-gradient(circle at 20% 80%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 40%, rgba(78, 205, 196, 0.08) 0%, transparent 50%),
+                    linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+            animation: backgroundMove 20s ease-in-out infinite;
+            z-index: -2;
+        }
+
+        @keyframes backgroundMove {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(1deg); }
+            66% { transform: translate(-20px, 20px) rotate(-1deg); }
+        }
+
+        /* Glass morphism overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                    rgba(0, 245, 255, 0.03) 0%,
+                    transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+            transition: background 0.3s ease;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .title-container {
+            margin-bottom: 40px;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .title-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--accent-color-1) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            opacity: 0.1;
+            animation: pulse 4s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.1; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
+        }
+
+        .main-title {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: transparent;
+            background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-4), var(--accent-color-2));
+            background-clip: text;
+            -webkit-background-clip: text;
+            margin: 0;
+            padding: 0;
+            letter-spacing: -2px;
+            position: relative;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            0% { filter: drop-shadow(0 0 20px rgba(0, 245, 255, 0.3)); }
+            100% { filter: drop-shadow(0 0 40px rgba(0, 245, 255, 0.6)); }
+        }
+
+        .search-subheading {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .search-section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .search-section::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            background: linear-gradient(45deg, var(--accent-color-1), transparent, var(--accent-color-2), transparent);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .search-section:hover::before {
+            opacity: 0.5;
+        }
+
+        .search-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 245, 255, 0.1);
+        }
+
+        @keyframes unfold {
+            from {
+                max-height: 0;
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                max-height: 200px;
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #global-search-results {
+            position: absolute;
+            top: 100%;
+            left: 30px;
+            right: 30px;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            max-height: 200px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+            animation: unfold 0.3s ease-out;
+            margin-top: 10px;
+        }
+
+        .search-result-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .search-result-item:first-child {
+            border-radius: 15px 15px 0 0;
+        }
+
+        .search-result-item:hover {
+            background: linear-gradient(90deg, rgba(0, 245, 255, 0.1), rgba(255, 107, 107, 0.1));
+            transform: translateX(5px);
+        }
+
+        .search-result-item img {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
+
+        .arrow {
+            display: inline-block;
+            animation: bounce 2s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(-1px); }
+            to { transform: translateY(4px); }
+        }
+
+        #global-player-search {
+            width: calc(100% - 60px);
+            padding: 18px 30px;
+            border: 2px solid transparent;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            color: var(--text-color);
+            font-size: 16px;
+            margin: 0 auto;
+            display: block;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        #global-player-search:focus {
+            border-color: var(--accent-color-1);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 30px rgba(0, 245, 255, 0.2);
+        }
+
+        #global-player-search::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .controls-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 20px;
+            padding: 25px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .controls-container:hover {
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px rgba(0, 245, 255, 0.1);
+        }
+
+        .dropdown, .search-container {
+            flex: 1;
+            max-width: calc(50% - 10px);
+        }
+
+        #minigame-select, #player-search {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid transparent;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            color: var(--text-color);
+            font-size: 16px;
+            box-sizing: border-box;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%2300f5ff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            padding-right: 45px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        #minigame-select:focus, #player-search:focus {
+            border-color: var(--accent-color-1);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
+        }
+
+        #player-search::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* AG-Grid Custom Styling */
+        .ag-theme-alpine-dark {
+            --ag-background-color: rgba(255, 255, 255, 0.02);
+            --ag-header-background-color: rgba(0, 0, 0, 0.6);
+            --ag-odd-row-background-color: rgba(255, 255, 255, 0.02);
+            --ag-even-row-background-color: rgba(255, 255, 255, 0.05);
+            --ag-row-hover-color: rgba(0, 245, 255, 0.1);
+            --ag-selected-row-background-color: rgba(0, 245, 255, 0.15);
+            --ag-border-color: rgba(255, 255, 255, 0.1);
+            --ag-header-column-separator-color: rgba(255, 255, 255, 0.2);
+            --ag-cell-horizontal-border: solid rgba(255, 255, 255, 0.05);
+            --ag-font-family: 'Segoe UI', system-ui, sans-serif;
+            --ag-font-size: 14px;
+            --ag-foreground-color: var(--text-color);
+            --ag-header-foreground-color: var(--text-color);
+            border: none;
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .ag-header {
+            border-radius: 20px 20px 0 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(26, 26, 46, 0.8));
+        }
+
+        .ag-header-cell-sortable:hover {
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(255, 107, 107, 0.1)) !important;
+        }
+
+        .ag-header-cell.ag-header-cell-sorted-asc,
+        .ag-header-cell.ag-header-cell-sorted-desc {
+            background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-4)) !important;
+            color: var(--primary-color) !important;
+            font-weight: 600;
+        }
+
+        .ag-row:hover .ag-cell {
+            color: var(--accent-color-1) !important;
+            background: linear-gradient(90deg, rgba(0, 245, 255, 0.05), transparent) !important;
+        }
+
+        .player-avatar {
+            width: 32px;
+            height: 32px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .player-name {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .player-name:hover {
+            color: var(--accent-color-1);
+        }
+
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid var(--accent-color-3);
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #records-grid {
+            height: 500px;
+            width: 100%;
+            opacity: 0;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        #records-grid.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .rank-1 {
+            color: #ffd700 !important;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        .rank-2 {
+            color: #c0c0c0 !important;
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(192, 192, 192, 0.5);
+        }
+        .rank-3 {
+            color: #cd7f32 !important;
+            font-weight: bold;
+            text-shadow: 0 0 6px rgba(205, 127, 50, 0.5);
+        }
+        .rank-other {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        .video-link {
+            color: inherit;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-link:hover {
+            opacity: 0.7;
+        }
+
+        .video-links-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .video-links-container h3 {
+            color: var(--accent-color-1);
+            margin-bottom: 15px;
+        }
+
+        .video-links-container h4 {
+            color: var(--accent-color-2);
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .video-link-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .video-link-item:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .video-link-player {
+            flex-grow: 1;
+            color: var(--text-color);
+        }
+
+        .video-link-time {
+            margin-right: 15px;
+            color: var(--accent-color-3);
+        }
+
+        .video-link-button {
+            padding: 8px 16px;
+            background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-4));
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
+        }
+
+        .video-link-button:hover {
+            background: linear-gradient(135deg, var(--accent-color-4), var(--accent-color-2));
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 245, 255, 0.3);
+        }
+
+        .legend {
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9em;
+            text-align: center;
+            padding: 15px;
+            background: var(--glass-bg);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        } var(--accent-color-1);
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 3px;
+        transition: background-color 0.3s ease;
+        }
+
+        .video-link-button:hover {
+            background-color: var(--accent-color-2);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .modal-content {
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px);
+            margin: 0 auto;
+            padding: 40px;
+            border: 1px solid var(--glass-border);
+            width: 100%;
+            max-width: 1000px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50%) translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(-50%) translateY(0) scale(1);
+            }
+        }
+
+        .close {
+            color: rgba(255, 255, 255, 0.7);
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1001;
+        }
+
+        .close:hover {
+            color: var(--accent-color-2);
+            background: rgba(255, 107, 107, 0.2);
+            transform: rotate(90deg);
+        }
+
+        /* Player Profile Styles */
+        .player-profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding-right: 60px;
+            flex-wrap: wrap;
+        }
+
+        .player-avatar-name {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .player-avatar-name img {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            border-radius: 15px;
+            border: 2px solid var(--glass-border);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .player-avatar-name h2 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .player-prefix {
+            font-weight: bold;
+            margin-bottom: 8px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: white;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .player-stats {
+            text-align: right;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+            min-width: 200px;
+        }
+
+        .player-stats p {
+            margin: 8px 0;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .player-stats p strong {
+            color: var(--accent-color-1);
+            font-weight: 600;
+        }
+
+        /* Minigame Section Styles */
+        .minigame-section {
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .minigame-section:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .minigame-section h3 {
+            color: var(--accent-color-1);
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: 600;
+            text-align: center;
+            border-bottom: 2px solid var(--glass-border);
+            padding-bottom: 10px;
+        }
+
+        /* Profile Table Styles */
+        .profile-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .profile-table th {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(26, 26, 46, 0.6));
+            color: var(--text-color);
+            font-weight: 600;
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 2px solid var(--glass-border);
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-table th:first-child {
+            border-radius: 15px 0 0 0;
+        }
+
+        .profile-table th:last-child {
+            border-radius: 0 15px 0 0;
+        }
+
+        .profile-table td {
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+        }
+
+        .profile-table tr:nth-child(even) td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .profile-table tr:hover td {
+            background: linear-gradient(90deg, rgba(0, 245, 255, 0.05), transparent);
+            color: var(--accent-color-1);
+        }
+
+        .profile-table tr:last-child td:first-child {
+            border-radius: 0 0 0 15px;
+        }
+
+        .profile-table tr:last-child td:last-child {
+            border-radius: 0 0 15px 0;
+        }
+
+        .profile-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Expand Button Styles */
+        .expand-button {
+            background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-4));
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .expand-button:hover {
+            background: linear-gradient(135deg, var(--accent-color-4), var(--accent-color-2));
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 245, 255, 0.3);
+        }
+
+        .expand-icon {
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hidden rows for expand/collapse */
+        .hidden-row {
+            display: none;
+        }
+
+        /* Legend in modal */
+        .modal .legend {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+
+        .site-footer {
+            margin-top: 50px;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-separator {
+            margin: 0 15px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .site-footer a {
+            color: var(--accent-color-1);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
+        .site-footer a:hover {
+            color: var(--accent-color-2);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Modal Design */
+        @media (max-width: 768px) {
+            .modal {
+                padding: 10px;
+            }
+
+            .modal-content {
+                padding: 25px;
+                top: 0;
+                transform: none;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                max-height: none;
+            }
+
+            .player-profile-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding-right: 0;
+            }
+
+            .player-stats {
+                text-align: center;
+                margin-top: 20px;
+                width: 100%;
+            }
+
+            .player-avatar-name img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .player-avatar-name h2 {
+                font-size: 1.5rem;
+                align-items: center;
+            }
+
+            .profile-table th,
+            .profile-table td {
+                padding: 8px 12px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modal-content {
+                padding: 20px;
+            }
+
+            .player-avatar-name {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .player-avatar-name img {
+                margin-right: 0;
+                margin-bottom: 15px;
+                width: 70px;
+                height: 70px;
+            }
+
+            .player-avatar-name h2 {
+                font-size: 1.3rem;
+            }
+
+            .profile-table {
+                font-size: 0.85em;
+            }
+
+            .profile-table th,
+            .profile-table td {
+                padding: 6px 8px;
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2));
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, var(--accent-color-2), var(--accent-color-1));
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="title-container">
+        <h2 class="search-subheading">unofficial</h2>
+        <h1 class="main-title">Cytooxien Minecraft Party Records</h1>
+    </div>
+
+    <div class="search-section">
+        <div class="search-subheading">
+            <span class="arrow">full records data</span>
+        </div>
+        <input type="text" id="global-player-search" placeholder="records(<player>)">
+        <div id="global-search-results"></div>
+    </div>
+
+    <div class="controls-container">
+        <div class="dropdown">
+            <select id="minigame-select">
+                <option value="Blockhüpfer">Block Jump</option>
+                <option value="Buntes Chaos">Colorful Chaos</option>
+                <option value="Todeswürfel">Death Cube</option>
+                <option value="Duelle">Duels</option>
+                <option value="Drachenflucht">Dragon Escape</option>
+                <option value="Freier Fall">Dropper</option>
+                <option value="Elytrarennen">Elytra Race</option>
+                <option value="Frostiger Pfad">Frozen Path</option>
+                <option value="Waffenfolge">Gungame</option>
+                <option value="Pferderennen" selected>Horse Race</option>
+                <option value="Parkour">Parkour</option>
+                <option value="Kletterkönig">King of the Hill</option>
+                <option value="Lasertag">Lasertag</option>
+                <option value="Minengefecht">Mine Battle</option>
+                <option value="Minenfeld">Minefield</option>
+                <option value="Skywars">Skywars</option>
+                <option value="Survivalgames">Survivalgames</option>
+                <option value="Einer im Köcher">One in the Chamber</option>
+                <option value="Paintball">Paintball</option>
+                <option value="Replika">Replica</option>
+                <option value="Ampelrennen">Red Light, Green Light</option>
+                <option value="Schießstand">Shooting Range</option>
+                <option value="Spleef">Spleef</option>
+                <option value="Wettrennen">Speed Race</option>
+                <option value="Sammelwahn">Too many items</option>
+                <option value="Runterpurzeln">Tumble Tactics</option>
+                <option value="Hoch hinaus">Up High</option>
+                <option value="Mauerfall">Mauerfall</option>
+                <option value="Turmroulette">Turmroulette</option>
+            </select>
+        </div>
+        <div class="search-container">
+            <input type="text" id="player-search" placeholder="filter scoreboard...">
+        </div>
+    </div>
+
+    <div id="loading-animation" class="loading">
+        <div class="spinner"></div>
+        <p id="loading-text">Loading data and avatars...</p>
+    </div>
+
+    <div id="records-grid" class="ag-theme-alpine-dark"></div>
+    <div id="legend-container"></div>
+    <div id="video-links-container" class="video-links-container"></div>
+
+    <!-- Player Profile Modal -->
+    <div id="player-profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <div id="player-profile-content"></div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <span>Data as of: <time datetime="2025-06-29T12:00:00Z">29 Jun, 2025</time></span>
+            <span class="footer-separator">|</span>
+            <a href="https://github.com/Fflopse/MCP-Records" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+            <span class="footer-separator">|</span>
+            <a href="https://github.com/Fflopse/MCP-Records/blob/main/data-analysis/records_data.json">Raw Data</a>
+            <span class="footer-separator">|</span>
+            <a href="mailto:contact@fflopse.de">Contact</a>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // Sample data structure - replace with your actual data loading
+    const sampleData = [
+        {
+            "name": "Ex4cted",
+            "minigame": "Runterpurzeln",
+            "scores": {"Space": 49.26},
+            "best_score": 49.26
+        },
+        {
+            "name": "swiffle",
+            "minigame": "Runterpurzeln",
+            "scores": {"Space": 58.713},
+            "best_score": 58.713
+        },
+        {
+            "name": "juvona",
+            "minigame": "Runterpurzeln",
+            "scores": {"Space": 134.32},
+            "best_score": 134.32
+        },
+        {
+            "name": "__egE",
+            "minigame": "Sammelwahn",
+            "scores": {
+                "Sum": 452.0,
+                "Dichter Wald": 25.0,
+                " Bambusdschungel": 20.0,
+                " Birkenwald": 27.0
+            },
+            "best_score": 452.0
+        }
+    ];
+
+    // Configuration objects
+    const minigameSortDirections = {
+        "Blockhüpfer": "asc",
+        "Buntes Chaos": "desc",
+        "Todeswürfel": "asc",
+        "Duelle": "desc",
+        "Drachenflucht": "asc",
+        "Freier Fall": "asc",
+        "Elytrarennen": "asc",
+        "Frostiger Pfad": "asc",
+        "Waffenfolge": "asc",
+        "Pferderennen": "asc",
+        "Parkour": "asc",
+        "Kletterkönig": "asc",
+        "Lasertag": "desc",
+        "Minengefecht": "desc",
+        "Minenfeld": "asc",
+        "Skywars": "desc",
+        "Survivalgames": "desc",
+        "Einer im Köcher": "desc",
+        "Paintball": "desc",
+        "Replika": "asc",
+        "Ampelrennen": "asc",
+        "Schießstand": "desc",
+        "Spleef": "desc",
+        "Wettrennen": "asc",
+        "Sammelwahn": "desc",
+        "Hoch hinaus": "asc",
+        "Runterpurzeln": "asc",
+        "Mauerfall": "desc",
+        "Turmroulette": "desc",
+    };
+
+    const cutoffValues = {
+        "Todeswürfel": {"Street": 25.0},
+        "Wettrennen": {
+            "Blossom Canyon": 77.0,
+            "Cyberpunk": 75.8,
+            "Green Hills": 63.5
+        },
+        "Paintball": {"Cyber Arena": 40.0},
+        "Freier Fall": {"Underground": 19.0},
+        "Hoch hinaus": {"Global": 39.0},
+        "Pferderennen": {
+            "Jungle": 69.7,
+            "Ancient Falls": 83.0
+        },
+        "Minenfeld": {"Ice Cave": 24.0}
+    };
+
+    const videoLinks = {
+        "Blockhüpfer": {
+            "City": [
+                {time: 20.577, player: "ReichesBrot", link: "https://youtu.be/I-v4fahzt00"}
+            ]
+        },
+        "Schießstand": {
+            "Farm": [
+                {time: 479, player: "Fflopse", link: "https://youtu.be/JXs1dn8vZwc"}
+            ]
+        },
+        "Pferderennen": {
+            "City": [
+                {time: 63.320, player: "Fflopse", link: "https://youtu.be/JcA4LR3a2RY"}
+            ],
+            "Jungle": [
+                {time: 69.611, player: "Fflopse", link: "https://youtu.be/wtKRtbWWp1Q"}
+            ]
+        }
+    };
+
+    const prefixData = {
+        "bauteam": {"prefix": "§f", "name": "Builder", "color": "#ffd300"},
+        "supporter": {"prefix": "§f", "name": "Supporter", "color": "#54c9ff"},
+        "default": {"prefix": "§f", "name": "Player", "color": "#9097a0"},
+        "premium": {"prefix": "§f", "name": "Premium", "color": "#71d512"},
+        "premium+": {"prefix": "§f", "name": "Premium+", "color": "#448e00"},
+        "entwickler": {"prefix": "§f", "name": "Developer", "color": "#e6173d"},
+        "content": {"prefix": "§f", "name": "Content", "color": "#ff0b74"},
+        "vip": {"prefix": "§f", "name": "VIP", "color": "#ae00ff"},
+        "moderator": {"prefix": "§f", "name": "Moderator", "color": "#0078ff"},
+        "owner": {"prefix": "§f", "name": "Owner", "color": "#980c23"}
+    };
+
+    // Global variables
+    let gridApi;
+    let gridOptions;
+    let currentMinigame = "Pferderennen";
+    let allData = [];
+    let playerUUIDs = {};
+    let playerInfoData = {};
+
+    // Utility functions
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    function getRankClass(rank) {
+        if (rank === 1) return 'rank-1';
+        if (rank === 2) return 'rank-2';
+        if (rank === 3) return 'rank-3';
+        return 'rank-other';
+    }
+
+    function calculateRank(allPlayersData, map, playerScore, sortDirection) {
+        const validScores = allPlayersData
+            .map(player => player.scores[map])
+            .filter(score => score !== undefined && score !== null && score !== "-");
+
+        const uniqueScores = [...new Set(validScores)];
+        uniqueScores.sort((a, b) => sortDirection === "asc" ? a - b : b - a);
+
+        return uniqueScores.indexOf(playerScore) + 1;
+    }
+
+    // Cell renderers
+    function avatarCellRenderer(params) {
+        const name = params.data.name;
+        const uuid = playerUUIDs[name] || "8667ba71-b85a-4004-af54-457a9734eed7";
+        const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
+
+        return `
+                <div style="display: flex; align-items: center;">
+                    <img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar">
+                    <span class="player-name" onclick="showPlayerProfile('${name}')">${name}</span>
+                </div>
+            `;
+    }
+
+    function rankCellRenderer(params) {
+        const rank = params.value;
+        const rankClass = getRankClass(rank);
+        return `<span class="${rankClass}">${rank}</span>`;
+    }
+
+    function scoreCellRenderer(params) {
+        const value = params.value;
+        if (value === undefined || value === null) return "-";
+
+        const formattedValue = typeof value === 'number' ? value.toFixed(3) : value;
+        const playerName = params.data.name;
+        const mapName = params.colDef.field.replace('scores.', '');
+
+        // Check for video links
+        const videoInfo = videoLinks[currentMinigame] &&
+            videoLinks[currentMinigame][mapName] &&
+            videoLinks[currentMinigame][mapName].find(v =>
+                v.player === playerName && Math.abs(v.time - parseFloat(formattedValue)) < 0.001
+            );
+
+        if (videoInfo) {
+            return `<a href="${videoInfo.link}" target="_blank" class="video-link">${formattedValue}</a>`;
+        }
+
+        // Check if the value is better than the cutoff
+        const cutoff = cutoffValues[currentMinigame] && cutoffValues[currentMinigame][mapName];
+        if (cutoff !== undefined) {
+            const sortDirection = minigameSortDirections[currentMinigame] || "desc";
+            if ((sortDirection === "asc" && value < cutoff) || (sortDirection === "desc" && value > cutoff)) {
+                return `<span style="font-style: italic;">${formattedValue}*</span>`;
+            }
+        }
+
+        return formattedValue;
+    }
+
+    // Grid setup functions
+    function createColumnDefs(minigame, filteredData) {
+        const allMapNames = new Set();
+        filteredData.forEach(record => {
+            Object.keys(record.scores || {}).forEach(mapName => {
+                allMapNames.add(mapName);
+            });
+        });
+
+        // Calculate the width needed for the name column based on content
+        const longestName = filteredData.reduce((longest, record) =>
+            record.name.length > longest.length ? record.name : longest, ""
+        );
+        // Base width for avatar (40px) + padding (20px) + text width estimate (8px per char) + buffer (20px)
+        const nameColumnWidth = Math.max(200, 40 + 20 + (longestName.length * 8) + 20);
+
+        const columnDefs = [
+            {
+                headerName: "Name",
+                field: "name",
+                cellRenderer: avatarCellRenderer,
+                pinned: 'left',
+                width: nameColumnWidth,
+                minWidth: nameColumnWidth,
+                maxWidth: nameColumnWidth + 50, // Allow some flexibility
+                sortable: false,
+                filter: false,
+                suppressSizeToFit: true, // Don't resize this column during sizeColumnsToFit
+                lockPosition: true
+            },
+            {
+                headerName: "Rank",
+                field: "rank",
+                cellRenderer: rankCellRenderer,
+                width: 70,
+                minWidth: 70,
+                maxWidth: 80,
+                sortable: false,
+                filter: false,
+                suppressSizeToFit: true
+            }
+        ];
+
+        Array.from(allMapNames).sort().forEach(mapName => {
+            columnDefs.push({
+                headerName: mapName,
+                field: `scores.${mapName}`,
+                cellRenderer: scoreCellRenderer,
+                width: 120,
+                sortable: true,
+                filter: false,
+                valueGetter: params => {
+                    return params.data.scores && params.data.scores[mapName] !== undefined
+                        ? params.data.scores[mapName]
+                        : null;
+                }
+            });
+        });
+
+        return columnDefs;
+    }
+
+    function prepareRowData(minigame, filteredData) {
+        if (filteredData.length === 0) return [];
+
+        // Get all map names for this minigame
+        const allMapNames = new Set();
+        filteredData.forEach(record => {
+            Object.keys(record.scores || {}).forEach(mapName => {
+                allMapNames.add(mapName);
+            });
+        });
+
+        const sortDirection = minigameSortDirections[minigame] || "desc";
+        const firstMapName = Array.from(allMapNames).sort()[0];
+
+        // Sort data by first map
+        const sortedData = [...filteredData].sort((a, b) => {
+            const aScore = a.scores && a.scores[firstMapName];
+            const bScore = b.scores && b.scores[firstMapName];
+
+            if (aScore === undefined || aScore === null) return 1;
+            if (bScore === undefined || bScore === null) return -1;
+            if (aScore === bScore) return 0;
+
+            return sortDirection === "asc" ? aScore - bScore : bScore - aScore;
+        });
+
+        // Add ranks
+        let rank = 1;
+        let lastScore = null;
+        let tieCount = 0;
+
+        sortedData.forEach((row, index) => {
+            const score = row.scores && row.scores[firstMapName];
+
+            if (lastScore !== null && score !== lastScore) {
+                rank += tieCount + 1;
+                tieCount = 0;
+            } else if (lastScore !== null) {
+                tieCount++;
+            }
+
+            row.rank = rank;
+            lastScore = score;
+        });
+
+        return sortedData;
+    }
+
+    function updateGrid(minigame) {
+        console.log('🔄 Updating grid for minigame:', minigame);
+        currentMinigame = minigame;
+
+        // Clear search
+        document.getElementById('player-search').value = '';
+
+        // Show loading
+        document.getElementById('loading-animation').style.display = 'flex';
+        document.getElementById('records-grid').style.opacity = '0';
+
+        setTimeout(() => {
+            const filteredData = allData.filter(record => record.minigame === minigame);
+            console.log('📊 Filtered data for', minigame + ':', filteredData.length, 'records');
+
+            if (filteredData.length === 0) {
+                console.log('⚠️ No data found for minigame:', minigame);
+                if (gridApi) {
+                    // Use the new API method instead of deprecated setRowData
+                    gridApi.setGridOption('rowData', []);
+                }
+                document.getElementById('loading-animation').style.display = 'none';
+                document.getElementById('records-grid').style.opacity = '1';
+                return;
+            }
+
+            const columnDefs = createColumnDefs(minigame, filteredData);
+            const rowData = prepareRowData(minigame, filteredData);
+
+            console.log('📋 Column definitions:', columnDefs.length, 'columns');
+            console.log('📊 Row data:', rowData.length, 'rows');
+
+            if (gridApi) {
+                // Use new API methods
+                gridApi.setGridOption('columnDefs', columnDefs);
+                gridApi.setGridOption('rowData', rowData);
+
+                // Auto-sort by first score column
+                const firstScoreCol = columnDefs.find(col => col.field && col.field.startsWith('scores.'));
+                if (firstScoreCol) {
+                    const sortDirection = minigameSortDirections[minigame] === 'asc' ? 'asc' : 'desc';
+                    console.log('🔢 Auto-sorting by:', firstScoreCol.field, 'direction:', sortDirection);
+                    gridApi.applyColumnState({
+                        state: [{ colId: firstScoreCol.field, sort: sortDirection }]
+                    });
+                }
+
+                // Fit columns to view, but preserve name column width
+                setTimeout(() => {
+                    // Auto-size the name column to fit content perfectly
+                    gridApi.autoSizeColumns(['name'], false);
+
+                    // Then fit the remaining columns
+                    setTimeout(() => {
+                        gridApi.sizeColumnsToFit();
+                    }, 50);
+                }, 100);
+            }
+
+            // Update video links and legend
+            displayVideoLinks(minigame);
+            updateLegend(rowData);
+
+            document.getElementById('loading-animation').style.display = 'none';
+            document.getElementById('records-grid').style.opacity = '1';
+
+            console.log('✅ Grid update complete');
+        }, 150);
+    }
+
+    function displayVideoLinks(minigame) {
+        const container = document.getElementById('video-links-container');
+        container.innerHTML = '';
+
+        if (!videoLinks[minigame] || Object.keys(videoLinks[minigame]).length === 0) {
+            return;
+        }
+
+        let html = '<h3>Video Records</h3>';
+        for (const [map, videos] of Object.entries(videoLinks[minigame])) {
+            html += `<h4>${map}</h4>`;
+            for (const video of videos) {
+                const uuid = playerUUIDs[video.player] || "8667ba71-b85a-4004-af54-457a9734eed7";
+                const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
+                html += `
+                        <div class="video-link-item">
+                            <img src="${avatarUrl}" alt="${video.player}'s avatar" class="player-avatar">
+                            <span class="video-link-player">${video.player}</span>
+                            <span class="video-link-time">${video.time.toFixed(3)}</span>
+                            <a href="${video.link}" target="_blank" class="video-link-button">Watch</a>
+                        </div>
+                    `;
+            }
+        }
+        container.innerHTML = html;
+    }
+
+    function updateLegend(data) {
+        const container = document.getElementById('legend-container');
+
+        // Check if any records are annotated
+        const hasAnnotatedRecords = data.some(row =>
+            Object.entries(row.scores || {}).some(([map, score]) => {
+                const cutoff = cutoffValues[currentMinigame] && cutoffValues[currentMinigame][map];
+                if (cutoff !== undefined) {
+                    const sortDirection = minigameSortDirections[currentMinigame] || "desc";
+                    return (sortDirection === "asc" && score < cutoff) || (sortDirection === "desc" && score > cutoff);
+                }
+                return false;
+            })
+        );
+
+        if (hasAnnotatedRecords) {
+            container.innerHTML = `
+                    <div class="legend">
+                        * Indicates a score that is not reproducible in legitimate play at the current state of the map.
+                    </div>
+                `;
+        } else {
+            container.innerHTML = '';
+        }
+    }
+
+    // Player profile functions
+    function createPlayerProfile(playerName) {
+        const playerData = allData.filter(record => record.name === playerName);
+        const playerInfo = playerInfoData[playerName];
+
+        // Determine the correct prefix
+        const prefixInfo = playerInfo && prefixData[playerInfo.rank?.toLowerCase()]
+            ? prefixData[playerInfo.rank.toLowerCase()]
+            : prefixData.default;
+        const prefixColor = prefixInfo.color;
+
+        let profileHTML = `
+                <div class="player-profile-header">
+                    <div class="player-avatar-name">
+                        <img src="https://starlightskins.lunareclipse.studio/render/default/${playerUUIDs[playerName] || 'Alex'}/face"
+                            alt="${playerName}'s head"
+                            onerror="this.src='https://starlightskins.lunareclipse.studio/render/default/Alex/face'">
+                        <h2>
+                            <span class="player-prefix" style="background-color: ${prefixColor};">${prefixInfo.name}</span>
+                            ${playerName}
+                        </h2>
+                    </div>`;
+
+        if (playerInfo && playerInfo.minecraft_party) {
+            const gameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Spiele'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Spiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
+            const minigameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Minispiele'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Minispiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
+
+            profileHTML += `
+                    <div class="player-stats">
+                        <p><strong>alltime#:</strong> ${playerInfo.minecraft_party['Position (Punkte)']}</p>
+                        <p><strong>game%:</strong> ${gameWinPercentage}%</p>
+                        <p><strong>minigame%:</strong> ${minigameWinPercentage}%</p>
+                    </div>`;
+        }
+
+        profileHTML += `</div>`;
+
+        const minigames = [...new Set(playerData.map(record => record.minigame))];
+        let hasAnnotatedRecords = false;
+
+        minigames.forEach((minigame, index) => {
+            const minigameData = playerData.find(record => record.minigame === minigame);
+            if (minigameData && minigameData.scores) {
+                const allPlayersData = allData.filter(record => record.minigame === minigame);
+
+                profileHTML += `
+                        <div class="minigame-section">
+                            <h3>${minigame}</h3>
+                            <table class="profile-table" id="minigame-table-${index}">
+                                <thead>
+                                    <tr>
+                                        <th>Map</th>
+                                        <th>Score</th>
+                                        <th>Rank</th>
+                                    </tr>
+                                </thead>
+                                <tbody>`;
+
+                Object.entries(minigameData.scores).forEach(([map, score]) => {
+                    const sortDirection = minigameSortDirections[minigame] || "desc";
+                    const playerRank = calculateRank(allPlayersData, map, score, sortDirection);
+                    const rankClass = getRankClass(playerRank);
+
+                    // Check if the score is better than the cutoff
+                    const cutoff = cutoffValues[minigame] && cutoffValues[minigame][map];
+                    let scoreDisplay = score;
+                    if (cutoff !== undefined &&
+                        ((sortDirection === "asc" && score < cutoff) ||
+                            (sortDirection === "desc" && score > cutoff))) {
+                        scoreDisplay = `<span style="font-style: italic;">${score}*</span>`;
+                        hasAnnotatedRecords = true;
+                    }
+
+                    profileHTML += `
+                            <tr>
+                                <td>${map}</td>
+                                <td>${scoreDisplay}</td>
+                                <td class="${rankClass}">${playerRank}</td>
+                            </tr>`;
+                });
+
+                profileHTML += `</tbody></table>`;
+
+                if (Object.keys(minigameData.scores).length > 5) {
+                    profileHTML += `
+                            <button class="expand-button" onclick="toggleRows('minigame-table-${index}')">
+                                <span class="expand-icon">▲</span> Show Less
+                            </button>`;
+                }
+
+                profileHTML += `</div>`;
+            }
+        });
+
+        if (hasAnnotatedRecords) {
+            profileHTML += `
+                    <div class="legend">
+                        * Indicates a score that is not reproducible in legitimate play at the current state of the map.
+                    </div>
+                `;
+        }
+
+        return profileHTML;
+    }
+
+    function toggleRows(tableId) {
+        const table = document.getElementById(tableId);
+        const button = table.nextElementSibling;
+        const rows = table.querySelectorAll('tbody tr');
+
+        const isExpanded = button.textContent.includes('Show Less');
+
+        rows.forEach((row, index) => {
+            if (index >= 5) {
+                row.style.display = isExpanded ? 'none' : 'table-row';
+            }
+        });
+
+        if (isExpanded) {
+            button.innerHTML = '<span class="expand-icon">▼</span> Show More';
+        } else {
+            button.innerHTML = '<span class="expand-icon">▲</span> Show Less';
+        }
+    }
+
+    function showPlayerProfile(playerName) {
+        const modal = document.getElementById('player-profile-modal');
+        const content = document.getElementById('player-profile-content');
+
+        modal.style.display = 'block';
+        content.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
+        document.title = `MCPR(${playerName})`;
+
+        setTimeout(() => {
+            content.innerHTML = createPlayerProfile(playerName);
+
+            // Initialize collapsed tables
+            const tables = content.querySelectorAll('.profile-table');
+            tables.forEach((table, index) => {
+                if (table.rows.length > 6) { // 1 header + 5 data rows
+                    toggleRows(`minigame-table-${index}`);
+                }
+            });
+        }, 500);
+    }
+
+    function closeModal() {
+        document.getElementById('player-profile-modal').style.display = 'none';
+        document.title = "Minecraft Party Records";
+    }
+
+    // Search functionality
+    function setupGlobalSearch() {
+        const searchInput = document.getElementById('global-player-search');
+        const searchResults = document.getElementById('global-search-results');
+
+        const performSearch = debounce(function() {
+            const searchTerm = searchInput.value.toLowerCase();
+            if (searchTerm.length < 2) {
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            const matchingPlayers = Object.keys(playerUUIDs).filter(name =>
+                name.toLowerCase().includes(searchTerm)
+            ).slice(0, 5);
+
+            if (matchingPlayers.length > 0) {
+                searchResults.innerHTML = matchingPlayers.map(name => `
+                        <div class="search-result-item" onclick="showPlayerProfile('${name}')">
+                            <img src="https://crafatar.com/avatars/${playerUUIDs[name]}?size=32&overlay" alt="${name}'s avatar">
+                            <span>${name}</span>
+                        </div>
+                    `).join('');
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.style.display = 'none';
+            }
+        }, 300);
+
+        searchInput.addEventListener('input', performSearch);
+
+        document.addEventListener('click', function(event) {
+            if (!searchResults.contains(event.target) && event.target !== searchInput) {
+                searchResults.style.display = 'none';
+            }
+        });
+    }
+
+    function setupTableSearch() {
+        const searchInput = document.getElementById('player-search');
+
+        searchInput.addEventListener('input', function() {
+            console.log('🔍 Table search:', this.value);
+            if (gridApi) {
+                gridApi.setGridOption('quickFilterText', this.value);
+            }
+        });
+    }
+
+    // Data loading and initialization
+    async function loadData() {
+        console.log('🔄 Starting data loading...');
+
+        try {
+            // Load player UUIDs first
+            console.log('📡 Fetching player_uuids.json...');
+            const uuidResponse = await fetch('data-analysis/player_uuids.json');
+            if (!uuidResponse.ok) {
+                throw new Error(`Failed to load UUIDs: ${uuidResponse.status} ${uuidResponse.statusText}`);
+            }
+            playerUUIDs = await uuidResponse.json();
+            console.log('✅ Player UUIDs loaded:', Object.keys(playerUUIDs).length, 'players');
+
+            // Load records data
+            console.log('📡 Fetching records_data.json...');
+            const recordsResponse = await fetch('data-analysis/records_data.json');
+            if (!recordsResponse.ok) {
+                throw new Error(`Failed to load records: ${recordsResponse.status} ${recordsResponse.statusText}`);
+            }
+            const recordsData = await recordsResponse.json();
+            console.log('✅ Records data loaded:', recordsData.length, 'records');
+
+            // Load player info (optional, may not exist)
+            try {
+                console.log('📡 Fetching player_data.json...');
+                const playerInfoResponse = await fetch('data-analysis/player_data.json');
+                if (playerInfoResponse.ok) {
+                    playerInfoData = await playerInfoResponse.json();
+                    console.log('✅ Player info loaded:', Object.keys(playerInfoData).length, 'players');
+                } else {
+                    console.log('⚠️ Player info not available, using defaults');
+                    playerInfoData = {};
+                }
+            } catch (error) {
+                console.log('⚠️ Player info not available:', error.message);
+                playerInfoData = {};
+            }
+
+            console.log('🎯 Data loading complete!');
+            return recordsData;
+
+        } catch (error) {
+            console.error('❌ Error loading data:', error);
+
+            // Fallback to sample data for testing
+            console.log('🔄 Using sample data as fallback...');
+
+            // Generate some sample UUIDs for testing
+            playerUUIDs = {
+                "Ex4cted": "550e8400-e29b-41d4-a716-446655440000",
+                "swiffle": "550e8400-e29b-41d4-a716-446655440001",
+                "juvona": "550e8400-e29b-41d4-a716-446655440002",
+                "__egE": "550e8400-e29b-41d4-a716-446655440003",
+                "TestPlayer1": "550e8400-e29b-41d4-a716-446655440004",
+                "TestPlayer2": "550e8400-e29b-41d4-a716-446655440005"
+            };
+
+            // Sample player info
+            playerInfoData = {
+                "Ex4cted": {
+                    rank: "premium",
+                    minecraft_party: {
+                        "Position (Punkte)": "42",
+                        "Gewonnene Spiele": "150",
+                        "Gespielte Spiele": "200",
+                        "Gewonnene Minispiele": "300",
+                        "Gespielte Minispiele": "400"
+                    }
+                }
+            };
+
+            // Enhanced sample data for testing
+            const sampleData = [
+                {
+                    "name": "Ex4cted",
+                    "minigame": "Pferderennen",
+                    "scores": {"City": 63.25, "Jungle": 71.5, "Ancient Falls": 85.2},
+                    "best_score": 63.25
+                },
+                {
+                    "name": "swiffle",
+                    "minigame": "Pferderennen",
+                    "scores": {"City": 65.1, "Jungle": 69.8, "Ancient Falls": 82.3},
+                    "best_score": 65.1
+                },
+                {
+                    "name": "juvona",
+                    "minigame": "Pferderennen",
+                    "scores": {"City": 67.8, "Jungle": 73.2},
+                    "best_score": 67.8
+                },
+                {
+                    "name": "__egE",
+                    "minigame": "Sammelwahn",
+                    "scores": {
+                        "Sum": 452.0,
+                        "Dichter Wald": 25.0,
+                        " Bambusdschungel": 20.0,
+                        " Birkenwald": 27.0,
+                        " Blumenwald": 31.0
+                    },
+                    "best_score": 452.0
+                },
+                {
+                    "name": "TestPlayer1",
+                    "minigame": "Pferderennen",
+                    "scores": {"City": 61.5, "Jungle": 68.9},
+                    "best_score": 61.5
+                },
+                {
+                    "name": "TestPlayer2",
+                    "minigame": "Pferderennen",
+                    "scores": {"City": 70.2, "Ancient Falls": 88.1},
+                    "best_score": 70.2
+                },
+                {
+                    "name": "Ex4cted",
+                    "minigame": "Runterpurzeln",
+                    "scores": {"Space": 49.26},
+                    "best_score": 49.26
+                },
+                {
+                    "name": "swiffle",
+                    "minigame": "Runterpurzeln",
+                    "scores": {"Space": 58.713},
+                    "best_score": 58.713
+                }
+            ];
+
+            console.log('✅ Sample data generated:', sampleData.length, 'records');
+            return sampleData;
+        }
+    }
+
+    // Grid initialization
+    function initializeGrid() {
+        console.log('🏗️ Initializing AG-Grid...');
+
+        gridOptions = {
+            columnDefs: [],
+            rowData: [],
+            defaultColDef: {
+                resizable: true,
+                sortable: true,
+                filter: false,
+                minWidth: 100
+            },
+            animateRows: true,
+            rowHeight: 50,
+            headerHeight: 40,
+            suppressRowClickSelection: true,
+            enableCellTextSelection: true,
+            onGridReady: function(params) {
+                console.log('✅ Grid ready, API available');
+                gridApi = params.api;
+                updateGrid(currentMinigame);
+            },
+            onSortChanged: function() {
+                console.log('🔄 Sort changed, updating ranks...');
+                updateRanksAfterSort();
+            },
+            onFirstDataRendered: function() {
+                console.log('🎨 First data rendered');
+                // Auto-size the name column first to fit content
+                gridApi.autoSizeColumns(['name'], false);
+
+                // Then fit the remaining columns
+                setTimeout(() => {
+                    gridApi.sizeColumnsToFit();
+                }, 50);
+            },
+            onGridSizeChanged: function() {
+                // When grid is resized, maintain name column width and resize others
+                setTimeout(() => {
+                    gridApi.autoSizeColumns(['name'], false);
+                    setTimeout(() => {
+                        gridApi.sizeColumnsToFit();
+                    }, 50);
+                }, 100);
+            }
+        };
+
+        const gridDiv = document.getElementById('records-grid');
+        console.log('📋 Creating grid in element:', gridDiv);
+
+        // Use the new createGrid API instead of deprecated new Grid()
+        const gridInstance = agGrid.createGrid(gridDiv, gridOptions);
+        gridApi = gridInstance;
+
+        console.log('✅ AG-Grid initialized successfully');
+    }
+
+    function updateRanksAfterSort() {
+        if (!gridApi) return;
+
+        let rank = 1;
+        let lastScore = null;
+        let tieCount = 0;
+
+        gridApi.forEachNodeAfterFilterAndSort((node, index) => {
+            const sortedColumns = gridApi.getColumnState().filter(col => col.sort);
+            if (sortedColumns.length > 0) {
+                const sortCol = sortedColumns[0];
+                const score = node.data.scores && node.data.scores[sortCol.colId.replace('scores.', '')];
+
+                if (lastScore !== null && score !== lastScore) {
+                    rank += tieCount + 1;
+                    tieCount = 0;
+                } else if (lastScore !== null) {
+                    tieCount++;
+                }
+
+                node.setDataValue('rank', rank);
+                lastScore = score;
+            }
+        });
+    }
+
+    // Event listeners
+    function setupEventListeners() {
+        document.getElementById('minigame-select').addEventListener('change', function() {
+            updateGrid(this.value);
+        });
+
+        document.getElementById('close-modal').addEventListener('click', closeModal);
+
+        document.getElementById('player-profile-modal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && document.getElementById('player-profile-modal').style.display === 'block') {
+                closeModal();
+            }
+        });
+    }
+
+    // Main initialization
+    async function init() {
+        console.log('🚀 Starting application initialization...');
+        document.getElementById('loading-animation').style.display = 'flex';
+
+        try {
+            allData = await loadData();
+            console.log('📊 Total data loaded:', allData.length, 'records');
+
+            // Log minigames available
+            const minigames = [...new Set(allData.map(record => record.minigame))];
+            console.log('🎮 Available minigames:', minigames);
+
+            initializeGrid();
+            setupGlobalSearch();
+            setupTableSearch();
+            setupEventListeners();
+
+            document.getElementById('loading-animation').style.display = 'none';
+            document.getElementById('records-grid').classList.add('loaded');
+
+            console.log('✅ Application initialization complete!');
+        } catch (error) {
+            console.error('❌ Initialization failed:', error);
+            document.getElementById('loading-animation').style.display = 'none';
+
+            // Show error message
+            document.getElementById('records-grid').innerHTML = `
+                    <div style="padding: 20px; text-align: center; color: var(--text-color);">
+                        <h3>Error loading data</h3>
+                        <p>Please check the console for details and ensure data files are available.</p>
+                        <p style="font-size: 0.9em; color: #888;">${error.message}</p>
+                    </div>
+                `;
+        }
+    }
+
+    // Make functions globally available
+    window.showPlayerProfile = showPlayerProfile;
+    window.closeModal = closeModal;
+    window.toggleRows = toggleRows;
+
+    // Start the application
+    document.addEventListener('DOMContentLoaded', init);
+
+    // Mouse tracking for interactive background
+    document.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth) * 100;
+        const y = (e.clientY / window.innerHeight) * 100;
+
+        document.documentElement.style.setProperty('--mouse-x', x + '%');
+        document.documentElement.style.setProperty('--mouse-y', y + '%');
+    });
+
+    // Add some extra interactive elements on load
+    window.addEventListener('load', () => {
+        // Add floating particles effect
+        createFloatingParticles();
+    });
+
+    function createFloatingParticles() {
+        const particleCount = 15;
+        const container = document.body;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                    position: fixed;
+                    width: 4px;
+                    height: 4px;
+                    background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2));
+                    border-radius: 50%;
+                    pointer-events: none;
+                    z-index: -1;
+                    opacity: 0.3;
+                    animation: float ${Math.random() * 10 + 10}s linear infinite;
+                    left: ${Math.random() * 100}vw;
+                    top: 100vh;
+                `;
+
+            container.appendChild(particle);
+
+            // Remove particle after animation
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.parentNode.removeChild(particle);
+                }
+            }, (Math.random() * 10 + 10) * 1000);
+        }
+    }
+
+    // Add CSS for floating particles animation
+    const style = document.createElement('style');
+    style.textContent = `
+            @keyframes float {
+                0% {
+                    transform: translateY(0) translateX(0) rotate(0deg);
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 0.3;
+                }
+                90% {
+                    opacity: 0.3;
+                }
+                100% {
+                    transform: translateY(-100vh) translateX(${Math.random() * 200 - 100}px) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+    document.head.appendChild(style);
+
+    // Recreate particles periodically
+    setInterval(createFloatingParticles, 3000);
+</script>
+</body>
+</html>
