@@ -1718,8 +1718,8 @@
                 </div>`;
 
             if (playerInfo && playerInfo.minecraft_party) {
-                const gameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Spiele'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Spiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
-                const minigameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Minispiele'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Minispiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
+                const gameWinPercentage = (parseFloat(playerInfo.minecraft_party['Siege'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Spiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
+                const minigameWinPercentage = (parseFloat(playerInfo.minecraft_party['Minispiel-Siege'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Minispiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
 
                 profileHTML += `
                 <div class="player-stats">
