@@ -1718,8 +1718,19 @@
                 </div>`;
 
             if (playerInfo && playerInfo.minecraft_party) {
-                const gameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Spiele'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Spiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
-                const minigameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Minispiele'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Minispiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
+
+                const safeParseFloat = (value) => {
+                    if (typeof value === 'number') {
+                        return value;
+                    }
+                    if (typeof value === 'string') {
+                        return parseFloat(value.replace(/[,\.]/g, ''));
+                    }
+                    return 0;
+                };
+
+                const gameWinPercentage = (safeParseFloat(playerInfo.minecraft_party['Gewonnene Spiele'].replace(',', '').replace('.', '')) / safeParseFloat(playerInfo.minecraft_party['Gespielte Spiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
+                const minigameWinPercentage = (safeParseFloat(playerInfo.minecraft_party['Gewonnene Minispiele'].replace(',', '').replace('.', '')) / safeParseFloat(playerInfo.minecraft_party['Gespielte Minispiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
 
                 profileHTML += `
                 <div class="player-stats">
