@@ -1123,6 +1123,15 @@
     "best_score": 25.071
   },
   {
+    "name": "Kklopse",
+    "minigame": "Ampelrennen",
+    "scores": {
+      "Castle": 22.391,
+      "Street": 25.716
+    },
+    "best_score": 25.716
+  },
+  {
     "name": "xIForgotMySkill",
     "minigame": "Ampelrennen",
     "scores": {
@@ -1480,7 +1489,11 @@
   {
     "name": "GeneralEnte06",
     "minigame": "Ampelrennen",
-    "scores": {}
+    "scores": {
+      "Castle": 19.838,
+      "Street": 22.503
+    },
+    "best_score": 22.503
   },
   {
     "name": "Dubbly",
@@ -3080,6 +3093,14 @@
     "best_score": 31.008
   },
   {
+    "name": "Kklopse",
+    "minigame": "Blockh\u00fcpfer",
+    "scores": {
+      "City": 32.784
+    },
+    "best_score": 32.784
+  },
+  {
     "name": "xIForgotMySkill",
     "minigame": "Blockh\u00fcpfer",
     "scores": {
@@ -3886,9 +3907,9 @@
     "name": "swiffle",
     "minigame": "Blockh\u00fcpfer",
     "scores": {
-      "City": 29.812
+      "City": 27.097
     },
-    "best_score": 29.812
+    "best_score": 27.097
   },
   {
     "name": "juvona",
@@ -5055,6 +5076,15 @@
     "best_score": 23.0
   },
   {
+    "name": "Kklopse",
+    "minigame": "Buntes Chaos",
+    "scores": {
+      "Cyberpunk": 24.0,
+      "Structure": 17.0
+    },
+    "best_score": 24.0
+  },
+  {
     "name": "xIForgotMySkill",
     "minigame": "Buntes Chaos",
     "scores": {
@@ -5221,7 +5251,7 @@
     "minigame": "Buntes Chaos",
     "scores": {
       "Cyberpunk": 33.0,
-      "Structure": 23.0
+      "Structure": 29.0
     },
     "best_score": 33.0
   },
@@ -6430,7 +6460,7 @@
     "name": "Otronix",
     "minigame": "Drachenflucht",
     "scores": {
-      "Desert": 86.689,
+      "Desert": 104.523,
       "Factory": 121.911,
       "Hills": 126.557,
       "Temple": 120.257
@@ -6537,7 +6567,7 @@
     "name": "Sey__",
     "minigame": "Drachenflucht",
     "scores": {
-      "Desert": 113.583,
+      "Desert": 125.163,
       "Factory": 125.781,
       "Hills": 127.056,
       "Temple": 125.025
@@ -6903,7 +6933,10 @@
   {
     "name": "Dat_Klan",
     "minigame": "Drachenflucht",
-    "scores": {}
+    "scores": {
+      "Factory": 19.388
+    },
+    "best_score": 19.388
   },
   {
     "name": "Luis_XYZ",
@@ -7087,6 +7120,16 @@
     "scores": {}
   },
   {
+    "name": "Kklopse",
+    "minigame": "Drachenflucht",
+    "scores": {
+      "Desert": 100.191,
+      "Factory": 117.8,
+      "Hills": 122.174
+    },
+    "best_score": 122.174
+  },
+  {
     "name": "xIForgotMySkill",
     "minigame": "Drachenflucht",
     "scores": {
@@ -7122,6 +7165,7 @@
     "name": "Raefinzs",
     "minigame": "Drachenflucht",
     "scores": {
+      "Desert": 30.192,
       "Factory": 115.399,
       "Hills": 118.89699999999999,
       "Temple": 121.423
@@ -7259,9 +7303,9 @@
     "scores": {
       "Desert": 115.73400000000001,
       "Factory": 117.407,
-      "Hills": 120.073
+      "Hills": 120.538
     },
-    "best_score": 120.073
+    "best_score": 120.538
   },
   {
     "name": "Stockinqs",
@@ -7543,7 +7587,7 @@
     "name": "Mincheeen",
     "minigame": "Drachenflucht",
     "scores": {
-      "Desert": 18.569,
+      "Desert": 101.07,
       "Factory": 110.691,
       "Hills": 122.321,
       "Temple": 111.559
@@ -7673,7 +7717,7 @@
     "minigame": "Drachenflucht",
     "scores": {
       "Desert": 127.206,
-      "Factory": 124.604,
+      "Factory": 126.94800000000001,
       "Hills": 127.249,
       "Temple": 121.206
     },
@@ -7713,6 +7757,7 @@
     "name": "lizsyy",
     "minigame": "Drachenflucht",
     "scores": {
+      "Desert": 101.078,
       "Factory": 120.84,
       "Hills": 123.657,
       "Temple": 125.43
@@ -7819,7 +7864,7 @@
     "scores": {
       "Desert": 123.78,
       "Factory": 126.012,
-      "Hills": 125.607,
+      "Hills": 126.008,
       "Temple": 126.82300000000001
     },
     "best_score": 126.82300000000001
@@ -9051,6 +9096,14 @@
     "best_score": 24
   },
   {
+    "name": "Kklopse",
+    "minigame": "Duelle",
+    "scores": {
+      "Default": 17
+    },
+    "best_score": 17
+  },
+  {
     "name": "xIForgotMySkill",
     "minigame": "Duelle",
     "scores": {
@@ -10124,6 +10177,16 @@
     "best_score": 23.0
   },
   {
+    "name": "T_Niko_T",
+    "minigame": "Einer im K\u00f6cher",
+    "scores": {
+      "Asia": 21.0,
+      "Fall": 8.0,
+      "Japan": 20.0
+    },
+    "best_score": 21.0
+  },
+  {
     "name": "Vanillinchen",
     "minigame": "Einer im K\u00f6cher",
     "scores": {
@@ -10360,11 +10423,11 @@
     "name": "Otronix",
     "minigame": "Einer im K\u00f6cher",
     "scores": {
-      "Asia": 19.0,
+      "Asia": 23.0,
       "Fall": 15.0,
       "Japan": 22.0
     },
-    "best_score": 22.0
+    "best_score": 23.0
   },
   {
     "name": "Schmaarek",
@@ -11089,6 +11152,16 @@
       "Japan": 18.0
     },
     "best_score": 24.0
+  },
+  {
+    "name": "Kklopse",
+    "minigame": "Einer im K\u00f6cher",
+    "scores": {
+      "Asia": 18.0,
+      "Fall": 10.0,
+      "Japan": 15.0
+    },
+    "best_score": 18.0
   },
   {
     "name": "xIForgotMySkill",
@@ -12556,9 +12629,9 @@
       "Canyon": 40.653,
       "Death Star": 48.534,
       "River": 39.855,
-      "Shards": 49.644
+      "Shards": 49.302
     },
-    "best_score": 49.644
+    "best_score": 49.302
   },
   {
     "name": "KakaMC",
@@ -12797,9 +12870,9 @@
       "Canyon": 40.103,
       "Death Star": 47.004,
       "River": 39.694,
-      "Shards": 50.348
+      "Shards": 48.446
     },
-    "best_score": 50.348
+    "best_score": 48.446
   },
   {
     "name": "Umgfoin",
@@ -12863,9 +12936,9 @@
       "Canyon": 40.571,
       "Death Star": 46.252,
       "River": 40.163,
-      "Shards": 47.867
+      "Shards": 47.602
     },
-    "best_score": 47.867
+    "best_score": 47.602
   },
   {
     "name": "DarkCobweb",
@@ -13141,6 +13214,16 @@
     "scores": {}
   },
   {
+    "name": "Kklopse",
+    "minigame": "Elytrarennen",
+    "scores": {
+      "Canyon": 45.296,
+      "River": 44.686,
+      "Shards": 51.402
+    },
+    "best_score": 51.402
+  },
+  {
     "name": "xIForgotMySkill",
     "minigame": "Elytrarennen",
     "scores": {
@@ -13298,8 +13381,8 @@
     "name": "VendasTM",
     "minigame": "Elytrarennen",
     "scores": {
-      "Canyon": 40.391,
-      "River": 41.399,
+      "Canyon": 40.33,
+      "River": 38.595,
       "Shards": 45.932
     },
     "best_score": 45.932
@@ -13428,7 +13511,7 @@
     "scores": {
       "Canyon": 42.196,
       "Death Star": 52.468,
-      "River": 44.873
+      "River": 42.522
     },
     "best_score": 52.468
   },
@@ -13566,7 +13649,7 @@
     "scores": {
       "Canyon": 45.252,
       "Death Star": 49.556,
-      "River": 47.567,
+      "River": 46.533,
       "Shards": 58.699
     },
     "best_score": 58.699
@@ -13684,7 +13767,7 @@
     "name": "Joe3346",
     "minigame": "Elytrarennen",
     "scores": {
-      "Canyon": 38.472,
+      "Canyon": 37.885,
       "Death Star": 50.456,
       "River": 38.218,
       "Shards": 45.082
@@ -13798,9 +13881,10 @@
     "name": "Seemops_8",
     "minigame": "Elytrarennen",
     "scores": {
+      "Canyon": 46.973,
       "River": 46.441
     },
-    "best_score": 46.441
+    "best_score": 46.973
   },
   {
     "name": "GermanPie",
@@ -13928,9 +14012,9 @@
       "Canyon": 41.438,
       "Death Star": 50.03,
       "River": 40.746,
-      "Shards": 50.748
+      "Shards": 49.215
     },
-    "best_score": 50.748
+    "best_score": 50.03
   },
   {
     "name": "WirdNichtGeladen",
@@ -13974,9 +14058,9 @@
       "Canyon": 41.206,
       "Death Star": 48.109,
       "River": 40.828,
-      "Shards": 50.55
+      "Shards": 50.077
     },
-    "best_score": 50.55
+    "best_score": 50.077
   },
   {
     "name": "Mvsk_",
@@ -14703,6 +14787,11 @@
   },
   {
     "name": "xd_Maiky",
+    "minigame": "Frostiger Pfad",
+    "scores": {}
+  },
+  {
+    "name": "Kklopse",
     "minigame": "Frostiger Pfad",
     "scores": {}
   },
@@ -16150,9 +16239,9 @@
     "name": "cediiiiii_10",
     "minigame": "Hoch hinaus",
     "scores": {
-      "Global": 41.649
+      "Global": 41.601
     },
-    "best_score": 41.649
+    "best_score": 41.601
   },
   {
     "name": "Dokkkkko",
@@ -16249,6 +16338,14 @@
       "Global": 52.315
     },
     "best_score": 52.315
+  },
+  {
+    "name": "Kklopse",
+    "minigame": "Hoch hinaus",
+    "scores": {
+      "Global": 53.943
+    },
+    "best_score": 53.943
   },
   {
     "name": "xIForgotMySkill",
@@ -16849,9 +16946,9 @@
     "name": "Bildungsarten",
     "minigame": "Hoch hinaus",
     "scores": {
-      "Global": 51.077
+      "Global": 49.137
     },
-    "best_score": 51.077
+    "best_score": 49.137
   },
   {
     "name": "chrisihalt",
@@ -17642,11 +17739,11 @@
     "name": "Sey__",
     "minigame": "Kletterk\u00f6nig",
     "scores": {
-      "Frosty": 58.533,
+      "Frosty": 42.533,
       "Garden": 42.443,
       "Inka": 41.592
     },
-    "best_score": 58.533
+    "best_score": 42.533
   },
   {
     "name": "ForceFox",
@@ -17888,7 +17985,7 @@
     "scores": {
       "Frosty": 51.105,
       "Garden": 49.518,
-      "Inka": 50.101
+      "Inka": 49.721
     },
     "best_score": 51.105
   },
@@ -18221,6 +18318,14 @@
     "best_score": 69.393
   },
   {
+    "name": "Kklopse",
+    "minigame": "Kletterk\u00f6nig",
+    "scores": {
+      "Frosty": 65.449
+    },
+    "best_score": 65.449
+  },
+  {
     "name": "xIForgotMySkill",
     "minigame": "Kletterk\u00f6nig",
     "scores": {
@@ -18396,10 +18501,10 @@
     "name": "VendasTM",
     "minigame": "Kletterk\u00f6nig",
     "scores": {
-      "Frosty": 45.987,
+      "Frosty": 45.518,
       "Inka": 43.203
     },
-    "best_score": 45.987
+    "best_score": 45.518
   },
   {
     "name": "Stockinqs",
@@ -18653,10 +18758,10 @@
     "name": "kfc_man069",
     "minigame": "Kletterk\u00f6nig",
     "scores": {
-      "Frosty": 50.55,
+      "Frosty": 49.626,
       "Inka": 47.0
     },
-    "best_score": 50.55
+    "best_score": 49.626
   },
   {
     "name": "TheKillerisback",
@@ -19711,7 +19816,7 @@
     "minigame": "Lasertag",
     "scores": {
       "Factory": 88.0,
-      "Kills Port": 40.0,
+      "Kills Port": 41.0,
       "Neon": 50.0
     },
     "best_score": 88.0
@@ -20413,6 +20518,16 @@
     "best_score": 32.0
   },
   {
+    "name": "Kklopse",
+    "minigame": "Lasertag",
+    "scores": {
+      "Factory": 19.0,
+      "Kills Port": 14.0,
+      "Neon": 16.0
+    },
+    "best_score": 19.0
+  },
+  {
     "name": "xIForgotMySkill",
     "minigame": "Lasertag",
     "scores": {
@@ -20595,7 +20710,7 @@
     "minigame": "Lasertag",
     "scores": {
       "Factory": 29.0,
-      "Kills Port": 24.0,
+      "Kills Port": 27.0,
       "Neon": 26.0
     },
     "best_score": 29.0
@@ -20857,9 +20972,9 @@
     "scores": {
       "Factory": 28.0,
       "Kills Port": 29.0,
-      "Neon": 29.0
+      "Neon": 32.0
     },
-    "best_score": 29.0
+    "best_score": 32.0
   },
   {
     "name": "TheKillerisback",
@@ -21292,7 +21407,7 @@
     "scores": {
       "Ancient City": 25.0,
       "Factory": 26.0,
-      "Kills Port": 19.0,
+      "Kills Port": 21.0,
       "Neon": 22.0
     },
     "best_score": 26.0
@@ -22634,6 +22749,16 @@
     "best_score": 9.0
   },
   {
+    "name": "Kklopse",
+    "minigame": "Mauerfall",
+    "scores": {
+      "Garden": 1.0,
+      "Grass": 1.0,
+      "Vulcano": 1.0
+    },
+    "best_score": 1.0
+  },
+  {
     "name": "xIForgotMySkill",
     "minigame": "Mauerfall",
     "scores": {
@@ -23074,7 +23199,7 @@
     "minigame": "Mauerfall",
     "scores": {
       "Garden": 5.0,
-      "Grass": 4.0,
+      "Grass": 6.0,
       "Vulcano": 7.0
     },
     "best_score": 7.0
@@ -24852,6 +24977,14 @@
     "best_score": 26.043
   },
   {
+    "name": "Kklopse",
+    "minigame": "Minenfeld",
+    "scores": {
+      "Nether": 53.737
+    },
+    "best_score": 53.737
+  },
+  {
     "name": "xIForgotMySkill",
     "minigame": "Minenfeld",
     "scores": {
@@ -25300,7 +25433,7 @@
     "name": "kfc_man069",
     "minigame": "Minenfeld",
     "scores": {
-      "Desert": 29.509,
+      "Desert": 28.022,
       "Ice Cave": 38.873,
       "Nether": 26.375
     },
@@ -25725,9 +25858,9 @@
     "name": "CladyNoClip_",
     "minigame": "Minenfeld",
     "scores": {
-      "Desert": 27.148,
+      "Desert": 26.934,
       "Ice Cave": 38.754,
-      "Nether": 27.857
+      "Nether": 27.019
     },
     "best_score": 38.754
   },
@@ -27075,6 +27208,16 @@
     "best_score": 8.0
   },
   {
+    "name": "Kklopse",
+    "minigame": "Minengefecht",
+    "scores": {
+      "Nether": 2.0,
+      "Overworld": 2.0,
+      "Ruin": 1.0
+    },
+    "best_score": 2.0
+  },
+  {
     "name": "xIForgotMySkill",
     "minigame": "Minengefecht",
     "scores": {
@@ -27257,10 +27400,10 @@
     "minigame": "Minengefecht",
     "scores": {
       "Nether": 7.0,
-      "Overworld": 7.0,
+      "Overworld": 8.0,
       "Ruin": 7.0
     },
-    "best_score": 7.0
+    "best_score": 8.0
   },
   {
     "name": "Stockinqs",
@@ -28621,7 +28764,7 @@
     "name": "HerrDante",
     "minigame": "Parkour",
     "scores": {
-      "Abyss": 61.039,
+      "Abyss": 60.168,
       "Canyon": 61.762,
       "Sky City": 43.963,
       "Wet Cave": 48.366
@@ -28712,12 +28855,12 @@
     "name": "Sey__",
     "minigame": "Parkour",
     "scores": {
-      "Abyss": 66.116,
+      "Abyss": 61.094,
       "Canyon": 60.949,
       "Sky City": 43.93,
       "Wet Cave": 48.776
     },
-    "best_score": 66.116
+    "best_score": 61.094
   },
   {
     "name": "ForceFox",
@@ -28908,12 +29051,12 @@
     "name": "JennieKim",
     "minigame": "Parkour",
     "scores": {
-      "Abyss": 62.795,
+      "Abyss": 60.727,
       "Canyon": 62.241,
       "Sky City": 43.819,
       "Wet Cave": 49.853
     },
-    "best_score": 62.795
+    "best_score": 62.241
   },
   {
     "name": "Umgfoin",
@@ -29347,6 +29490,14 @@
     "best_score": 75.964
   },
   {
+    "name": "Kklopse",
+    "minigame": "Parkour",
+    "scores": {
+      "Abyss": 89.646
+    },
+    "best_score": 89.646
+  },
+  {
     "name": "xIForgotMySkill",
     "minigame": "Parkour",
     "scores": {
@@ -29539,9 +29690,9 @@
     "minigame": "Parkour",
     "scores": {
       "Abyss": 57.683,
-      "Canyon": 63.005
+      "Canyon": 61.338
     },
-    "best_score": 63.005
+    "best_score": 61.338
   },
   {
     "name": "Stockinqs",
@@ -29955,12 +30106,12 @@
     "name": "Freeeedom",
     "minigame": "Parkour",
     "scores": {
-      "Abyss": 64.428,
+      "Abyss": 63.711,
       "Canyon": 61.503,
       "Sky City": 44.388,
       "Wet Cave": 48.965
     },
-    "best_score": 64.428
+    "best_score": 63.711
   },
   {
     "name": "miridis41",
@@ -30140,7 +30291,7 @@
     "name": "chrisihalt",
     "minigame": "Parkour",
     "scores": {
-      "Abyss": 58.933,
+      "Abyss": 58.867,
       "Canyon": 60.667,
       "Sky City": 43.7,
       "Wet Cave": 48.27
@@ -30249,21 +30400,21 @@
     "minigame": "Parkour",
     "scores": {
       "Abyss": 64.336,
-      "Canyon": 65.605,
+      "Canyon": 64.791,
       "Sky City": 64.705
     },
-    "best_score": 65.605
+    "best_score": 64.791
   },
   {
     "name": "CladyNoClip_",
     "minigame": "Parkour",
     "scores": {
       "Abyss": 64.877,
-      "Canyon": 65.106,
+      "Canyon": 64.587,
       "Sky City": 47.822,
       "Wet Cave": 56.949
     },
-    "best_score": 65.106
+    "best_score": 64.877
   },
   {
     "name": "WirdNichtGeladen",
@@ -30323,7 +30474,7 @@
     "name": "Ex4cted",
     "minigame": "Parkour",
     "scores": {
-      "Abyss": 60.456,
+      "Abyss": 59.15,
       "Canyon": 61.521,
       "Sky City": 44.071,
       "Wet Cave": 48.863
@@ -30498,7 +30649,7 @@
       "Ancient Falls": 72.806,
       "Cheep Beach": 91.138,
       "City": 64.585,
-      "Jungle": 66.771,
+      "Jungle": 66.539,
       "Rainbow": 89.349,
       "Wario's Arena": 65.085
     },
@@ -30810,7 +30961,7 @@
       "City": 69.104,
       "Jungle": 71.324,
       "Rainbow": 92.76599999999999,
-      "Wario's Arena": 67.709
+      "Wario's Arena": 66.846
     },
     "best_score": 92.76599999999999
   },
@@ -31013,7 +31164,7 @@
       "Cheep Beach": 101.77600000000001,
       "Jungle": 70.255,
       "Rainbow": 92.902,
-      "Wario's Arena": 67.946
+      "Wario's Arena": 67.754
     },
     "best_score": 101.77600000000001
   },
@@ -31054,7 +31205,7 @@
       "City": 64.165,
       "Jungle": 68.575,
       "Rainbow": 91.131,
-      "Wario's Arena": 66.348
+      "Wario's Arena": 65.841
     },
     "best_score": 91.131
   },
@@ -31400,9 +31551,9 @@
       "Ancient Falls": 64.779,
       "Cheep Beach": 89.749,
       "City": 67.49,
-      "Jungle": 67.301,
+      "Jungle": 66.244,
       "Rainbow": 88.702,
-      "Wario's Arena": 66.805
+      "Wario's Arena": 66.488
     },
     "best_score": 89.749
   },
@@ -31586,7 +31737,7 @@
     "name": "Nor_Malo",
     "minigame": "Pferderennen",
     "scores": {
-      "Ancient Falls": 87.137,
+      "Ancient Falls": 87.112,
       "City": 71.545,
       "Jungle": 69.359,
       "Rainbow": 92.967,
@@ -31783,7 +31934,7 @@
       "Ancient Falls": 77.256,
       "Cheep Beach": 90.15,
       "City": 63.661,
-      "Jungle": 68.818,
+      "Jungle": 65.799,
       "Rainbow": 88.31700000000001,
       "Wario's Arena": 65.108
     },
@@ -31936,6 +32087,16 @@
       "Wario's Arena": 69.05199999999999
     },
     "best_score": 101.788
+  },
+  {
+    "name": "Kklopse",
+    "minigame": "Pferderennen",
+    "scores": {
+      "Ancient Falls": 91.792,
+      "Jungle": 72.231,
+      "Wario's Arena": 66.135
+    },
+    "best_score": 91.792
   },
   {
     "name": "xIForgotMySkill",
@@ -32172,11 +32333,11 @@
     "name": "VendasTM",
     "minigame": "Pferderennen",
     "scores": {
-      "Ancient Falls": 70.971,
-      "Jungle": 66.249,
-      "Wario's Arena": 67.289
+      "Ancient Falls": 66.369,
+      "Jungle": 64.919,
+      "Wario's Arena": 66.281
     },
-    "best_score": 70.971
+    "best_score": 66.369
   },
   {
     "name": "Stockinqs",
@@ -32417,7 +32578,7 @@
       "Ancient Falls": 90.763,
       "Cheep Beach": 93.312,
       "City": 65.976,
-      "Jungle": 72.711,
+      "Jungle": 72.417,
       "Rainbow": 94.905,
       "Wario's Arena": 68.092
     },
@@ -32611,7 +32772,7 @@
       "City": 66.569,
       "Jungle": 71.607,
       "Rainbow": 92.949,
-      "Wario's Arena": 68.144
+      "Wario's Arena": 66.459
     },
     "best_score": 93.164
   },
@@ -32713,7 +32874,7 @@
       "Ancient Falls": 87.78399999999999,
       "Cheep Beach": 92.49000000000001,
       "City": 68.01,
-      "Jungle": 71.03,
+      "Jungle": 70.995,
       "Rainbow": 92.304,
       "Wario's Arena": 69.024
     },
@@ -32726,7 +32887,7 @@
       "Ancient Falls": 77.376,
       "Cheep Beach": 95.836,
       "City": 70.566,
-      "Jungle": 70.036,
+      "Jungle": 68.834,
       "Rainbow": 87.655,
       "Wario's Arena": 66.603
     },
@@ -33043,7 +33204,7 @@
       "Ancient Falls": 89.70400000000001,
       "Jungle": 70.291,
       "Rainbow": 99.663,
-      "Wario's Arena": 68.93299999999999
+      "Wario's Arena": 68.109
     },
     "best_score": 99.663
   },
@@ -33558,7 +33719,7 @@
     "name": "_n3d",
     "minigame": "Replika",
     "scores": {
-      "Sum": 1466.9650000000006,
+      "Sum": 1463.3690000000006,
       "Alien": 11.708,
       "Among Us": 14.664,
       "Apple": 10.737,
@@ -33614,7 +33775,7 @@
       "Kirby": 15.59,
       "Kitty": 14.009,
       "Koopa": 9.83,
-      "Krabs": 12.018,
+      "Krabs": 9.557,
       "Lion": 17.342,
       "Mario": 11.474,
       "Mooshroom": 16.542,
@@ -33656,7 +33817,7 @@
       "Thinking": 15.585,
       "Thinking 2": 16.074,
       "Toad": 17.475,
-      "Tree": 14.745,
+      "Tree": 13.61,
       "Turtle": 15.813,
       "Twitch": 11.538,
       "Twitter": 12.224,
@@ -33673,7 +33834,7 @@
       "ppHop 1": 13.037,
       "ppHop 2": 14.291
     },
-    "best_score": 1466.9650000000006
+    "best_score": 1463.3690000000006
   },
   {
     "name": "Sebi1801",
@@ -35083,7 +35244,7 @@
     "name": "D4rkCookie",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2664.567000000001,
+      "Sum": 2665.326000000001,
       "Among Us": 23.119,
       "Apple": 24.795,
       "Arrow": 16.458,
@@ -35139,6 +35300,7 @@
       "Mouse": 22.435,
       "Nether": 22.705,
       "Netherite Ingot": 12.387,
+      "Orchid": 25.759,
       "Pacman Ghost": 21.63,
       "Parrot": 20.264,
       "Penguin": 20.98,
@@ -35186,7 +35348,7 @@
       "ppHop 1": 24.862,
       "ppHop 2": 20.46
     },
-    "best_score": 2664.567000000001
+    "best_score": 2665.326000000001
   },
   {
     "name": "yzvm",
@@ -35500,19 +35662,20 @@
     "name": "Ungluecklicher",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2725.0750000000003,
-      "Alien": 40.196,
+      "Sum": 2696.3610000000003,
+      "Alien": 28.812,
       "Among Us": 23.946,
-      "Apple": 23.693,
+      "Apple": 21.442,
       "Arrow": 23.167,
       "Baby Yoda": 24.361,
       "Bee": 17.595,
       "Blinky": 26.087,
       "Blue Monster": 19.402,
-      "Breeze": 33.516,
+      "Breeze": 29.532,
       "Cake": 27.466,
       "Camera": 18.668,
-      "Carrot": 18.495,
+      "Canvas": 42.673,
+      "Carrot": 16.295,
       "Caterpie": 24.775,
       "Charizard": 28.278,
       "Cherry": 28.279,
@@ -35522,6 +35685,7 @@
       "Coffee": 14.671,
       "Controller": 15.994,
       "Cookie": 18.897,
+      "Cornflower": 19.016,
       "Cow": 33.857,
       "Cowboy": 14.736,
       "Creeper": 53.637,
@@ -35536,7 +35700,7 @@
       "Ender Pearl": 27.372,
       "Excavator": 19.253,
       "Flag": 23.619,
-      "Flamingo": 23.657,
+      "Flamingo": 18.903,
       "Fox": 21.921,
       "French Fries": 21.894,
       "Frog": 29.803,
@@ -35547,21 +35711,22 @@
       "Gold Ingot": 11.286,
       "Guardian": 27.178,
       "Heart": 23.357,
-      "Hourglass": 24.463,
+      "Hourglass": 22.807,
       "House": 22.381,
       "Instagram": 28.019,
-      "Iron Ingot": 11.848,
+      "Iron Ingot": 9.412,
       "Kirby": 38.172,
       "Kitty": 27.55,
       "Koopa": 15.084,
       "Krabs": 22.908,
-      "Lion": 29.769,
+      "Lion": 26.418,
       "Mario": 19.874,
       "Mooshroom": 30.108,
       "Mountain": 24.415,
       "Mouse": 33.221,
       "Nether": 25.833,
       "Netherite Ingot": 14.561,
+      "Orca": 17.103,
       "Orchid": 20.845,
       "Pacman Ghost": 16.296,
       "Parrot": 19.392,
@@ -35599,10 +35764,10 @@
       "Twitch": 18.572,
       "Twitter": 21.231,
       "Unicorn": 15.077,
-      "Up": 27.361,
+      "Up": 27.268,
       "Water Temple": 19.273,
       "Windows": 14.175,
-      "Wizard": 23.509,
+      "Wizard": 23.112,
       "YouTube": 23.179,
       "Zombie": 33.809,
       "muss los": 31.23,
@@ -35611,7 +35776,7 @@
       "ppHop 1": 22.643,
       "ppHop 2": 28.691
     },
-    "best_score": 2725.0750000000003
+    "best_score": 2696.3610000000003
   },
   {
     "name": "Lutorix",
@@ -36763,7 +36928,7 @@
     "name": "Otronix",
     "minigame": "Replika",
     "scores": {
-      "Sum": 3155.886,
+      "Sum": 3133.544,
       "Among Us": 32.49,
       "Apple": 39.504,
       "Arrow": 24.955,
@@ -36794,7 +36959,7 @@
       "Ender Pearl": 45.215,
       "Excavator": 20.169,
       "Fish": 24.245,
-      "Fox": 37.657,
+      "Fox": 21.715,
       "French Fries": 24.558,
       "Galaxian Alien": 38.459,
       "Ghost": 18.027,
@@ -36806,7 +36971,9 @@
       "Iron Ingot": 16.812,
       "Kirby": 41.31,
       "Kitty": 36.679,
+      "Krabs": 22.482,
       "Lion": 31.348,
+      "Mario": 21.118,
       "Mooshroom": 43.938,
       "Mouse": 27.162,
       "Netherite Ingot": 20.324,
@@ -36848,7 +37015,7 @@
       "omb": 21.929,
       "ppHop 1": 28.541
     },
-    "best_score": 3155.886
+    "best_score": 3133.544
   },
   {
     "name": "Schmaarek",
@@ -36986,7 +37153,7 @@
     "name": "HerrDante",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2186.9930000000004,
+      "Sum": 2189.6170000000006,
       "Among Us": 20.457,
       "Apple": 18.364,
       "Arrow": 10.456,
@@ -36994,6 +37161,7 @@
       "Bee": 10.583,
       "Blinky": 19.95,
       "Blue Monster": 21.51,
+      "Breeze": 31.688,
       "Cake": 20.448,
       "Camera": 18.6,
       "Carrot": 12.023,
@@ -37056,7 +37224,7 @@
       "Pirate": 13.108,
       "Pizza": 13.499,
       "Poke Ball": 18.532,
-      "Poppy": 13.783,
+      "Poppy": 12.317,
       "Princess": 19.596,
       "Random 1": 10.194,
       "Random 2": 10.811,
@@ -37081,7 +37249,7 @@
       "Toad": 25.27,
       "Tree": 20.062,
       "Turtle": 19.845,
-      "Twitch": 20.315,
+      "Twitch": 17.717,
       "Twitter": 15.842,
       "Unicorn": 11.306,
       "Up": 16.214,
@@ -37096,7 +37264,7 @@
       "ppHop 1": 20.105,
       "ppHop 2": 18.89
     },
-    "best_score": 2186.9930000000004
+    "best_score": 2189.6170000000006
   },
   {
     "name": "KakaMC",
@@ -37308,7 +37476,7 @@
     "name": "Lelouch610",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2365.975,
+      "Sum": 2364.562,
       "Among Us": 21.213,
       "Apple": 20.463,
       "Arrow": 13.87,
@@ -37361,7 +37529,7 @@
       "Mouse": 19.305,
       "Netherite Ingot": 14.08,
       "Orca": 23.585,
-      "Pacman Ghost": 16.394,
+      "Pacman Ghost": 14.981,
       "Parrot": 18.128,
       "Penguin": 15.262,
       "Perry": 11.567,
@@ -37409,7 +37577,7 @@
       "ppHop 1": 21.911,
       "ppHop 2": 18.842
     },
-    "best_score": 2365.975
+    "best_score": 2364.562
   },
   {
     "name": "Kyuudo",
@@ -38989,11 +39157,11 @@
     "name": "JennieKim",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2378.525,
+      "Sum": 2367.741,
       "Among Us": 19.473,
       "Apple": 24.096,
       "Arrow": 17.136,
-      "Baby Yoda": 16.825,
+      "Baby Yoda": 12.425,
       "Bee": 11.575,
       "Blinky": 23.004,
       "Blue Monster": 22.286,
@@ -39006,7 +39174,7 @@
       "Chicken": 20.227,
       "Coffee": 14.737,
       "Controller": 15.183,
-      "Cookie": 19.066,
+      "Cookie": 18.074,
       "Cornflower": 21.118,
       "Cow": 29.669,
       "Cowboy": 15.036,
@@ -39025,6 +39193,7 @@
       "French Fries": 19.457,
       "Frog": 16.789,
       "Galaxian Alien": 19.646,
+      "Gap": 24.81,
       "Ghost": 11.36,
       "Globe": 24.617,
       "Gold Ingot": 10.479,
@@ -39046,7 +39215,7 @@
       "Netherite Ingot": 10.445,
       "Orchid": 28.526,
       "Pacman Ghost": 21.904,
-      "Parrot": 19.456,
+      "Parrot": 18.169,
       "Penguin": 19.929,
       "Perry": 12.169,
       "Pikachu": 28.558,
@@ -39069,7 +39238,7 @@
       "Sonic": 15.619,
       "Spider": 25.133,
       "Sword": 9.787,
-      "TNT": 25.385,
+      "TNT": 22.18,
       "Target": 11.56,
       "Tetris": 11.772,
       "The Sea": 20.773,
@@ -39084,7 +39253,7 @@
       "Up": 19.617,
       "Water Temple": 17.0,
       "Windows": 18.055,
-      "Wizard": 21.04,
+      "Wizard": 20.33,
       "YouTube": 16.918,
       "Zombie": 19.83,
       "muss los": 20.432,
@@ -39093,13 +39262,13 @@
       "ppHop 1": 21.522,
       "ppHop 2": 19.457
     },
-    "best_score": 2378.525
+    "best_score": 2367.741
   },
   {
     "name": "Umgfoin",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2439.484,
+      "Sum": 2418.2,
       "Among Us": 18.946,
       "Apple": 18.792,
       "Arrow": 15.314,
@@ -39108,7 +39277,7 @@
       "Blinky": 24.022,
       "Block": 44.629,
       "Blue Monster": 18.106,
-      "Breeze": 42.499,
+      "Breeze": 33.07,
       "Cake": 25.611,
       "Camera": 17.883,
       "Canvas": 26.049,
@@ -39122,7 +39291,7 @@
       "Coffee": 12.256,
       "Controller": 14.689,
       "Cookie": 16.223,
-      "Cornflower": 22.47,
+      "Cornflower": 19.741,
       "Cow": 28.77,
       "Cowboy": 15.764,
       "Creeper": 43.735,
@@ -39146,10 +39315,10 @@
       "Gap": 25.641,
       "Ghost": 10.329,
       "Globe": 24.724,
-      "Gold Ingot": 12.065,
+      "Gold Ingot": 11.3,
       "Guardian": 23.072,
       "Heart": 20.19,
-      "Hourglass": 20.998,
+      "Hourglass": 19.087,
       "House": 18.517,
       "Instagram": 24.806,
       "Iron Ingot": 10.965,
@@ -39172,16 +39341,16 @@
       "Perry": 14.092,
       "Pikachu": 31.36,
       "Piranha Plant": 30.579,
-      "Pirate": 13.722,
+      "Pirate": 13.113,
       "Pizza": 22.385,
       "Poke Ball": 17.548000000000002,
       "Poppy": 18.308,
       "Princess": 27.47,
-      "Random 1": 11.938,
+      "Random 1": 11.822,
       "Random 2": 12.102,
       "Robin Hood": 29.165,
       "Rocket": 16.942,
-      "Sheep": 21.556,
+      "Sheep": 19.219,
       "Skeleton": 22.806,
       "Skeleton Skull": 22.13,
       "Slime": 25.295,
@@ -39189,14 +39358,14 @@
       "Snake": 10.289,
       "Sniffer": 41.106,
       "Sonic": 18.37,
-      "Spider": 22.448,
+      "Spider": 21.676,
       "Sword": 11.454,
       "TNT": 24.749,
       "Target": 11.046,
       "Tetris": 15.612,
       "The Sea": 19.297,
       "Thinking": 19.229,
-      "Thinking 2": 21.261,
+      "Thinking 2": 18.982,
       "Toad": 24.211,
       "Tree": 18.885,
       "Turtle": 23.031,
@@ -39207,7 +39376,7 @@
       "Water Temple": 19.146,
       "Windows": 16.059,
       "Wizard": 28.645,
-      "YouTube": 16.031,
+      "YouTube": 15.693999999999999,
       "Zombie": 27.341,
       "muss los": 20.812,
       "of Meat": 22.572,
@@ -39215,7 +39384,7 @@
       "ppHop 1": 17.283,
       "ppHop 2": 19.562
     },
-    "best_score": 2439.484
+    "best_score": 2418.2
   },
   {
     "name": "ffawks",
@@ -39547,7 +39716,7 @@
     "name": "Squashgitter333",
     "minigame": "Replika",
     "scores": {
-      "Sum": 1990.441,
+      "Sum": 1982.162,
       "Alien": 19.967,
       "Among Us": 18.038,
       "Apple": 17.723,
@@ -39608,6 +39777,7 @@
       "Mouse": 21.881,
       "Netherite Ingot": 8.655,
       "Orca": 11.677,
+      "Orchid": 16.721,
       "Pacman Ghost": 15.904,
       "Parrot": 14.193,
       "Penguin": 17.559,
@@ -39657,13 +39827,13 @@
       "ppHop 1": 15.846,
       "ppHop 2": 18.414
     },
-    "best_score": 1990.441
+    "best_score": 1982.162
   },
   {
     "name": "Luxemburq",
     "minigame": "Replika",
     "scores": {
-      "Sum": 1739.8059999999998,
+      "Sum": 1731.6289999999997,
       "Alien": 18.107,
       "Among Us": 18.475,
       "Apple": 14.176,
@@ -39683,7 +39853,7 @@
       "Cherry": 13.6,
       "Chick": 12.091,
       "Chicken": 12.009,
-      "Chocolate": 16.277,
+      "Chocolate": 14.588,
       "Coffee": 9.546,
       "Controller": 14.857,
       "Cookie": 14.81,
@@ -39694,7 +39864,7 @@
       "Cytooxien": 12.794,
       "Deadpool": 18.134,
       "Diskette": 16.887,
-      "Doge": 19.141,
+      "Doge": 17.738,
       "Duck": 8.809,
       "Eevee": 12.549,
       "Egg": 14.507,
@@ -39703,7 +39873,7 @@
       "Excavator": 10.357,
       "Fish": 14.017,
       "Flag": 14.581,
-      "Flamingo": 12.666,
+      "Flamingo": 11.225,
       "Fox": 13.261,
       "French Fries": 17.402,
       "Frog": 16.18,
@@ -39730,7 +39900,7 @@
       "Mouse": 15.135,
       "Nether": 19.887,
       "Netherite Ingot": 9.089,
-      "Orca": 11.815,
+      "Orca": 8.879,
       "Pacman Ghost": 13.43,
       "Parrot": 10.575,
       "Penguin": 12.154,
@@ -39745,7 +39915,7 @@
       "Random 1": 10.829,
       "Random 2": 10.885,
       "Robin Hood": 17.109,
-      "Rocket": 9.934,
+      "Rocket": 9.226,
       "Sheep": 13.324,
       "Skeleton": 18.6,
       "Skeleton Skull": 14.325,
@@ -39780,13 +39950,13 @@
       "ppHop 1": 15.625,
       "ppHop 2": 13.401
     },
-    "best_score": 1739.8059999999998
+    "best_score": 1731.6289999999997
   },
   {
     "name": "DarkCobweb",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2416.5479999999993,
+      "Sum": 2414.3919999999994,
       "Among Us": 19.94,
       "Apple": 21.924,
       "Arrow": 14.282,
@@ -39823,7 +39993,7 @@
       "French Fries": 18.677,
       "Frog": 22.192,
       "Galaxian Alien": 20.806,
-      "Ghost": 13.999,
+      "Ghost": 11.873,
       "Globe": 23.322,
       "Gold Ingot": 11.963,
       "Guardian": 32.638,
@@ -39843,7 +40013,7 @@
       "Nether": 22.408,
       "Netherite Ingot": 12.734,
       "Pacman Ghost": 16.286,
-      "Parrot": 17.989,
+      "Parrot": 17.959,
       "Penguin": 17.907,
       "Perry": 13.229,
       "Pikachu": 28.056,
@@ -39890,7 +40060,7 @@
       "ppHop 1": 19.85,
       "ppHop 2": 24.32
     },
-    "best_score": 2416.5479999999993
+    "best_score": 2414.3919999999994
   },
   {
     "name": "Sackkerl",
@@ -40214,7 +40384,7 @@
     "name": "Nor_Malo",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2903.512,
+      "Sum": 2923.355,
       "Among Us": 20.86,
       "Apple": 34.85,
       "Baby Yoda": 21.011,
@@ -40244,6 +40414,7 @@
       "Ender Pearl": 36.386,
       "Excavator": 17.545,
       "Fish": 20.739,
+      "Flamingo": 22.721,
       "Fox": 20.709,
       "French Fries": 25.166,
       "Frog": 28.981,
@@ -40282,6 +40453,7 @@
       "Slime": 26.154,
       "Smurf": 26.029,
       "Snake": 21.533,
+      "Sniffer": 47.122,
       "Sonic": 21.032,
       "Spider": 25.807,
       "TNT": 38.305,
@@ -40303,7 +40475,7 @@
       "of Meat": 22.848,
       "omb": 19.047
     },
-    "best_score": 2903.512
+    "best_score": 2923.355
   },
   {
     "name": "Gerrygames",
@@ -41376,7 +41548,7 @@
     "name": "cediiiiii_10",
     "minigame": "Replika",
     "scores": {
-      "Sum": 1671.8239999999992,
+      "Sum": 1681.2789999999989,
       "Alien": 24.481,
       "Among Us": 14.679,
       "Apple": 10.893,
@@ -41384,6 +41556,7 @@
       "Baby Yoda": 10.94,
       "Bee": 10.688,
       "Blinky": 13.285,
+      "Block": 35.598,
       "Blue Monster": 14.825,
       "Cake": 15.51,
       "Camera": 12.155,
@@ -41393,7 +41566,7 @@
       "Charizard": 18.0,
       "Cherry": 11.18,
       "Chicken": 10.593,
-      "Coffee": 8.072,
+      "Coffee": 7.882,
       "Controller": 11.038,
       "Cookie": 13.624,
       "Cornflower": 12.714,
@@ -41404,13 +41577,13 @@
       "Deadpool": 17.874,
       "Diskette": 12.283,
       "Doge": 17.681,
-      "Duck": 9.256,
+      "Duck": 9.214,
       "Eevee": 12.01,
       "Egg": 11.165,
       "Elephant": 27.876,
       "Ender Pearl": 14.047,
       "Excavator": 10.043,
-      "Fish": 16.804,
+      "Fish": 16.655,
       "Flag": 18.887,
       "Flamingo": 19.876,
       "Fox": 10.731,
@@ -41419,6 +41592,7 @@
       "Galaxian Alien": 16.418,
       "Gap": 19.278,
       "Ghost": 9.354,
+      "Giraffe": 24.55,
       "Globe": 16.476,
       "Gold Ingot": 8.077,
       "Guardian": 17.103,
@@ -41432,7 +41606,7 @@
       "Koopa": 11.437,
       "Krabs": 8.918,
       "Lion": 24.604,
-      "Mario": 11.158,
+      "Mario": 10.872,
       "Mooshroom": 17.624,
       "Mountain": 13.472,
       "Mouse": 14.37,
@@ -41469,7 +41643,7 @@
       "The Sea": 10.966,
       "Thinking": 13.425,
       "Thinking 2": 13.425,
-      "Toad": 16.212,
+      "Toad": 16.186,
       "Tree": 13.241,
       "Turtle": 14.503,
       "Twitch": 11.949,
@@ -41487,7 +41661,7 @@
       "ppHop 1": 17.488,
       "ppHop 2": 14.512
     },
-    "best_score": 1671.8239999999992
+    "best_score": 1681.2789999999989
   },
   {
     "name": "Dokkkkko",
@@ -42203,6 +42377,20 @@
       "Zombie": 33.591
     },
     "best_score": 2941.2809999999995
+  },
+  {
+    "name": "Kklopse",
+    "minigame": "Replika",
+    "scores": {
+      "Sum": 2955.3709999999996,
+      "Apple": 54.05,
+      "Cornflower": 25.748,
+      "Egg": 31.642,
+      "French Fries": 37.748,
+      "Pirate": 26.097,
+      "Windows": 30.086
+    },
+    "best_score": 2955.3709999999996
   },
   {
     "name": "xIForgotMySkill",
@@ -43140,7 +43328,7 @@
     "name": "BauHD",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2713.5229999999992,
+      "Sum": 2713.740999999999,
       "Among Us": 28.028,
       "Apple": 23.406,
       "Arrow": 16.555,
@@ -43182,6 +43370,7 @@
       "Galaxian Alien": 25.185,
       "Gap": 39.419,
       "Ghost": 13.118,
+      "Giraffe": 25.9,
       "Globe": 26.849,
       "Gold Ingot": 13.098,
       "Guardian": 30.135,
@@ -43244,12 +43433,12 @@
       "YouTube": 22.648,
       "Zombie": 23.895,
       "muss los": 22.95,
-      "of Meat": 23.164,
+      "of Meat": 22.482,
       "omb": 13.676,
       "ppHop 1": 24.355,
       "ppHop 2": 21.128
     },
-    "best_score": 2713.5229999999992
+    "best_score": 2713.740999999999
   },
   {
     "name": "CML_Justin",
@@ -43582,9 +43771,10 @@
     "name": "VendasTM",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2835.7400000000002,
+      "Sum": 2800.6920000000005,
       "Alien": 30.082,
       "Among Us": 34.446,
+      "Arrow": 19.207,
       "Bee": 14.363,
       "Blue Monster": 34.938,
       "Breeze": 36.015,
@@ -43596,9 +43786,11 @@
       "Coffee": 12.797,
       "Controller": 18.433,
       "Cornflower": 24.435,
+      "Cow": 43.15,
       "Creeper": 48.499,
       "Cytooxien": 15.211,
-      "Diskette": 24.21,
+      "Diskette": 20.024,
+      "Doge": 24.692,
       "Duck": 19.167,
       "Ender Pearl": 45.144,
       "Excavator": 22.555,
@@ -43608,16 +43800,18 @@
       "French Fries": 24.09,
       "Frog": 21.462,
       "Galaxian Alien": 25.197,
+      "Gap": 22.366,
       "Ghost": 12.808,
       "Giraffe": 22.174,
       "Globe": 37.909,
       "Gold Ingot": 21.7,
       "Guardian": 34.588,
-      "Hourglass": 26.84,
+      "Hourglass": 22.938,
       "House": 27.647,
       "Iron Ingot": 22.066,
       "Kirby": 30.278,
       "Koopa": 18.082,
+      "Krabs": 20.941,
       "Lion": 25.93,
       "Mario": 17.739,
       "Mooshroom": 26.716,
@@ -43625,20 +43819,23 @@
       "Nether": 17.038,
       "Orca": 29.106,
       "Orchid": 23.306,
-      "Parrot": 19.511,
+      "Parrot": 18.37,
+      "Piranha Plant": 32.168,
       "Pirate": 13.8,
       "Pizza": 28.892,
       "Poke Ball": 19.04,
       "Princess": 22.609,
+      "Rocket": 15.444,
       "Sheep": 28.927,
       "Skeleton": 28.946,
-      "Slime": 25.56,
-      "Smurf": 31.446,
+      "Slime": 22.743,
+      "Smurf": 24.628,
       "Snake": 10.626,
       "Sniffer": 35.349,
-      "Spider": 30.281,
+      "Spider": 23.46,
       "Tetris": 15.614,
       "The Sea": 20.874,
+      "Thinking": 24.586,
       "Thinking 2": 24.409,
       "Toad": 30.428,
       "Tree": 20.712,
@@ -43646,16 +43843,19 @@
       "Twitch": 17.433,
       "Twitter": 22.888,
       "Unicorn": 14.806000000000001,
+      "Up": 23.817,
       "Water Temple": 16.037,
       "Windows": 19.826,
       "Wizard": 22.884,
       "YouTube": 24.02,
       "Zombie": 26.17,
+      "muss los": 26.227,
       "of Meat": 20.655,
+      "omb": 13.039,
       "ppHop 1": 34.38,
       "ppHop 2": 28.772
     },
-    "best_score": 2835.7400000000002
+    "best_score": 2800.6920000000005
   },
   {
     "name": "Stockinqs",
@@ -45475,7 +45675,7 @@
     "name": "kfc_man069",
     "minigame": "Replika",
     "scores": {
-      "Sum": 3066.2009999999987,
+      "Sum": 3062.4659999999985,
       "Among Us": 32.411,
       "Apple": 30.763,
       "Arrow": 20.487,
@@ -45535,7 +45735,7 @@
       "Pikachu": 37.654,
       "Piranha Plant": 37.91,
       "Pirate": 16.727,
-      "Pizza": 32.484,
+      "Pizza": 28.749,
       "Poke Ball": 19.234,
       "Poppy": 18.02,
       "Princess": 35.115,
@@ -45572,7 +45772,7 @@
       "ppHop 1": 23.9,
       "ppHop 2": 25.22
     },
-    "best_score": 3066.2009999999987
+    "best_score": 3062.4659999999985
   },
   {
     "name": "TheKillerisback",
@@ -45690,7 +45890,7 @@
     "name": "Mincheeen",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2346.4539999999997,
+      "Sum": 2343.3109999999992,
       "Among Us": 21.215,
       "Apple": 23.442,
       "Arrow": 15.81,
@@ -45720,6 +45920,7 @@
       "Egg": 17.019,
       "Ender Pearl": 23.113,
       "Excavator": 16.348,
+      "Fish": 22.322,
       "Fox": 22.449,
       "French Fries": 21.811,
       "Frog": 19.829,
@@ -45758,7 +45959,7 @@
       "Robin Hood": 28.634,
       "Rocket": 15.768,
       "Sheep": 18.095,
-      "Skeleton": 24.341,
+      "Skeleton": 23.876,
       "Skeleton Skull": 26.187,
       "Slime": 25.58,
       "Smurf": 21.011,
@@ -45791,7 +45992,7 @@
       "ppHop 1": 19.747,
       "ppHop 2": 21.357
     },
-    "best_score": 2346.4539999999997
+    "best_score": 2343.3109999999992
   },
   {
     "name": "2wc",
@@ -45963,14 +46164,14 @@
     "name": "NewNormal0947",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2139.592,
+      "Sum": 2123.1980000000003,
       "Alien": 26.509,
       "Among Us": 20.096,
       "Apple": 17.276,
       "Arrow": 13.391,
       "Baby Yoda": 15.804,
       "Bee": 10.467,
-      "Blinky": 22.272,
+      "Blinky": 19.984,
       "Block": 36.995,
       "Blue Monster": 18.802,
       "Breeze": 35.992,
@@ -45979,7 +46180,7 @@
       "Canvas": 30.113,
       "Carrot": 12.914,
       "Caterpie": 15.188,
-      "Charizard": 20.434,
+      "Charizard": 19.837,
       "Cherry": 17.857,
       "Chick": 14.477,
       "Chicken": 15.085,
@@ -45991,8 +46192,8 @@
       "Cow": 23.227,
       "Cowboy": 11.207,
       "Creeper": 38.594,
-      "Cytooxien": 13.908,
-      "Deadpool": 27.931,
+      "Cytooxien": 13.179,
+      "Deadpool": 25.806,
       "Diskette": 15.962,
       "Doge": 23.127,
       "Duck": 9.618,
@@ -46001,40 +46202,40 @@
       "Elephant": 20.401,
       "Ender Pearl": 26.867,
       "Excavator": 17.137,
-      "Fish": 17.06,
+      "Fish": 16.358,
       "Flag": 21.681,
       "Flamingo": 14.621,
       "Fox": 16.95,
-      "French Fries": 17.9,
+      "French Fries": 15.22,
       "Frog": 13.906,
       "Galaxian Alien": 20.249,
-      "Gap": 19.0,
+      "Gap": 18.615,
       "Ghost": 9.932,
       "Giraffe": 34.276,
       "Globe": 21.45,
       "Gold Ingot": 13.376,
       "Guardian": 24.754,
-      "Heart": 17.133,
+      "Heart": 16.822,
       "Hourglass": 17.826,
-      "House": 14.836,
+      "House": 13.868,
       "Instagram": 20.347,
       "Iron Ingot": 10.781,
       "Kirby": 23.411,
       "Kitty": 20.814,
       "Koopa": 15.636,
-      "Krabs": 12.369,
+      "Krabs": 11.615,
       "Lion": 24.572,
       "Mario": 15.957,
       "Mooshroom": 21.622,
       "Mountain": 19.276,
       "Mouse": 18.386,
       "Nether": 22.025,
-      "Netherite Ingot": 10.737,
+      "Netherite Ingot": 10.236,
       "Orca": 15.826,
       "Orchid": 26.593,
       "Pacman Ghost": 14.093,
       "Parrot": 15.988,
-      "Penguin": 21.084,
+      "Penguin": 18.25,
       "Perry": 13.134,
       "Pikachu": 24.525,
       "Piranha Plant": 28.631,
@@ -46055,14 +46256,14 @@
       "Snake": 7.098,
       "Sniffer": 35.243,
       "Sonic": 21.561,
-      "Spider": 20.328,
+      "Spider": 19.721,
       "Sword": 8.197,
       "TNT": 24.87,
       "Target": 11.568,
       "Tetris": 14.796,
-      "The Sea": 14.714,
+      "The Sea": 14.025,
       "Thinking": 19.729,
-      "Thinking 2": 16.996,
+      "Thinking 2": 16.772,
       "Toad": 27.015,
       "Tree": 17.68,
       "Turtle": 22.647,
@@ -46081,7 +46282,7 @@
       "ppHop 1": 17.305,
       "ppHop 2": 14.279
     },
-    "best_score": 2139.592
+    "best_score": 2123.1980000000003
   },
   {
     "name": "Teesily",
@@ -46643,7 +46844,7 @@
     "name": "zLachs",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2276.3100000000004,
+      "Sum": 2267.641,
       "Among Us": 20.504,
       "Apple": 25.706,
       "Arrow": 18.07,
@@ -46657,7 +46858,7 @@
       "Caterpie": 14.621,
       "Charizard": 21.809,
       "Cherry": 22.883,
-      "Chick": 23.061,
+      "Chick": 14.392,
       "Chicken": 15.727,
       "Coffee": 12.87,
       "Controller": 18.502,
@@ -46749,13 +46950,13 @@
       "ppHop 1": 17.385,
       "ppHop 2": 18.026
     },
-    "best_score": 2276.3100000000004
+    "best_score": 2267.641
   },
   {
     "name": "Joe3346",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2555.7580000000007,
+      "Sum": 2548.292000000001,
       "Alien": 26.372,
       "Among Us": 25.564,
       "Apple": 21.264,
@@ -46797,8 +46998,8 @@
       "Frog": 18.248,
       "Galaxian Alien": 22.227,
       "Ghost": 11.928,
-      "Giraffe": 23.006,
-      "Globe": 25.11,
+      "Giraffe": 22.183,
+      "Globe": 23.02,
       "Gold Ingot": 12.503,
       "Guardian": 29.733,
       "Heart": 19.174,
@@ -46861,10 +47062,10 @@
       "Zombie": 23.414,
       "muss los": 20.697,
       "of Meat": 16.04,
-      "ppHop 1": 27.739,
+      "ppHop 1": 23.186,
       "ppHop 2": 22.307
     },
-    "best_score": 2555.7580000000007
+    "best_score": 2548.292000000001
   },
   {
     "name": "Lingex",
@@ -47506,26 +47707,26 @@
     "name": "Wienerisch",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2303.9410000000003,
+      "Sum": 2293.5820000000003,
       "Alien": 23.194,
-      "Among Us": 20.917,
+      "Among Us": 19.392,
       "Apple": 25.94,
       "Arrow": 16.053,
       "Baby Yoda": 16.525,
       "Bee": 15.475999999999999,
       "Blinky": 21.09,
       "Block": 41.994,
-      "Blue Monster": 21.552,
+      "Blue Monster": 19.737,
       "Breeze": 27.162,
       "Cake": 25.015,
       "Camera": 19.457,
-      "Canvas": 27.427,
+      "Canvas": 26.061,
       "Carrot": 10.765,
       "Caterpie": 19.739,
       "Charizard": 23.471,
       "Cherry": 18.681,
       "Chick": 21.497,
-      "Chicken": 19.998,
+      "Chicken": 17.08,
       "Coffee": 10.667,
       "Controller": 17.94,
       "Cookie": 16.115,
@@ -47557,7 +47758,7 @@
       "Guardian": 23.786,
       "Heart": 23.075,
       "Hourglass": 18.992,
-      "House": 15.4,
+      "House": 13.992,
       "Instagram": 21.555,
       "Iron Ingot": 10.763,
       "Kirby": 28.592,
@@ -47579,7 +47780,7 @@
       "Pikachu": 29.808,
       "Piranha Plant": 27.148,
       "Pirate": 12.594,
-      "Pizza": 17.042,
+      "Pizza": 16.527,
       "Poke Ball": 18.176,
       "Poppy": 13.821,
       "Princess": 26.279,
@@ -47590,7 +47791,7 @@
       "Sheep": 18.578,
       "Skeleton": 22.523,
       "Skeleton Skull": 22.069,
-      "Slime": 21.037,
+      "Slime": 20.641,
       "Smurf": 21.584,
       "Snake": 11.619,
       "Sniffer": 31.897,
@@ -47601,10 +47802,10 @@
       "Target": 13.214,
       "Tetris": 17.139,
       "The Sea": 16.689,
-      "Thinking": 20.011,
+      "Thinking": 19.688,
       "Thinking 2": 19.892,
       "Toad": 25.557,
-      "Tree": 19.508,
+      "Tree": 19.415,
       "Turtle": 18.826,
       "Twitch": 17.139,
       "Twitter": 19.659,
@@ -47621,7 +47822,7 @@
       "ppHop 1": 20.6,
       "ppHop 2": 18.709
     },
-    "best_score": 2303.9410000000003
+    "best_score": 2293.5820000000003
   },
   {
     "name": "Seemops_8",
@@ -47937,7 +48138,7 @@
     "name": "chrisihalt",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2084.8550000000005,
+      "Sum": 2082.9790000000003,
       "Alien": 28.394,
       "Among Us": 18.935,
       "Apple": 17.905,
@@ -48023,7 +48224,7 @@
       "Skeleton": 17.31,
       "Skeleton Skull": 19.974,
       "Slime": 21.041,
-      "Smurf": 23.422,
+      "Smurf": 22.857,
       "Snake": 8.553,
       "Sniffer": 31.893,
       "Sonic": 16.052,
@@ -48044,7 +48245,7 @@
       "Up": 15.267,
       "Water Temple": 11.565,
       "Windows": 13.365,
-      "Wizard": 18.067,
+      "Wizard": 16.756,
       "YouTube": 13.735,
       "Zombie": 19.17,
       "muss los": 20.559,
@@ -48053,7 +48254,7 @@
       "ppHop 1": 21.842,
       "ppHop 2": 16.489
     },
-    "best_score": 2084.8550000000005
+    "best_score": 2082.9790000000003
   },
   {
     "name": "FluffyDragon2007",
@@ -48772,9 +48973,9 @@
     "name": "CladyNoClip_",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2989.5120000000006,
+      "Sum": 2983.1290000000004,
       "Alien": 25.967,
-      "Among Us": 29.759,
+      "Among Us": 24.383,
       "Apple": 38.902,
       "Arrow": 22.743,
       "Baby Yoda": 25.963,
@@ -48782,15 +48983,16 @@
       "Blinky": 27.798000000000002,
       "Block": 45.072,
       "Blue Monster": 36.712,
-      "Cake": 28.884,
-      "Camera": 25.352,
-      "Carrot": 18.248,
+      "Cake": 27.221,
+      "Camera": 22.556,
+      "Canvas": 38.621,
+      "Carrot": 17.057,
       "Caterpie": 19.931,
       "Charizard": 26.179,
       "Cherry": 25.902,
       "Chicken": 20.308,
       "Coffee": 10.997,
-      "Controller": 23.302,
+      "Controller": 23.291,
       "Cookie": 22.093,
       "Cow": 35.108,
       "Cowboy": 19.419,
@@ -48807,7 +49009,7 @@
       "Fish": 27.168,
       "Flag": 24.17,
       "Fox": 24.478,
-      "French Fries": 30.613,
+      "French Fries": 26.147,
       "Frog": 28.152,
       "Galaxian Alien": 22.932,
       "Ghost": 14.873,
@@ -48817,24 +49019,25 @@
       "Heart": 25.339,
       "Hourglass": 26.574,
       "House": 19.189,
-      "Instagram": 37.429,
+      "Instagram": 34.129,
       "Iron Ingot": 15.143,
       "Kirby": 34.886,
       "Kitty": 33.765,
       "Koopa": 21.305,
       "Krabs": 16.422,
+      "Lion": 34.258,
       "Mario": 20.76,
       "Mountain": 25.714,
       "Mouse": 27.722,
       "Netherite Ingot": 13.183,
       "Orchid": 34.05,
       "Pacman Ghost": 20.655,
-      "Parrot": 26.165,
+      "Parrot": 21.384,
       "Penguin": 19.685,
       "Perry": 15.333,
       "Pikachu": 34.378,
       "Piranha Plant": 43.607,
-      "Pirate": 14.312,
+      "Pirate": 13.414,
       "Pizza": 26.926,
       "Poke Ball": 28.744,
       "Poppy": 22.097,
@@ -48846,8 +49049,8 @@
       "Sheep": 27.969,
       "Skeleton": 27.143,
       "Skeleton Skull": 29.126,
-      "Slime": 31.642,
-      "Smurf": 29.906,
+      "Slime": 27.448,
+      "Smurf": 29.556,
       "Snake": 12.409,
       "Sonic": 25.019,
       "Spider": 25.579,
@@ -48855,7 +49058,7 @@
       "TNT": 32.123,
       "Tetris": 16.86,
       "The Sea": 39.612,
-      "Thinking": 27.349,
+      "Thinking": 24.595,
       "Thinking 2": 27.068,
       "Toad": 29.259,
       "Tree": 32.544,
@@ -48865,14 +49068,15 @@
       "Water Temple": 21.304,
       "Windows": 20.023,
       "Wizard": 31.163,
-      "YouTube": 24.29,
+      "YouTube": 23.531,
       "Zombie": 31.54,
+      "muss los": 28.277,
       "of Meat": 24.285,
       "omb": 18.276,
       "ppHop 1": 26.732,
       "ppHop 2": 26.851
     },
-    "best_score": 2989.5120000000006
+    "best_score": 2983.1290000000004
   },
   {
     "name": "WirdNichtGeladen",
@@ -49007,7 +49211,7 @@
     "name": "Ex4cted",
     "minigame": "Replika",
     "scores": {
-      "Sum": 1759.1380000000001,
+      "Sum": 1758.9749999999997,
       "Alien": 23.535,
       "Among Us": 17.132,
       "Apple": 18.033,
@@ -49046,7 +49250,7 @@
       "Excavator": 13.54,
       "Fish": 16.026,
       "Flag": 19.528,
-      "Flamingo": 15.605,
+      "Flamingo": 15.495,
       "Fox": 11.056,
       "French Fries": 11.191,
       "Frog": 12.629,
@@ -49065,7 +49269,7 @@
       "Kirby": 23.904,
       "Kitty": 16.549,
       "Koopa": 12.386,
-      "Krabs": 12.592,
+      "Krabs": 12.539,
       "Lion": 23.515,
       "Mario": 11.381,
       "Mooshroom": 17.733,
@@ -49124,7 +49328,7 @@
       "ppHop 1": 15.33,
       "ppHop 2": 12.843
     },
-    "best_score": 1759.1380000000001
+    "best_score": 1758.9749999999997
   },
   {
     "name": "Mvsk_",
@@ -49214,11 +49418,13 @@
     "name": "swiffle",
     "minigame": "Replika",
     "scores": {
-      "Sum": 2452.1549999999997,
+      "Sum": 2448.8169999999996,
+      "Alien": 28.787,
       "Among Us": 20.258,
       "Apple": 25.465,
       "Baby Yoda": 15.526,
       "Bee": 12.698,
+      "Blinky": 29.044,
       "Breeze": 29.259,
       "Cake": 22.276,
       "Camera": 17.629,
@@ -49226,8 +49432,10 @@
       "Carrot": 13.099,
       "Caterpie": 20.512,
       "Cherry": 20.121,
+      "Chicken": 15.343,
       "Coffee": 11.527,
       "Cookie": 18.524,
+      "Cow": 37.938,
       "Cowboy": 13.573,
       "Creeper": 46.179,
       "Cytooxien": 12.975,
@@ -49237,6 +49445,7 @@
       "Eevee": 22.703,
       "Ender Pearl": 18.496,
       "Excavator": 20.843,
+      "Flamingo": 16.788,
       "Fox": 17.014,
       "Frog": 17.35,
       "Globe": 21.991,
@@ -49254,6 +49463,7 @@
       "Mountain": 16.356,
       "Mouse": 18.778,
       "Pacman Ghost": 12.724,
+      "Parrot": 18.762,
       "Perry": 10.305,
       "Pikachu": 27.279,
       "Pirate": 11.799,
@@ -49287,7 +49497,7 @@
       "ppHop 1": 16.833,
       "ppHop 2": 19.713
     },
-    "best_score": 2452.1549999999997
+    "best_score": 2448.8169999999996
   },
   {
     "name": "juvona",
@@ -50100,9 +50310,9 @@
     "name": "Otronix",
     "minigame": "Runterpurzeln",
     "scores": {
-      "Space": 63.656
+      "Space": 63.32
     },
-    "best_score": 63.656
+    "best_score": 63.32
   },
   {
     "name": "Schmaarek",
@@ -50602,6 +50812,14 @@
     "name": "xd_Maiky",
     "minigame": "Runterpurzeln",
     "scores": {}
+  },
+  {
+    "name": "Kklopse",
+    "minigame": "Runterpurzeln",
+    "scores": {
+      "Space": 84.439
+    },
+    "best_score": 84.439
   },
   {
     "name": "xIForgotMySkill",
@@ -51487,7 +51705,7 @@
     "name": "_n3d",
     "minigame": "Sammelwahn",
     "scores": {
-      "Sum": 692.0,
+      "Sum": 708.0,
       "Dichter Wald": 35.0,
       "Lichter Dschungel": 33.0,
       " Bambusdschungel": 27.0,
@@ -51504,12 +51722,12 @@
       "Sonnenblumenebene": 33.0,
       "Urtaiga": 31.0,
       "Urwald": 34.0,
-      "Verschneite Ebene": 33.0,
+      "Verschneite Ebene": 49.0,
       "Verschneite Taiga": 28.0,
       "Zerzauste H\u00fcgel": 33.0,
       "Zerzauste Savanne": 30.0
     },
-    "best_score": 692.0
+    "best_score": 708.0
   },
   {
     "name": "Sebi1801",
@@ -52588,7 +52806,7 @@
     "name": "Otronix",
     "minigame": "Sammelwahn",
     "scores": {
-      "Sum": 546.0,
+      "Sum": 552.0,
       "Dichter Wald": 31.0,
       "Lichter Dschungel": 29.0,
       " Bambusdschungel": 28.0,
@@ -52601,7 +52819,7 @@
       " Savannenhochebene": 27.0,
       " Sumpf": 27.0,
       " Taiga": 21.0,
-      " Wald": 23.0,
+      " Wald": 29.0,
       "Sonnenblumenebene": 34.0,
       "Urtaiga": 24.0,
       "Urwald": 26.0,
@@ -52610,7 +52828,7 @@
       "Zerzauste H\u00fcgel": 21.0,
       "Zerzauste Savanne": 25.0
     },
-    "best_score": 546.0
+    "best_score": 552.0
   },
   {
     "name": "Schmaarek",
@@ -53403,14 +53621,14 @@
     "name": "JennieKim",
     "minigame": "Sammelwahn",
     "scores": {
-      "Sum": 596.0,
+      "Sum": 610.0,
       "Dichter Wald": 31.0,
       "Lichter Dschungel": 33.0,
       " Bambusdschungel": 28.0,
       " Birkenwald": 34.0,
       " Blumenwald": 37.0,
       " Dschungel": 32.0,
-      " Ebene": 28.0,
+      " Ebene": 37.0,
       " Kirschberghain": 31.0,
       " Savanne": 30.0,
       " Savannenhochebene": 30.0,
@@ -53420,18 +53638,18 @@
       "Sonnenblumenebene": 32.0,
       "Urtaiga": 24.0,
       "Urwald": 24.0,
-      "Verschneite Ebene": 27.0,
+      "Verschneite Ebene": 32.0,
       "Verschneite Taiga": 26.0,
       "Zerzauste H\u00fcgel": 24.0,
       "Zerzauste Savanne": 30.0
     },
-    "best_score": 596.0
+    "best_score": 610.0
   },
   {
     "name": "Umgfoin",
     "minigame": "Sammelwahn",
     "scores": {
-      "Sum": 658.0,
+      "Sum": 659.0,
       "Dichter Wald": 33.0,
       "Lichter Dschungel": 32.0,
       " Bambusdschungel": 34.0,
@@ -53445,7 +53663,7 @@
       " Sumpf": 30.0,
       " Taiga": 34.0,
       " Wald": 31.0,
-      "Sonnenblumenebene": 32.0,
+      "Sonnenblumenebene": 33.0,
       "Urtaiga": 33.0,
       "Urwald": 31.0,
       "Verschneite Ebene": 34.0,
@@ -53453,7 +53671,7 @@
       "Zerzauste H\u00fcgel": 34.0,
       "Zerzauste Savanne": 31.0
     },
-    "best_score": 658.0
+    "best_score": 659.0
   },
   {
     "name": "ffawks",
@@ -54220,8 +54438,8 @@
     "name": "cediiiiii_10",
     "minigame": "Sammelwahn",
     "scores": {
-      "Sum": 767.0,
-      "Dichter Wald": 32.0,
+      "Sum": 770.0,
+      "Dichter Wald": 33.0,
       "Lichter Dschungel": 38.0,
       " Bambusdschungel": 34.0,
       " Birkenwald": 31.0,
@@ -54231,7 +54449,7 @@
       " Karmesinwald": 19.0,
       " Kirschberghain": 35.0,
       " Savanne": 43.0,
-      " Savannenhochebene": 35.0,
+      " Savannenhochebene": 37.0,
       " Sumpf": 33.0,
       " Taiga": 41.0,
       " Wald": 35.0,
@@ -54244,7 +54462,7 @@
       "Zerzauste H\u00fcgel": 37.0,
       "Zerzauste Savanne": 34.0
     },
-    "best_score": 767.0
+    "best_score": 770.0
   },
   {
     "name": "Dokkkkko",
@@ -54558,6 +54776,33 @@
       "Zerzauste Savanne": 16.0
     },
     "best_score": 412.0
+  },
+  {
+    "name": "Kklopse",
+    "minigame": "Sammelwahn",
+    "scores": {
+      "Sum": 445.0,
+      "Blumenwald": 28.0,
+      "Dichter Wald": 25.0,
+      "Lichter Dschungel": 24.0,
+      " Bambusdschungel": 22.0,
+      " Birkenwald": 24.0,
+      " Dschungel": 19.0,
+      " Ebene": 31.0,
+      " Kirschberghain": 18.0,
+      " Savanne": 27.0,
+      " Savannenhochebene": 30.0,
+      " Sumpf": 25.0,
+      " Taiga": 31.0,
+      " Wald": 22.0,
+      "Urtaiga": 19.0,
+      "Urwald": 17.0,
+      "Verschneite Ebene": 17.0,
+      "Verschneite Taiga": 22.0,
+      "Zerzauste H\u00fcgel": 22.0,
+      "Zerzauste Savanne": 22.0
+    },
+    "best_score": 445.0
   },
   {
     "name": "xIForgotMySkill",
@@ -55052,29 +55297,29 @@
     "name": "VendasTM",
     "minigame": "Sammelwahn",
     "scores": {
-      "Sum": 563.0,
+      "Sum": 593.0,
       "Dichter Wald": 30.0,
       "Lichter Dschungel": 26.0,
       " Bambusdschungel": 23.0,
-      " Birkenwald": 20.0,
+      " Birkenwald": 26.0,
       " Blumenwald": 30.0,
       " Dschungel": 21.0,
       " Ebene": 34.0,
       " Kirschberghain": 25.0,
       " Savanne": 33.0,
-      " Savannenhochebene": 45.0,
+      " Savannenhochebene": 49.0,
       " Sumpf": 22.0,
-      " Taiga": 35.0,
+      " Taiga": 43.0,
       " Wald": 26.0,
       "Sonnenblumenebene": 29.0,
       "Urtaiga": 30.0,
       "Urwald": 31.0,
-      "Verschneite Ebene": 22.0,
+      "Verschneite Ebene": 34.0,
       "Verschneite Taiga": 29.0,
       "Zerzauste H\u00fcgel": 24.0,
       "Zerzauste Savanne": 28.0
     },
-    "best_score": 563.0
+    "best_score": 593.0
   },
   {
     "name": "Stockinqs",
@@ -55954,7 +56199,7 @@
     "name": "NewNormal0947",
     "minigame": "Sammelwahn",
     "scores": {
-      "Sum": 692.0,
+      "Sum": 695.0,
       "Dichter Wald": 37.0,
       "Lichter Dschungel": 35.0,
       " Bambusdschungel": 32.0,
@@ -55972,12 +56217,12 @@
       "Sonnenblumenebene": 33.0,
       "Urtaiga": 26.0,
       "Urwald": 32.0,
-      "Verschneite Ebene": 28.0,
+      "Verschneite Ebene": 31.0,
       "Verschneite Taiga": 35.0,
       "Zerzauste H\u00fcgel": 41.0,
       "Zerzauste Savanne": 32.0
     },
-    "best_score": 692.0
+    "best_score": 695.0
   },
   {
     "name": "Teesily",
@@ -56537,7 +56782,7 @@
     "name": "Flitzi_Dino",
     "minigame": "Sammelwahn",
     "scores": {
-      "Sum": 461.0,
+      "Sum": 463.0,
       "Dichter Wald": 22.0,
       "Lichter Dschungel": 24.0,
       " Bambusdschungel": 26.0,
@@ -56556,10 +56801,10 @@
       "Urwald": 25.0,
       "Verschneite Ebene": 28.0,
       "Verschneite Taiga": 18.0,
-      "Zerzauste H\u00fcgel": 19.0,
+      "Zerzauste H\u00fcgel": 21.0,
       "Zerzauste Savanne": 24.0
     },
-    "best_score": 461.0
+    "best_score": 463.0
   },
   {
     "name": "Wienerisch",
@@ -56978,9 +57223,9 @@
     "name": "CladyNoClip_",
     "minigame": "Sammelwahn",
     "scores": {
-      "Sum": 556.0,
+      "Sum": 557.0,
       "Dichter Wald": 29.0,
-      "Lichter Dschungel": 25.0,
+      "Lichter Dschungel": 26.0,
       " Bambusdschungel": 24.0,
       " Birkenwald": 25.0,
       " Blumenwald": 30.0,
@@ -57000,7 +57245,7 @@
       "Zerzauste H\u00fcgel": 29.0,
       "Zerzauste Savanne": 30.0
     },
-    "best_score": 556.0
+    "best_score": 557.0
   },
   {
     "name": "WirdNichtGeladen",
@@ -57894,7 +58139,7 @@
       "City": 146.0,
       "Farm": 298.0,
       "Jungle": 271.0,
-      "Punkte Chambers": 225.0
+      "Punkte Chambers": 247.0
     },
     "best_score": 298.0
   },
@@ -58025,7 +58270,7 @@
       "City": 369.0,
       "Farm": 376.0,
       "Jungle": 361.0,
-      "Punkte Chambers": 288.0
+      "Punkte Chambers": 316.0
     },
     "best_score": 376.0
   },
@@ -58208,7 +58453,7 @@
       "City": 311.0,
       "Farm": 402.0,
       "Jungle": 312.0,
-      "Punkte Chambers": 182.0
+      "Punkte Chambers": 248.0
     },
     "best_score": 402.0
   },
@@ -58527,7 +58772,7 @@
       "City": 433.0,
       "Farm": 477.0,
       "Jungle": 438.0,
-      "Punkte Chambers": 346.0
+      "Punkte Chambers": 405.0
     },
     "best_score": 477.0
   },
@@ -58547,7 +58792,8 @@
     "scores": {
       "City": 287.0,
       "Farm": 302.0,
-      "Jungle": 293.0
+      "Jungle": 293.0,
+      "Punkte Chambers": 160.0
     },
     "best_score": 302.0
   },
@@ -58652,13 +58898,21 @@
     "best_score": 312.0
   },
   {
+    "name": "Kklopse",
+    "minigame": "Schie\u00dfstand",
+    "scores": {
+      "Punkte Chambers": 180.0
+    },
+    "best_score": 180.0
+  },
+  {
     "name": "xIForgotMySkill",
     "minigame": "Schie\u00dfstand",
     "scores": {
       "City": 253.0,
       "Farm": 286.0,
       "Jungle": 245.0,
-      "Punkte Chambers": 172.0
+      "Punkte Chambers": 195.0
     },
     "best_score": 286.0
   },
@@ -58840,9 +59094,9 @@
     "name": "VendasTM",
     "minigame": "Schie\u00dfstand",
     "scores": {
-      "Punkte Chambers": 295.0
+      "Punkte Chambers": 368.0
     },
-    "best_score": 295.0
+    "best_score": 368.0
   },
   {
     "name": "Stockinqs",
@@ -59109,7 +59363,7 @@
       "City": 186.0,
       "Farm": 311.0,
       "Jungle": 238.0,
-      "Punkte Chambers": 196.0
+      "Punkte Chambers": 253.0
     },
     "best_score": 311.0
   },
@@ -59338,7 +59592,7 @@
       "City": 453.0,
       "Farm": 430.0,
       "Jungle": 377.0,
-      "Punkte Chambers": 146.0
+      "Punkte Chambers": 224.0
     },
     "best_score": 453.0
   },
@@ -60252,7 +60506,7 @@
       "Asia": 9.0,
       "Kills Coconut": 1.0,
       "Kills Oasis": 6.0,
-      "Kills Rust": 3.0,
+      "Kills Rust": 5.0,
       "Swamp": 8.0,
       "Wild West": 8.0
     },
@@ -60536,6 +60790,7 @@
     "minigame": "Skywars",
     "scores": {
       "Asia": 7.0,
+      "Kills Coconut": 2.0,
       "Kills Oasis": 4.0,
       "Kills Rust": 4.0,
       "Swamp": 5.0,
@@ -60867,7 +61122,7 @@
       "Asia": 10.0,
       "Kills Coconut": 3.0,
       "Kills Oasis": 5.0,
-      "Kills Rust": 7.0,
+      "Kills Rust": 8.0,
       "Swamp": 10.0,
       "Wild West": 11.0
     },
@@ -60888,6 +61143,7 @@
     "minigame": "Skywars",
     "scores": {
       "Asia": 6.0,
+      "Kills Oasis": 1.0,
       "Kills Rust": 6.0,
       "Swamp": 7.0,
       "Wild West": 8.0
@@ -61004,10 +61260,22 @@
     "best_score": 8.0
   },
   {
+    "name": "Kklopse",
+    "minigame": "Skywars",
+    "scores": {
+      "Asia": 1.0,
+      "Kills Oasis": 1.0,
+      "Kills Rust": 2.0,
+      "Swamp": 1.0
+    },
+    "best_score": 2.0
+  },
+  {
     "name": "xIForgotMySkill",
     "minigame": "Skywars",
     "scores": {
       "Asia": 7.0,
+      "Kills Oasis": 2.0,
       "Kills Rust": 3.0,
       "Swamp": 8.0,
       "Wild West": 8.0
@@ -61522,6 +61790,7 @@
     "minigame": "Skywars",
     "scores": {
       "Asia": 6.0,
+      "Kills Oasis": 2.0,
       "Kills Rust": 6.0,
       "Swamp": 7.0,
       "Wild West": 4.0
@@ -61686,7 +61955,7 @@
     "scores": {
       "Asia": 5.0,
       "Kills Oasis": 9.0,
-      "Kills Rust": 3.0,
+      "Kills Rust": 4.0,
       "Swamp": 4.0,
       "Wild West": 6.0
     },
@@ -61974,6 +62243,7 @@
     "minigame": "Skywars",
     "scores": {
       "Asia": 5.0,
+      "Kills Oasis": 1.0,
       "Kills Rust": 4.0,
       "Swamp": 5.0,
       "Wild West": 4.0
@@ -62562,6 +62832,14 @@
     "best_score": 13
   },
   {
+    "name": "deadfiight",
+    "minigame": "Spleef",
+    "scores": {
+      "Snow Valley": 1
+    },
+    "best_score": 1
+  },
+  {
     "name": "crocodile1870",
     "minigame": "Spleef",
     "scores": {
@@ -62584,6 +62862,14 @@
       "Snow Valley": 4
     },
     "best_score": 4
+  },
+  {
+    "name": "Kklopse",
+    "minigame": "Spleef",
+    "scores": {
+      "Snow Valley": 3
+    },
+    "best_score": 3
   },
   {
     "name": "xIForgotMySkill",
@@ -63077,9 +63363,9 @@
     "name": "CladyNoClip_",
     "minigame": "Spleef",
     "scores": {
-      "Snow Valley": 5
+      "Snow Valley": 6
     },
-    "best_score": 5
+    "best_score": 6
   },
   {
     "name": "Ex4cted",
@@ -63953,7 +64239,7 @@
     "minigame": "Survivalgames",
     "scores": {
       "Berglin": 4.0,
-      "Oasis": 5.0,
+      "Oasis": 8.0,
       "Winter Village": 11.0
     },
     "best_score": 11.0
@@ -64273,6 +64559,15 @@
       "Winter Village": 8.0
     },
     "best_score": 8.0
+  },
+  {
+    "name": "Kklopse",
+    "minigame": "Survivalgames",
+    "scores": {
+      "Berglin": 3.0,
+      "Oasis": 3.0
+    },
+    "best_score": 3.0
   },
   {
     "name": "xIForgotMySkill",
@@ -64726,6 +65021,7 @@
     "name": "Mincheeen",
     "minigame": "Survivalgames",
     "scores": {
+      "Berglin": 2.0,
       "Oasis": 3.0,
       "Prison": 2.0,
       "Winter Village": 9.0
@@ -64860,7 +65156,7 @@
     "scores": {
       "Berglin": 7.0,
       "Oasis": 12.0,
-      "Prison": 5.0,
+      "Prison": 6.0,
       "Winter Village": 9.0
     },
     "best_score": 12.0
@@ -65935,6 +66231,11 @@
     "scores": {}
   },
   {
+    "name": "Kklopse",
+    "minigame": "Todesw\u00fcrfel",
+    "scores": {}
+  },
+  {
     "name": "xIForgotMySkill",
     "minigame": "Todesw\u00fcrfel",
     "scores": {}
@@ -66504,9 +66805,9 @@
     "name": "AnzeigeGehtRaus",
     "minigame": "Turmroulette",
     "scores": {
-      "Global": 1
+      "Global": 4
     },
-    "best_score": 1
+    "best_score": 4
   },
   {
     "name": "N3XV",
@@ -66846,6 +67147,14 @@
   },
   {
     "name": "Keenaai",
+    "minigame": "Turmroulette",
+    "scores": {
+      "Global": 3
+    },
+    "best_score": 3
+  },
+  {
+    "name": "Kklopse",
     "minigame": "Turmroulette",
     "scores": {
       "Global": 3
@@ -67864,6 +68173,11 @@
   },
   {
     "name": "xd_Maiky",
+    "minigame": "Waffenfolge",
+    "scores": {}
+  },
+  {
+    "name": "Kklopse",
     "minigame": "Waffenfolge",
     "scores": {}
   },
@@ -68995,7 +69309,7 @@
       "Blossom Canyon": 80.568,
       "Cyberpunk": 75.493,
       "Green Hills": 64.999,
-      "Islands": 71.504,
+      "Islands": 71.353,
       "Snow": 71.457
     },
     "best_score": 80.568
@@ -69309,7 +69623,7 @@
       "Blossom Canyon": 81.48,
       "Cyberpunk": 77.41,
       "Green Hills": 55.992,
-      "Islands": 73.365,
+      "Islands": 71.845,
       "Snow": 61.568
     },
     "best_score": 81.48
@@ -69377,7 +69691,7 @@
     "minigame": "Wettrennen",
     "scores": {
       "Blossom Canyon": 81.048,
-      "Cyberpunk": 76.503,
+      "Cyberpunk": 76.47800000000001,
       "Green Hills": 65.751,
       "Islands": 72.939,
       "Snow": 71.271
@@ -69777,6 +70091,16 @@
     "best_score": 94.825
   },
   {
+    "name": "Kklopse",
+    "minigame": "Wettrennen",
+    "scores": {
+      "Cyberpunk": 83.457,
+      "Green Hills": 70.047,
+      "Islands": 75.425
+    },
+    "best_score": 83.457
+  },
+  {
     "name": "xIForgotMySkill",
     "minigame": "Wettrennen",
     "scores": {
@@ -69982,11 +70306,11 @@
     "name": "VendasTM",
     "minigame": "Wettrennen",
     "scores": {
-      "Cyberpunk": 73.563,
+      "Cyberpunk": 73.206,
       "Green Hills": 64.4,
       "Islands": 69.548
     },
-    "best_score": 73.563
+    "best_score": 73.206
   },
   {
     "name": "Stockinqs",
@@ -70357,7 +70681,7 @@
     "minigame": "Wettrennen",
     "scores": {
       "Blossom Canyon": 84.375,
-      "Cyberpunk": 75.997,
+      "Cyberpunk": 75.989,
       "Green Hills": 60.238,
       "Islands": 71.409,
       "Snow": 70.609
@@ -70473,7 +70797,7 @@
     "minigame": "Wettrennen",
     "scores": {
       "Blossom Canyon": 94.99199999999999,
-      "Cyberpunk": 75.30799999999999,
+      "Cyberpunk": 74.914,
       "Green Hills": 61.306,
       "Islands": 72.672,
       "Snow": 68.899
@@ -70757,7 +71081,7 @@
     "scores": {
       "Blossom Canyon": 93.49600000000001,
       "Cyberpunk": 78.199,
-      "Green Hills": 68.545,
+      "Green Hills": 67.519,
       "Islands": 75.52,
       "Snow": 83.964
     },
@@ -70768,9 +71092,9 @@
     "minigame": "Wettrennen",
     "scores": {
       "Blossom Canyon": 93.88499999999999,
-      "Cyberpunk": 79.368,
-      "Green Hills": 68.854,
-      "Islands": 73.775,
+      "Cyberpunk": 79.068,
+      "Green Hills": 68.092,
+      "Islands": 73.313,
       "Snow": 74.541
     },
     "best_score": 93.88499999999999

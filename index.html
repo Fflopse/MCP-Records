@@ -4,67 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minecraft Party Records</title>
-    <link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css" rel="stylesheet">
-    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
+
+    <!-- AG-Grid CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community@31.0.0/styles/ag-grid.css">
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community@31.0.0/styles/ag-theme-alpine-dark.css">
+
+    <!-- AG-Grid JS -->
+    <script src="https://unpkg.com/ag-grid-community@31.0.0/dist/ag-grid-community.min.js"></script>
+
     <style>
         :root {
-            --primary-color: #1a1a1a;
-            --secondary-color: #2a2a2a;
-            --accent-color-1: #0ec5c56b;  
-            --accent-color-2: #ffdab9;  
-            --accent-color-3: #d0f0c0; 
+            --primary-color: #0a0a0f;
+            --secondary-color: #1a1a2e;
+            --tertiary-color: #16213e;
+            --accent-color-1: #00f5ff;
+            --accent-color-2: #ff6b6b;
+            --accent-color-3: #4ecdc4;
+            --accent-color-4: #45b7d1;
             --text-color: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
-        
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, var(--primary-color), #2c2c2c);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0f;
             color: var(--text-color);
             margin: 0;
-            padding: 20px;
+            padding: 0;
             min-height: 100vh;
+            overflow-x: hidden;
         }
-        
+
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                    radial-gradient(circle at 20% 80%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 40%, rgba(78, 205, 196, 0.08) 0%, transparent 50%),
+                    linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+            animation: backgroundMove 20s ease-in-out infinite;
+            z-index: -2;
+        }
+
+        @keyframes backgroundMove {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(1deg); }
+            66% { transform: translate(-20px, 20px) rotate(-1deg); }
+        }
+
+        /* Glass morphism overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                    rgba(0, 245, 255, 0.03) 0%,
+                    transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+            transition: background 0.3s ease;
+        }
+
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
         }
-        
-        h1 {
+
+        .title-container {
+            margin-bottom: 40px;
+            padding: 40px 0;
             text-align: center;
-            margin-bottom: 30px;
-            color: var(--accent-color-1);
+            position: relative;
         }
-        
-        .caption {
-            text-align: center;
-            margin-bottom: 20px;
-            color: var(--text-color);
+
+        .title-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--accent-color-1) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            opacity: 0.1;
+            animation: pulse 4s ease-in-out infinite;
+            z-index: -1;
         }
-        
-        .highlight {
-            color: var(--accent-color-2);
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.1; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
         }
-        
-        .date {
-            font-style: italic;
+
+        .main-title {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: transparent;
+            background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-4), var(--accent-color-2));
+            background-clip: text;
+            -webkit-background-clip: text;
+            margin: 0;
+            padding: 0;
+            letter-spacing: -2px;
+            position: relative;
+            animation: titleGlow 3s ease-in-out infinite alternate;
         }
-        
+
+        @keyframes titleGlow {
+            0% { filter: drop-shadow(0 0 20px rgba(0, 245, 255, 0.3)); }
+            100% { filter: drop-shadow(0 0 40px rgba(0, 245, 255, 0.6)); }
+        }
+
         .search-subheading {
             text-align: center;
             margin-bottom: 15px;
-            font-size: 1.2em;
-            color: rgb(138, 138, 138);
+            font-size: 1.1em;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
-        
+
         .search-section {
             margin-bottom: 40px;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
+            padding: 30px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
             position: relative;
+            transition: all 0.3s ease;
         }
-        
+
+        .search-section::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            background: linear-gradient(45deg, var(--accent-color-1), transparent, var(--accent-color-2), transparent);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .search-section:hover::before {
+            opacity: 0.5;
+        }
+
+        .search-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 245, 255, 0.1);
+        }
+
         @keyframes unfold {
             from {
                 max-height: 0;
@@ -77,178 +186,184 @@
                 transform: translateY(0);
             }
         }
-        
+
         #global-search-results {
             position: absolute;
             top: 100%;
-            left: 20px;
-            right: 20px;
-            background-color: var(--secondary-color);
-            border-top: none;
-            border-radius: 5px;
+            left: 30px;
+            right: 30px;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
             max-height: 200px;
             overflow-y: auto;
             display: none;
             z-index: 1000;
             animation: unfold 0.3s ease-out;
+            margin-top: 10px;
         }
-        
-        .blur-background {
-            filter: blur(3px);
-            transition: filter 0.3s ease-out;
-        }
-        
-        #global-search-results .search-result-item:last-child {
-            border-radius: 0 0 9px 9px;
-        }
-        
+
         .search-result-item {
             display: flex;
             align-items: center;
-            padding: 10px;
+            padding: 15px 20px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
+        .search-result-item:last-child {
+            border-bottom: none;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .search-result-item:first-child {
+            border-radius: 15px 15px 0 0;
+        }
+
+        .search-result-item:hover {
+            background: linear-gradient(90deg, rgba(0, 245, 255, 0.1), rgba(255, 107, 107, 0.1));
+            transform: translateX(5px);
+        }
+
         .search-result-item img {
             width: 32px;
             height: 32px;
             margin-right: 10px;
         }
-        
+
         .arrow {
             display: inline-block;
             animation: bounce 2s infinite alternate;
         }
-        
+
         @keyframes bounce {
             from { transform: translateY(-1px); }
             to { transform: translateY(4px); }
         }
-        
+
         #global-player-search {
-            width: calc(100% - 40px);
-            padding: 10px 20px;
-            border: 1px solid var(--accent-color-1);
-            border-radius: 5px;
-            background-color: var(--secondary-color);
+            width: calc(100% - 60px);
+            padding: 18px 30px;
+            border: 2px solid transparent;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
             color: var(--text-color);
             font-size: 16px;
             margin: 0 auto;
             display: block;
-        }
-        
-        #global-player-search:focus {
+            transition: all 0.3s ease;
             outline: none;
-            box-shadow: 0 0 0 2px rgba(168, 216, 234, 0.5);
         }
-        
+
+        #global-player-search:focus {
+            border-color: var(--accent-color-1);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 30px rgba(0, 245, 255, 0.2);
+        }
+
+        #global-player-search::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
         .controls-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             gap: 20px;
+            padding: 25px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            transition: all 0.3s ease;
         }
-        
+
+        .controls-container:hover {
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px rgba(0, 245, 255, 0.1);
+        }
+
         .dropdown, .search-container {
             flex: 1;
             max-width: calc(50% - 10px);
         }
 
-        .player-prefix {
-            font-weight: bold;
-            margin-right: 5px;
-            padding: 2px 5px;
-            border-radius: 3px;
-            color: white;
-        }
-
         #minigame-select, #player-search {
             width: 100%;
-            padding: 10px;
-            border: 1px solid var(--accent-color-1);
-            border-radius: 5px;
-            background-color: var(--secondary-color);
+            padding: 15px 20px;
+            border: 2px solid transparent;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
             color: var(--text-color);
             font-size: 16px;
             box-sizing: border-box;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%2300f5ff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            padding-right: 45px;
+            transition: all 0.3s ease;
+            outline: none;
         }
 
         #minigame-select:focus, #player-search:focus {
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(168, 216, 234, 0.5);
+            border-color: var(--accent-color-1);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
         }
 
-        .tabulator {
-            background-color: var(--secondary-color);
+        #player-search::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* AG-Grid Custom Styling */
+        .ag-theme-alpine-dark {
+            --ag-background-color: rgba(255, 255, 255, 0.02);
+            --ag-header-background-color: rgba(0, 0, 0, 0.6);
+            --ag-odd-row-background-color: rgba(255, 255, 255, 0.02);
+            --ag-even-row-background-color: rgba(255, 255, 255, 0.05);
+            --ag-row-hover-color: rgba(0, 245, 255, 0.1);
+            --ag-selected-row-background-color: rgba(0, 245, 255, 0.15);
+            --ag-border-color: rgba(255, 255, 255, 0.1);
+            --ag-header-column-separator-color: rgba(255, 255, 255, 0.2);
+            --ag-cell-horizontal-border: solid rgba(255, 255, 255, 0.05);
+            --ag-font-family: 'Segoe UI', system-ui, sans-serif;
+            --ag-font-size: 14px;
+            --ag-foreground-color: var(--text-color);
+            --ag-header-foreground-color: var(--text-color);
             border: none;
-            width: 100% !important;
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
         }
 
-        .tabulator .tabulator-header {
-            background-color: #000000;
-            color: var(--text-color);
-            font-weight: bold;
+        .ag-header {
+            border-radius: 20px 20px 0 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(26, 26, 46, 0.8));
         }
 
-        .tabulator .tabulator-header .tabulator-col {
-            background-color: #000000;
-            border-right: 1px solid var(--secondary-color);
+        .ag-header-cell-sortable:hover {
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(255, 107, 107, 0.1)) !important;
         }
 
-        .tabulator .tabulator-header .tabulator-col.tabulator-sortable:hover {
-            background-color: #1a1a1a;
+        .ag-header-cell.ag-header-cell-sorted-asc,
+        .ag-header-cell.ag-header-cell-sorted-desc {
+            background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-4)) !important;
+            color: var(--primary-color) !important;
+            font-weight: 600;
         }
 
-        .tabulator .tabulator-header .tabulator-col.tabulator-sortable[aria-sort],
-        .tabulator .tabulator-header .tabulator-col.sorted {
-            background-color: var(--accent-color-1);
-            color: var(--primary-color);
-        }
-
-        .tabulator .tabulator-row {
-            color: var(--text-color);
-            transition: background-color 0.15s ease;
-        }
-
-        .tabulator .tabulator-row.tabulator-row-even {
-            background-color: var(--secondary-color);
-        }
-
-        .tabulator .tabulator-row.tabulator-row-odd {
-            background-color: #333333;
-        }
-
-        .tabulator .tabulator-row:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        .tabulator .tabulator-row.tabulator-row-even:hover {
-            background-color: rgba(42, 42, 42, 0.95);
-        }
-
-        .tabulator .tabulator-row.tabulator-row-odd:hover {
-            background-color: rgba(51, 51, 51, 0.95);
-        }
-
-        .tabulator .tabulator-row .tabulator-cell {
-            transition: color 0.15s ease;
-        }
-
-        .tabulator .tabulator-row:hover .tabulator-cell {
-            color: var(--accent-color-2);
-        }
-
-        .tabulator .tabulator-header .tabulator-col.tabulator-frozen,
-        .tabulator .tabulator-row .tabulator-cell.tabulator-frozen {
-            position: sticky;
-            left: 0;
-            z-index: 2;
-            background-color: inherit;
-        }
-
-        .tabulator .tabulator-row .tabulator-cell.tabulator-frozen {
-            box-shadow: 2px 0px 3px rgba(0,0,0,0.1);
+        .ag-row:hover .ag-cell {
+            color: var(--accent-color-1) !important;
+            background: linear-gradient(90deg, rgba(0, 245, 255, 0.05), transparent) !important;
         }
 
         .player-avatar {
@@ -256,6 +371,15 @@
             height: 32px;
             vertical-align: middle;
             margin-right: 10px;
+        }
+
+        .player-name {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .player-name:hover {
+            color: var(--accent-color-1);
         }
 
         .loading {
@@ -280,401 +404,36 @@
             100% { transform: rotate(360deg); }
         }
 
-        #records-table {
-            opacity: 0;
-            transition: opacity 0.15s ease-in-out;
+        #records-grid {
+            height: 500px;
             width: 100%;
+            opacity: 0;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
         }
 
-        #records-table.loaded,
-        #records-table.fade-in {
+        #records-grid.loaded {
             opacity: 1;
-        }
-
-        #records-table.fade-out {
-            opacity: 0;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4);
-        }
-
-        .modal-content {
-            background-color: var(--secondary-color);
-            margin: 5% auto;
-            padding: 30px;
-            border: 1px solid #444;
-            width: 90%;
-            max-width: 800px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-
-        .modal-loader {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-        }
-
-        .modal-spinner {
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top: 4px solid var(--accent-color-3);
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-
-        .close {
-            color: #aaa;
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: var(--accent-color-2);
-            text-decoration: none;
-        }
-
-        .player-profile-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 20px;
-            padding-right: 40px;
-        }
-
-        .player-avatar-name {
-            display: flex;
-            align-items: center;
-        }
-
-        .player-avatar-name img {
-            width: 100px;
-            height: 100px;
-            margin-right: 20px;
-            border-radius: 8px;
-        }
-
-        .player-avatar-name h2 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        .player-stats {
-            text-align: right;
-        }
-
-        .player-stats p {
-            margin: 5px 0;
-            font-size: 14px;
-        }
-
-        .player-stats p strong {
-            color: var(--accent-color-1);
-        }
-
-        .profile-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin-top: 20px;
-        }
-
-        .profile-table th,
-        .profile-table td {
-            border: 1px solid #444;
-            padding: 10px;
-            text-align: left;
-        }
-
-        .profile-table th {
-            background-color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        .profile-table tr:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        .minigame-section {
-            margin-top: 30px;
-        }
-
-        .minigame-section h3 {
-            color: var(--accent-color-2);
-            margin-bottom: 10px;
-        }
-
-        .language-selector {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-
-        .language-selector button {
-            background-color: #333;
-            color: #fff;
-            border-radius: 4px;
-            padding: 5px 10px;
-            font-size: 14px;
-            cursor: pointer;
-            margin-left: 10px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .language-selector button:hover,
-        .language-selector button:focus,
-        .language-selector button[aria-pressed="true"] {
-            background-color: var(--accent-color-1);
-            color: var(--primary-color);
-        }
-
-        .table-controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .dropdown, .search-container {
-            flex: 1;
-        }
-
-        .dropdown {
-            margin-right: 10px;
-        }
-
-        .search-container {
-            margin-left: 10px;
-        }
-
-        #minigame-select {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            padding-right: 30px;
-        }
-
-        #player-search::placeholder {
-            color: #aaa;
+            transform: translateY(0);
         }
 
         .rank-1 {
-            color: rgb(226, 173, 0);
+            color: #ffd700 !important;
             font-weight: bold;
-            text-shadow: 0 0 5px rgba(226, 155, 0, 0.5);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
         .rank-2 {
-            color: rgb(214, 237, 243);
+            color: #c0c0c0 !important;
             font-weight: bold;
-            text-shadow: 0 0 4px rgba(212, 246, 255, 0.5);
+            text-shadow: 0 0 8px rgba(192, 192, 192, 0.5);
         }
         .rank-3 {
-            color: rgb(175, 106, 2);
+            color: #cd7f32 !important;
             font-weight: bold;
-            text-shadow: 0 0 3px rgba(182, 111, 4, 0.5);
+            text-shadow: 0 0 6px rgba(205, 127, 50, 0.5);
         }
         .rank-other {
-            color: #A0A0A0;
-        }
-
-        .title-container {
-            margin-bottom: 30px;
-            padding: 10px 0;
-            border-bottom: 2px solid var(--secondary-color);
-        }
-
-        .main-title {
-            font-family: Arial, sans-serif;
-            font-size: 2rem;
-            color: var(--text-color);
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            transition: text-shadow 0.3s ease;
-        }
-
-        .main-title:hover {
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-        }
-
-        .site-footer {
-            margin-top: 40px;
-            padding: 20px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .footer-separator {
-            margin: 0 10px;
-            color: rgba(255, 255, 255, 0.3);
-        }
-
-        .site-footer a {
-            color: var(--accent-color-1);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .site-footer a:hover {
-            color: var(--accent-color-2);
-        }
-
-        @media (max-width: 768px) {
-            .controls-container {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .dropdown,
-            .search-container {
-                max-width: none;
-                margin-bottom: 10px;
-            }
-
-            .player-profile-header {
-                flex-direction: column;
-            }
-
-            .player-stats {
-                text-align: left;
-                margin-top: 15px;
-            }
-
-            .main-title {
-                font-size: 1.5rem;
-            }
-
-            .footer-content {
-                font-size: 0.8rem;
-            }
-
-            .footer-separator {
-                margin: 0 5px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-
-            .container {
-                padding: 0 10px;
-            }
-
-            .modal-content {
-                width: 95%;
-                padding: 20px;
-            }
-
-            .player-avatar-name img {
-                width: 80px;
-                height: 80px;
-            }
-
-            .player-avatar-name h2 {
-                font-size: 20px;
-            }
-        }
-
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            margin: -1px;
-            padding: 0;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        a:focus,
-        button:focus,
-        input:focus,
-        select:focus {
-            outline: 2px solid var(--accent-color-1);
-            outline-offset: 2px;
-        }
-
-        .search-result-item:hover,
-        .language-selector button:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .tabulator .tabulator-row .tabulator-cell,
-        .close,
-        .site-footer a,
-        .language-selector button {
-            transition: color 0.3s ease, background-color 0.3s ease;
-        }
-
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--secondary-color);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent-color-1);
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-color-2);
-        }
-
-        @media print {
-            body {
-                background: white;
-                color: black;
-            }
-
-            .no-print {
-                display: none;
-            }
-
-            .tabulator-print-header, .tabulator-print-footer {
-                display: none;
-            }
-        }
-
-        .legend {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 10px;
-            color:rgb(168, 168, 168);
+            color: rgba(255, 255, 255, 0.8) !important;
         }
 
         .video-link {
@@ -686,10 +445,6 @@
 
         .video-link:hover {
             opacity: 0.7;
-        }
-
-        .video-link:visited {
-            color: inherit;
         }
 
         .video-links-container {
@@ -710,12 +465,6 @@
             margin-bottom: 10px;
         }
 
-        .video-links-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
         .video-link-item {
             display: flex;
             align-items: center;
@@ -723,16 +472,11 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            margin-bottom: 10px;
         }
 
         .video-link-item:hover {
             background-color: rgba(255, 255, 255, 0.15);
-        }
-
-        .video-link-item .player-avatar {
-            width: 32px;
-            height: 32px;
-            margin-right: 10px;
         }
 
         .video-link-player {
@@ -746,110 +490,487 @@
         }
 
         .video-link-button {
-            padding: 5px 10px;
-            background-color: var(--accent-color-1);
+            padding: 8px 16px;
+            background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-4));
             color: var(--primary-color);
             text-decoration: none;
-            border-radius: 3px;
-            transition: background-color 0.3s ease;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
+        }
+
+        .video-link-button:hover {
+            background: linear-gradient(135deg, var(--accent-color-4), var(--accent-color-2));
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 245, 255, 0.3);
+        }
+
+        .legend {
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9em;
+            text-align: center;
+            padding: 15px;
+            background: var(--glass-bg);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        } var(--accent-color-1);
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 3px;
+        transition: background-color 0.3s ease;
         }
 
         .video-link-button:hover {
             background-color: var(--accent-color-2);
         }
 
-        .highlighted-video {
-            background-color: rgba(14, 197, 197, 0.1); 
-            transition: background-color 0.3s ease;
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            box-sizing: border-box;
         }
 
-        .has-video {
+        .modal-content {
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px);
+            margin: 0 auto;
+            padding: 40px;
+            border: 1px solid var(--glass-border);
+            width: 100%;
+            max-width: 1000px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
             position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
-        .has-video::after {
-            content: '▶';
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50%) translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(-50%) translateY(0) scale(1);
+            }
+        }
+
+        .close {
+            color: rgba(255, 255, 255, 0.7);
             position: absolute;
-            top: 2px;
-            right: 2px;
-            font-size: 10px;
+            top: 20px;
+            right: 25px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1001;
+        }
+
+        .close:hover {
+            color: var(--accent-color-2);
+            background: rgba(255, 107, 107, 0.2);
+            transform: rotate(90deg);
+        }
+
+        /* Player Profile Styles */
+        .player-profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding-right: 60px;
+            flex-wrap: wrap;
+        }
+
+        .player-avatar-name {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .player-avatar-name img {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            border-radius: 15px;
+            border: 2px solid var(--glass-border);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .player-avatar-name h2 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .player-prefix {
+            font-weight: bold;
+            margin-bottom: 8px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: white;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .player-stats {
+            text-align: right;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+            min-width: 200px;
+        }
+
+        .player-stats p {
+            margin: 8px 0;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .player-stats p strong {
+            color: var(--accent-color-1);
+            font-weight: 600;
+        }
+
+        /* Minigame Section Styles */
+        .minigame-section {
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .minigame-section:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .minigame-section h3 {
+            color: var(--accent-color-1);
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: 600;
+            text-align: center;
+            border-bottom: 2px solid var(--glass-border);
+            padding-bottom: 10px;
+        }
+
+        /* Profile Table Styles */
+        .profile-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .profile-table th {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(26, 26, 46, 0.6));
+            color: var(--text-color);
+            font-weight: 600;
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 2px solid var(--glass-border);
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-table th:first-child {
+            border-radius: 15px 0 0 0;
+        }
+
+        .profile-table th:last-child {
+            border-radius: 0 15px 0 0;
+        }
+
+        .profile-table td {
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+        }
+
+        .profile-table tr:nth-child(even) td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .profile-table tr:hover td {
+            background: linear-gradient(90deg, rgba(0, 245, 255, 0.05), transparent);
             color: var(--accent-color-1);
         }
 
+        .profile-table tr:last-child td:first-child {
+            border-radius: 0 0 0 15px;
+        }
+
+        .profile-table tr:last-child td:last-child {
+            border-radius: 0 0 15px 0;
+        }
+
+        .profile-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Expand Button Styles */
+        .expand-button {
+            background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-4));
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .expand-button:hover {
+            background: linear-gradient(135deg, var(--accent-color-4), var(--accent-color-2));
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 245, 255, 0.3);
+        }
+
+        .expand-icon {
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hidden rows for expand/collapse */
         .hidden-row {
             display: none;
         }
 
-        .expand-button {
-            background: none;
-            border: none;
+        /* Legend in modal */
+        .modal .legend {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+
+        .site-footer {
+            margin-top: 50px;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-separator {
+            margin: 0 15px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .site-footer a {
             color: var(--accent-color-1);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            font-size: 0.9em;
-            margin-top: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 10px;
         }
 
-        .expand-button:hover {
+        .site-footer a:hover {
             color: var(--accent-color-2);
+            background: rgba(255, 255, 255, 0.1);
         }
 
-        .expand-icon {
-            margin-right: 5px;
+        /* Responsive Modal Design */
+        @media (max-width: 768px) {
+            .modal {
+                padding: 10px;
+            }
+
+            .modal-content {
+                padding: 25px;
+                top: 0;
+                transform: none;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                max-height: none;
+            }
+
+            .player-profile-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding-right: 0;
+            }
+
+            .player-stats {
+                text-align: center;
+                margin-top: 20px;
+                width: 100%;
+            }
+
+            .player-avatar-name img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .player-avatar-name h2 {
+                font-size: 1.5rem;
+                align-items: center;
+            }
+
+            .profile-table th,
+            .profile-table td {
+                padding: 8px 12px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modal-content {
+                padding: 20px;
+            }
+
+            .player-avatar-name {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .player-avatar-name img {
+                margin-right: 0;
+                margin-bottom: 15px;
+                width: 70px;
+                height: 70px;
+            }
+
+            .player-avatar-name h2 {
+                font-size: 1.3rem;
+            }
+
+            .profile-table {
+                font-size: 0.85em;
+            }
+
+            .profile-table th,
+            .profile-table td {
+                padding: 6px 8px;
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2));
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, var(--accent-color-2), var(--accent-color-1));
         }
     </style>
-
-
+</head>
+<body>
 <div class="container">
     <div class="title-container">
-        <h2 class="search-subheading">
-            unofficial
-        </h2>
-        <h1 class="main-title">
-          Cytooxien Minecraft Party Records
-        </h1>
+        <h2 class="search-subheading">unofficial</h2>
+        <h1 class="main-title">Cytooxien Minecraft Party Records</h1>
     </div>
 
     <div class="search-section">
         <div class="search-subheading">
-            <span class="arrow">
-            full records data
-            </span>
+            <span class="arrow">full records data</span>
         </div>
         <input type="text" id="global-player-search" placeholder="records(<player>)">
+        <div id="global-search-results"></div>
     </div>
 
     <div class="controls-container">
         <div class="dropdown">
             <select id="minigame-select">
-                    <option value="Blockhüpfer">Block Jump</option>
-                    <option value="Buntes Chaos">Colorful Chaos</option>
-                    <option value="Todeswürfel">Death Cube</option>
-                    <option value="Duelle">Duels</option>
-                    <option value="Drachenflucht">Dragon Escape</option>
-                    <option value="Freier Fall">Dropper</option>
-                    <option value="Elytrarennen">Elytra Race</option>
-                    <option value="Frostiger Pfad">Frozen Path</option>
-                    <option value="Waffenfolge">Gungame</option>
-                    <option value="Pferderennen">Horse Race</option>
-                    <option value="Parkour">Parkour</option>
-                    <option value="Kletterkönig">King of the Hill</option>
-                    <option value="Lasertag">Lasertag</option>
-                    <option value="Minengefecht">Mine Battle</option>
-                    <option value="Minenfeld">Minefield</option>
-                    <option value="Skywars">Skywars</option>
-                    <option value="Survivalgames">Survivalgames</option>
-                    <option value="Einer im Köcher">One in the Chamber</option>
-                    <option value="Paintball">Paintball</option>
-                    <option value="Replika">Replica</option>
-                    <option value="Ampelrennen">Red Light, Green Light</option>
-                    <option value="Schießstand">Shooting Range</option>
-                    <option value="Spleef">Spleef</option>
-                    <option value="Wettrennen">Speed Race</option>
-                    <option value="Sammelwahn">Too many items</option>
-                    <option value="Runterpurzeln">Tumble Tactics</option>
-                    <option value="Hoch hinaus">Up High</option>
+                <option value="Blockhüpfer">Block Jump</option>
+                <option value="Buntes Chaos">Colorful Chaos</option>
+                <option value="Todeswürfel">Death Cube</option>
+                <option value="Duelle">Duels</option>
+                <option value="Drachenflucht">Dragon Escape</option>
+                <option value="Freier Fall">Dropper</option>
+                <option value="Elytrarennen">Elytra Race</option>
+                <option value="Frostiger Pfad">Frozen Path</option>
+                <option value="Waffenfolge">Gungame</option>
+                <option value="Pferderennen" selected>Horse Race</option>
+                <option value="Parkour">Parkour</option>
+                <option value="Kletterkönig">King of the Hill</option>
+                <option value="Lasertag">Lasertag</option>
+                <option value="Minengefecht">Mine Battle</option>
+                <option value="Minenfeld">Minefield</option>
+                <option value="Skywars">Skywars</option>
+                <option value="Survivalgames">Survivalgames</option>
+                <option value="Einer im Köcher">One in the Chamber</option>
+                <option value="Paintball">Paintball</option>
+                <option value="Replika">Replica</option>
+                <option value="Ampelrennen">Red Light, Green Light</option>
+                <option value="Schießstand">Shooting Range</option>
+                <option value="Spleef">Spleef</option>
+                <option value="Wettrennen">Speed Race</option>
+                <option value="Sammelwahn">Too many items</option>
+                <option value="Runterpurzeln">Tumble Tactics</option>
+                <option value="Hoch hinaus">Up High</option>
                 <option value="Mauerfall">Mauerfall</option>
                 <option value="Turmroulette">Turmroulette</option>
             </select>
@@ -858,24 +979,27 @@
             <input type="text" id="player-search" placeholder="filter scoreboard...">
         </div>
     </div>
+
     <div id="loading-animation" class="loading">
         <div class="spinner"></div>
         <p id="loading-text">Loading data and avatars...</p>
     </div>
-    <div id="records-table"></div>
+
+    <div id="records-grid" class="ag-theme-alpine-dark"></div>
+    <div id="legend-container"></div>
     <div id="video-links-container" class="video-links-container"></div>
+
+    <!-- Player Profile Modal -->
     <div id="player-profile-modal" class="modal">
         <div class="modal-content">
-            <span class="close" id="close-modal" onclick="closeModal()">&times;</span>
-            <div id="modal-loader" class="modal-loader">
-                <div class="modal-spinner"></div>
-            </div>
+            <span class="close" id="close-modal">&times;</span>
             <div id="player-profile-content"></div>
         </div>
     </div>
+
     <footer class="site-footer">
         <div class="footer-content">
-            <span id="data-as-of">Data as of: <time datetime="2025-02-16T12:00:00Z">30 Jun, 2025</time></span>
+            <span>Data as of: <time datetime="2025-06-29T12:00:00Z">02 Jul, 2025</time></span>
             <span class="footer-separator">|</span>
             <a href="https://github.com/Fflopse/MCP-Records" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
             <span class="footer-separator">|</span>
@@ -887,230 +1011,560 @@
 </div>
 
 <script>
-    const translations = {
-        en: {
-            title: "Cytooxien Minecraft Party Records",
-            subtitle: "by",
-            dataAsOf: "Data as of",
-            loading: "Loading data and avatars...",
-            searchPlaceholder: "records(<player>)",
-            tableSearchPlaceholder: "filter scoreboard...",
-            githubLink: "GitHub Repository",
-            contact: "Contact",
-            raw: "JSON data",
-            minigames: {
-                "Blockhüpfer": "Block Jump",
-                "Buntes Chaos": "Colorful Chaos",
-                "Todeswürfel": "Death Cube",
-                "Duelle": "Duels",
-                "Drachenflucht": "Dragon Escape",
-                "Freier Fall": "Dropper",
-                "Elytrarennen": "Elytra Race",
-                "Frostiger Pfad": "Frozen Path",
-                "Waffenfolge": "Gungame",
-                "Pferderennen": "Horse Race",
-                "Parkour": "Parkour",
-                "Kletterkönig": "King of the Hill",
-                "Lasertag": "Lasertag",
-                "Minengefecht": "Mine Battle",
-                "Minenfeld": "Minefield",
-                "Skywars": "Skywars",
-                "Survivalgames": "Survivalgames",
-                "Einer im Köcher": "One in the Chamber",
-                "Paintball": "Paintball",
-                "Replika": "Replica",
-                "Ampelrennen": "Red Light, Green Light",
-                "Schießstand": "Shooting Range",
-                "Spleef": "Spleef",
-                "Wettrennen": "Speed Race",
-                "Sammelwahn": "Too many items",
-                "Runterpurzeln": "Tumble Tactics",
-                "Hoch hinaus": "Up High",
-                "Mauerfall": "Walls",
-                "Turmroulette": "Lucky Towers"
-            }
+    // Sample data structure - replace with your actual data loading
+    const sampleData = [
+        {
+            "name": "Ex4cted",
+            "minigame": "Runterpurzeln",
+            "scores": {"Space": 49.26},
+            "best_score": 49.26
         },
-        de: {
-            title: "Cytooxien Minecraft Party Rekorde",
-            subtitle: "von",
-            dataAsOf: "Daten vom",
-            loading: "Lade Daten und Avatare...",
-            searchPlaceholder: "records(<spieler>)",
-            tableSearchPlaceholder: "Spieler suchen...",
-            githubLink: "GitHub Repository",
-            contact: "Kontakt",
-            raw: "JSON",
-            minigames: {
-                "Blockhüpfer": "Blockhüpfer",
-                "Buntes Chaos": "Buntes Chaos",
-                "Todeswürfel": "Todeswürfel",
-                "Duelle": "Duelle",
-                "Freier Fall": "Freier Fall",
-                "Elytrarennen": "Elytrarennen",
-                "Frostiger Pfad": "Frostiger Pfad",
-                "Drachenflucht": "Drachenflucht",
-                "Waffenfolge": "Waffenfolge",
-                "Pferderennen": "Pferderennen",
-                "Parkour": "Jump and Run",
-                "Kletterkönig": "Kletterkönig",
-                "Lasertag": "Lasertag",
-                "Minengefecht": "Minengefecht",
-                "Minenfeld": "Minenfeld",
-                "Skywars": "Skywars",
-                "Survivallgames": "Survivalgames",
-                "Einer im Köcher": "Einer im Köcher",
-                "Paintball": "Paintball",
-                "Replika": "Replika",
-                "Ampelrennen": "Ampelrennen",
-                "Schießstand": "Schießstand",
-                "Spleef": "Spleef",
-                "Wettrennen": "Wettrennen",
-                "Sammelwahn": "Sammelwahn",
-                "Hoch hinaus": "Hoch Hinaus",
-                "Runterpurzeln" : "Runterpurzeln",
-                "Mauerfall": "Mauerfall",
-                "Turmroulette": "Turmroulette"
-            }
+        {
+            "name": "swiffle",
+            "minigame": "Runterpurzeln",
+            "scores": {"Space": 58.713},
+            "best_score": 58.713
+        },
+        {
+            "name": "juvona",
+            "minigame": "Runterpurzeln",
+            "scores": {"Space": 134.32},
+            "best_score": 134.32
+        },
+        {
+            "name": "__egE",
+            "minigame": "Sammelwahn",
+            "scores": {
+                "Sum": 452.0,
+                "Dichter Wald": 25.0,
+                " Bambusdschungel": 20.0,
+                " Birkenwald": 27.0
+            },
+            "best_score": 452.0
         }
+    ];
+
+    // Configuration objects
+    const minigameSortDirections = {
+        "Blockhüpfer": "asc",
+        "Buntes Chaos": "desc",
+        "Todeswürfel": "asc",
+        "Duelle": "desc",
+        "Drachenflucht": "asc",
+        "Freier Fall": "asc",
+        "Elytrarennen": "asc",
+        "Frostiger Pfad": "asc",
+        "Waffenfolge": "asc",
+        "Pferderennen": "asc",
+        "Parkour": "asc",
+        "Kletterkönig": "asc",
+        "Lasertag": "desc",
+        "Minengefecht": "desc",
+        "Minenfeld": "asc",
+        "Skywars": "desc",
+        "Survivalgames": "desc",
+        "Einer im Köcher": "desc",
+        "Paintball": "desc",
+        "Replika": "asc",
+        "Ampelrennen": "asc",
+        "Schießstand": "desc",
+        "Spleef": "desc",
+        "Wettrennen": "asc",
+        "Sammelwahn": "desc",
+        "Hoch hinaus": "asc",
+        "Runterpurzeln": "asc",
+        "Mauerfall": "desc",
+        "Turmroulette": "desc",
     };
 
     const cutoffValues = {
-        "Todeswürfel": {
-            "Street": 25.0
-        },
+        "Todeswürfel": {"Street": 25.0},
         "Wettrennen": {
             "Blossom Canyon": 77.0,
-            "Cyberpunk" : 75.8,
-            "Green Hills" : 63.5
+            "Cyberpunk": 75.8,
+            "Green Hills": 63.5
         },
-        "Paintball": {
-            "Cyber Arena" : 40.0
-        },
-        "Freier Fall": {
-            "Underground" : 19.0
-        },
-        "Hoch hinaus": {
-            "Global" : 39.0,
-        },
+        "Paintball": {"Cyber Arena": 40.0},
+        "Freier Fall": {"Underground": 19.0},
+        "Hoch hinaus": {"Global": 39.0},
         "Pferderennen": {
-            "Jungle" : 69.7,
-            "Ancient Falls" : 83.0
+            "Jungle": 69.7,
+            "Ancient Falls": 83.0
         },
-        "Minenfeld": {
-            "Ice Cave" : 24.0
-        },
+        "Minenfeld": {"Ice Cave": 24.0}
     };
 
     const videoLinks = {
         "Blockhüpfer": {
             "City": [
-                { time: 20.577, player: "ReichesBrot", link: "https://youtu.be/I-v4fahzt00" },
+                {time: 20.577, player: "ReichesBrot", link: "https://youtu.be/I-v4fahzt00"}
             ]
         },
         "Schießstand": {
             "Farm": [
-                { time: 479, player: "Fflopse", link: "https://youtu.be/JXs1dn8vZwc" }
+                {time: 479, player: "Fflopse", link: "https://youtu.be/JXs1dn8vZwc"}
             ]
         },
-        "Minenfeld" : {
-            "Nether" : [
-                { time: 23.706, player: "Fflopse", link: "https://youtu.be/Hxb9JzMjtqI" }
+        "Pferderennen": {
+            "City": [
+                {time: 63.320, player: "Fflopse", link: "https://youtu.be/JcA4LR3a2RY"}
+            ],
+            "Jungle": [
+                {time: 69.611, player: "Fflopse", link: "https://youtu.be/wtKRtbWWp1Q"}
             ]
-        },
-        "Pferderennen" : {
-            "City" : [
-                { time: 63.320, player: "Fflopse", link: "https://youtu.be/JcA4LR3a2RY" }
-            ],
-            "Jungle" : [
-                { time: 69.611, player: "Fflopse", link: "https://youtu.be/wtKRtbWWp1Q" }
-            ]
-        },
-        "Frostiger Pfad" : {
-            "Global" : [
-                { time: 52.466, player: "Gobo9", link: "https://www.youtube.com/watch?v=c5NndwKYfgU" },
-                { time: 53.266, player: "ReichesBrot", link: "https://youtu.be/OhTGBJeIcjg" }
-            ]
-        },
-        "Wettrennen" : {
-            "Blossom Canyon" : [
-                { time: 59.101, player: "Fflopse*", link: "https://youtu.be/nvyCfl4LUOM" },
-                { time: 78.213, player: "ReichesBrot", link: "https://youtu.be/JX8o7dWA8UQ?si=wlqReGvQXMIZ5B9h" }
-            ],
-            "Cyberpunk" : [
-                { time: 76.083, player: "TAMISH009", link: "https://medal.tv/games/minecraft/clips/jGhyVzI9dxwuEizWN?invite=cr-MSxUZjgsMjEwNDQzMDk1LA" }
-            ],
-            "Green Hills" : [
-                { time: 64.142, player: "ReichesBrot", link: "https://youtu.be/JDki9-88gvM" }
-            ],
-            "Islands" : [
-                { time: 71.135, player: "ReichesBrot", link: "https://youtu.be/UZ841v-g46Y" }
-            ],
-        },
-        "Jump and Run" : {
-            "Canyon" : [
-                { time: 59.527, player: "ReichesBrot", link: "https://youtu.be/G_GohMaTlrY" }
-            ],
-            "Sky City" : [
-                { time: 43.297, player: "ReichesBrot", link: "https://youtu.be/v9GMSaxiR3c" }
-            ]
-        },
+        }
     };
 
     const prefixData = {
-        "bauteam": {"prefix":"§f","name":"Builder","color":"§x§f§f§d§3§0§0"},
-        "supporter": {"prefix":"§f","name":"Supporter","color":"§x§5§4§c§9§f§f"},
-        "default": {"prefix":"§f","name":"Player","color":"§x§9§0§9§7§a§0"},
-        "premium": {"prefix":"§f","name":"Premium","color":"§x§7§1§d§5§1§2"},
-        "premium+": {"prefix":"§f","name":"Premium+","color":"§x§4§4§8§e§0§0"},
-        "entwickler": {"prefix":"§f","name":"Developer","color":"§x§e§6§1§7§3§d"},
-        "content": {"prefix":"§f","name":"Content","color":"§x§f§f§0§b§7§4"},
-        "vip": {"prefix":"§f","name":"VIP","color":"§x§a§e§0§0§f§f"},
-        "moderator": {"prefix":"§f","name":"Moderator","color":"§x§0§0§7§8§f§f"},
-        "owner": {"prefix":"§f","name":"Owner","color":"§x§9§8§0§c§2§3"},
+        "bauteam": {"prefix": "§f", "name": "Builder", "color": "#ffd300"},
+        "supporter": {"prefix": "§f", "name": "Supporter", "color": "#54c9ff"},
+        "default": {"prefix": "§f", "name": "Player", "color": "#9097a0"},
+        "premium": {"prefix": "§f", "name": "Premium", "color": "#71d512"},
+        "premium+": {"prefix": "§f", "name": "Premium+", "color": "#448e00"},
+        "entwickler": {"prefix": "§f", "name": "Developer", "color": "#e6173d"},
+        "content": {"prefix": "§f", "name": "Content", "color": "#ff0b74"},
+        "vip": {"prefix": "§f", "name": "VIP", "color": "#ae00ff"},
+        "moderator": {"prefix": "§f", "name": "Moderator", "color": "#0078ff"},
+        "owner": {"prefix": "§f", "name": "Owner", "color": "#980c23"}
     };
 
-    var playerUUIDs = {};
-    var avatarsLoaded = 0;
-    var totalAvatars = 0;
+    // Global variables
+    let gridApi;
+    let gridOptions;
+    let currentMinigame = "Pferderennen";
+    let allData = [];
+    let playerUUIDs = {};
     let playerInfoData = {};
 
-    function detectLanguage() {
-        const userLang = navigator.language || navigator.userLanguage;
-        return userLang.startsWith('de') ? 'de' : 'en';
+    // Utility functions
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
     }
 
-    let currentLanguage = detectLanguage();
-
-    function changeLanguage(lang) {
-        currentLanguage = lang;
-        document.documentElement.lang = lang;
-        updateTexts();
-
-        document.querySelectorAll('.language-selector button').forEach(button => {
-            button.setAttribute('aria-pressed', 'false');
-        });
-        document.querySelector(`.language-selector button[onclick="changeLanguage('${lang}')"]`)
-            .setAttribute('aria-pressed', 'true');
+    function getRankClass(rank) {
+        if (rank === 1) return 'rank-1';
+        if (rank === 2) return 'rank-2';
+        if (rank === 3) return 'rank-3';
+        return 'rank-other';
     }
 
-    function minecraftColorToCSS(colorCode) {
-        if (colorCode.startsWith('§x')) {
-            const hex = colorCode.substr(2).split('§').join('');
-            return `#${hex}`;
+    function calculateRank(allPlayersData, map, playerScore, sortDirection) {
+        const validScores = allPlayersData
+            .map(player => player.scores[map])
+            .filter(score => score !== undefined && score !== null && score !== "-");
+
+        const uniqueScores = [...new Set(validScores)];
+        uniqueScores.sort((a, b) => sortDirection === "asc" ? a - b : b - a);
+
+        return uniqueScores.indexOf(playerScore) + 1;
+    }
+
+    // Cell renderers
+    function avatarCellRenderer(params) {
+        const name = params.data.name;
+        const uuid = playerUUIDs[name] || "8667ba71-b85a-4004-af54-457a9734eed7";
+        const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
+
+        return `
+                <div style="display: flex; align-items: center;">
+                    <img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar">
+                    <span class="player-name" onclick="showPlayerProfile('${name}')">${name}</span>
+                </div>
+            `;
+    }
+
+    function rankCellRenderer(params) {
+        const rank = params.value;
+        const rankClass = getRankClass(rank);
+        return `<span class="${rankClass}">${rank}</span>`;
+    }
+
+    function scoreCellRenderer(params) {
+        const value = params.value;
+        if (value === undefined || value === null) return "-";
+
+        const formattedValue = typeof value === 'number' ? value.toFixed(3) : value;
+        const playerName = params.data.name;
+        const mapName = params.colDef.field.replace('scores.', '');
+
+        // Check for video links
+        const videoInfo = videoLinks[currentMinigame] &&
+            videoLinks[currentMinigame][mapName] &&
+            videoLinks[currentMinigame][mapName].find(v =>
+                v.player === playerName && Math.abs(v.time - parseFloat(formattedValue)) < 0.001
+            );
+
+        if (videoInfo) {
+            return `<a href="${videoInfo.link}" target="_blank" class="video-link">${formattedValue}</a>`;
         }
-        // Add more color conversions if needed
-        return '';
+
+        // Check if the value is better than the cutoff
+        const cutoff = cutoffValues[currentMinigame] && cutoffValues[currentMinigame][mapName];
+        if (cutoff !== undefined) {
+            const sortDirection = minigameSortDirections[currentMinigame] || "desc";
+            if ((sortDirection === "asc" && value < cutoff) || (sortDirection === "desc" && value > cutoff)) {
+                return `<span style="font-style: italic;">${formattedValue}*</span>`;
+            }
+        }
+
+        return formattedValue;
+    }
+
+    // Grid setup functions
+    function createColumnDefs(minigame, filteredData) {
+        const allMapNames = new Set();
+        filteredData.forEach(record => {
+            Object.keys(record.scores || {}).forEach(mapName => {
+                allMapNames.add(mapName);
+            });
+        });
+
+        // Calculate the width needed for the name column based on content
+        const longestName = filteredData.reduce((longest, record) =>
+            record.name.length > longest.length ? record.name : longest, ""
+        );
+        // Base width for avatar (40px) + padding (20px) + text width estimate (8px per char) + buffer (20px)
+        const nameColumnWidth = Math.max(200, 40 + 20 + (longestName.length * 8) + 20);
+
+        const columnDefs = [
+            {
+                headerName: "Name",
+                field: "name",
+                cellRenderer: avatarCellRenderer,
+                pinned: 'left',
+                width: nameColumnWidth,
+                minWidth: nameColumnWidth,
+                maxWidth: nameColumnWidth + 50, // Allow some flexibility
+                sortable: false,
+                filter: false,
+                suppressSizeToFit: true, // Don't resize this column during sizeColumnsToFit
+                lockPosition: true
+            },
+            {
+                headerName: "Rank",
+                field: "rank",
+                cellRenderer: rankCellRenderer,
+                width: 70,
+                minWidth: 70,
+                maxWidth: 80,
+                sortable: false,
+                filter: false,
+                suppressSizeToFit: true
+            }
+        ];
+
+        Array.from(allMapNames).sort().forEach(mapName => {
+            columnDefs.push({
+                headerName: mapName,
+                field: `scores.${mapName}`,
+                cellRenderer: scoreCellRenderer,
+                width: 120,
+                sortable: true,
+                filter: false,
+                valueGetter: params => {
+                    return params.data.scores && params.data.scores[mapName] !== undefined
+                        ? params.data.scores[mapName]
+                        : null;
+                }
+            });
+        });
+
+        return columnDefs;
+    }
+
+    function prepareRowData(minigame, filteredData) {
+        if (filteredData.length === 0) return [];
+
+        // Get all map names for this minigame
+        const allMapNames = new Set();
+        filteredData.forEach(record => {
+            Object.keys(record.scores || {}).forEach(mapName => {
+                allMapNames.add(mapName);
+            });
+        });
+
+        const sortDirection = minigameSortDirections[minigame] || "desc";
+        const firstMapName = Array.from(allMapNames).sort()[0];
+
+        // Sort data by first map
+        const sortedData = [...filteredData].sort((a, b) => {
+            const aScore = a.scores && a.scores[firstMapName];
+            const bScore = b.scores && b.scores[firstMapName];
+
+            if (aScore === undefined || aScore === null) return 1;
+            if (bScore === undefined || bScore === null) return -1;
+            if (aScore === bScore) return 0;
+
+            return sortDirection === "asc" ? aScore - bScore : bScore - aScore;
+        });
+
+        // Add ranks
+        let rank = 1;
+        let lastScore = null;
+        let tieCount = 0;
+
+        sortedData.forEach((row, index) => {
+            const score = row.scores && row.scores[firstMapName];
+
+            if (lastScore !== null && score !== lastScore) {
+                rank += tieCount + 1;
+                tieCount = 0;
+            } else if (lastScore !== null) {
+                tieCount++;
+            }
+
+            row.rank = rank;
+            lastScore = score;
+        });
+
+        return sortedData;
+    }
+
+    function updateGrid(minigame) {
+        console.log('🔄 Updating grid for minigame:', minigame);
+        currentMinigame = minigame;
+
+        // Clear search
+        document.getElementById('player-search').value = '';
+
+        // Show loading
+        document.getElementById('loading-animation').style.display = 'flex';
+        document.getElementById('records-grid').style.opacity = '0';
+
+        setTimeout(() => {
+            const filteredData = allData.filter(record => record.minigame === minigame);
+            console.log('📊 Filtered data for', minigame + ':', filteredData.length, 'records');
+
+            if (filteredData.length === 0) {
+                console.log('⚠️ No data found for minigame:', minigame);
+                if (gridApi) {
+                    // Use the new API method instead of deprecated setRowData
+                    gridApi.setGridOption('rowData', []);
+                }
+                document.getElementById('loading-animation').style.display = 'none';
+                document.getElementById('records-grid').style.opacity = '1';
+                return;
+            }
+
+            const columnDefs = createColumnDefs(minigame, filteredData);
+            const rowData = prepareRowData(minigame, filteredData);
+
+            console.log('📋 Column definitions:', columnDefs.length, 'columns');
+            console.log('📊 Row data:', rowData.length, 'rows');
+
+            if (gridApi) {
+                // Use new API methods
+                gridApi.setGridOption('columnDefs', columnDefs);
+                gridApi.setGridOption('rowData', rowData);
+
+                // Auto-sort by first score column
+                const firstScoreCol = columnDefs.find(col => col.field && col.field.startsWith('scores.'));
+                if (firstScoreCol) {
+                    const sortDirection = minigameSortDirections[minigame] === 'asc' ? 'asc' : 'desc';
+                    console.log('🔢 Auto-sorting by:', firstScoreCol.field, 'direction:', sortDirection);
+                    gridApi.applyColumnState({
+                        state: [{ colId: firstScoreCol.field, sort: sortDirection }]
+                    });
+                }
+
+                // Fit columns to view, but preserve name column width
+                setTimeout(() => {
+                    // Auto-size the name column to fit content perfectly
+                    gridApi.autoSizeColumns(['name'], false);
+
+                    // Then fit the remaining columns
+                    setTimeout(() => {
+                        gridApi.sizeColumnsToFit();
+                    }, 50);
+                }, 100);
+            }
+
+            // Update video links and legend
+            displayVideoLinks(minigame);
+            updateLegend(rowData);
+
+            document.getElementById('loading-animation').style.display = 'none';
+            document.getElementById('records-grid').style.opacity = '1';
+
+            console.log('✅ Grid update complete');
+        }, 150);
+    }
+
+    function displayVideoLinks(minigame) {
+        const container = document.getElementById('video-links-container');
+        container.innerHTML = '';
+
+        if (!videoLinks[minigame] || Object.keys(videoLinks[minigame]).length === 0) {
+            return;
+        }
+
+        let html = '<h3>Video Records</h3>';
+        for (const [map, videos] of Object.entries(videoLinks[minigame])) {
+            html += `<h4>${map}</h4>`;
+            for (const video of videos) {
+                const uuid = playerUUIDs[video.player] || "8667ba71-b85a-4004-af54-457a9734eed7";
+                const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
+                html += `
+                        <div class="video-link-item">
+                            <img src="${avatarUrl}" alt="${video.player}'s avatar" class="player-avatar">
+                            <span class="video-link-player">${video.player}</span>
+                            <span class="video-link-time">${video.time.toFixed(3)}</span>
+                            <a href="${video.link}" target="_blank" class="video-link-button">Watch</a>
+                        </div>
+                    `;
+            }
+        }
+        container.innerHTML = html;
+    }
+
+    function updateLegend(data) {
+        const container = document.getElementById('legend-container');
+
+        // Check if any records are annotated
+        const hasAnnotatedRecords = data.some(row =>
+            Object.entries(row.scores || {}).some(([map, score]) => {
+                const cutoff = cutoffValues[currentMinigame] && cutoffValues[currentMinigame][map];
+                if (cutoff !== undefined) {
+                    const sortDirection = minigameSortDirections[currentMinigame] || "desc";
+                    return (sortDirection === "asc" && score < cutoff) || (sortDirection === "desc" && score > cutoff);
+                }
+                return false;
+            })
+        );
+
+        if (hasAnnotatedRecords) {
+            container.innerHTML = `
+                    <div class="legend">
+                        * Indicates a score that is not reproducible in legitimate play at the current state of the map.
+                    </div>
+                `;
+        } else {
+            container.innerHTML = '';
+        }
+    }
+
+    // Player profile functions
+    function createPlayerProfile(playerName) {
+        const playerData = allData.filter(record => record.name === playerName);
+        const playerInfo = playerInfoData[playerName];
+
+        // Determine the correct prefix
+        const prefixInfo = playerInfo && prefixData[playerInfo.rank?.toLowerCase()]
+            ? prefixData[playerInfo.rank.toLowerCase()]
+            : prefixData.default;
+        const prefixColor = prefixInfo.color;
+
+        let profileHTML = `
+                <div class="player-profile-header">
+                    <div class="player-avatar-name">
+                        <img src="https://starlightskins.lunareclipse.studio/render/default/${playerUUIDs[playerName] || 'Alex'}/face"
+                            alt="${playerName}'s head"
+                            onerror="this.src='https://starlightskins.lunareclipse.studio/render/default/Alex/face'">
+                        <h2>
+                            <span class="player-prefix" style="background-color: ${prefixColor};">${prefixInfo.name}</span>
+                            ${playerName}
+                        </h2>
+                    </div>`;
+
+        if (playerInfo && playerInfo.minecraft_party) {
+            const gameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Spiele'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Spiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
+            const minigameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Minispiele'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Minispiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
+
+            profileHTML += `
+                    <div class="player-stats">
+                        <p><strong>alltime#:</strong> ${playerInfo.minecraft_party['Position (Punkte)']}</p>
+                        <p><strong>game%:</strong> ${gameWinPercentage}%</p>
+                        <p><strong>minigame%:</strong> ${minigameWinPercentage}%</p>
+                    </div>`;
+        }
+
+        profileHTML += `</div>`;
+
+        const minigames = [...new Set(playerData.map(record => record.minigame))];
+        let hasAnnotatedRecords = false;
+
+        minigames.forEach((minigame, index) => {
+            const minigameData = playerData.find(record => record.minigame === minigame);
+            if (minigameData && minigameData.scores) {
+                const allPlayersData = allData.filter(record => record.minigame === minigame);
+
+                profileHTML += `
+                        <div class="minigame-section">
+                            <h3>${minigame}</h3>
+                            <table class="profile-table" id="minigame-table-${index}">
+                                <thead>
+                                    <tr>
+                                        <th>Map</th>
+                                        <th>Score</th>
+                                        <th>Rank</th>
+                                    </tr>
+                                </thead>
+                                <tbody>`;
+
+                Object.entries(minigameData.scores).forEach(([map, score]) => {
+                    const sortDirection = minigameSortDirections[minigame] || "desc";
+                    const playerRank = calculateRank(allPlayersData, map, score, sortDirection);
+                    const rankClass = getRankClass(playerRank);
+
+                    // Check if the score is better than the cutoff
+                    const cutoff = cutoffValues[minigame] && cutoffValues[minigame][map];
+                    let scoreDisplay = score;
+                    if (cutoff !== undefined &&
+                        ((sortDirection === "asc" && score < cutoff) ||
+                            (sortDirection === "desc" && score > cutoff))) {
+                        scoreDisplay = `<span style="font-style: italic;">${score}*</span>`;
+                        hasAnnotatedRecords = true;
+                    }
+
+                    profileHTML += `
+                            <tr>
+                                <td>${map}</td>
+                                <td>${scoreDisplay}</td>
+                                <td class="${rankClass}">${playerRank}</td>
+                            </tr>`;
+                });
+
+                profileHTML += `</tbody></table>`;
+
+                if (Object.keys(minigameData.scores).length > 5) {
+                    profileHTML += `
+                            <button class="expand-button" onclick="toggleRows('minigame-table-${index}')">
+                                <span class="expand-icon">▲</span> Show Less
+                            </button>`;
+                }
+
+                profileHTML += `</div>`;
+            }
+        });
+
+        if (hasAnnotatedRecords) {
+            profileHTML += `
+                    <div class="legend">
+                        * Indicates a score that is not reproducible in legitimate play at the current state of the map.
+                    </div>
+                `;
+        }
+
+        return profileHTML;
     }
 
     function toggleRows(tableId) {
         const table = document.getElementById(tableId);
-        const rows = table.querySelectorAll('tr');
         const button = table.nextElementSibling;
+        const rows = table.querySelectorAll('tbody tr');
 
         const isExpanded = button.textContent.includes('Show Less');
 
         rows.forEach((row, index) => {
-            if (index > 5) {
+            if (index >= 5) {
                 row.style.display = isExpanded ? 'none' : 'table-row';
             }
         });
@@ -1122,928 +1576,436 @@
         }
     }
 
-    function updateTexts() {
-        document.querySelector('.main-title').textContent = translations[currentLanguage].title;
-        document.getElementById('global-player-search').placeholder = translations[currentLanguage].searchPlaceholder;
-        document.getElementById('player-search').placeholder = translations[currentLanguage].tableSearchPlaceholder;
-        document.getElementById('loading-text').textContent = translations[currentLanguage].loading;
+    function showPlayerProfile(playerName) {
+        const modal = document.getElementById('player-profile-modal');
+        const content = document.getElementById('player-profile-content');
 
-        const select = document.getElementById('minigame-select');
-        Array.from(select.options).forEach(option => {
-            option.textContent = translations[currentLanguage].minigames[option.value] || option.value;
-        });
+        modal.style.display = 'block';
+        content.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
+        document.title = `MCPR(${playerName})`;
 
-        // Update footer
-        document.querySelector('.site-footer a[href^="https://github.com"]').textContent = translations[currentLanguage].githubLink;
-        document.querySelector('.site-footer a[href^="mailto:"]').textContent = translations[currentLanguage].contact;
-
-        // Update "Data as of" text
-        const dataAsOfElement = document.getElementById('data-as-of');
-        const currentDate = new Date();
-    }
-
-    function showLoading() {
-        document.getElementById('loading-animation').style.display = 'flex';
-        document.getElementById('records-table').style.display = 'none';
-    }
-
-    function hideLoading() {
-        document.getElementById('loading-animation').style.display = 'none';
-        document.getElementById('records-table').style.display = 'block';
         setTimeout(() => {
-            document.getElementById('records-table').classList.add('loaded');
-        }, 0);
-    }
+            content.innerHTML = createPlayerProfile(playerName);
 
-    function preloadAvatars(data) {
-        const uniqueNames = [...new Set(data.map(record => record.name))];
-        totalAvatars = uniqueNames.length;
-
-        return Promise.all(uniqueNames.map(name => {
-            const uuid = playerUUIDs[name] || "8667ba71-b85a-4004-af54-457a9734eed7";
-            const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
-            return new Promise((resolve) => {
-                const img = new Image();
-                img.onload = () => {
-                    avatarsLoaded++;
-                    resolve();
-                };
-                img.onerror = resolve;
-                img.src = avatarUrl;
+            // Initialize collapsed tables
+            const tables = content.querySelectorAll('.profile-table');
+            tables.forEach((table, index) => {
+                if (table.rows.length > 6) { // 1 header + 5 data rows
+                    toggleRows(`minigame-table-${index}`);
+                }
             });
-        }));
+        }, 500);
     }
 
-    showLoading();
-
-    fetch('data-analysis/player_uuids.json')
-        .then(response => response.json())
-        .then(data => {
-            playerUUIDs = data;
-            return fetch("data-analysis/records_data.json");
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log("Loaded data:", data);
-            return preloadAvatars(data).then(() => data);
-        })
-        .then(data => {
-            hideLoading();
-            initializeTable(data);
-        })
-        .catch(error => {
-            console.error("Error loading data:", error);
-            hideLoading();
-            initializeTable([]);
-        });
-
-    function avatarFormatter(cell) {
-        const {name} = cell.getData();
-        const uuid = playerUUIDs[name] || "8667ba71-b85a-4004-af54-457a9734eed7";
-        const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
-
-        return `
-            <img src="${avatarUrl}" class="player-avatar" alt="${name}'s avatar">
-            <span class="player-name" onclick="window.showPlayerProfile('${name}')">${name}</span>
-        `;
+    function closeModal() {
+        document.getElementById('player-profile-modal').style.display = 'none';
+        document.title = "Minecraft Party Records";
     }
 
-    function displayVideoLinks(minigame) {
-        const videoLinksContainer = document.getElementById('video-links-container');
-        videoLinksContainer.innerHTML = '';
+    // Search functionality
+    function setupGlobalSearch() {
+        const searchInput = document.getElementById('global-player-search');
+        const searchResults = document.getElementById('global-search-results');
 
-        if (!videoLinks[minigame] || Object.keys(videoLinks[minigame]).length === 0) {
-            videoLinksContainer.innerHTML = '';
-            return;
-        }
-
-        let html = '';
-        for (const [map, videos] of Object.entries(videoLinks[minigame])) {
-            html += `<h4>${map}</h4>`;
-            html += '<div class="video-links-list">';
-            for (const video of videos) {
-                const uuid = playerUUIDs[video.player] || "8667ba71-b85a-4004-af54-457a9734eed7";
-                const avatarUrl = `https://crafatar.com/avatars/${uuid}?size=32&overlay`;
-                html += `
-                    <div class="video-link-item">
-                        <img src="${avatarUrl}" alt="${video.player}'s avatar" class="player-avatar">
-                        <span class="video-link-player">${video.player}</span>
-                        <span class="video-link-time">${video.time.toFixed(3)}</span>
-                        <a href="${video.link}" target="_blank" class="video-link-button">Watch</a>
-                    </div>
-                `;
-            }
-             html += '</div>';
-        }
-
-        videoLinksContainer.innerHTML = html;
-    }
-
-    function initializeTable(data) {
-        const initialData = data;
-        console.log("Initializing table with data:", initialData);
-        if (typeof Tabulator === 'undefined') {
-            console.error("Tabulator library is not loaded!");
-            alert("Tabulator library is not loaded. Please check your internet connection and refresh the page.");
-            return;
-        }
-        var table;
-        var currentMinigame = "Pferderennen";
-        var searchTerm = "";
-        var sortedColumn;
-        const MIN_COLUMN_WIDTH = 100;
-
-        let playerInfoData = {};
-
-        fetch('data-analysis/player_data.json')
-            .then(response => response.json())
-            .then(data => {
-                playerInfoData = data;
-            })
-            .catch(error => {
-                console.error("Error loading player info:", error);
-                playerInfoData = {}; // empty object if loading fails
-            });
-
-        const minigameSortDirections = {
-            "Blockhüpfer": "asc",
-            "Buntes Chaos": "desc",
-            "Todeswürfel": "asc",
-            "Duelle": "desc",
-            "Freier Fall": "asc",
-            "Elytrarennen": "asc",
-            "Frostiger Pfad": "asc",
-            "Waffenfolge": "asc",
-            "Pferderennen": "asc",
-            "Parkour": "asc",
-            "Kletterkönig": "asc",
-            "Lasertag": "desc",
-            "Minengefecht": "desc",
-            "Minenfeld": "asc",
-            "Skywars": "desc",
-            "Survivalgames": "desc",
-            "Einer im Köcher": "desc",
-            "Paintball": "desc",
-            "Replika": "asc",
-            "Ampelrennen": "asc",
-            "Schießstand": "desc",
-            "Spleef": "desc",
-            "Wettrennen": "asc",
-            "Sammelwahn": "desc",
-            "Hoch hinaus": "asc",
-            "Runterpurzeln" : "asc",
-            "Mauerfall": "desc",
-            "Turmroulette": "desc",
-        };
-
-        function customFilter(data) {
-            return data.name.toLowerCase().includes(searchTerm.toLowerCase());
-        }
-
-        function setupSearch() {
-            const searchInput = document.getElementById("player-search");
-            if (searchInput) {
-                searchInput.addEventListener("input", function() {
-                    searchTerm = this.value;
-                    if (table) {
-                        table.setFilter(customFilter);
-                    }
-                });
-            }
-        }
-
-        function highlightSortedColumn(column) {
-            if (table) {
-                table.getColumns().forEach(col => {
-                    if (col.getElement()) {
-                        col.getElement().classList.remove('sorted');
-                    }
-                });
-                if (column && column.getElement()) {
-                    column.getElement().classList.add('sorted');
-                }
-            }
-        }
-
-        function adjustColumnWidths() {
-            if (table) {
-                const tableWidth = table.element.clientWidth;
-                const frozenColumn = table.getColumn("name");
-                const frozenWidth = frozenColumn ? frozenColumn.getWidth() : 200;
-                const availableWidth = tableWidth - frozenWidth;
-
-                const columns = table.getColumns();
-                const nonFrozenColumns = columns.filter(column => column.getField() !== "name" && column.getField() !== "rank");
-                const columnCount = nonFrozenColumns.length;
-
-                if (columnCount > 0) {
-                    let newWidth = Math.floor(availableWidth / columnCount);
-                    newWidth = Math.max(newWidth, MIN_COLUMN_WIDTH);
-
-                    nonFrozenColumns.forEach((column) => {
-                        column.setWidth(newWidth);
-                    });
-
-                    const totalWidth = frozenWidth + (newWidth * columnCount);
-                    if (totalWidth < tableWidth && nonFrozenColumns.length > 0) {
-                        const lastColumn = nonFrozenColumns[nonFrozenColumns.length - 1];
-                        lastColumn.setWidth(newWidth + (tableWidth - totalWidth));
-                    }
-                }
-            }
-        }
-
-        function updateTable(minigame) {
-            console.log("Updating table for minigame:", minigame);
-            currentMinigame = minigame;
-
-            const searchInput = document.getElementById("player-search");
-            if (searchInput) {
-                searchInput.value = "";
-                searchTerm = "";
-            }
-
-            const tableElement = document.getElementById("records-table");
-            tableElement.classList.add('fade-out');
-
-            displayVideoLinks(minigame);
-
-            setTimeout(() => {
-                if (table) {
-                    table.destroy();
-                    table = null;
-                }
-
-                createTable();
-
-                // Remove existing legend after creating the new table
-                const existingLegend = document.querySelector('.legend');
-                if (existingLegend) {
-                    existingLegend.remove();
-                }
-
-                const globalPlayerSearch = document.getElementById('global-player-search');
-                const globalSearchResults = document.createElement('div');
-                globalSearchResults.id = 'global-search-results';
-                globalSearchResults.style.cssText = `
-                    position: absolute;
-                    top: 90%;
-                    left: 20;
-                    right: 20;
-                    background-color: var(--secondary-color);
-                    border-top: none;
-                    border-radius: 0 0 5px 5px;
-                    max-height: 200px;
-                    overflow-y: auto;
-                    display: none;
-                    z-index: 1000;
-                `;
-                globalPlayerSearch.parentNode.appendChild(globalSearchResults);
-
-                function debounce(func, wait) {
-                    let timeout;
-                    return function executedFunction(...args) {
-                        const later = () => {
-                            clearTimeout(timeout);
-                            func(...args);
-                        };
-                        clearTimeout(timeout);
-                        timeout = setTimeout(later, wait);
-                    };
-                }
-
-                const performGlobalSearch = debounce(function() {
-                    const searchTerm = globalPlayerSearch.value.toLowerCase();
-                    if (searchTerm.length < 2) {
-                        globalSearchResults.style.display = 'none';
-                        return;
-                    }
-
-                    const matchingPlayers = Object.keys(playerUUIDs).filter(name =>
-                        name.toLowerCase().includes(searchTerm)
-                    ).slice(0, 5); // Limit to 5 results
-
-                    if (matchingPlayers.length > 0) {
-                        globalSearchResults.innerHTML = matchingPlayers.map(name => `
-                            <div class="search-result-item" onclick="showPlayerProfile('${name}')">
-                                <img src="https://crafatar.com/avatars/${playerUUIDs[name]}?size=32&overlay" alt="${name}'s avatar">
-                                <span>${name}</span>
-                            </div>
-                        `).join('');
-                        globalSearchResults.style.display = 'block';
-                    } else {
-                        globalSearchResults.style.display = 'none';
-                    }
-                }, 300);
-
-                globalPlayerSearch.addEventListener('input', performGlobalSearch);
-
-                document.addEventListener('click', function(event) {
-                    if (!globalSearchResults.contains(event.target) && event.target !== globalPlayerSearch) {
-                        globalSearchResults.style.display = 'none';
-                    }
-                });
-
-                if (table) {
-                    tableElement.classList.remove('fade-out');
-                    tableElement.classList.add('fade-in');
-
-                    setTimeout(() => {
-                        const firstMapName = Array.from(new Set(initialData.filter(record => record.minigame === currentMinigame)
-                            .flatMap(record => Object.keys(record.scores)))).sort()[0];
-                        const initialColumn = table.getColumn(`scores.${firstMapName}`);
-                        if (initialColumn) {
-                            highlightSortedColumn(initialColumn);
-                        }
-                        adjustColumnWidths();
-
-                        setTimeout(() => {
-                            tableElement.classList.remove('fade-in');
-                        }, 150);
-                    }, 0);
-                }
-            }, 150);
-        }
-
-        function createTable() {
-            console.log("Creating table for minigame:", currentMinigame);
-            const filteredData = initialData.filter(record => record.minigame === currentMinigame);
-            console.log("Filtered data:", filteredData);
-
-            if (filteredData.length === 0) {
-                console.log("No data for this minigame");
-                if (table) {
-                    table.setData([]);
-                }
+        const performSearch = debounce(function() {
+            const searchTerm = searchInput.value.toLowerCase();
+            if (searchTerm.length < 2) {
+                searchResults.style.display = 'none';
                 return;
             }
 
-            const allMapNames = new Set();
-            filteredData.forEach(record => {
-                Object.keys(record.scores).forEach(mapName => {
-                    allMapNames.add(mapName);
-                });
-            });
+            const matchingPlayers = Object.keys(playerUUIDs).filter(name =>
+                name.toLowerCase().includes(searchTerm)
+            ).slice(0, 5);
 
-            const columns = [
-                {title: "Name", field: "name", formatter: avatarFormatter, headerSort: false, frozen: true, width: 200},
-                {title: "Rank", field: "rank", headerSort: false, width: 70},
+            if (matchingPlayers.length > 0) {
+                searchResults.innerHTML = matchingPlayers.map(name => `
+                        <div class="search-result-item" onclick="showPlayerProfile('${name}')">
+                            <img src="https://crafatar.com/avatars/${playerUUIDs[name]}?size=32&overlay" alt="${name}'s avatar">
+                            <span>${name}</span>
+                        </div>
+                    `).join('');
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.style.display = 'none';
+            }
+        }, 300);
+
+        searchInput.addEventListener('input', performSearch);
+
+        document.addEventListener('click', function(event) {
+            if (!searchResults.contains(event.target) && event.target !== searchInput) {
+                searchResults.style.display = 'none';
+            }
+        });
+    }
+
+    function setupTableSearch() {
+        const searchInput = document.getElementById('player-search');
+
+        searchInput.addEventListener('input', function() {
+            console.log('🔍 Table search:', this.value);
+            if (gridApi) {
+                gridApi.setGridOption('quickFilterText', this.value);
+            }
+        });
+    }
+
+    // Data loading and initialization
+    async function loadData() {
+        console.log('🔄 Starting data loading...');
+
+        try {
+            // Load player UUIDs first
+            console.log('📡 Fetching player_uuids.json...');
+            const uuidResponse = await fetch('data-analysis/player_uuids.json');
+            if (!uuidResponse.ok) {
+                throw new Error(`Failed to load UUIDs: ${uuidResponse.status} ${uuidResponse.statusText}`);
+            }
+            playerUUIDs = await uuidResponse.json();
+            console.log('✅ Player UUIDs loaded:', Object.keys(playerUUIDs).length, 'players');
+
+            // Load records data
+            console.log('📡 Fetching records_data.json...');
+            const recordsResponse = await fetch('data-analysis/records_data.json');
+            if (!recordsResponse.ok) {
+                throw new Error(`Failed to load records: ${recordsResponse.status} ${recordsResponse.statusText}`);
+            }
+            const recordsData = await recordsResponse.json();
+            console.log('✅ Records data loaded:', recordsData.length, 'records');
+
+            // Load player info (optional, may not exist)
+            try {
+                console.log('📡 Fetching player_data.json...');
+                const playerInfoResponse = await fetch('data-analysis/player_data.json');
+                if (playerInfoResponse.ok) {
+                    playerInfoData = await playerInfoResponse.json();
+                    console.log('✅ Player info loaded:', Object.keys(playerInfoData).length, 'players');
+                } else {
+                    console.log('⚠️ Player info not available, using defaults');
+                    playerInfoData = {};
+                }
+            } catch (error) {
+                console.log('⚠️ Player info not available:', error.message);
+                playerInfoData = {};
+            }
+
+            console.log('🎯 Data loading complete!');
+            return recordsData;
+
+        } catch (error) {
+            console.error('❌ Error loading data:', error);
+
+            // Fallback to sample data for testing
+            console.log('🔄 Using sample data as fallback...');
+
+            // Generate some sample UUIDs for testing
+            playerUUIDs = {
+                "Ex4cted": "550e8400-e29b-41d4-a716-446655440000",
+                "swiffle": "550e8400-e29b-41d4-a716-446655440001",
+                "juvona": "550e8400-e29b-41d4-a716-446655440002",
+                "__egE": "550e8400-e29b-41d4-a716-446655440003",
+                "TestPlayer1": "550e8400-e29b-41d4-a716-446655440004",
+                "TestPlayer2": "550e8400-e29b-41d4-a716-446655440005"
+            };
+
+            // Sample player info
+            playerInfoData = {
+                "Ex4cted": {
+                    rank: "premium",
+                    minecraft_party: {
+                        "Position (Punkte)": "42",
+                        "Gewonnene Spiele": "150",
+                        "Gespielte Spiele": "200",
+                        "Gewonnene Minispiele": "300",
+                        "Gespielte Minispiele": "400"
+                    }
+                }
+            };
+
+            // Enhanced sample data for testing
+            const sampleData = [
+                {
+                    "name": "Ex4cted",
+                    "minigame": "Pferderennen",
+                    "scores": {"City": 63.25, "Jungle": 71.5, "Ancient Falls": 85.2},
+                    "best_score": 63.25
+                },
+                {
+                    "name": "swiffle",
+                    "minigame": "Pferderennen",
+                    "scores": {"City": 65.1, "Jungle": 69.8, "Ancient Falls": 82.3},
+                    "best_score": 65.1
+                },
+                {
+                    "name": "juvona",
+                    "minigame": "Pferderennen",
+                    "scores": {"City": 67.8, "Jungle": 73.2},
+                    "best_score": 67.8
+                },
+                {
+                    "name": "__egE",
+                    "minigame": "Sammelwahn",
+                    "scores": {
+                        "Sum": 452.0,
+                        "Dichter Wald": 25.0,
+                        " Bambusdschungel": 20.0,
+                        " Birkenwald": 27.0,
+                        " Blumenwald": 31.0
+                    },
+                    "best_score": 452.0
+                },
+                {
+                    "name": "TestPlayer1",
+                    "minigame": "Pferderennen",
+                    "scores": {"City": 61.5, "Jungle": 68.9},
+                    "best_score": 61.5
+                },
+                {
+                    "name": "TestPlayer2",
+                    "minigame": "Pferderennen",
+                    "scores": {"City": 70.2, "Ancient Falls": 88.1},
+                    "best_score": 70.2
+                },
+                {
+                    "name": "Ex4cted",
+                    "minigame": "Runterpurzeln",
+                    "scores": {"Space": 49.26},
+                    "best_score": 49.26
+                },
+                {
+                    "name": "swiffle",
+                    "minigame": "Runterpurzeln",
+                    "scores": {"Space": 58.713},
+                    "best_score": 58.713
+                }
             ];
 
-            const sortDirection = minigameSortDirections[currentMinigame] || "desc";
-
-            function compareScores(a, b, mapName) {
-                const aScore = a.scores[mapName];
-                const bScore = b.scores[mapName];
-
-                if (aScore === undefined || aScore === null || aScore === "-") return 1;
-                if (bScore === undefined || bScore === null || bScore === "-") return -1;
-                if (aScore === bScore) return 0;
-
-                return sortDirection === "asc" ? aScore - bScore : bScore - aScore;
-            }
-
-            Array.from(allMapNames).sort().forEach(mapName => {
-                columns.push({
-                    title: mapName,
-                    field: `scores.${mapName}`,
-                    headerSort: false,
-                    minWidth: MIN_COLUMN_WIDTH,
-                    formatter: function(cell) {
-                        const value = cell.getValue();
-                        if (value === undefined || value === null) return "-";
-
-                        const formattedValue = typeof value === 'number' ? value.toFixed(3) : value;
-
-                        const playerName = cell.getRow().getData().name;
-                        const videoInfo = videoLinks[currentMinigame] &&
-                                        videoLinks[currentMinigame][mapName] &&
-                                        videoLinks[currentMinigame][mapName].find(v => v.player === playerName && v.time === formattedValue);
-
-                        if (videoInfo) {
-                            return `<a href="${videoInfo.link}" target="_blank" class="video-link">${formattedValue}</a>`;
-                        }
-
-                        // Check if the value is better than the cutoff
-                        const cutoff = cutoffValues[currentMinigame] && cutoffValues[currentMinigame][mapName];
-                        if (cutoff !== undefined) {
-                            const sortDirection = minigameSortDirections[currentMinigame] || "desc";
-                            if ((sortDirection === "asc" && value < cutoff) || (sortDirection === "desc" && value > cutoff)) {
-                                return `<span style="font-style: italic;">${formattedValue}*</span>`;
-                            }
-                        }
-
-                        return formattedValue;
-                    }
-                });
-            });
-
-            const firstMapName = Array.from(allMapNames)[0];
-            filteredData.sort((a, b) => compareScores(a, b, firstMapName));
-
-            sortedColumn = firstMapName;
-
-            function updateRanks() {
-                let rank = 1;
-                let lastScore = null;
-                let tieCount = 0;
-
-                const rows = table.getRows();
-                rows.forEach((row, index) => {
-                    const score = row.getData().scores[sortedColumn];
-
-                    if (lastScore !== null && score !== lastScore) {
-                        rank += tieCount + 1;
-                        tieCount = 0;
-                    } else if (lastScore !== null) {
-                        tieCount++;
-                    }
-
-                    row.update({rank: rank});
-                    lastScore = score;
-                });
-            }
-
-            const tableOptions = {
-                data: filteredData,
-                columns: columns,
-                layout: "fitDataFill",
-                columnHeaderSortMulti: false,
-                sortOrderReverse: false,
-                movableColumns: false,
-                scrollToColumnPosition: 'center',
-                height: 500,
-                initialFilter: customFilter,
-                renderStarted: function() {
-                    document.getElementById("records-table").style.opacity = "1";
-                },
-                renderComplete: function() {
-                    addLegend(this.getData());
-                }
-            };
-
-            function hasAnnotatedRecords(data) {
-                return data.some(row =>
-                    Object.entries(row.scores).some(([map, score]) => {
-                        const cutoff = cutoffValues[currentMinigame] && cutoffValues[currentMinigame][map];
-                        if (cutoff !== undefined) {
-                            const sortDirection = minigameSortDirections[currentMinigame] || "desc";
-                            return (sortDirection === "asc" && score < cutoff) || (sortDirection === "desc" && score > cutoff);
-                        }
-                        return false;
-                    })
-                );
-            }
-
-            function addLegend(data) {
-                // Remove existing legend if any
-                const existingLegend = document.querySelector('.legend');
-                if (existingLegend) {
-                    existingLegend.remove();
-                }
-
-                // Check if any records are annotated
-                const hasAnnotatedRecords = data.some(row =>
-                    Object.entries(row.scores).some(([map, score]) => {
-                        const cutoff = cutoffValues[currentMinigame] && cutoffValues[currentMinigame][map];
-                        if (cutoff !== undefined) {
-                            const sortDirection = minigameSortDirections[currentMinigame] || "desc";
-                            return (sortDirection === "asc" && score < cutoff) || (sortDirection === "desc" && score > cutoff);
-                        }
-                        return false;
-                    })
-                );
-            }
-
-            table = new Tabulator("#records-table", tableOptions);
-
-            table.on("renderComplete", function(){
-                addLegend(this.getData());
-            });
-
-            setTimeout(() => {
-                const initialColumn = table.getColumn(`scores.${sortedColumn}`);
-                if (initialColumn) {
-                    highlightSortedColumn(initialColumn);
-                }
-                adjustColumnWidths();
-                updateRanks();
-            }, 0);
-
-            table.on("headerClick", function(e, column){
-                if(column.getField() !== "name" && column.getField() !== "rank") {
-                    e.stopPropagation();
-                    const mapName = column.getField().split('.')[1];
-                    filteredData.sort((a, b) => compareScores(a, b, mapName));
-                    table.setData(filteredData).then(() => {
-                        highlightSortedColumn(column);
-                        sortedColumn = mapName;
-                        updateRanks();
-                    });
-                }
-            });
-
-            Array.from(allMapNames).sort().forEach(mapName => {
-                columns.push({
-                    title: mapName,
-                    field: `scores.${mapName}`,
-                    headerSort: false,
-                    minWidth: MIN_COLUMN_WIDTH,
-                    formatter: function(cell) {
-                        const value = cell.getValue();
-                        if (value === undefined || value === null) return "-";
-
-                        const formattedValue = typeof value === 'number' ? value.toFixed(3) : value;
-
-                        // Check if value is better than the cutoff
-                        const cutoff = cutoffValues[currentMinigame] && cutoffValues[currentMinigame][cell.getColumn().getField().split('.')[1]];
-                        if (cutoff !== undefined) {
-                            const sortDirection = minigameSortDirections[currentMinigame] || "desc";
-                            if ((sortDirection === "asc" && value < cutoff) || (sortDirection === "desc" && value > cutoff)) {
-                                return `<span style="font-style: italic;">${formattedValue}*</span>`;
-                            }
-                        }
-
-                        return formattedValue;
-                    }
-                });
-            });
-
-            const legendHTML = `
-                <div class="legend" style="margin-top: 10px; font-size: 0.9em;">
-                    * Indicates a score that is not reproducible in legitimate play at the current state of the map.
-                </div>
-            `;
-            document.getElementById("records-table").insertAdjacentHTML('afterend', legendHTML);
-
-            table.on("dataLoaded", updateRanks);
-
-            table.on("dataSorted", function() {
-                updateRanks();
-                addLegend(this.getData());
-            });
-
-            table.on("dataFiltered", function() {
-                updateRanks();
-                addLegend(this.getData());
-            });
-
-            window.addEventListener('resize', adjustColumnWidths);
-
-            setupSearch();
-            updateTexts();
+            console.log('✅ Sample data generated:', sampleData.length, 'records');
+            return sampleData;
         }
+    }
 
+    // Grid initialization
+    function initializeGrid() {
+        console.log('🏗️ Initializing AG-Grid...');
 
-        function createPlayerProfile(playerName) {
-            const playerData = initialData.filter(record => record.name === playerName);
-            const playerInfo = playerInfoData[playerName];
+        gridOptions = {
+            columnDefs: [],
+            rowData: [],
+            defaultColDef: {
+                resizable: true,
+                sortable: true,
+                filter: false,
+                minWidth: 100
+            },
+            animateRows: true,
+            rowHeight: 50,
+            headerHeight: 40,
+            suppressRowClickSelection: true,
+            enableCellTextSelection: true,
+            onGridReady: function(params) {
+                console.log('✅ Grid ready, API available');
+                gridApi = params.api;
+                updateGrid(currentMinigame);
+            },
+            onSortChanged: function() {
+                console.log('🔄 Sort changed, updating ranks...');
+                updateRanksAfterSort();
+            },
+            onFirstDataRendered: function() {
+                console.log('🎨 First data rendered');
+                // Auto-size the name column first to fit content
+                gridApi.autoSizeColumns(['name'], false);
 
-            // Determine the correct prefix
-            const prefixInfo = playerInfo && prefixData[playerInfo.rank.toLowerCase()]
-                ? prefixData[playerInfo.rank.toLowerCase()]
-                : prefixData.default;
-            const prefixColor = minecraftColorToCSS(prefixInfo.color);
-
-            let profileHTML = `
-            <div class="player-profile-header">
-                <div class="player-avatar-name">
-                    <img src="https://starlightskins.lunareclipse.studio/render/default/${playerUUIDs[playerName]}/face"
-                        alt="${playerName}'s head"
-                        onerror="this.src='https://starlightskins.lunareclipse.studio/render/default/Alex/face'">
-                    <h2>
-                        <span class="player-prefix" style="background-color: ${prefixColor};">${prefixInfo.name}</span>
-                        ${playerName}
-                    </h2>
-                </div>`;
-
-            if (playerInfo && playerInfo.minecraft_party) {
-                const gameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Spiele'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Spiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
-                const minigameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Minispiele'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Minispiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
-
-                profileHTML += `
-                <div class="player-stats">
-                    <p><strong>alltime#:</strong> ${playerInfo.minecraft_party['Position (Punkte)']}</p>
-                    <p><strong>game%:</strong> ${gameWinPercentage}%</p>
-                    <p><strong>minigame%:</strong> ${minigameWinPercentage}%</p>
-                </div>`;
-            }
-
-            profileHTML += `</div>`; // Close player-profile-header
-
-            const minigames = [...new Set(playerData.map(record => record.minigame))];
-
-            let hasAnnotatedRecords = false;
-
-            minigames.forEach((minigame, index) => {
-                const minigameData = playerData.find(record => record.minigame === minigame);
-                if (minigameData) {
-                    const allPlayersData = initialData.filter(record => record.minigame === minigame);
-
-                    profileHTML += `
-                    <div class="minigame-section">
-                        <h3>${minigame}</h3>
-                        <table class="profile-table" id="minigame-table-${index}">
-                            <thead>
-                                <tr>
-                                    <th>Map</th>
-                                    <th>Score</th>
-                                    <th>Rank</th>
-                                </tr>
-                            </thead>
-                            <tbody>`;
-
-                    Object.entries(minigameData.scores).forEach(([map, score], rowIndex) => {
-                        const sortDirection = minigameSortDirections[minigame] || "desc";
-                        const playerRank = calculateRank(allPlayersData, map, score, sortDirection);
-
-                        const rankClass = getRankClass(playerRank);
-
-                        // Check if the score is better than the cutoff
-                        const cutoff = cutoffValues[minigame] && cutoffValues[minigame][map];
-                        let scoreDisplay = score;
-                        if (cutoff !== undefined &&
-                            ((sortDirection === "asc" && score < cutoff) ||
-                            (sortDirection === "desc" && score > cutoff))) {
-                            scoreDisplay = `<span style="font-style: italic;">${score}*</span>`;
-                            hasAnnotatedRecords = true;
-                        }
-
-                        profileHTML += `
-                                <tr>
-                                    <td>${map}</td>
-                                    <td>${scoreDisplay}</td>
-                                    <td class="${rankClass}">${playerRank}</td>
-                                </tr>`;
-                        });
-
-                        profileHTML += `
-                                </tbody>
-                            </table>`;
-
-                        if (Object.keys(minigameData.scores).length > 5) {
-                            profileHTML += `
-                            <button class="expand-button" data-table-id="minigame-table-${index}">
-                                <span class="expand-icon">▲</span> Show Less
-                            </button>`;
-                        }
-
-                    profileHTML += `</div>`;
-                }
-            });
-
-            // Add legend only if there are annotated records
-            if (hasAnnotatedRecords) {
-                profileHTML += `
-                    <div class="legend" style="margin-top: 10px; font-size: 0.9em;">
-                        * Indicates a score that is not reproducible in legitimate play at the current state of the map.
-                    </div>
-                `;
-            }
-
-            return profileHTML;
-        }
-
-function calculateRank(allPlayersData, map, playerScore, sortDirection) {
-const validScores = allPlayersData
-    .map(player => player.scores[map])
-    .filter(score => score !== undefined && score !== null && score !== "-");
-
-const uniqueScores = [...new Set(validScores)];
-uniqueScores.sort((a, b) => sortDirection === "asc" ? a - b : b - a);
-
-const playerRank = uniqueScores.indexOf(playerScore) + 1;
-return playerRank;
-}
-
-function getRankClass(rank) {
-if (rank === 1) return 'rank-1';
-if (rank === 2) return 'rank-2';
-if (rank === 3) return 'rank-3';
-return 'rank-other';
-}
-        function calculateRank(allPlayersData, map, playerScore, sortDirection) {
-            const validScores = allPlayersData
-                .map(player => player.scores[map])
-                .filter(score => score !== undefined && score !== null && score !== "-");
-
-            const uniqueScores = [...new Set(validScores)];
-            uniqueScores.sort((a, b) => sortDirection === "asc" ? a - b : b - a);
-
-            const playerRank = uniqueScores.indexOf(playerScore) + 1;
-            return playerRank;
-        }
-
-        function getRankClass(rank) {
-            if (rank === 1) return 'rank-1';
-            if (rank === 2) return 'rank-2';
-            if (rank === 3) return 'rank-3';
-            return 'rank-other';
-        }
-
-        function showPlayerProfile(playerName) {
-            const modal = document.getElementById('player-profile-modal');
-            const content = document.getElementById('player-profile-content');
-            const loader = document.getElementById('modal-loader');
-
-            modal.style.display = 'block';
-            loader.style.display = 'flex';
-            content.style.display = 'none';
-
-            document.title = `MCPR(${playerName})`;
-
-            const avatarImg = new Image();
-            avatarImg.src = `https://starlightskins.lunareclipse.studio/render/ultimate/${playerUUIDs[playerName]}/face`;
-            avatarImg.alt = `${playerName}'s head`;
-
-            avatarImg.onload = () => {
+                // Then fit the remaining columns
                 setTimeout(() => {
-                    content.innerHTML = createPlayerProfile(playerName);
-
-                    // Set up event listeners for expand buttons
-                    const expandButtons = content.querySelectorAll('.expand-button');
-                    expandButtons.forEach(button => {
-                        button.addEventListener('click', function() {
-                            const tableId = this.getAttribute('data-table-id');
-                            toggleRows(tableId);
-                            // toggleRows(tableId);
-                        });
-                    });
-
-                    loader.style.display = 'none';
-                    content.style.display = 'block';
-
-                    // toggle rows initially
-                    const tables = content.querySelectorAll('.profile-table');
-                    tables.forEach((table, index) => {
-                        if (table.rows.length > 5) {
-                            toggleRows(`minigame-table-${index}`);
-                        }
-                    });
-
-                }, 500);
-
-            };
-
-            avatarImg.onerror = () => {
+                    gridApi.sizeColumnsToFit();
+                }, 50);
+            },
+            onGridSizeChanged: function() {
+                // When grid is resized, maintain name column width and resize others
                 setTimeout(() => {
-                    content.innerHTML = createPlayerProfile(playerName);
+                    gridApi.autoSizeColumns(['name'], false);
+                    setTimeout(() => {
+                        gridApi.sizeColumnsToFit();
+                    }, 50);
+                }, 100);
+            }
+        };
 
-                    // Set up event listeners for expand buttons (same as above)
-                    const expandButtons = content.querySelectorAll('.expand-button');
-                    expandButtons.forEach(button => {
-                        button.addEventListener('click', function() {
-                            const tableId = this.getAttribute('data-table-id');
-                            toggleRows(tableId);
-                        });
-                    });
+        const gridDiv = document.getElementById('records-grid');
+        console.log('📋 Creating grid in element:', gridDiv);
 
-                    loader.style.display = 'none';
-                    content.style.display = 'block';
-                }, 500);
-            };
-        }
+        // Use the new createGrid API instead of deprecated new Grid()
+        const gridInstance = agGrid.createGrid(gridDiv, gridOptions);
+        gridApi = gridInstance;
 
-        window.showPlayerProfile = showPlayerProfile;
+        console.log('✅ AG-Grid initialized successfully');
+    }
 
-        console.log("Setting up event listener for minigame select");
-        document.getElementById("minigame-select").addEventListener("change", function() {
-            updateTable(this.value);
+    function updateRanksAfterSort() {
+        if (!gridApi) return;
+
+        let rank = 1;
+        let lastScore = null;
+        let tieCount = 0;
+
+        gridApi.forEachNodeAfterFilterAndSort((node, index) => {
+            const sortedColumns = gridApi.getColumnState().filter(col => col.sort);
+            if (sortedColumns.length > 0) {
+                const sortCol = sortedColumns[0];
+                const score = node.data.scores && node.data.scores[sortCol.colId.replace('scores.', '')];
+
+                if (lastScore !== null && score !== lastScore) {
+                    rank += tieCount + 1;
+                    tieCount = 0;
+                } else if (lastScore !== null) {
+                    tieCount++;
+                }
+
+                node.setDataValue('rank', rank);
+                lastScore = score;
+            }
+        });
+    }
+
+    // Event listeners
+    function setupEventListeners() {
+        document.getElementById('minigame-select').addEventListener('change', function() {
+            updateGrid(this.value);
         });
 
-        console.log("Calling initial updateTable");
-        updateTable(currentMinigame);
+        document.getElementById('close-modal').addEventListener('click', closeModal);
+
+        document.getElementById('player-profile-modal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && document.getElementById('player-profile-modal').style.display === 'block') {
+                closeModal();
+            }
+        });
     }
 
-    document.getElementById('current-date').textContent = new Date().toLocaleString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric'
-    });
+    // Main initialization
+    async function init() {
+        console.log('🚀 Starting application initialization...');
+        document.getElementById('loading-animation').style.display = 'flex';
 
-    document.addEventListener('DOMContentLoaded', function() {
+        try {
+            allData = await loadData();
+            console.log('📊 Total data loaded:', allData.length, 'records');
 
-    });
+            // Log minigames available
+            const minigames = [...new Set(allData.map(record => record.minigame))];
+            console.log('🎮 Available minigames:', minigames);
 
-    function closeModal() {
-        const modal = document.getElementById('player-profile-modal');
-        modal.style.display = "none";
+            initializeGrid();
+            setupGlobalSearch();
+            setupTableSearch();
+            setupEventListeners();
 
-        // Reset the document title
-        document.title = "MCPR";
+            document.getElementById('loading-animation').style.display = 'none';
+            document.getElementById('records-grid').classList.add('loaded');
+
+            console.log('✅ Application initialization complete!');
+        } catch (error) {
+            console.error('❌ Initialization failed:', error);
+            document.getElementById('loading-animation').style.display = 'none';
+
+            // Show error message
+            document.getElementById('records-grid').innerHTML = `
+                    <div style="padding: 20px; text-align: center; color: var(--text-color);">
+                        <h3>Error loading data</h3>
+                        <p>Please check the console for details and ensure data files are available.</p>
+                        <p style="font-size: 0.9em; color: #888;">${error.message}</p>
+                    </div>
+                `;
+        }
     }
 
-    const playerSearch = document.getElementById('player-search');
-    const searchResults = document.getElementById('search-results');
-
-    playerSearch.addEventListener('input', function() {
-        const searchTerm = this.value.toLowerCase();
-        if (searchTerm.length < 2) {
-            searchResults.style.display = 'none';
-            return;
-        }
-
-        const matchingPlayers = Object.keys(playerUUIDs).filter(name =>
-            name.toLowerCase().includes(searchTerm)
-        ).slice(0, 5); // Limit to 5 results
-
-        if (matchingPlayers.length > 0) {
-            searchResults.innerHTML = matchingPlayers.map(name => `
-                <div class="search-result-item" onclick="showPlayerProfile('${name}')">
-                    <img src="https://crafatar.com/avatars/${playerUUIDs[name]}?size=32&overlay" alt="${name}'s avatar">
-                    <span>${name}</span>
-                </div>
-            `).join('');
-            searchResults.style.display = 'block';
-        } else {
-            searchResults.style.display = 'none';
-        }
-    });
-
-    document.addEventListener('click', function(event) {
-        if (!searchResults.contains(event.target) && event.target !== playerSearch) {
-            searchResults.style.display = 'none';
-        }
-    });
-
-
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log("DOMContentLoaded event fired");
-        document.title = "MCPR";
-
-        updateTexts();
-
-        showLoading();
-
-        // fetch player UUIDs
-        fetch('data-analysis/player_uuids.json')
-            .then(response => response.json())
-            .then(data => {
-                console.log("player_uuids.json loaded");
-                playerUUIDs = data;
-                // fetch the records data
-                return fetch("data-analysis/records_data.json");
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log("records_data.json loaded");
-                // Preload avatars
-                return preloadAvatars(data).then(() => data);
-            })
-            .then(data => {
-                console.log("Avatars preloaded");
-                // fetch the player info data
-                return fetch('data-analysis/player_data.json')
-                    .then(response => response.json())
-                    .then(infoData => {
-                        console.log("player_data.json loaded");
-                        playerInfoData = infoData;
-                        return data;  // Return original data
-                    });
-            })
-            .then(data => {
-                console.log("All data loaded, initializing table");
-                hideLoading();
-                initializeTable(data);
-            })
-            .catch(error => {
-                console.error("Error loading data:", error);
-                hideLoading();
-                initializeTable([]);
-            });
-
-            const modal = document.getElementById('player-profile-modal');
-            const closeBtn = document.getElementById('close-modal');
-
-            closeBtn.addEventListener('click', closeModal);
-
-            modal.addEventListener('click', function(event) {
-                if (event.target === modal) {
-                    closeModal();
-                }
-            });
-
-            document.addEventListener('click', function(event) {
-                const modal = document.getElementById('player-profile-modal');
-                if (event.target === modal) {
-                    closeModal();
-                }
-            });
-
-            document.addEventListener('keydown', function(event) {
-                if (event.key === "Escape" && document.getElementById('player-profile-modal').style.display === "block") {
-                    closeModal();
-                }
-            });
-
-            document.querySelector(`.language-selector button[onclick="changeLanguage('${currentLanguage}')"]`)
-                .setAttribute('aria-pressed', 'true');
-    });
-
+    // Make functions globally available
+    window.showPlayerProfile = showPlayerProfile;
     window.closeModal = closeModal;
+    window.toggleRows = toggleRows;
 
+    // Start the application
+    document.addEventListener('DOMContentLoaded', init);
+
+    // Mouse tracking for interactive background
+    document.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth) * 100;
+        const y = (e.clientY / window.innerHeight) * 100;
+
+        document.documentElement.style.setProperty('--mouse-x', x + '%');
+        document.documentElement.style.setProperty('--mouse-y', y + '%');
+    });
+
+    // Add some extra interactive elements on load
+    window.addEventListener('load', () => {
+        // Add floating particles effect
+        createFloatingParticles();
+    });
+
+    function createFloatingParticles() {
+        const particleCount = 15;
+        const container = document.body;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                    position: fixed;
+                    width: 4px;
+                    height: 4px;
+                    background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2));
+                    border-radius: 50%;
+                    pointer-events: none;
+                    z-index: -1;
+                    opacity: 0.3;
+                    animation: float ${Math.random() * 10 + 10}s linear infinite;
+                    left: ${Math.random() * 100}vw;
+                    top: 100vh;
+                `;
+
+            container.appendChild(particle);
+
+            // Remove particle after animation
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.parentNode.removeChild(particle);
+                }
+            }, (Math.random() * 10 + 10) * 1000);
+        }
+    }
+
+    // Add CSS for floating particles animation
+    const style = document.createElement('style');
+    style.textContent = `
+            @keyframes float {
+                0% {
+                    transform: translateY(0) translateX(0) rotate(0deg);
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 0.3;
+                }
+                90% {
+                    opacity: 0.3;
+                }
+                100% {
+                    transform: translateY(-100vh) translateX(${Math.random() * 200 - 100}px) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+    document.head.appendChild(style);
+
+    // Recreate particles periodically
+    setInterval(createFloatingParticles, 3000);
 </script>
-</head>
+</body>
 </html>
