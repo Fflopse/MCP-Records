@@ -875,7 +875,7 @@
     </div>
     <footer class="site-footer">
         <div class="footer-content">
-            <span id="data-as-of">Data as of: <time datetime="2025-02-16T12:00:00Z">02 Jul, 2025</time></span>
+            <span id="data-as-of">Data as of: <time datetime="2025-02-16T12:00:00Z">30 Jun, 2025</time></span>
             <span class="footer-separator">|</span>
             <a href="https://github.com/Fflopse/MCP-Records" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
             <span class="footer-separator">|</span>
@@ -1718,8 +1718,8 @@
                 </div>`;
 
             if (playerInfo && playerInfo.minecraft_party) {
-                const gameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Spiele'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Spiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
-                const minigameWinPercentage = (parseFloat(playerInfo.minecraft_party['Gewonnene Minispiele'].replace(',', '').replace('.', '')) / parseFloat(playerInfo.minecraft_party['Gespielte Minispiele'].replace(',', '').replace('.', '')) * 100).toFixed(2);
+                const gameWinPercentage = (playerInfo.minecraft_party['Gewonnene Spiele'] / playerInfo.minecraft_party['Gespielte Spiele']).toFixed(2);
+                const minigameWinPercentage = (playerInfo.minecraft_party['Gewonnene Minispiele'] / playerInfo.minecraft_party['Gespielte Minispiele']).toFixed(2);
 
                 profileHTML += `
                 <div class="player-stats">
