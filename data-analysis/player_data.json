@@ -2281,18 +2281,8 @@
     },
     "SiLoHB": {
         "name": "SiLoHB",
-        "rank": "Premium",
-        "minecraft_party": {
-            "Gewonnene Spiele": 11,
-            "Gewonnene Minispiele": 119,
-            "Gespielte Spiele": 235,
-            "Gespielte Minispiele": 1656,
-            "Spielzeit": "2d 17h 40m",
-            "Punkte": 2007,
-            "Rang": 7926,
-            "Winrate %": 4.68,
-            "Minigame Winrate %": 7.19
-        }
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "Simlll": {
         "name": "Simlll",
