@@ -2,7 +2,7 @@ name: Update Player Stats
 
 on:
   schedule:
-    - cron: '0 */2 * * *'  # Run every 6 hours
+    - cron: '0 */6 * * *'  # Run every 6 hours
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
@@ -23,9 +23,17 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests tqdm
         
+    - name: List files for debugging
+      run: |
+        echo "Root directory contents:"
+        ls -la
+        echo "Data analysis directory contents:"
+        ls -la data-analysis/
+        
     - name: Run data collection script
+      working-directory: ./data-analysis
       run: python update_player_data.py
-      
+        
     - name: Check for changes
       id: verify-changed-files
       run: |
@@ -40,6 +48,6 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add player_data.json
+        git add data-analysis/player_data.json
         git commit -m "Update player data - $(date)"
         git push
