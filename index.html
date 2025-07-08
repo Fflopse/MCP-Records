@@ -944,9 +944,10 @@
             "premium+": {"prefix": "§f", "name": "Premium+", "color": "#448e00"},
             "entwickler": {"prefix": "§f", "name": "Developer", "color": "#e6173d"},
             "content": {"prefix": "§f", "name": "Content", "color": "#ff0b74"},
+            "translator": {"prefix": "§f", "name": "Translator", "color": "#03c988"},
             "vip": {"prefix": "§f", "name": "VIP", "color": "#ae00ff"},
             "moderator": {"prefix": "§f", "name": "Moderator", "color": "#0078ff"},
-            "owner": {"prefix": "§f", "name": "Owner", "color": "#980c23"}
+            "owner": {"prefix": "§f", "name": "Owner", "color": "#980c23"} 
         };
 
         // Global variables
@@ -1217,7 +1218,7 @@
 
             setTimeout(() => {
                 const filteredData = allData.filter(record => record.minigame === minigame);
-                console.log('📊 Filtered data for', minigame + ':', filteredData.length, 'records');
+                console.log('Filtered data for', minigame + ':', filteredData.length, 'records');
                 
                 if (filteredData.length === 0) {
                     console.log('⚠️ No data found for minigame:', minigame);
@@ -1233,8 +1234,8 @@
                 const columnDefs = createColumnDefs(minigame, filteredData);
                 const rowData = prepareRowData(minigame, filteredData);
                 
-                console.log('📋 Column definitions:', columnDefs.length, 'columns');
-                console.log('📊 Row data:', rowData.length, 'rows');
+                console.log('Column definitions:', columnDefs.length, 'columns');
+                console.log('Row data:', rowData.length, 'rows');
 
                 if (gridApi) {
                     // Use new API methods
@@ -1245,7 +1246,7 @@
                     const firstScoreCol = columnDefs.find(col => col.field && col.field.startsWith('scores.'));
                     if (firstScoreCol) {
                         const sortDirection = minigameSortDirections[minigame] || 'desc';
-                        console.log('🔢 Auto-sorting by:', firstScoreCol.field, 'direction:', sortDirection);
+                        console.log('Auto-sorting by:', firstScoreCol.field, 'direction:', sortDirection);
                         gridApi.applyColumnState({
                             state: [{ colId: firstScoreCol.field, sort: sortDirection }],
                             defaultState: { sort: null }
@@ -1271,7 +1272,7 @@
                 document.getElementById('loading-animation').style.display = 'none';
                 document.getElementById('records-grid').style.opacity = '1';
                 
-                console.log('✅ Grid update complete');
+                console.log('Grid update complete');
             }, 150);
         }
 
@@ -1532,13 +1533,13 @@
 
                     if (exactMatch) {
                         // Exact match found - show profile
-                        console.log('🎯 Exact match found:', exactMatch);
+                        console.log('Exact match found:', exactMatch);
                         showPlayerProfile(exactMatch);
                         this.value = '';
                         searchResults.style.display = 'none';
                     } else if (matchingPlayers.length === 1) {
                         // Only one match - show profile
-                        console.log('🎯 Single match found:', matchingPlayers[0]);
+                        console.log('Single match found:', matchingPlayers[0]);
                         showPlayerProfile(matchingPlayers[0]);
                         this.value = '';
                         searchResults.style.display = 'none';
@@ -1547,7 +1548,7 @@
                         const highlightedItem = searchResults.querySelector('.highlighted');
                         if (highlightedItem) {
                             const playerName = highlightedItem.getAttribute('data-player');
-                            console.log('🎯 Selected highlighted match:', playerName);
+                            console.log('Selected highlighted match:', playerName);
                             showPlayerProfile(playerName);
                             this.value = '';
                             searchResults.style.display = 'none';
@@ -1557,7 +1558,7 @@
                         }
                     } else {
                         // No matches found
-                        console.log('❌ No matches found for:', searchTerm);
+                        console.log('No matches found for:', searchTerm);
                         // Could add a "no results" feedback here
                     }
                 } else if (event.key === 'Escape') {
@@ -1633,7 +1634,7 @@
                     event.preventDefault();
                     const searchInput = document.getElementById('global-player-search');
                     searchInput.focus();
-                    console.log('🔍 Search focused via Enter hotkey');
+                    console.log('Search focused via Enter hotkey');
                 }
 
                 // Forward slash (/) - also focus search (like GitHub, Reddit, etc.)
@@ -1641,7 +1642,7 @@
                     event.preventDefault();
                     const searchInput = document.getElementById('global-player-search');
                     searchInput.focus();
-                    console.log('🔍 Search focused via / hotkey');
+                    console.log('Search focused via / hotkey');
                 }
             });
         }
@@ -1651,7 +1652,7 @@
             const searchInput = document.getElementById('player-search');
             
             searchInput.addEventListener('input', function() {
-                console.log('🔍 Table search:', this.value);
+                console.log('Table search:', this.value);
                 if (gridApi) {
                     gridApi.setGridOption('quickFilterText', this.value);
                 }
@@ -1660,26 +1661,26 @@
 
         // Data loading and initialization
         async function loadData() {
-            console.log('🔄 Starting data loading...');
+            console.log('Starting data loading...');
             
             try {
                 // Load player UUIDs first
-                console.log('📡 Fetching player_uuids.json...');
+                console.log('Fetching player_uuids.json...');
                 const uuidResponse = await fetch('data-analysis/player_uuids.json');
                 if (!uuidResponse.ok) {
                     throw new Error(`Failed to load UUIDs: ${uuidResponse.status} ${uuidResponse.statusText}`);
                 }
                 playerUUIDs = await uuidResponse.json();
-                console.log('✅ Player UUIDs loaded:', Object.keys(playerUUIDs).length, 'players');
+                console.log('Player UUIDs loaded:', Object.keys(playerUUIDs).length, 'players');
 
                 // Load records data
-                console.log('📡 Fetching records_data.json...');
+                console.log('Fetching records_data.json...');
                 const recordsResponse = await fetch('data-analysis/records_data.json');
                 if (!recordsResponse.ok) {
                     throw new Error(`Failed to load records: ${recordsResponse.status} ${recordsResponse.statusText}`);
                 }
                 const recordsData = await recordsResponse.json();
-                console.log('✅ Records data loaded:', recordsData.length, 'records');
+                console.log('Records data loaded:', recordsData.length, 'records');
 
                 // Load player info (optional, may not exist)
                 try {
@@ -1687,21 +1688,21 @@
                     const playerInfoResponse = await fetch('data-analysis/player_data.json');
                     if (playerInfoResponse.ok) {
                         playerInfoData = await playerInfoResponse.json();
-                        console.log('✅ Player info loaded:', Object.keys(playerInfoData).length, 'players');
+                        console.log('Player info loaded:', Object.keys(playerInfoData).length, 'players');
                     } else {
-                        console.log('⚠️ Player info not available, using defaults');
+                        console.log('! Player info not available, using defaults');
                         playerInfoData = {};
                     }
                 } catch (error) {
-                    console.log('⚠️ Player info not available:', error.message);
+                    console.log('! Player info not available:', error.message);
                     playerInfoData = {};
                 }
 
-                console.log('🎯 Data loading complete!');
+                console.log('Data loading complete!');
                 return recordsData;
 
             } catch (error) {
-                console.error('❌ Error loading data:', error);
+                console.error('! Error loading data:', error);
                 
                 // Fallback to sample data for testing
                 console.log('🔄 Using sample data as fallback...');
@@ -1812,16 +1813,16 @@
                 suppressRowClickSelection: true,
                 enableCellTextSelection: true,
                 onGridReady: function(params) {
-                    console.log('✅ Grid ready, API available');
+                    console.log('Grid ready, API available');
                     gridApi = params.api;
                     updateGrid(currentMinigame);
                 },
                 onSortChanged: function() {
-                    console.log('🔄 Sort changed, updating ranks...');
+                    console.log('Sort changed, updating ranks...');
                     updateRanksAfterSort();
                 },
                 onFirstDataRendered: function() {
-                    console.log('🎨 First data rendered');
+                    console.log('First data rendered');
                     // Auto-size the name column first to fit content
                     gridApi.autoSizeColumns(['name'], false);
                     
@@ -1842,13 +1843,13 @@
             };
 
             const gridDiv = document.getElementById('records-grid');
-            console.log('📋 Creating grid in element:', gridDiv);
+            console.log('Creating grid in element:', gridDiv);
             
             // Use the new createGrid API instead of deprecated new Grid()
             const gridInstance = agGrid.createGrid(gridDiv, gridOptions);
             gridApi = gridInstance;
             
-            console.log('✅ AG-Grid initialized successfully');
+            console.log('AG-Grid initialized successfully');
         }
 
         function updateRanksAfterSort() {
@@ -1987,7 +1988,7 @@
                 intervals.push(interval);
             }
 
-            console.log('🎨 Starting font carousel...');
+            console.log('Starting font carousel...');
 
             // Function to update to next font in cycle
             function cycleFont() {
@@ -2015,7 +2016,7 @@
                             titleElement.style.textShadow = '';
                         }, 400);
 
-                        console.log(`✨ Font carousel complete! Final selection: ${finalFont.name} (${finalFont.style})`);
+                        console.log(`Font carousel complete! Final selection: ${finalFont.name} (${finalFont.style})`);
                     }, 200);
                 }
             }
@@ -2047,21 +2048,21 @@
             setupGlobalHotkeys();
             setupHotkeyHints();
 
-            console.log('⌨️ Hotkeys enabled: ESC (close modal), ENTER (focus search), / (focus search)');
+            console.log('Hotkeys enabled: ESC (close modal), ENTER (focus search), / (focus search)');
         }
 
         // Main initialization
         async function init() {
-            console.log('🚀 Starting application initialization...');
+            console.log('Starting application initialization...');
             document.getElementById('loading-animation').style.display = 'flex';
             
             try {
                 allData = await loadData();
-                console.log('📊 Total data loaded:', allData.length, 'records');
+                console.log('Total data loaded:', allData.length, 'records');
                 
                 // Log minigames available
                 const minigames = [...new Set(allData.map(record => record.minigame))];
-                console.log('🎮 Available minigames:', minigames);
+                console.log('Available minigames:', minigames);
                 
                 initializeGrid();
                 setupGlobalSearch();
@@ -2071,9 +2072,9 @@
                 document.getElementById('loading-animation').style.display = 'none';
                 document.getElementById('records-grid').classList.add('loaded');
                 
-                console.log('✅ Application initialization complete!');
+                console.log('Application initialization complete!');
             } catch (error) {
-                console.error('❌ Initialization failed:', error);
+                console.error('! Initialization failed:', error);
                 document.getElementById('loading-animation').style.display = 'none';
                 
                 // Show error message
@@ -2155,7 +2156,7 @@
                 }, 1000);
             });
 
-            console.log('💡 Hotkey hints initialized');
+            console.log('Hotkey hints initialized');
         }
     </script>
 
