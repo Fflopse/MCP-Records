@@ -3,6 +3,9 @@ import json
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import os
+import shutil
+from pathlib import Path
+
 
 def get_username_from_uuid(uuid):
     """Get current username for a given UUID"""
@@ -111,3 +114,26 @@ def assemblePlayerList():
         print(f"  ... and {len(names) - 10} more")
 
     return names
+
+def move_recent_txt_files():
+    desktop_path = Path.home() / "Desktop"
+    target_dir = desktop_path / "in-new"
+    
+    target_dir.mkdir(exist_ok=True)
+    
+    excluded_files = {"itemTooltipExport.txt", "log.txt"}
+    cutoff_time = time.time() - (60 * 60)  # 60 minutes ago
+    
+    moved_count = 0
+    
+    for file_path in desktop_path.glob("*.txt"):
+        if file_path.name in excluded_files:
+            continue
+        
+        if file_path.stat().st_mtime > cutoff_time:
+            target_path = target_dir / file_path.name
+            shutil.move(str(file_path), str(target_path))
+            print(f"Moved: {file_path.name}")
+            moved_count += 1
+    
+    print(f"Moved {moved_count} files to in-new/")
