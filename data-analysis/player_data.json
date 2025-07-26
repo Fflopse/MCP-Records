@@ -1229,6 +1229,21 @@
             "Minigame Winrate %": 37.75
         }
     },
+    "Karsten5": {
+        "name": "Karsten5",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 0,
+            "Gewonnene Minispiele": 14,
+            "Gespielte Spiele": 118,
+            "Gespielte Minispiele": 1014,
+            "Spielzeit": "1d 17h 38m",
+            "Punkte": 288,
+            "Rang": 69986,
+            "Winrate %": 0.0,
+            "Minigame Winrate %": 1.38
+        }
+    },
     "Keenaai": {
         "name": "Keenaai",
         "rank": "Premium",
@@ -3148,11 +3163,6 @@
             "Winrate %": 9.89,
             "Minigame Winrate %": 11.9
         }
-    },
-    "krstn_": {
-        "name": "krstn_",
-        "rank": "Error",
-        "minecraft_party": {}
     },
     "linastunna": {
         "name": "linastunna",
