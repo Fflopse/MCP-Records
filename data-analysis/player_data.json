@@ -901,8 +901,18 @@
     },
     "HeIsJustAPoorBoy": {
         "name": "HeIsJustAPoorBoy",
-        "rank": "Error",
-        "minecraft_party": {}
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 365,
+            "Gewonnene Minispiele": 2320,
+            "Gespielte Spiele": 1158,
+            "Gespielte Minispiele": 8560,
+            "Spielzeit": "13d 7h 7m",
+            "Punkte": 25646,
+            "Rang": 111,
+            "Winrate %": 31.52,
+            "Minigame Winrate %": 27.1
+        }
     },
     "HerosHD": {
         "name": "HerosHD",
@@ -3064,11 +3074,6 @@
             "Minigame Winrate %": 37.59
         }
     },
-    "dossantosaveiro_": {
-        "name": "dossantosaveiro_",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "ffawks": {
         "name": "ffawks",
         "rank": "Spieler",
@@ -3307,6 +3312,21 @@
             "Rang": 103,
             "Winrate %": 47.89,
             "Minigame Winrate %": 33.21
+        }
+    },
+    "pascalsiiakam": {
+        "name": "pascalsiiakam",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 16,
+            "Gewonnene Minispiele": 96,
+            "Gespielte Spiele": 73,
+            "Gespielte Minispiele": 535,
+            "Spielzeit": "21h 13m",
+            "Punkte": 1124,
+            "Rang": 17424,
+            "Winrate %": 21.92,
+            "Minigame Winrate %": 17.94
         }
     },
     "qMika": {
