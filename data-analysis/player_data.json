@@ -3074,11 +3074,6 @@
             "Minigame Winrate %": 37.59
         }
     },
-    "dossantosaveiro_": {
-        "name": "dossantosaveiro_",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "ffawks": {
         "name": "ffawks",
         "rank": "Spieler",
@@ -3175,11 +3170,11 @@
         "minecraft_party": {
             "Gewonnene Spiele": 0,
             "Gewonnene Minispiele": 0,
-            "Gespielte Spiele": 34,
-            "Gespielte Minispiele": 255,
-            "Spielzeit": "9h 46m",
-            "Punkte": 46,
-            "Rang": 229565,
+            "Gespielte Spiele": 35,
+            "Gespielte Minispiele": 263,
+            "Spielzeit": "10h 14m",
+            "Punkte": 47,
+            "Rang": 227764,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.0
         }
@@ -3317,6 +3312,21 @@
             "Rang": 103,
             "Winrate %": 47.89,
             "Minigame Winrate %": 33.21
+        }
+    },
+    "pascalsiiakam": {
+        "name": "pascalsiiakam",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 16,
+            "Gewonnene Minispiele": 96,
+            "Gespielte Spiele": 73,
+            "Gespielte Minispiele": 535,
+            "Spielzeit": "21h 13m",
+            "Punkte": 1124,
+            "Rang": 17428,
+            "Winrate %": 21.92,
+            "Minigame Winrate %": 17.94
         }
     },
     "qMika": {
