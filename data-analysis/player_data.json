@@ -1426,18 +1426,8 @@
     },
     "Lelouch610": {
         "name": "Lelouch610",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 549,
-            "Gewonnene Minispiele": 3129,
-            "Gespielte Spiele": 1772,
-            "Gespielte Minispiele": 12647,
-            "Spielzeit": "21d 6h 42m",
-            "Punkte": 41329,
-            "Rang": 63,
-            "Winrate %": 30.98,
-            "Minigame Winrate %": 24.74
-        }
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "Lennart0911": {
         "name": "Lennart0911",
@@ -3492,6 +3482,21 @@
             "Rang": 194,
             "Winrate %": 80.8,
             "Minigame Winrate %": 60.68
+        }
+    },
+    "trahoyober": {
+        "name": "trahoyober",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 43,
+            "Gewonnene Minispiele": 379,
+            "Gespielte Spiele": 930,
+            "Gespielte Minispiele": 6764,
+            "Spielzeit": "11d 16h 2m",
+            "Punkte": 7601,
+            "Rang": 923,
+            "Winrate %": 4.62,
+            "Minigame Winrate %": 5.6
         }
     },
     "twitchparaskiill": {
