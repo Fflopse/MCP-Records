@@ -219,7 +219,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 636440,
+            "Rang": 636446,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -1794,7 +1794,7 @@
             "Gespielte Minispiele": 96,
             "Spielzeit": "4h 22m",
             "Punkte": 21,
-            "Rang": 322652,
+            "Rang": 322656,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.0
         }
@@ -1989,7 +1989,7 @@
             "Gespielte Minispiele": 140,
             "Spielzeit": "5h 34m",
             "Punkte": 14,
-            "Rang": 364542,
+            "Rang": 364547,
             "Winrate %": 0.0,
             "Minigame Winrate %": 1.43
         }
@@ -3069,7 +3069,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 636440,
+            "Rang": 636446,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -3189,7 +3189,7 @@
             "Gespielte Minispiele": 330,
             "Spielzeit": "13h 11m",
             "Punkte": 55,
-            "Rang": 211247,
+            "Rang": 211248,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.3
         }
@@ -3496,8 +3496,18 @@
     },
     "trahoyober": {
         "name": "trahoyober",
-        "rank": "Error",
-        "minecraft_party": {}
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 48,
+            "Gewonnene Minispiele": 419,
+            "Gespielte Spiele": 972,
+            "Gespielte Minispiele": 7093,
+            "Spielzeit": "12d 5h 58m",
+            "Punkte": 8466,
+            "Rang": 789,
+            "Winrate %": 4.94,
+            "Minigame Winrate %": 5.91
+        }
     },
     "twitchparaskiill": {
         "name": "twitchparaskiill",
