@@ -3344,6 +3344,21 @@
             "Minigame Winrate %": 21.15
         }
     },
+    "qodKito": {
+        "name": "qodKito",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 254,
+            "Gewonnene Minispiele": 1323,
+            "Gespielte Spiele": 546,
+            "Gespielte Minispiele": 3741,
+            "Spielzeit": "6d 7h 26m",
+            "Punkte": 15812,
+            "Rang": 256,
+            "Winrate %": 46.52,
+            "Minigame Winrate %": 35.36
+        }
+    },
     "qriezmannsOpa": {
         "name": "qriezmannsOpa",
         "rank": "Premium+",
@@ -3522,21 +3537,6 @@
             "Rang": 77,
             "Winrate %": 53.81,
             "Minigame Winrate %": 38.0
-        }
-    },
-    "vKito": {
-        "name": "vKito",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 254,
-            "Gewonnene Minispiele": 1323,
-            "Gespielte Spiele": 546,
-            "Gespielte Minispiele": 3741,
-            "Spielzeit": "6d 7h 26m",
-            "Punkte": 15812,
-            "Rang": 256,
-            "Winrate %": 46.52,
-            "Minigame Winrate %": 35.36
         }
     },
     "vzqs": {
