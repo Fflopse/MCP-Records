@@ -1051,18 +1051,8 @@
     },
     "JayMinInSane": {
         "name": "JayMinInSane",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 610,
-            "Gewonnene Minispiele": 3183,
-            "Gespielte Spiele": 968,
-            "Gespielte Minispiele": 6850,
-            "Spielzeit": "11d 0h 2m",
-            "Punkte": 31319,
-            "Rang": 89,
-            "Winrate %": 63.02,
-            "Minigame Winrate %": 46.47
-        }
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "JennieKim": {
         "name": "JennieKim",
@@ -1779,7 +1769,7 @@
             "Gespielte Minispiele": 96,
             "Spielzeit": "4h 22m",
             "Punkte": 21,
-            "Rang": 323918,
+            "Rang": 323920,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.0
         }
