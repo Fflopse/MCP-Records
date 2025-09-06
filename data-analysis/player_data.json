@@ -219,7 +219,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 640557,
+            "Rang": 640562,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -319,14 +319,14 @@
         "rank": "Translator",
         "minecraft_party": {
             "Gewonnene Spiele": 289,
-            "Gewonnene Minispiele": 1800,
-            "Gespielte Spiele": 1383,
-            "Gespielte Minispiele": 10387,
-            "Spielzeit": "17d 10h 42m",
-            "Punkte": 25754,
+            "Gewonnene Minispiele": 1801,
+            "Gespielte Spiele": 1385,
+            "Gespielte Minispiele": 10397,
+            "Spielzeit": "17d 11h 8m",
+            "Punkte": 25762,
             "Rang": 113,
-            "Winrate %": 20.9,
-            "Minigame Winrate %": 17.33
+            "Winrate %": 20.87,
+            "Minigame Winrate %": 17.32
         }
     },
     "CuzImKnxck": {
@@ -1199,10 +1199,20 @@
             "Minigame Winrate %": 5.34
         }
     },
-    "KakaMC": {
-        "name": "KakaMC",
-        "rank": "Error",
-        "minecraft_party": {}
+    "KaiguaMC": {
+        "name": "KaiguaMC",
+        "rank": "Premium",
+        "minecraft_party": {
+            "Gewonnene Spiele": 4162,
+            "Gewonnene Minispiele": 21919,
+            "Gespielte Spiele": 4940,
+            "Gespielte Minispiele": 34047,
+            "Spielzeit": "47d 10h 26m",
+            "Punkte": 202942,
+            "Rang": 4,
+            "Winrate %": 84.25,
+            "Minigame Winrate %": 64.38
+        }
     },
     "Kanickelul": {
         "name": "Kanickelul",
@@ -1769,7 +1779,7 @@
             "Gespielte Minispiele": 96,
             "Spielzeit": "4h 22m",
             "Punkte": 21,
-            "Rang": 324206,
+            "Rang": 324209,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.0
         }
@@ -1803,11 +1813,6 @@
             "Winrate %": 11.93,
             "Minigame Winrate %": 10.51
         }
-    },
-    "NewNormal0947": {
-        "name": "NewNormal0947",
-        "rank": "Error",
-        "minecraft_party": {}
     },
     "NiklasMoWo": {
         "name": "NiklasMoWo",
@@ -1954,7 +1959,7 @@
             "Gespielte Minispiele": 140,
             "Spielzeit": "5h 34m",
             "Punkte": 14,
-            "Rang": 366330,
+            "Rang": 366333,
             "Winrate %": 0.0,
             "Minigame Winrate %": 1.43
         }
@@ -2422,6 +2427,21 @@
             "Rang": 22,
             "Winrate %": 63.44,
             "Minigame Winrate %": 48.64
+        }
+    },
+    "Spitzengolf": {
+        "name": "Spitzengolf",
+        "rank": "Premium+",
+        "minecraft_party": {
+            "Gewonnene Spiele": 1681,
+            "Gewonnene Minispiele": 9473,
+            "Gespielte Spiele": 3175,
+            "Gespielte Minispiele": 23470,
+            "Spielzeit": "39d 8h 37m",
+            "Punkte": 109680,
+            "Rang": 14,
+            "Winrate %": 52.94,
+            "Minigame Winrate %": 40.36
         }
     },
     "Squashgitter333": {
@@ -3019,7 +3039,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 640557,
+            "Rang": 640562,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -3154,7 +3174,7 @@
             "Gespielte Minispiele": 330,
             "Spielzeit": "13h 11m",
             "Punkte": 55,
-            "Rang": 212203,
+            "Rang": 212204,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.3
         }
