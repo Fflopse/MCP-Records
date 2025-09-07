@@ -219,7 +219,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 640755,
+            "Rang": 640760,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -1199,10 +1199,20 @@
             "Minigame Winrate %": 5.34
         }
     },
-    "KakaMC": {
-        "name": "KakaMC",
-        "rank": "Error",
-        "minecraft_party": {}
+    "KaiguaMC": {
+        "name": "KaiguaMC",
+        "rank": "Premium",
+        "minecraft_party": {
+            "Gewonnene Spiele": 4162,
+            "Gewonnene Minispiele": 21919,
+            "Gespielte Spiele": 4940,
+            "Gespielte Minispiele": 34047,
+            "Spielzeit": "47d 10h 26m",
+            "Punkte": 202942,
+            "Rang": 4,
+            "Winrate %": 84.25,
+            "Minigame Winrate %": 64.38
+        }
     },
     "Kanickelul": {
         "name": "Kanickelul",
@@ -1769,7 +1779,7 @@
             "Gespielte Minispiele": 96,
             "Spielzeit": "4h 22m",
             "Punkte": 21,
-            "Rang": 324278,
+            "Rang": 324282,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.0
         }
@@ -1954,7 +1964,7 @@
             "Gespielte Minispiele": 140,
             "Spielzeit": "5h 34m",
             "Punkte": 14,
-            "Rang": 366419,
+            "Rang": 366421,
             "Winrate %": 0.0,
             "Minigame Winrate %": 1.43
         }
@@ -3019,7 +3029,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 640756,
+            "Rang": 640760,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
