@@ -751,8 +751,18 @@
     },
     "Gestimus": {
         "name": "Gestimus",
-        "rank": "Error",
-        "minecraft_party": {}
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 560,
+            "Gewonnene Minispiele": 3206,
+            "Gespielte Spiele": 781,
+            "Gespielte Minispiele": 7884,
+            "Spielzeit": "12d 17h 43m",
+            "Punkte": 29146,
+            "Rang": 94,
+            "Winrate %": 71.7,
+            "Minigame Winrate %": 40.66
+        }
     },
     "Gfrasti": {
         "name": "Gfrasti",
@@ -1189,10 +1199,20 @@
             "Minigame Winrate %": 5.34
         }
     },
-    "KakaMC": {
-        "name": "KakaMC",
-        "rank": "Error",
-        "minecraft_party": {}
+    "KaiguaMC": {
+        "name": "KaiguaMC",
+        "rank": "Premium",
+        "minecraft_party": {
+            "Gewonnene Spiele": 4162,
+            "Gewonnene Minispiele": 21919,
+            "Gespielte Spiele": 4940,
+            "Gespielte Minispiele": 34047,
+            "Spielzeit": "47d 10h 26m",
+            "Punkte": 202942,
+            "Rang": 4,
+            "Winrate %": 84.25,
+            "Minigame Winrate %": 64.38
+        }
     },
     "Kanickelul": {
         "name": "Kanickelul",
@@ -2754,6 +2774,11 @@
             "Minigame Winrate %": 39.19
         }
     },
+    "WshPasie": {
+        "name": "WshPasie",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "WuschigesEtwas": {
         "name": "WuschigesEtwas",
         "rank": "Spieler",
@@ -3052,21 +3077,6 @@
             "Rang": 836,
             "Winrate %": 68.35,
             "Minigame Winrate %": 52.94
-        }
-    },
-    "forma": {
-        "name": "forma",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 44,
-            "Gewonnene Minispiele": 359,
-            "Gespielte Spiele": 273,
-            "Gespielte Minispiele": 2165,
-            "Spielzeit": "3d 10h 49m",
-            "Punkte": 4665,
-            "Rang": 2056,
-            "Winrate %": 16.12,
-            "Minigame Winrate %": 16.58
         }
     },
     "frutigall": {
