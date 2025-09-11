@@ -2774,11 +2774,6 @@
             "Minigame Winrate %": 39.19
         }
     },
-    "WshPasie": {
-        "name": "WshPasie",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "WuschigesEtwas": {
         "name": "WuschigesEtwas",
         "rank": "Spieler",
@@ -3077,6 +3072,21 @@
             "Rang": 836,
             "Winrate %": 68.35,
             "Minigame Winrate %": 52.94
+        }
+    },
+    "forma": {
+        "name": "forma",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 44,
+            "Gewonnene Minispiele": 359,
+            "Gespielte Spiele": 273,
+            "Gespielte Minispiele": 2165,
+            "Spielzeit": "3d 10h 49m",
+            "Punkte": 4665,
+            "Rang": 2059,
+            "Winrate %": 16.12,
+            "Minigame Winrate %": 16.58
         }
     },
     "frutigall": {
