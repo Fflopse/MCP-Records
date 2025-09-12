@@ -219,7 +219,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 641562,
+            "Rang": 641564,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -429,7 +429,7 @@
             "Gespielte Minispiele": 61,
             "Spielzeit": "2h 38m",
             "Punkte": 87,
-            "Rang": 165057,
+            "Rang": 165058,
             "Winrate %": 25.0,
             "Minigame Winrate %": 11.48
         }
@@ -1604,7 +1604,7 @@
             "Gespielte Minispiele": 823,
             "Spielzeit": "1d 20h 10m",
             "Punkte": 127,
-            "Rang": 130124,
+            "Rang": 130125,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.49
         }
@@ -1769,7 +1769,7 @@
             "Gespielte Minispiele": 96,
             "Spielzeit": "4h 22m",
             "Punkte": 21,
-            "Rang": 324624,
+            "Rang": 324625,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.0
         }
@@ -1803,6 +1803,11 @@
             "Winrate %": 11.93,
             "Minigame Winrate %": 10.51
         }
+    },
+    "NewNormal0947": {
+        "name": "NewNormal0947",
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "NiklasMoWo": {
         "name": "NiklasMoWo",
@@ -1949,7 +1954,7 @@
             "Gespielte Minispiele": 140,
             "Spielzeit": "5h 34m",
             "Punkte": 14,
-            "Rang": 366786,
+            "Rang": 366787,
             "Winrate %": 0.0,
             "Minigame Winrate %": 1.43
         }
@@ -2417,21 +2422,6 @@
             "Rang": 22,
             "Winrate %": 63.44,
             "Minigame Winrate %": 48.64
-        }
-    },
-    "Spitzengolf": {
-        "name": "Spitzengolf",
-        "rank": "Premium+",
-        "minecraft_party": {
-            "Gewonnene Spiele": 1699,
-            "Gewonnene Minispiele": 9577,
-            "Gespielte Spiele": 3198,
-            "Gespielte Minispiele": 23653,
-            "Spielzeit": "39d 16h 1m",
-            "Punkte": 110896,
-            "Rang": 14,
-            "Winrate %": 53.13,
-            "Minigame Winrate %": 40.49
         }
     },
     "Squashgitter333": {
@@ -3029,7 +3019,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 641562,
+            "Rang": 641564,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -3164,7 +3154,7 @@
             "Gespielte Minispiele": 330,
             "Spielzeit": "13h 11m",
             "Punkte": 55,
-            "Rang": 212458,
+            "Rang": 212459,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.3
         }
