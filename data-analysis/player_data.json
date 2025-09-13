@@ -219,7 +219,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 641778,
+            "Rang": 641782,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -1779,7 +1779,7 @@
             "Gespielte Minispiele": 96,
             "Spielzeit": "4h 22m",
             "Punkte": 21,
-            "Rang": 324705,
+            "Rang": 324707,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.0
         }
@@ -1959,7 +1959,7 @@
             "Gespielte Minispiele": 140,
             "Spielzeit": "5h 34m",
             "Punkte": 14,
-            "Rang": 366882,
+            "Rang": 366884,
             "Winrate %": 0.0,
             "Minigame Winrate %": 1.43
         }
@@ -2774,11 +2774,6 @@
             "Minigame Winrate %": 39.19
         }
     },
-    "WshPasie": {
-        "name": "WshPasie",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "WuschigesEtwas": {
         "name": "WuschigesEtwas",
         "rank": "Spieler",
@@ -3044,7 +3039,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 641778,
+            "Rang": 641782,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -3077,6 +3072,21 @@
             "Rang": 836,
             "Winrate %": 68.35,
             "Minigame Winrate %": 52.94
+        }
+    },
+    "forma": {
+        "name": "forma",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 44,
+            "Gewonnene Minispiele": 359,
+            "Gespielte Spiele": 273,
+            "Gespielte Minispiele": 2165,
+            "Spielzeit": "3d 10h 49m",
+            "Punkte": 4665,
+            "Rang": 2060,
+            "Winrate %": 16.12,
+            "Minigame Winrate %": 16.58
         }
     },
     "frutigall": {
