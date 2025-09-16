@@ -541,18 +541,8 @@
     },
     "Falke_01": {
         "name": "Falke_01",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 495,
-            "Gewonnene Minispiele": 2610,
-            "Gespielte Spiele": 1177,
-            "Gespielte Minispiele": 8804,
-            "Spielzeit": "13d 16h 34m",
-            "Punkte": 28163,
-            "Rang": 100,
-            "Winrate %": 42.06,
-            "Minigame Winrate %": 29.65
-        }
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "Feinberg": {
         "name": "Feinberg",
@@ -1804,11 +1794,6 @@
             "Minigame Winrate %": 10.51
         }
     },
-    "NewNormal0947": {
-        "name": "NewNormal0947",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "NiklasMoWo": {
         "name": "NiklasMoWo",
         "rank": "Spieler",
@@ -2424,6 +2409,21 @@
             "Minigame Winrate %": 48.64
         }
     },
+    "Spitzengolf": {
+        "name": "Spitzengolf",
+        "rank": "Premium+",
+        "minecraft_party": {
+            "Gewonnene Spiele": 1703,
+            "Gewonnene Minispiele": 9600,
+            "Gespielte Spiele": 3202,
+            "Gespielte Minispiele": 23688,
+            "Spielzeit": "39d 17h 32m",
+            "Punkte": 111156,
+            "Rang": 14,
+            "Winrate %": 53.19,
+            "Minigame Winrate %": 40.53
+        }
+    },
     "Squashgitter333": {
         "name": "Squashgitter333",
         "rank": "Premium+",
@@ -2754,6 +2754,11 @@
             "Minigame Winrate %": 39.19
         }
     },
+    "WshPasie": {
+        "name": "WshPasie",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "WuschigesEtwas": {
         "name": "WuschigesEtwas",
         "rank": "Spieler",
@@ -3052,21 +3057,6 @@
             "Rang": 837,
             "Winrate %": 68.35,
             "Minigame Winrate %": 52.94
-        }
-    },
-    "forma": {
-        "name": "forma",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 44,
-            "Gewonnene Minispiele": 359,
-            "Gespielte Spiele": 273,
-            "Gespielte Minispiele": 2165,
-            "Spielzeit": "3d 10h 49m",
-            "Punkte": 4665,
-            "Rang": 2061,
-            "Winrate %": 16.12,
-            "Minigame Winrate %": 16.58
         }
     },
     "frutigall": {
