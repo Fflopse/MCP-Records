@@ -316,18 +316,8 @@
     },
     "Cemsy": {
         "name": "Cemsy",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 585,
-            "Gewonnene Minispiele": 3387,
-            "Gespielte Spiele": 1369,
-            "Gespielte Minispiele": 10474,
-            "Spielzeit": "15d 15h 37m",
-            "Punkte": 38613,
-            "Rang": 69,
-            "Winrate %": 42.73,
-            "Minigame Winrate %": 32.34
-        }
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "Chander24": {
         "name": "Chander24",
