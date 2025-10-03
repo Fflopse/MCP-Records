@@ -49,14 +49,14 @@
         "rank": "Premium",
         "minecraft_party": {
             "Gewonnene Spiele": 745,
-            "Gewonnene Minispiele": 4690,
-            "Gespielte Spiele": 1627,
-            "Gespielte Minispiele": 11783,
-            "Spielzeit": "20d 3h 10m",
-            "Punkte": 49059,
+            "Gewonnene Minispiele": 4692,
+            "Gespielte Spiele": 1628,
+            "Gespielte Minispiele": 11786,
+            "Spielzeit": "20d 3h 23m",
+            "Punkte": 49087,
             "Rang": 52,
-            "Winrate %": 45.79,
-            "Minigame Winrate %": 39.8
+            "Winrate %": 45.76,
+            "Minigame Winrate %": 39.81
         }
     },
     "Acidey": {
@@ -286,8 +286,18 @@
     },
     "CML_Justin": {
         "name": "CML_Justin",
-        "rank": "Error",
-        "minecraft_party": {}
+        "rank": "Premium",
+        "minecraft_party": {
+            "Gewonnene Spiele": 877,
+            "Gewonnene Minispiele": 4751,
+            "Gespielte Spiele": 1727,
+            "Gespielte Minispiele": 12118,
+            "Spielzeit": "20d 0h 50m",
+            "Punkte": 53840,
+            "Rang": 44,
+            "Winrate %": 50.78,
+            "Minigame Winrate %": 39.21
+        }
     },
     "Carl1_1": {
         "name": "Carl1_1",
@@ -302,6 +312,21 @@
             "Rang": 30,
             "Winrate %": 44.6,
             "Minigame Winrate %": 33.96
+        }
+    },
+    "Cemsy": {
+        "name": "Cemsy",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 585,
+            "Gewonnene Minispiele": 3387,
+            "Gespielte Spiele": 1369,
+            "Gespielte Minispiele": 10474,
+            "Spielzeit": "15d 15h 37m",
+            "Punkte": 38613,
+            "Rang": 69,
+            "Winrate %": 42.73,
+            "Minigame Winrate %": 32.34
         }
     },
     "Chander24": {
@@ -1683,11 +1708,6 @@
             "Winrate %": 27.13,
             "Minigame Winrate %": 21.97
         }
-    },
-    "MoZadaTV": {
-        "name": "MoZadaTV",
-        "rank": "Error",
-        "minecraft_party": {}
     },
     "Morittz": {
         "name": "Morittz",
