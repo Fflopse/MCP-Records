@@ -1924,21 +1924,6 @@
             "Minigame Winrate %": 23.41
         }
     },
-    "Otronix": {
-        "name": "Otronix",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 365,
-            "Gewonnene Minispiele": 2323,
-            "Gespielte Spiele": 1220,
-            "Gespielte Minispiele": 9043,
-            "Spielzeit": "16d 6h 47m",
-            "Punkte": 30205,
-            "Rang": 95,
-            "Winrate %": 29.92,
-            "Minigame Winrate %": 25.69
-        }
-    },
     "OutcroYoutube": {
         "name": "OutcroYoutube",
         "rank": "Spieler",
@@ -2133,11 +2118,6 @@
             "Winrate %": 63.77,
             "Minigame Winrate %": 47.75
         }
-    },
-    "Ritokii": {
-        "name": "Ritokii",
-        "rank": "Error",
-        "minecraft_party": {}
     },
     "RyanxCole": {
         "name": "RyanxCole",
@@ -3129,6 +3109,21 @@
             "Minigame Winrate %": 26.78
         }
     },
+    "galanzus": {
+        "name": "galanzus",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 1170,
+            "Gewonnene Minispiele": 6668,
+            "Gespielte Spiele": 2437,
+            "Gespielte Minispiele": 19060,
+            "Spielzeit": "27d 2h 50m",
+            "Punkte": 77509,
+            "Rang": 25,
+            "Winrate %": 48.01,
+            "Minigame Winrate %": 34.98
+        }
+    },
     "h4nnes": {
         "name": "h4nnes",
         "rank": "Spieler",
@@ -3307,6 +3302,21 @@
             "Rang": 112,
             "Winrate %": 47.89,
             "Minigame Winrate %": 33.21
+        }
+    },
+    "otronix": {
+        "name": "otronix",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 365,
+            "Gewonnene Minispiele": 2323,
+            "Gespielte Spiele": 1220,
+            "Gespielte Minispiele": 9043,
+            "Spielzeit": "16d 6h 47m",
+            "Punkte": 30205,
+            "Rang": 95,
+            "Winrate %": 29.92,
+            "Minigame Winrate %": 25.69
         }
     },
     "pascalsiiakam": {
