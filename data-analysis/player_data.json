@@ -234,7 +234,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 657540,
+            "Rang": 657542,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -474,7 +474,7 @@
             "Gespielte Minispiele": 61,
             "Spielzeit": "2h 38m",
             "Punkte": 87,
-            "Rang": 167884,
+            "Rang": 167885,
             "Winrate %": 25.0,
             "Minigame Winrate %": 11.48
         }
@@ -1139,20 +1139,10 @@
             "Minigame Winrate %": 27.25
         }
     },
-    "JoelTK_": {
-        "name": "JoelTK_",
-        "rank": "Premium+",
-        "minecraft_party": {
-            "Gewonnene Spiele": 206.0,
-            "Gewonnene Minispiele": 1310.0,
-            "Gespielte Spiele": 891.0,
-            "Gespielte Minispiele": 7152.0,
-            "Spielzeit": "12.0d 12.0h 50.0m",
-            "Punkte": 20846.0,
-            "Rang": 177,
-            "Winrate %": 23.12,
-            "Minigame Winrate %": 18.32
-        }
+    "Joel_the_king": {
+        "name": "Joel_the_king",
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "Joy_8oy": {
         "name": "Joy_8oy",
@@ -1844,6 +1834,21 @@
             "Minigame Winrate %": 10.51
         }
     },
+    "NewNormal0947": {
+        "name": "NewNormal0947",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 3,
+            "Gewonnene Minispiele": 45.0,
+            "Gespielte Spiele": 24.0,
+            "Gespielte Minispiele": 189.0,
+            "Spielzeit": "8.0h 2.0m",
+            "Punkte": 509.0,
+            "Rang": 42766,
+            "Winrate %": 12.5,
+            "Minigame Winrate %": 23.81
+        }
+    },
     "NiklasMoWo": {
         "name": "NiklasMoWo",
         "rank": "Spieler",
@@ -2004,7 +2009,7 @@
             "Gespielte Minispiele": 140,
             "Spielzeit": "5h 34m",
             "Punkte": 14,
-            "Rang": 373502,
+            "Rang": 373503,
             "Winrate %": 0.0,
             "Minigame Winrate %": 1.43
         }
@@ -2369,21 +2374,6 @@
             "Minigame Winrate %": 7.08
         }
     },
-    "SiegbertShnoesl": {
-        "name": "SiegbertShnoesl",
-        "rank": "Premium+",
-        "minecraft_party": {
-            "Gewonnene Spiele": 2011.0,
-            "Gewonnene Minispiele": 11436.0,
-            "Gespielte Spiele": 3582.0,
-            "Gespielte Minispiele": 26768.0,
-            "Spielzeit": "45.0d 0.0h 10.0m",
-            "Punkte": 131603.0,
-            "Rang": 11,
-            "Winrate %": 56.14,
-            "Minigame Winrate %": 42.72
-        }
-    },
     "Simlll": {
         "name": "Simlll",
         "rank": "Spieler",
@@ -2559,7 +2549,7 @@
             "Gespielte Minispiele": 2727,
             "Spielzeit": "4d 5h 8m",
             "Punkte": 3329,
-            "Rang": 3679,
+            "Rang": 3680,
             "Winrate %": 9.67,
             "Minigame Winrate %": 8.47
         }
@@ -2742,21 +2732,6 @@
             "Rang": 153,
             "Winrate %": 11.6,
             "Minigame Winrate %": 10.74
-        }
-    },
-    "WachsameWachtel": {
-        "name": "WachsameWachtel",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 117,
-            "Gewonnene Minispiele": 796,
-            "Gespielte Spiele": 500.0,
-            "Gespielte Minispiele": 3778.0,
-            "Spielzeit": "5.0d 22.0h 19.0m",
-            "Punkte": 9604.0,
-            "Rang": 673,
-            "Winrate %": 23.4,
-            "Minigame Winrate %": 21.07
         }
     },
     "Wienerisch": {
@@ -3099,7 +3074,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 657540,
+            "Rang": 657542,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -3253,6 +3228,11 @@
             "Winrate %": 31.21,
             "Minigame Winrate %": 25.47
         }
+    },
+    "lolisamakun": {
+        "name": "lolisamakun",
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "loukrativ": {
         "name": "loukrativ",
