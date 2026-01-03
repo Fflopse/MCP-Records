@@ -108,12 +108,12 @@
         "name": "AnzeigeGehtRaus",
         "rank": "Spieler",
         "minecraft_party": {
-            "Gewonnene Spiele": 412,
-            "Gewonnene Minispiele": 2399,
-            "Gespielte Spiele": 1563,
-            "Gespielte Minispiele": 12005,
-            "Spielzeit": "19d 7h 0m",
-            "Punkte": 34986,
+            "Gewonnene Spiele": 412.0,
+            "Gewonnene Minispiele": 2399.0,
+            "Gespielte Spiele": 1563.0,
+            "Gespielte Minispiele": 12005.0,
+            "Spielzeit": "19.0d 7.0h 0.0m",
+            "Punkte": 34986.0,
             "Rang": 81,
             "Winrate %": 26.36,
             "Minigame Winrate %": 19.98
@@ -219,7 +219,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 661787,
+            "Rang": 661827,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -279,9 +279,24 @@
             "Gespielte Minispiele": 2499.0,
             "Spielzeit": "4.0d 0.0h 16.0m",
             "Punkte": 2897.0,
-            "Rang": 4664,
+            "Rang": 4666,
             "Winrate %": 3.49,
             "Minigame Winrate %": 7.4
+        }
+    },
+    "CML_Justin": {
+        "name": "CML_Justin",
+        "rank": "Premium",
+        "minecraft_party": {
+            "Gewonnene Spiele": 877,
+            "Gewonnene Minispiele": 4751.0,
+            "Gespielte Spiele": 1727.0,
+            "Gespielte Minispiele": 12118.0,
+            "Spielzeit": "20.0d 0.0h 50.0m",
+            "Punkte": 53840.0,
+            "Rang": 44,
+            "Winrate %": 50.78,
+            "Minigame Winrate %": 39.21
         }
     },
     "Carl1_1": {
@@ -309,7 +324,7 @@
             "Gespielte Minispiele": 3881,
             "Spielzeit": "6d 5h 10m",
             "Punkte": 3432,
-            "Rang": 3526,
+            "Rang": 3528,
             "Winrate %": 6.35,
             "Minigame Winrate %": 5.57
         }
@@ -318,15 +333,15 @@
         "name": "CladyNoClip_",
         "rank": "Premium+",
         "minecraft_party": {
-            "Gewonnene Spiele": 388.0,
-            "Gewonnene Minispiele": 2395,
-            "Gespielte Spiele": 1633,
-            "Gespielte Minispiele": 12338,
-            "Spielzeit": "20d 20h 35m",
-            "Punkte": 34030,
-            "Rang": 86,
-            "Winrate %": 23.76,
-            "Minigame Winrate %": 19.41
+            "Gewonnene Spiele": 390,
+            "Gewonnene Minispiele": 2409,
+            "Gespielte Spiele": 1638,
+            "Gespielte Minispiele": 12385,
+            "Spielzeit": "20d 22h 34m",
+            "Punkte": 34213,
+            "Rang": 85,
+            "Winrate %": 23.81,
+            "Minigame Winrate %": 19.45
         }
     },
     "CuzImKnxck": {
@@ -354,7 +369,7 @@
             "Gespielte Minispiele": 2388,
             "Spielzeit": "3d 10h 34m",
             "Punkte": 2420,
-            "Rang": 6245,
+            "Rang": 6247,
             "Winrate %": 8.62,
             "Minigame Winrate %": 10.18
         }
@@ -394,14 +409,14 @@
         "rank": "Spieler",
         "minecraft_party": {
             "Gewonnene Spiele": 868,
-            "Gewonnene Minispiele": 5005.0,
-            "Gespielte Spiele": 1668.0,
-            "Gespielte Minispiele": 13541.0,
-            "Spielzeit": "20.0d 13.0h 55.0m",
-            "Punkte": 58762.0,
+            "Gewonnene Minispiele": 5006,
+            "Gespielte Spiele": 1669,
+            "Gespielte Minispiele": 13552,
+            "Spielzeit": "20d 14h 24m",
+            "Punkte": 58769,
             "Rang": 42,
-            "Winrate %": 52.04,
-            "Minigame Winrate %": 36.96
+            "Winrate %": 52.01,
+            "Minigame Winrate %": 36.94
         }
     },
     "Dat_Klan": {
@@ -429,7 +444,7 @@
             "Gespielte Minispiele": 61,
             "Spielzeit": "2h 38m",
             "Punkte": 87,
-            "Rang": 168632,
+            "Rang": 168642,
             "Winrate %": 25.0,
             "Minigame Winrate %": 11.48
         }
@@ -564,7 +579,7 @@
             "Gespielte Minispiele": 354,
             "Spielzeit": "14h 10m",
             "Punkte": 969,
-            "Rang": 21539,
+            "Rang": 21542,
             "Winrate %": 24.0,
             "Minigame Winrate %": 21.75
         }
@@ -673,6 +688,11 @@
             "Winrate %": 46.51,
             "Minigame Winrate %": 34.77
         }
+    },
+    "G0at3D": {
+        "name": "G0at3D",
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "GamemasterNiki": {
         "name": "GamemasterNiki",
@@ -804,7 +824,7 @@
             "Gespielte Minispiele": 5671,
             "Spielzeit": "9d 7h 23m",
             "Punkte": 1394,
-            "Rang": 14106,
+            "Rang": 14108,
             "Winrate %": 0.25,
             "Minigame Winrate %": 0.97
         }
@@ -834,7 +854,7 @@
             "Gespielte Minispiele": 602,
             "Spielzeit": "1d 1h 46m",
             "Punkte": 2893,
-            "Rang": 4680,
+            "Rang": 4681,
             "Winrate %": 54.44,
             "Minigame Winrate %": 46.68
         }
@@ -995,9 +1015,9 @@
         "minecraft_party": {
             "Gewonnene Spiele": 1223.0,
             "Gewonnene Minispiele": 7137.0,
-            "Gespielte Spiele": 2108,
-            "Gespielte Minispiele": 16310,
-            "Spielzeit": "26d 4h 11m",
+            "Gespielte Spiele": 2108.0,
+            "Gespielte Minispiele": 16310.0,
+            "Spielzeit": "26.0d 4.0h 11.0m",
             "Punkte": 72119.0,
             "Rang": 28,
             "Winrate %": 58.02,
@@ -1014,7 +1034,7 @@
             "Gespielte Minispiele": 1615,
             "Spielzeit": "2d 17h 54m",
             "Punkte": 4492,
-            "Rang": 2304,
+            "Rang": 2305,
             "Winrate %": 33.48,
             "Minigame Winrate %": 26.19
         }
@@ -1070,12 +1090,12 @@
         "minecraft_party": {
             "Gewonnene Spiele": 525.0,
             "Gewonnene Minispiele": 3016.0,
-            "Gespielte Spiele": 1379.0,
-            "Gespielte Minispiele": 10134.0,
-            "Spielzeit": "17.0d 0.0h 55.0m",
+            "Gespielte Spiele": 1380,
+            "Gespielte Minispiele": 10135,
+            "Spielzeit": "17d 1h 15m",
             "Punkte": 38632.0,
             "Rang": 74,
-            "Winrate %": 38.07,
+            "Winrate %": 38.04,
             "Minigame Winrate %": 29.76
         }
     },
@@ -1094,10 +1114,20 @@
             "Minigame Winrate %": 27.52
         }
     },
-    "Joel_the_king": {
-        "name": "Joel_the_king",
-        "rank": "Error",
-        "minecraft_party": {}
+    "JoelTK_": {
+        "name": "JoelTK_",
+        "rank": "Premium+",
+        "minecraft_party": {
+            "Gewonnene Spiele": 242.0,
+            "Gewonnene Minispiele": 1553.0,
+            "Gespielte Spiele": 978.0,
+            "Gespielte Minispiele": 7900.0,
+            "Spielzeit": "13.0d 19.0h 59.0m",
+            "Punkte": 24252.0,
+            "Rang": 136,
+            "Winrate %": 24.74,
+            "Minigame Winrate %": 19.66
+        }
     },
     "Joy_8oy": {
         "name": "Joy_8oy",
@@ -1124,7 +1154,7 @@
             "Gespielte Minispiele": 3039,
             "Spielzeit": "4d 16h 46m",
             "Punkte": 3001,
-            "Rang": 4416,
+            "Rang": 4417,
             "Winrate %": 5.15,
             "Minigame Winrate %": 7.8
         }
@@ -1184,7 +1214,7 @@
             "Gespielte Minispiele": 962.0,
             "Spielzeit": "1.0d 12.0h 24.0m",
             "Punkte": 727.0,
-            "Rang": 29604,
+            "Rang": 29606,
             "Winrate %": 4.58,
             "Minigame Winrate %": 5.09
         }
@@ -1219,6 +1249,11 @@
             "Minigame Winrate %": 37.56
         }
     },
+    "Karsten5": {
+        "name": "Karsten5",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "Keenaai": {
         "name": "Keenaai",
         "rank": "Premium",
@@ -1244,7 +1279,7 @@
             "Gespielte Minispiele": 1778,
             "Spielzeit": "3d 4h 42m",
             "Punkte": 1304,
-            "Rang": 15280,
+            "Rang": 15284,
             "Winrate %": 0.91,
             "Minigame Winrate %": 3.88
         }
@@ -1259,7 +1294,7 @@
             "Gespielte Minispiele": 1584,
             "Spielzeit": "2d 14h 0m",
             "Punkte": 3756,
-            "Rang": 3062,
+            "Rang": 3063,
             "Winrate %": 22.73,
             "Minigame Winrate %": 19.0
         }
@@ -1304,7 +1339,7 @@
             "Gespielte Minispiele": 4799,
             "Spielzeit": "8d 10h 30m",
             "Punkte": 9824,
-            "Rang": 653,
+            "Rang": 654,
             "Winrate %": 12.69,
             "Minigame Winrate %": 13.73
         }
@@ -1343,15 +1378,15 @@
         "name": "Lauch1899",
         "rank": "Premium",
         "minecraft_party": {
-            "Gewonnene Spiele": 529.0,
-            "Gewonnene Minispiele": 3122.0,
-            "Gespielte Spiele": 1731.0,
-            "Gespielte Minispiele": 12480.0,
-            "Spielzeit": "21.0d 22.0h 46.0m",
-            "Punkte": 45484.0,
+            "Gewonnene Spiele": 530,
+            "Gewonnene Minispiele": 3128,
+            "Gespielte Spiele": 1733,
+            "Gespielte Minispiele": 12493,
+            "Spielzeit": "21d 23h 19m",
+            "Punkte": 45536,
             "Rang": 61,
-            "Winrate %": 30.56,
-            "Minigame Winrate %": 25.02
+            "Winrate %": 30.58,
+            "Minigame Winrate %": 25.04
         }
     },
     "LeMetin_": {
@@ -1383,6 +1418,11 @@
             "Winrate %": 29.31,
             "Minigame Winrate %": 24.06
         }
+    },
+    "Lelouch610": {
+        "name": "Lelouch610",
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "Lennart0911": {
         "name": "Lennart0911",
@@ -1514,7 +1554,7 @@
             "Gespielte Minispiele": 1175,
             "Spielzeit": "1d 21h 3m",
             "Punkte": 1503,
-            "Rang": 12808,
+            "Rang": 12809,
             "Winrate %": 9.15,
             "Minigame Winrate %": 9.62
         }
@@ -1564,21 +1604,6 @@
             "Minigame Winrate %": 36.14
         }
     },
-    "Maekku": {
-        "name": "Maekku",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 39.0,
-            "Gewonnene Minispiele": 255.0,
-            "Gespielte Spiele": 219.0,
-            "Gespielte Minispiele": 1652.0,
-            "Spielzeit": "2.0d 20.0h 38.0m",
-            "Punkte": 4601.0,
-            "Rang": 2214,
-            "Winrate %": 17.81,
-            "Minigame Winrate %": 15.44
-        }
-    },
     "Mansuni": {
         "name": "Mansuni",
         "rank": "Spieler",
@@ -1589,7 +1614,7 @@
             "Gespielte Minispiele": 877.0,
             "Spielzeit": "1.0d 23.0h 36.0m",
             "Punkte": 150.0,
-            "Rang": 118868,
+            "Rang": 118874,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.68
         }
@@ -1664,7 +1689,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 661787,
+            "Rang": 661827,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -1754,7 +1779,7 @@
             "Gespielte Minispiele": 96,
             "Spielzeit": "4h 22m",
             "Punkte": 21,
-            "Rang": 332084,
+            "Rang": 332100,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.0
         }
@@ -1789,6 +1814,21 @@
             "Minigame Winrate %": 10.51
         }
     },
+    "NewNormal0947": {
+        "name": "NewNormal0947",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 3,
+            "Gewonnene Minispiele": 46.0,
+            "Gespielte Spiele": 26.0,
+            "Gespielte Minispiele": 202.0,
+            "Spielzeit": "8.0h 40.0m",
+            "Punkte": 516.0,
+            "Rang": 42411,
+            "Winrate %": 11.54,
+            "Minigame Winrate %": 22.77
+        }
+    },
     "NiklasMoWo": {
         "name": "NiklasMoWo",
         "rank": "Spieler",
@@ -1809,14 +1849,14 @@
         "rank": "Spieler",
         "minecraft_party": {
             "Gewonnene Spiele": 843.0,
-            "Gewonnene Minispiele": 4378.0,
-            "Gespielte Spiele": 1792.0,
-            "Gespielte Minispiele": 13124.0,
-            "Spielzeit": "21.0d 7.0h 51.0m",
-            "Punkte": 52439.0,
+            "Gewonnene Minispiele": 4379,
+            "Gespielte Spiele": 1793,
+            "Gespielte Minispiele": 13131,
+            "Spielzeit": "21d 8h 9m",
+            "Punkte": 52447,
             "Rang": 46,
-            "Winrate %": 47.04,
-            "Minigame Winrate %": 33.36
+            "Winrate %": 47.02,
+            "Minigame Winrate %": 33.35
         }
     },
     "Nor_Malo": {
@@ -1849,21 +1889,6 @@
             "Minigame Winrate %": 34.14
         }
     },
-    "NxtLumi": {
-        "name": "NxtLumi",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 8.0,
-            "Gewonnene Minispiele": 65.0,
-            "Gespielte Spiele": 660.0,
-            "Gespielte Minispiele": 3997.0,
-            "Spielzeit": "8.0d 2.0h 19.0m",
-            "Punkte": 1577.0,
-            "Rang": 11960,
-            "Winrate %": 1.21,
-            "Minigame Winrate %": 1.63
-        }
-    },
     "Odlaa": {
         "name": "Odlaa",
         "rank": "Premium",
@@ -1894,6 +1919,21 @@
             "Minigame Winrate %": 23.39
         }
     },
+    "Otronix": {
+        "name": "Otronix",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 404.0,
+            "Gewonnene Minispiele": 2600.0,
+            "Gespielte Spiele": 1322.0,
+            "Gespielte Minispiele": 9877.0,
+            "Spielzeit": "17.0d 21.0h 13.0m",
+            "Punkte": 33767.0,
+            "Rang": 88,
+            "Winrate %": 30.56,
+            "Minigame Winrate %": 26.32
+        }
+    },
     "OutcroYoutube": {
         "name": "OutcroYoutube",
         "rank": "Spieler",
@@ -1904,7 +1944,7 @@
             "Gespielte Minispiele": 1401,
             "Spielzeit": "2d 11h 23m",
             "Punkte": 2194,
-            "Rang": 7260,
+            "Rang": 7262,
             "Winrate %": 9.95,
             "Minigame Winrate %": 9.28
         }
@@ -1934,7 +1974,7 @@
             "Gespielte Minispiele": 140,
             "Spielzeit": "5h 34m",
             "Punkte": 14,
-            "Rang": 375324,
+            "Rang": 375342,
             "Winrate %": 0.0,
             "Minigame Winrate %": 1.43
         }
@@ -2018,15 +2058,15 @@
         "name": "Proofreader",
         "rank": "Spieler",
         "minecraft_party": {
-            "Gewonnene Spiele": 334.0,
-            "Gewonnene Minispiele": 1699.0,
-            "Gespielte Spiele": 563.0,
-            "Gespielte Minispiele": 4227.0,
-            "Spielzeit": "7.0d 14.0h 30.0m",
-            "Punkte": 22345.0,
+            "Gewonnene Spiele": 337,
+            "Gewonnene Minispiele": 1720,
+            "Gespielte Spiele": 568,
+            "Gespielte Minispiele": 4270,
+            "Spielzeit": "7d 16h 21m",
+            "Punkte": 22597,
             "Rang": 154,
             "Winrate %": 59.33,
-            "Minigame Winrate %": 40.19
+            "Minigame Winrate %": 40.28
         }
     },
     "PumiTheCat": {
@@ -2072,21 +2112,6 @@
             "Rang": 212,
             "Winrate %": 21.71,
             "Minigame Winrate %": 19.48
-        }
-    },
-    "Reconest": {
-        "name": "Reconest",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 560.0,
-            "Gewonnene Minispiele": 3190.0,
-            "Gespielte Spiele": 1799.0,
-            "Gespielte Minispiele": 12838.0,
-            "Spielzeit": "21.0d 14.0h 35.0m",
-            "Punkte": 42281.0,
-            "Rang": 67,
-            "Winrate %": 31.13,
-            "Minigame Winrate %": 24.85
         }
     },
     "ReichesBrot": {
@@ -2312,21 +2337,6 @@
             "Rang": 8235,
             "Winrate %": 4.6,
             "Minigame Winrate %": 7.11
-        }
-    },
-    "SiegbertShnoesl": {
-        "name": "SiegbertShnoesl",
-        "rank": "Premium+",
-        "minecraft_party": {
-            "Gewonnene Spiele": 2096.0,
-            "Gewonnene Minispiele": 11948.0,
-            "Gespielte Spiele": 3676.0,
-            "Gespielte Minispiele": 27538.0,
-            "Spielzeit": "46.0d 7.0h 59.0m",
-            "Punkte": 137128.0,
-            "Rang": 11,
-            "Winrate %": 57.02,
-            "Minigame Winrate %": 43.39
         }
     },
     "Simlll": {
@@ -2624,7 +2634,7 @@
             "Gespielte Minispiele": 152,
             "Spielzeit": "7h 26m",
             "Punkte": 382,
-            "Rang": 56371,
+            "Rang": 56379,
             "Winrate %": 20.0,
             "Minigame Winrate %": 19.08
         }
@@ -2819,7 +2829,7 @@
             "Gespielte Minispiele": 144,
             "Spielzeit": "5h 24m",
             "Punkte": 676,
-            "Rang": 31981,
+            "Rang": 31984,
             "Winrate %": 64.71,
             "Minigame Winrate %": 48.61
         }
@@ -3029,7 +3039,7 @@
             "Gespielte Minispiele": 3982.0,
             "Spielzeit": "6.0d 10.0h 39.0m",
             "Punkte": 9965.0,
-            "Rang": 635,
+            "Rang": 636,
             "Winrate %": 22.62,
             "Minigame Winrate %": 20.04
         }
@@ -3044,7 +3054,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 661787,
+            "Rang": 661827,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -3124,20 +3134,10 @@
             "Minigame Winrate %": 37.34
         }
     },
-    "jimmi4Life": {
-        "name": "jimmi4Life",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 58,
-            "Gewonnene Minispiele": 414,
-            "Gespielte Spiele": 538,
-            "Gespielte Minispiele": 3577,
-            "Spielzeit": "6d 11h 12m",
-            "Punkte": 5720,
-            "Rang": 1530,
-            "Winrate %": 10.78,
-            "Minigame Winrate %": 11.57
-        }
+    "jiimmii": {
+        "name": "jiimmii",
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "juvona": {
         "name": "juvona",
@@ -3164,7 +3164,7 @@
             "Gespielte Minispiele": 8560.0,
             "Spielzeit": "16.0d 8.0h 9.0m",
             "Punkte": 16343.0,
-            "Rang": 264,
+            "Rang": 265,
             "Winrate %": 11.94,
             "Minigame Winrate %": 14.68
         }
@@ -3179,7 +3179,7 @@
             "Gespielte Minispiele": 337.0,
             "Spielzeit": "13.0h 42.0m",
             "Punkte": 57.0,
-            "Rang": 213382,
+            "Rang": 213395,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.3
         }
@@ -3198,11 +3198,6 @@
             "Winrate %": 31.21,
             "Minigame Winrate %": 25.47
         }
-    },
-    "lolisamasan": {
-        "name": "lolisamasan",
-        "rank": "Error",
-        "minecraft_party": {}
     },
     "loukrativ": {
         "name": "loukrativ",
@@ -3294,21 +3289,6 @@
             "Minigame Winrate %": 33.21
         }
     },
-    "otronix": {
-        "name": "otronix",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 404,
-            "Gewonnene Minispiele": 2600,
-            "Gespielte Spiele": 1321,
-            "Gespielte Minispiele": 9876,
-            "Spielzeit": "17d 20h 46m",
-            "Punkte": 33767,
-            "Rang": 88,
-            "Winrate %": 30.58,
-            "Minigame Winrate %": 26.33
-        }
-    },
     "qMika": {
         "name": "qMika",
         "rank": "Spieler",
@@ -3367,6 +3347,21 @@
             "Rang": 628,
             "Winrate %": 10.02,
             "Minigame Winrate %": 10.81
+        }
+    },
+    "redrauber": {
+        "name": "redrauber",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 346.0,
+            "Gewonnene Minispiele": 1807.0,
+            "Gespielte Spiele": 728.0,
+            "Gespielte Minispiele": 5441.0,
+            "Spielzeit": "8.0d 12.0h 45.0m",
+            "Punkte": 21397.0,
+            "Rang": 176,
+            "Winrate %": 47.53,
+            "Minigame Winrate %": 33.21
         }
     },
     "revolverz": {
@@ -3478,15 +3473,15 @@
         "name": "trahoyober",
         "rank": "Spieler",
         "minecraft_party": {
-            "Gewonnene Spiele": 61.0,
-            "Gewonnene Minispiele": 510.0,
-            "Gespielte Spiele": 1069.0,
-            "Gespielte Minispiele": 7799.0,
-            "Spielzeit": "13.0d 11.0h 56.0m",
-            "Punkte": 10066.0,
-            "Rang": 618,
-            "Winrate %": 5.71,
-            "Minigame Winrate %": 6.54
+            "Gewonnene Spiele": 62,
+            "Gewonnene Minispiele": 512,
+            "Gespielte Spiele": 1070,
+            "Gespielte Minispiele": 7805,
+            "Spielzeit": "13d 12h 14m",
+            "Punkte": 10110,
+            "Rang": 614,
+            "Winrate %": 5.79,
+            "Minigame Winrate %": 6.56
         }
     },
     "twitchparaskiill": {
@@ -3549,34 +3544,24 @@
             "Minigame Winrate %": 16.23
         }
     },
+    "xFloraSun": {
+        "name": "xFloraSun",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "xIForgotMySkill": {
         "name": "xIForgotMySkill",
         "rank": "Spieler",
         "minecraft_party": {
-            "Gewonnene Spiele": 210,
-            "Gewonnene Minispiele": 1571,
-            "Gespielte Spiele": 1494,
-            "Gespielte Minispiele": 11404,
-            "Spielzeit": "18d 13h 20m",
-            "Punkte": 24147,
+            "Gewonnene Spiele": 210.0,
+            "Gewonnene Minispiele": 1571.0,
+            "Gespielte Spiele": 1494.0,
+            "Gespielte Minispiele": 11404.0,
+            "Spielzeit": "18.0d 13.0h 20.0m",
+            "Punkte": 24147.0,
             "Rang": 137,
             "Winrate %": 14.06,
             "Minigame Winrate %": 13.78
-        }
-    },
-    "xKarstn": {
-        "name": "xKarstn",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 0,
-            "Gewonnene Minispiele": 14,
-            "Gespielte Spiele": 128,
-            "Gespielte Minispiele": 1103,
-            "Spielzeit": "1d 21h 31m",
-            "Punkte": 293,
-            "Rang": 71276,
-            "Winrate %": 0.0,
-            "Minigame Winrate %": 1.27
         }
     },
     "xX_Dima_ggg_Xx6": {
@@ -3622,21 +3607,6 @@
             "Rang": 118,
             "Winrate %": 59.4,
             "Minigame Winrate %": 37.14
-        }
-    },
-    "xyof": {
-        "name": "xyof",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 0,
-            "Gewonnene Minispiele": 0,
-            "Gespielte Spiele": 0,
-            "Gespielte Minispiele": 0,
-            "Spielzeit": "0",
-            "Punkte": 0,
-            "Rang": 661787,
-            "Winrate %": 0,
-            "Minigame Winrate %": 0
         }
     },
     "y9nic": {
