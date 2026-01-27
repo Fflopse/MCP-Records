@@ -704,6 +704,11 @@
             "Minigame Winrate %": 34.76
         }
     },
+    "G0at3D": {
+        "name": "G0at3D",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "GamemasterNiki": {
         "name": "GamemasterNiki",
         "rank": "Premium+",
@@ -1604,21 +1609,6 @@
             "Minigame Winrate %": 35.97
         }
     },
-    "Maekku": {
-        "name": "Maekku",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 39.0,
-            "Gewonnene Minispiele": 255.0,
-            "Gespielte Spiele": 219.0,
-            "Gespielte Minispiele": 1652.0,
-            "Spielzeit": "2.0d 20.0h 38.0m",
-            "Punkte": 4601.0,
-            "Rang": 2233,
-            "Winrate %": 17.81,
-            "Minigame Winrate %": 15.44
-        }
-    },
     "Mansuni": {
         "name": "Mansuni",
         "rank": "Premium",
@@ -1872,21 +1862,6 @@
             "Rang": 120,
             "Winrate %": 46.97,
             "Minigame Winrate %": 34.14
-        }
-    },
-    "NxtLumi": {
-        "name": "NxtLumi",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 8.0,
-            "Gewonnene Minispiele": 65.0,
-            "Gespielte Spiele": 660.0,
-            "Gespielte Minispiele": 3997.0,
-            "Spielzeit": "8.0d 2.0h 19.0m",
-            "Punkte": 1577.0,
-            "Rang": 12034,
-            "Winrate %": 1.21,
-            "Minigame Winrate %": 1.63
         }
     },
     "Odlaa": {
@@ -3583,6 +3558,11 @@
             "Winrate %": 16.63,
             "Minigame Winrate %": 16.23
         }
+    },
+    "xFloraSun": {
+        "name": "xFloraSun",
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "xIForgotMySkill": {
         "name": "xIForgotMySkill",
