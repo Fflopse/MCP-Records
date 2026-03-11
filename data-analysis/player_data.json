@@ -153,12 +153,12 @@
         "name": "Bartschii",
         "rank": "Premium+",
         "minecraft_party": {
-            "Gewonnene Spiele": 2785,
-            "Gewonnene Minispiele": 12957,
-            "Gespielte Spiele": 4298,
-            "Gespielte Minispiele": 27069,
-            "Spielzeit": "42d 12h 58m",
-            "Punkte": 145758,
+            "Gewonnene Spiele": 2785.0,
+            "Gewonnene Minispiele": 12957.0,
+            "Gespielte Spiele": 4298.0,
+            "Gespielte Minispiele": 27069.0,
+            "Spielzeit": "42.0d 12.0h 58.0m",
+            "Punkte": 145758.0,
             "Rang": 11,
             "Winrate %": 64.8,
             "Minigame Winrate %": 47.87
@@ -333,12 +333,12 @@
         "name": "CladyNoClip_",
         "rank": "Premium+",
         "minecraft_party": {
-            "Gewonnene Spiele": 534,
-            "Gewonnene Minispiele": 3389,
-            "Gespielte Spiele": 1970,
-            "Gespielte Minispiele": 15017,
-            "Spielzeit": "25d 12h 28m",
-            "Punkte": 46615,
+            "Gewonnene Spiele": 534.0,
+            "Gewonnene Minispiele": 3389.0,
+            "Gespielte Spiele": 1970.0,
+            "Gespielte Minispiele": 15017.0,
+            "Spielzeit": "25.0d 12.0h 28.0m",
+            "Punkte": 46615.0,
             "Rang": 63,
             "Winrate %": 27.11,
             "Minigame Winrate %": 22.57
@@ -2339,21 +2339,6 @@
             "Minigame Winrate %": 20.93
         }
     },
-    "Sinochaloll": {
-        "name": "Sinochaloll",
-        "rank": "Premium",
-        "minecraft_party": {
-            "Gewonnene Spiele": 877,
-            "Gewonnene Minispiele": 4751.0,
-            "Gespielte Spiele": 1727.0,
-            "Gespielte Minispiele": 12118.0,
-            "Spielzeit": "20.0d 0.0h 50.0m",
-            "Punkte": 53840.0,
-            "Rang": 47,
-            "Winrate %": 50.78,
-            "Minigame Winrate %": 39.21
-        }
-    },
     "SmartyxD": {
         "name": "SmartyxD",
         "rank": "Premium",
@@ -3657,6 +3642,21 @@
             "Rang": 120,
             "Winrate %": 59.4,
             "Minigame Winrate %": 37.14
+        }
+    },
+    "xyof": {
+        "name": "xyof",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 0,
+            "Gewonnene Minispiele": 0,
+            "Gespielte Spiele": 0,
+            "Gespielte Minispiele": 0,
+            "Spielzeit": "0",
+            "Punkte": 0,
+            "Rang": 673343,
+            "Winrate %": 0,
+            "Minigame Winrate %": 0
         }
     },
     "y9nic": {
