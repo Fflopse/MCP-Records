@@ -219,7 +219,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 675525,
+            "Rang": 675526,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -1094,6 +1094,21 @@
             "Minigame Winrate %": 29.87
         }
     },
+    "JimGiOh": {
+        "name": "JimGiOh",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 58,
+            "Gewonnene Minispiele": 414,
+            "Gespielte Spiele": 540.0,
+            "Gespielte Minispiele": 3592.0,
+            "Spielzeit": "6.0d 11.0h 53.0m",
+            "Punkte": 5722.0,
+            "Rang": 1589,
+            "Winrate %": 10.74,
+            "Minigame Winrate %": 11.53
+        }
+    },
     "Joe3346": {
         "name": "Joe3346",
         "rank": "Premium",
@@ -1764,7 +1779,7 @@
             "Gespielte Minispiele": 96,
             "Spielzeit": "4h 22m",
             "Punkte": 21,
-            "Rang": 336680,
+            "Rang": 336681,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.0
         }
@@ -1929,7 +1944,7 @@
             "Gespielte Minispiele": 145.0,
             "Spielzeit": "5.0h 47.0m",
             "Punkte": 16.0,
-            "Rang": 366686,
+            "Rang": 366687,
             "Winrate %": 0.0,
             "Minigame Winrate %": 1.38
         }
@@ -2544,7 +2559,7 @@
             "Gespielte Minispiele": 2510.0,
             "Spielzeit": "4.0d 2.0h 15.0m",
             "Punkte": 6617.0,
-            "Rang": 1271,
+            "Rang": 1272,
             "Winrate %": 23.56,
             "Minigame Winrate %": 19.0
         }
@@ -3054,7 +3069,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 675525,
+            "Rang": 675526,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -3148,11 +3163,6 @@
             "Winrate %": 52.75,
             "Minigame Winrate %": 37.28
         }
-    },
-    "jiimmii": {
-        "name": "jiimmii",
-        "rank": "Error",
-        "minecraft_party": {}
     },
     "juvona": {
         "name": "juvona",
