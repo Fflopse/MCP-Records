@@ -689,11 +689,6 @@
             "Minigame Winrate %": 34.74
         }
     },
-    "G0at3D": {
-        "name": "G0at3D",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "GamemasterNiki": {
         "name": "GamemasterNiki",
         "rank": "Premium+",
@@ -1225,9 +1220,9 @@
         "minecraft_party": {
             "Gewonnene Spiele": 6,
             "Gewonnene Minispiele": 56.0,
-            "Gespielte Spiele": 156,
-            "Gespielte Minispiele": 1177,
-            "Spielzeit": "1d 21h 25m",
+            "Gespielte Spiele": 156.0,
+            "Gespielte Minispiele": 1177.0,
+            "Spielzeit": "1.0d 21.0h 25.0m",
             "Punkte": 800.0,
             "Rang": 27084,
             "Winrate %": 3.85,
@@ -1607,6 +1602,21 @@
             "Rang": 104,
             "Winrate %": 48.07,
             "Minigame Winrate %": 35.76
+        }
+    },
+    "Maekku": {
+        "name": "Maekku",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 39.0,
+            "Gewonnene Minispiele": 255.0,
+            "Gespielte Spiele": 219.0,
+            "Gespielte Minispiele": 1652.0,
+            "Spielzeit": "2.0d 20.0h 38.0m",
+            "Punkte": 4601.0,
+            "Rang": 2294,
+            "Winrate %": 17.81,
+            "Minigame Winrate %": 15.44
         }
     },
     "Mansuni": {
