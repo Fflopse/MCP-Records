@@ -299,6 +299,21 @@
             "Minigame Winrate %": 33.96
         }
     },
+    "Cemsy": {
+        "name": "Cemsy",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 585,
+            "Gewonnene Minispiele": 3387,
+            "Gespielte Spiele": 1369,
+            "Gespielte Minispiele": 10474,
+            "Spielzeit": "15d 15h 37m",
+            "Punkte": 38613,
+            "Rang": 81,
+            "Winrate %": 42.73,
+            "Minigame Winrate %": 32.34
+        }
+    },
     "Chander24": {
         "name": "Chander24",
         "rank": "Premium",
@@ -513,12 +528,12 @@
         "name": "Ex4cted",
         "rank": "Premium+",
         "minecraft_party": {
-            "Gewonnene Spiele": 2858,
-            "Gewonnene Minispiele": 16953,
-            "Gespielte Spiele": 3850,
-            "Gespielte Minispiele": 33684,
-            "Spielzeit": "53d 7h 12m",
-            "Punkte": 187395,
+            "Gewonnene Spiele": 2858.0,
+            "Gewonnene Minispiele": 16953.0,
+            "Gespielte Spiele": 3850.0,
+            "Gespielte Minispiele": 33684.0,
+            "Spielzeit": "53.0d 7.0h 12.0m",
+            "Punkte": 187395.0,
             "Rang": 5,
             "Winrate %": 74.23,
             "Minigame Winrate %": 50.33
@@ -1329,7 +1344,7 @@
             "Gespielte Minispiele": 4799,
             "Spielzeit": "8d 10h 30m",
             "Punkte": 9824,
-            "Rang": 684,
+            "Rang": 685,
             "Winrate %": 12.69,
             "Minigame Winrate %": 13.73
         }
@@ -1677,21 +1692,6 @@
             "Rang": 159,
             "Winrate %": 26.86,
             "Minigame Winrate %": 21.76
-        }
-    },
-    "MoZadaTV": {
-        "name": "MoZadaTV",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 23.0,
-            "Gewonnene Minispiele": 141.0,
-            "Gespielte Spiele": 60.0,
-            "Gespielte Minispiele": 505.0,
-            "Spielzeit": "21.0h 5.0m",
-            "Punkte": 2063.0,
-            "Rang": 8242,
-            "Winrate %": 38.33,
-            "Minigame Winrate %": 27.92
         }
     },
     "Morittz": {
