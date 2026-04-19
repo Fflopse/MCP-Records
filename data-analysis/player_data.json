@@ -3,12 +3,12 @@
         "name": "20LeRe10",
         "rank": "Spieler",
         "minecraft_party": {
-            "Gewonnene Spiele": 183,
-            "Gewonnene Minispiele": 1337,
-            "Gespielte Spiele": 1397,
-            "Gespielte Minispiele": 10627,
-            "Spielzeit": "17d 11h 23m",
-            "Punkte": 19186,
+            "Gewonnene Spiele": 183.0,
+            "Gewonnene Minispiele": 1337.0,
+            "Gespielte Spiele": 1397.0,
+            "Gespielte Minispiele": 10627.0,
+            "Spielzeit": "17.0d 11.0h 23.0m",
+            "Punkte": 19186.0,
             "Rang": 222,
             "Winrate %": 13.1,
             "Minigame Winrate %": 12.58
@@ -219,7 +219,7 @@
             "Gespielte Minispiele": 0,
             "Spielzeit": "0",
             "Punkte": 0,
-            "Rang": 679654,
+            "Rang": 679658,
             "Winrate %": 0,
             "Minigame Winrate %": 0
         }
@@ -299,21 +299,6 @@
             "Minigame Winrate %": 33.96
         }
     },
-    "Cemsy": {
-        "name": "Cemsy",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 585,
-            "Gewonnene Minispiele": 3387,
-            "Gespielte Spiele": 1369,
-            "Gespielte Minispiele": 10474,
-            "Spielzeit": "15d 15h 37m",
-            "Punkte": 38613,
-            "Rang": 83,
-            "Winrate %": 42.73,
-            "Minigame Winrate %": 32.34
-        }
-    },
     "Chander24": {
         "name": "Chander24",
         "rank": "Premium",
@@ -333,15 +318,15 @@
         "name": "CladyNoClip_",
         "rank": "Premium+",
         "minecraft_party": {
-            "Gewonnene Spiele": 590.0,
-            "Gewonnene Minispiele": 3796.0,
-            "Gespielte Spiele": 2119.0,
-            "Gespielte Minispiele": 16188.0,
-            "Spielzeit": "27.0d 15.0h 3.0m",
-            "Punkte": 51688.0,
+            "Gewonnene Spiele": 591.0,
+            "Gewonnene Minispiele": 3797.0,
+            "Gespielte Spiele": 2120.0,
+            "Gespielte Minispiele": 16196.0,
+            "Spielzeit": "27.0d 15.0h 24.0m",
+            "Punkte": 51731.0,
             "Rang": 54,
-            "Winrate %": 27.84,
-            "Minigame Winrate %": 23.45
+            "Winrate %": 27.88,
+            "Minigame Winrate %": 23.44
         }
     },
     "CuzImKnxck": {
@@ -1269,7 +1254,7 @@
             "Gespielte Minispiele": 1785.0,
             "Spielzeit": "3.0d 6.0h 0.0m",
             "Punkte": 1310.0,
-            "Rang": 15591,
+            "Rang": 15592,
             "Winrate %": 0.9,
             "Minigame Winrate %": 3.92
         }
@@ -1539,7 +1524,7 @@
             "Gespielte Minispiele": 1175,
             "Spielzeit": "1d 21h 3m",
             "Punkte": 1503,
-            "Rang": 13142,
+            "Rang": 13143,
             "Winrate %": 9.15,
             "Minigame Winrate %": 9.62
         }
@@ -1614,7 +1599,7 @@
             "Gespielte Minispiele": 907.0,
             "Spielzeit": "2.0d 1.0h 29.0m",
             "Punkte": 212.0,
-            "Rang": 93937,
+            "Rang": 93938,
             "Winrate %": 0.58,
             "Minigame Winrate %": 0.99
         }
@@ -1677,6 +1662,21 @@
             "Rang": 159,
             "Winrate %": 26.81,
             "Minigame Winrate %": 21.72
+        }
+    },
+    "MoZadaTV": {
+        "name": "MoZadaTV",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 23.0,
+            "Gewonnene Minispiele": 144.0,
+            "Gespielte Spiele": 64.0,
+            "Gespielte Minispiele": 540.0,
+            "Spielzeit": "22.0h 37.0m",
+            "Punkte": 2110.0,
+            "Rang": 7974,
+            "Winrate %": 35.94,
+            "Minigame Winrate %": 26.67
         }
     },
     "Morittz": {
@@ -1764,7 +1764,7 @@
             "Gespielte Minispiele": 96,
             "Spielzeit": "4h 22m",
             "Punkte": 21,
-            "Rang": 338076,
+            "Rang": 338078,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.0
         }
@@ -1929,7 +1929,7 @@
             "Gespielte Minispiele": 145.0,
             "Spielzeit": "5.0h 47.0m",
             "Punkte": 16.0,
-            "Rang": 368269,
+            "Rang": 368271,
             "Winrate %": 0.0,
             "Minigame Winrate %": 1.38
         }
@@ -2322,6 +2322,21 @@
             "Rang": 130,
             "Winrate %": 26.46,
             "Minigame Winrate %": 20.93
+        }
+    },
+    "Sinochaloll": {
+        "name": "Sinochaloll",
+        "rank": "Premium",
+        "minecraft_party": {
+            "Gewonnene Spiele": 877,
+            "Gewonnene Minispiele": 4751.0,
+            "Gespielte Spiele": 1727.0,
+            "Gespielte Minispiele": 12118.0,
+            "Spielzeit": "20.0d 0.0h 50.0m",
+            "Punkte": 53840.0,
+            "Rang": 50,
+            "Winrate %": 50.78,
+            "Minigame Winrate %": 39.21
         }
     },
     "SmartyxD": {
@@ -3189,7 +3204,7 @@
             "Gespielte Minispiele": 337.0,
             "Spielzeit": "13.0h 42.0m",
             "Punkte": 57.0,
-            "Rang": 216972,
+            "Rang": 216974,
             "Winrate %": 0.0,
             "Minigame Winrate %": 0.3
         }
@@ -3594,7 +3609,7 @@
             "Gespielte Minispiele": 1112.0,
             "Spielzeit": "1.0d 21.0h 53.0m",
             "Punkte": 293,
-            "Rang": 72509,
+            "Rang": 72510,
             "Winrate %": 0.0,
             "Minigame Winrate %": 1.26
         }
@@ -3642,21 +3657,6 @@
             "Rang": 126,
             "Winrate %": 59.4,
             "Minigame Winrate %": 37.14
-        }
-    },
-    "xyof": {
-        "name": "xyof",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 0,
-            "Gewonnene Minispiele": 0,
-            "Gespielte Spiele": 0,
-            "Gespielte Minispiele": 0,
-            "Spielzeit": "0",
-            "Punkte": 0,
-            "Rang": 679654,
-            "Winrate %": 0,
-            "Minigame Winrate %": 0
         }
     },
     "y9nic": {
