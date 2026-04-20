@@ -1889,21 +1889,6 @@
             "Minigame Winrate %": 23.21
         }
     },
-    "Otronix": {
-        "name": "Otronix",
-        "rank": "Premium",
-        "minecraft_party": {
-            "Gewonnene Spiele": 647.0,
-            "Gewonnene Minispiele": 4261.0,
-            "Gespielte Spiele": 1850.0,
-            "Gespielte Minispiele": 14159.0,
-            "Spielzeit": "25.0d 16.0h 10.0m",
-            "Punkte": 54625.0,
-            "Rang": 48,
-            "Winrate %": 34.97,
-            "Minigame Winrate %": 30.09
-        }
-    },
     "OutcroYoutube": {
         "name": "OutcroYoutube",
         "rank": "Spieler",
@@ -2337,21 +2322,6 @@
             "Rang": 131,
             "Winrate %": 26.46,
             "Minigame Winrate %": 20.93
-        }
-    },
-    "Sinochaloll": {
-        "name": "Sinochaloll",
-        "rank": "Premium",
-        "minecraft_party": {
-            "Gewonnene Spiele": 877,
-            "Gewonnene Minispiele": 4751.0,
-            "Gespielte Spiele": 1727.0,
-            "Gespielte Minispiele": 12118.0,
-            "Spielzeit": "20.0d 0.0h 50.0m",
-            "Punkte": 53840.0,
-            "Rang": 50,
-            "Winrate %": 50.78,
-            "Minigame Winrate %": 39.21
         }
     },
     "SmartyxD": {
@@ -3329,6 +3299,21 @@
             "Minigame Winrate %": 33.18
         }
     },
+    "otronix": {
+        "name": "otronix",
+        "rank": "Premium",
+        "minecraft_party": {
+            "Gewonnene Spiele": 647.0,
+            "Gewonnene Minispiele": 4261.0,
+            "Gespielte Spiele": 1850.0,
+            "Gespielte Minispiele": 14159.0,
+            "Spielzeit": "25.0d 16.0h 10.0m",
+            "Punkte": 54625.0,
+            "Rang": 48,
+            "Winrate %": 34.97,
+            "Minigame Winrate %": 30.09
+        }
+    },
     "qMika": {
         "name": "qMika",
         "rank": "Spieler",
@@ -3657,6 +3642,21 @@
             "Rang": 127,
             "Winrate %": 59.4,
             "Minigame Winrate %": 37.14
+        }
+    },
+    "xyof": {
+        "name": "xyof",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 0,
+            "Gewonnene Minispiele": 0,
+            "Gespielte Spiele": 0,
+            "Gespielte Minispiele": 0,
+            "Spielzeit": "0",
+            "Punkte": 0,
+            "Rang": 679800,
+            "Winrate %": 0,
+            "Minigame Winrate %": 0
         }
     },
     "y9nic": {
