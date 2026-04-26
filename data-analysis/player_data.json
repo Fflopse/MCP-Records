@@ -1079,6 +1079,21 @@
             "Minigame Winrate %": 30.09
         }
     },
+    "JimGiOh": {
+        "name": "JimGiOh",
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 58,
+            "Gewonnene Minispiele": 414,
+            "Gespielte Spiele": 540.0,
+            "Gespielte Minispiele": 3592.0,
+            "Spielzeit": "6.0d 11.0h 53.0m",
+            "Punkte": 5722.0,
+            "Rang": 1610,
+            "Winrate %": 10.74,
+            "Minigame Winrate %": 11.53
+        }
+    },
     "Joe3346": {
         "name": "Joe3346",
         "rank": "Premium",
@@ -1872,21 +1887,6 @@
             "Rang": 517,
             "Winrate %": 28.01,
             "Minigame Winrate %": 23.21
-        }
-    },
-    "Otronix": {
-        "name": "Otronix",
-        "rank": "Premium",
-        "minecraft_party": {
-            "Gewonnene Spiele": 655.0,
-            "Gewonnene Minispiele": 4337.0,
-            "Gespielte Spiele": 1885.0,
-            "Gespielte Minispiele": 14404.0,
-            "Spielzeit": "26.0d 3.0h 44.0m",
-            "Punkte": 55652.0,
-            "Rang": 47,
-            "Winrate %": 34.75,
-            "Minigame Winrate %": 30.11
         }
     },
     "OutcroYoutube": {
@@ -3164,11 +3164,6 @@
             "Minigame Winrate %": 37.17
         }
     },
-    "jiimmii": {
-        "name": "jiimmii",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "juvona": {
         "name": "juvona",
         "rank": "Premium",
@@ -3317,6 +3312,21 @@
             "Rang": 126,
             "Winrate %": 47.84,
             "Minigame Winrate %": 33.18
+        }
+    },
+    "otronix": {
+        "name": "otronix",
+        "rank": "Premium",
+        "minecraft_party": {
+            "Gewonnene Spiele": 655.0,
+            "Gewonnene Minispiele": 4337.0,
+            "Gespielte Spiele": 1885.0,
+            "Gespielte Minispiele": 14404.0,
+            "Spielzeit": "26.0d 3.0h 44.0m",
+            "Punkte": 55652.0,
+            "Rang": 47,
+            "Winrate %": 34.75,
+            "Minigame Winrate %": 30.11
         }
     },
     "qMika": {
