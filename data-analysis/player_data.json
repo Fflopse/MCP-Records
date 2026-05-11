@@ -24,7 +24,7 @@
             "Gespielte Minispiele": 1656,
             "Spielzeit": "2d 14h 40m",
             "Punkte": 7681,
-            "Rang": 1032,
+            "Rang": 1033,
             "Winrate %": 61.99,
             "Minigame Winrate %": 41.12
         }
@@ -110,13 +110,13 @@
         "minecraft_party": {
             "Gewonnene Spiele": 420.0,
             "Gewonnene Minispiele": 2428.0,
-            "Gespielte Spiele": 1584.0,
-            "Gespielte Minispiele": 12176.0,
-            "Spielzeit": "19.0d 14.0h 9.0m",
-            "Punkte": 35598.0,
+            "Gespielte Spiele": 1585,
+            "Gespielte Minispiele": 12192,
+            "Spielzeit": "19d 14h 34m",
+            "Punkte": 35604,
             "Rang": 91,
-            "Winrate %": 26.52,
-            "Minigame Winrate %": 19.94
+            "Winrate %": 26.5,
+            "Minigame Winrate %": 19.91
         }
     },
     "ArthurAlchemist": {
@@ -144,7 +144,7 @@
             "Gespielte Minispiele": 1691,
             "Spielzeit": "2d 18h 41m",
             "Punkte": 3720,
-            "Rang": 3244,
+            "Rang": 3245,
             "Winrate %": 15.19,
             "Minigame Winrate %": 17.21
         }
@@ -694,11 +694,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "NewNormal0947": {
-        "name": "NewNormal0947",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "NiklasMoWo": {
         "name": "NiklasMoWo",
         "rank": "Error",
@@ -726,11 +721,6 @@
     },
     "Oronor": {
         "name": "Oronor",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "Otronix": {
-        "name": "Otronix",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1064,6 +1054,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "_n3dstark": {
+        "name": "_n3dstark",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "_yuna17": {
         "name": "_yuna17",
         "rank": "Error",
@@ -1139,11 +1134,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "fuyumiina": {
-        "name": "fuyumiina",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "h4nnes": {
         "name": "h4nnes",
         "rank": "Error",
@@ -1206,6 +1196,16 @@
     },
     "musi1999": {
         "name": "musi1999",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "otronix": {
+        "name": "otronix",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "pascalsiiakam": {
+        "name": "pascalsiiakam",
         "rank": "Error",
         "minecraft_party": {}
     },
