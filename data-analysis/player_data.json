@@ -78,12 +78,12 @@
         "name": "Allooy",
         "rank": "Premium",
         "minecraft_party": {
-            "Gewonnene Spiele": 1522,
-            "Gewonnene Minispiele": 9341,
-            "Gespielte Spiele": 1947,
-            "Gespielte Minispiele": 16258,
-            "Spielzeit": "27d 0h 42m",
-            "Punkte": 98558,
+            "Gewonnene Spiele": 1522.0,
+            "Gewonnene Minispiele": 9341.0,
+            "Gespielte Spiele": 1947.0,
+            "Gespielte Minispiele": 16258.0,
+            "Spielzeit": "27.0d 0.0h 42.0m",
+            "Punkte": 98558.0,
             "Rang": 20,
             "Winrate %": 78.17,
             "Minigame Winrate %": 57.45
@@ -144,7 +144,7 @@
             "Gespielte Minispiele": 1691,
             "Spielzeit": "2d 18h 41m",
             "Punkte": 3720,
-            "Rang": 3253,
+            "Rang": 3254,
             "Winrate %": 15.19,
             "Minigame Winrate %": 17.21
         }
@@ -196,11 +196,6 @@
     },
     "Carl1_1": {
         "name": "Carl1_1",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "Cemsy": {
-        "name": "Cemsy",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -326,6 +321,11 @@
     },
     "FrozenNoah": {
         "name": "FrozenNoah",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "G0at3D": {
+        "name": "G0at3D",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -464,8 +464,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "JoelTK_": {
-        "name": "JoelTK_",
+    "Joel_the_king": {
+        "name": "Joel_the_king",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -506,11 +506,6 @@
     },
     "Kanickelul": {
         "name": "Kanickelul",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "Karsten5": {
-        "name": "Karsten5",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -629,11 +624,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "Maekku": {
-        "name": "Maekku",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "Mansuni": {
         "name": "Mansuni",
         "rank": "Error",
@@ -656,6 +646,11 @@
     },
     "Mincheeen": {
         "name": "Mincheeen",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "MoZadaTV": {
+        "name": "MoZadaTV",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -799,6 +794,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "Ritokii": {
+        "name": "Ritokii",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "RyanxCole": {
         "name": "RyanxCole",
         "rank": "Error",
@@ -871,6 +871,11 @@
     },
     "Simlll": {
         "name": "Simlll",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Sinochaloll": {
+        "name": "Sinochaloll",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1134,16 +1139,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "fuyumiina": {
-        "name": "fuyumiina",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "galanzus": {
-        "name": "galanzus",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "h4nnes": {
         "name": "h4nnes",
         "rank": "Error",
@@ -1206,6 +1201,11 @@
     },
     "otronix": {
         "name": "otronix",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "pascalsiiakam": {
+        "name": "pascalsiiakam",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1299,6 +1299,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "xKarstn": {
+        "name": "xKarstn",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "xX_Dima_ggg_Xx6": {
         "name": "xX_Dima_ggg_Xx6",
         "rank": "Error",
@@ -1311,11 +1316,6 @@
     },
     "xd_Maiky": {
         "name": "xd_Maiky",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "xyof": {
-        "name": "xyof",
         "rank": "Error",
         "minecraft_party": {}
     },
