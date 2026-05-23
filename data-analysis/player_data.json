@@ -78,14 +78,14 @@
         "name": "Allooy",
         "rank": "Premium+",
         "minecraft_party": {
-            "Gewonnene Spiele": 1527.0,
-            "Gewonnene Minispiele": 9372.0,
-            "Gespielte Spiele": 1952.0,
-            "Gespielte Minispiele": 16308.0,
-            "Spielzeit": "27.0d 2.0h 55.0m",
-            "Punkte": 98902.0,
+            "Gewonnene Spiele": 1529.0,
+            "Gewonnene Minispiele": 9382.0,
+            "Gespielte Spiele": 1954.0,
+            "Gespielte Minispiele": 16325.0,
+            "Spielzeit": "27.0d 3.0h 41.0m",
+            "Punkte": 99023.0,
             "Rang": 20,
-            "Winrate %": 78.23,
+            "Winrate %": 78.25,
             "Minigame Winrate %": 57.47
         }
     },
@@ -196,6 +196,11 @@
     },
     "Carl1_1": {
         "name": "Carl1_1",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Cemsy": {
+        "name": "Cemsy",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -649,11 +654,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "MoZadaTV": {
-        "name": "MoZadaTV",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "Morittz": {
         "name": "Morittz",
         "rank": "Error",
@@ -721,11 +721,6 @@
     },
     "Oronor": {
         "name": "Oronor",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "Otronix": {
-        "name": "Otronix",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -994,6 +989,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "WachsameWachtel": {
+        "name": "WachsameWachtel",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "Wienerisch": {
         "name": "Wienerisch",
         "rank": "Error",
@@ -1174,11 +1174,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "lolisamakun": {
-        "name": "lolisamakun",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "lolisamasan": {
         "name": "lolisamasan",
         "rank": "Error",
@@ -1211,6 +1206,11 @@
     },
     "musi1999": {
         "name": "musi1999",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "otronix": {
+        "name": "otronix",
         "rank": "Error",
         "minecraft_party": {}
     },
