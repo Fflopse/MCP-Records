@@ -144,7 +144,7 @@
             "Gespielte Minispiele": 1691,
             "Spielzeit": "2d 18h 41m",
             "Punkte": 3720,
-            "Rang": 3258,
+            "Rang": 3259,
             "Winrate %": 15.19,
             "Minigame Winrate %": 17.21
         }
@@ -506,6 +506,11 @@
     },
     "Kanickelul": {
         "name": "Kanickelul",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Karsten5": {
+        "name": "Karsten5",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -989,11 +994,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "WachsameWachtel": {
-        "name": "WachsameWachtel",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "Wienerisch": {
         "name": "Wienerisch",
         "rank": "Error",
@@ -1174,8 +1174,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "lolisamasan": {
-        "name": "lolisamasan",
+    "lolisamakun": {
+        "name": "lolisamakun",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1234,8 +1234,13 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "revolverz": {
-        "name": "revolverz",
+    "redrauber": {
+        "name": "redrauber",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "rev_xd": {
+        "name": "rev_xd",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1296,11 +1301,6 @@
     },
     "xIForgotMySkill": {
         "name": "xIForgotMySkill",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "xKarstn": {
-        "name": "xKarstn",
         "rank": "Error",
         "minecraft_party": {}
     },
