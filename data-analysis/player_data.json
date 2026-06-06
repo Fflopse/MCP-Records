@@ -24,7 +24,7 @@
             "Gespielte Minispiele": 1656,
             "Spielzeit": "2d 14h 40m",
             "Punkte": 7681,
-            "Rang": 1042,
+            "Rang": 1043,
             "Winrate %": 61.99,
             "Minigame Winrate %": 41.12
         }
@@ -196,6 +196,11 @@
     },
     "Carl1_1": {
         "name": "Carl1_1",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Cemsy": {
+        "name": "Cemsy",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -504,6 +509,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "Karsten5": {
+        "name": "Karsten5",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "Keenaai": {
         "name": "Keenaai",
         "rank": "Error",
@@ -649,11 +659,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "MoZadaTV": {
-        "name": "MoZadaTV",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "Morittz": {
         "name": "Morittz",
         "rank": "Error",
@@ -694,6 +699,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "NewNormal0947": {
+        "name": "NewNormal0947",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "NiklasMoWo": {
         "name": "NiklasMoWo",
         "rank": "Error",
@@ -721,11 +731,6 @@
     },
     "Oronor": {
         "name": "Oronor",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "Otronix": {
-        "name": "Otronix",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1059,8 +1064,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "_n3dstark": {
-        "name": "_n3dstark",
+    "_yuna17": {
+        "name": "_yuna17",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1174,11 +1179,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "lolisamasan": {
-        "name": "lolisamasan",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "loukrativ": {
         "name": "loukrativ",
         "rank": "Error",
@@ -1209,6 +1209,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "otronichts": {
+        "name": "otronichts",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "qMika": {
         "name": "qMika",
         "rank": "Error",
@@ -1229,8 +1234,13 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "rev_xd": {
-        "name": "rev_xd",
+    "redrauber": {
+        "name": "redrauber",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "revolverz": {
+        "name": "revolverz",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1289,18 +1299,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "xFloraSun": {
-        "name": "xFloraSun",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "xIForgotMySkill": {
         "name": "xIForgotMySkill",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "xKarstn": {
-        "name": "xKarstn",
         "rank": "Error",
         "minecraft_party": {}
     },
