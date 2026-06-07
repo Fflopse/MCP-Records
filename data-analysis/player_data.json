@@ -78,14 +78,14 @@
         "name": "Allooy",
         "rank": "Premium+",
         "minecraft_party": {
-            "Gewonnene Spiele": 1547.0,
-            "Gewonnene Minispiele": 9527.0,
-            "Gespielte Spiele": 1975.0,
-            "Gespielte Minispiele": 16510.0,
-            "Spielzeit": "27.0d 11.0h 36.0m",
-            "Punkte": 100421.0,
+            "Gewonnene Spiele": 1549,
+            "Gewonnene Minispiele": 9536,
+            "Gespielte Spiele": 1977,
+            "Gespielte Minispiele": 16527,
+            "Spielzeit": "27d 12h 24m",
+            "Punkte": 100541,
             "Rang": 21,
-            "Winrate %": 78.33,
+            "Winrate %": 78.35,
             "Minigame Winrate %": 57.7
         }
     },
@@ -724,11 +724,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "Otronix": {
-        "name": "Otronix",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "OutcroYoutube": {
         "name": "OutcroYoutube",
         "rank": "Error",
@@ -994,6 +989,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "WachsameWachtel": {
+        "name": "WachsameWachtel",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "Wienerisch": {
         "name": "Wienerisch",
         "rank": "Error",
@@ -1134,6 +1134,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "fuyumiina": {
+        "name": "fuyumiina",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "galanzus": {
         "name": "galanzus",
         "rank": "Error",
@@ -1169,16 +1174,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "lolisamakun": {
-        "name": "lolisamakun",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "lolisamasan": {
-        "name": "lolisamasan",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "loukrativ": {
         "name": "loukrativ",
         "rank": "Error",
@@ -1209,8 +1204,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "pascalsiiakam": {
-        "name": "pascalsiiakam",
+    "otronichts": {
+        "name": "otronichts",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1231,6 +1226,11 @@
     },
     "redbrll": {
         "name": "redbrll",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "redrauber": {
+        "name": "redrauber",
         "rank": "Error",
         "minecraft_party": {}
     },
