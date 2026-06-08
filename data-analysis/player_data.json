@@ -78,12 +78,12 @@
         "name": "Allooy",
         "rank": "Premium+",
         "minecraft_party": {
-            "Gewonnene Spiele": 1549,
-            "Gewonnene Minispiele": 9536,
-            "Gespielte Spiele": 1977,
-            "Gespielte Minispiele": 16527,
-            "Spielzeit": "27d 12h 24m",
-            "Punkte": 100541,
+            "Gewonnene Spiele": 1549.0,
+            "Gewonnene Minispiele": 9536.0,
+            "Gespielte Spiele": 1977.0,
+            "Gespielte Minispiele": 16527.0,
+            "Spielzeit": "27.0d 12.0h 24.0m",
+            "Punkte": 100541.0,
             "Rang": 21,
             "Winrate %": 78.35,
             "Minigame Winrate %": 57.7
@@ -464,8 +464,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "JoelTK_": {
-        "name": "JoelTK_",
+    "Joel_the_king": {
+        "name": "Joel_the_king",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -721,6 +721,11 @@
     },
     "Oronor": {
         "name": "Oronor",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Otronix": {
+        "name": "Otronix",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1134,11 +1139,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "fuyumiina": {
-        "name": "fuyumiina",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "galanzus": {
         "name": "galanzus",
         "rank": "Error",
@@ -1149,8 +1149,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "jimmiyo": {
-        "name": "jimmiyo",
+    "jiimmii": {
+        "name": "jiimmii",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1204,8 +1204,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "otronichts": {
-        "name": "otronichts",
+    "pascalsiiakam": {
+        "name": "pascalsiiakam",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1234,8 +1234,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "revolverz": {
-        "name": "revolverz",
+    "rev_xd": {
+        "name": "rev_xd",
         "rank": "Error",
         "minecraft_party": {}
     },
