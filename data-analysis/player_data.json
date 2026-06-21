@@ -78,12 +78,12 @@
         "name": "Allooy",
         "rank": "Premium+",
         "minecraft_party": {
-            "Gewonnene Spiele": 1617,
-            "Gewonnene Minispiele": 9996,
-            "Gespielte Spiele": 2047,
-            "Gespielte Minispiele": 17142,
-            "Spielzeit": "28d 15h 15m",
-            "Punkte": 105346,
+            "Gewonnene Spiele": 1617.0,
+            "Gewonnene Minispiele": 9996.0,
+            "Gespielte Spiele": 2047.0,
+            "Gespielte Minispiele": 17142.0,
+            "Spielzeit": "28.0d 15.0h 15.0m",
+            "Punkte": 105346.0,
             "Rang": 19,
             "Winrate %": 78.99,
             "Minigame Winrate %": 58.31
@@ -144,7 +144,7 @@
             "Gespielte Minispiele": 1691,
             "Spielzeit": "2d 18h 41m",
             "Punkte": 3720,
-            "Rang": 3273,
+            "Rang": 3274,
             "Winrate %": 15.19,
             "Minigame Winrate %": 17.21
         }
@@ -464,8 +464,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "JoelTK_": {
-        "name": "JoelTK_",
+    "Joel_the_king": {
+        "name": "Joel_the_king",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1129,6 +1129,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "fuyumiina": {
+        "name": "fuyumiina",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "galanzus": {
         "name": "galanzus",
         "rank": "Error",
@@ -1196,11 +1201,6 @@
     },
     "otronichts": {
         "name": "otronichts",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "pascalsiiakam": {
-        "name": "pascalsiiakam",
         "rank": "Error",
         "minecraft_party": {}
     },
