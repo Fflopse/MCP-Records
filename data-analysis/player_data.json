@@ -76,18 +76,8 @@
     },
     "Allooy": {
         "name": "Allooy",
-        "rank": "Premium+",
-        "minecraft_party": {
-            "Gewonnene Spiele": 1618.0,
-            "Gewonnene Minispiele": 10005.0,
-            "Gespielte Spiele": 2048.0,
-            "Gespielte Minispiele": 17151.0,
-            "Spielzeit": "28.0d 15.0h 35.0m",
-            "Punkte": 105424.0,
-            "Rang": 18,
-            "Winrate %": 79.0,
-            "Minigame Winrate %": 58.33
-        }
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "Anni808": {
         "name": "Anni808",
@@ -144,15 +134,25 @@
             "Gespielte Minispiele": 1691,
             "Spielzeit": "2d 18h 41m",
             "Punkte": 3720,
-            "Rang": 3277,
+            "Rang": 3279,
             "Winrate %": 15.19,
             "Minigame Winrate %": 17.21
         }
     },
     "Bartschii": {
         "name": "Bartschii",
-        "rank": "Error",
-        "minecraft_party": {}
+        "rank": "Premium+",
+        "minecraft_party": {
+            "Gewonnene Spiele": 2840.0,
+            "Gewonnene Minispiele": 13286.0,
+            "Gespielte Spiele": 4444.0,
+            "Gespielte Minispiele": 28236.0,
+            "Spielzeit": "44.0d 15.0h 52.0m",
+            "Punkte": 150880.0,
+            "Rang": 12,
+            "Winrate %": 63.91,
+            "Minigame Winrate %": 47.05
+        }
     },
     "BastiGHG": {
         "name": "BastiGHG",
@@ -464,8 +464,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "Joel_the_king": {
-        "name": "Joel_the_king",
+    "JoelTK_": {
+        "name": "JoelTK_",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -721,6 +721,11 @@
     },
     "Oronor": {
         "name": "Oronor",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Otronix": {
+        "name": "Otronix",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1201,11 +1206,6 @@
     },
     "musi1999": {
         "name": "musi1999",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "otronichts": {
-        "name": "otronichts",
         "rank": "Error",
         "minecraft_party": {}
     },
