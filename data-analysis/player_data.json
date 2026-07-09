@@ -78,12 +78,12 @@
         "name": "Allooy",
         "rank": "Premium+",
         "minecraft_party": {
-            "Gewonnene Spiele": 1644,
-            "Gewonnene Minispiele": 10175,
-            "Gespielte Spiele": 2077,
-            "Gespielte Minispiele": 17392,
-            "Spielzeit": "29d 2h 1m",
-            "Punkte": 107252,
+            "Gewonnene Spiele": 1644.0,
+            "Gewonnene Minispiele": 10175.0,
+            "Gespielte Spiele": 2077.0,
+            "Gespielte Minispiele": 17392.0,
+            "Spielzeit": "29.0d 2.0h 1.0m",
+            "Punkte": 107252.0,
             "Rang": 18,
             "Winrate %": 79.15,
             "Minigame Winrate %": 58.5
@@ -196,6 +196,11 @@
     },
     "Carl1_1": {
         "name": "Carl1_1",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Cemsy": {
+        "name": "Cemsy",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -321,6 +326,11 @@
     },
     "FrozenNoah": {
         "name": "FrozenNoah",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "G0at3D": {
+        "name": "G0at3D",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -559,6 +569,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "Lelouch610": {
+        "name": "Lelouch610",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "Lennart0911": {
         "name": "Lennart0911",
         "rank": "Error",
@@ -619,11 +634,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "Maekku": {
-        "name": "Maekku",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "Mansuni": {
         "name": "Mansuni",
         "rank": "Error",
@@ -646,11 +656,6 @@
     },
     "Mincheeen": {
         "name": "Mincheeen",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "MoZadaTV": {
-        "name": "MoZadaTV",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -744,11 +749,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "Phoenix3000": {
-        "name": "Phoenix3000",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "Picutar": {
         "name": "Picutar",
         "rank": "Error",
@@ -786,11 +786,6 @@
     },
     "RasenLP": {
         "name": "RasenLP",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "Reconest": {
-        "name": "Reconest",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -994,11 +989,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "WachsameWachtel": {
-        "name": "WachsameWachtel",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "Wienerisch": {
         "name": "Wienerisch",
         "rank": "Error",
@@ -1129,8 +1119,18 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "foenichs": {
+        "name": "foenichs",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "frutigall": {
         "name": "frutigall",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "fuyumiina": {
+        "name": "fuyumiina",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1144,8 +1144,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "jimmiyo": {
-        "name": "jimmiyo",
+    "jiimmii": {
+        "name": "jiimmii",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1166,6 +1166,16 @@
     },
     "lizsyy": {
         "name": "lizsyy",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "lolisamakun": {
+        "name": "lolisamakun",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "lolisamasan": {
+        "name": "lolisamasan",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1199,11 +1209,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "pascalsiiakam": {
-        "name": "pascalsiiakam",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "qMika": {
         "name": "qMika",
         "rank": "Error",
@@ -1224,13 +1229,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "redrauber": {
-        "name": "redrauber",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "rev_xd": {
-        "name": "rev_xd",
+    "revolverz": {
+        "name": "revolverz",
         "rank": "Error",
         "minecraft_party": {}
     },
