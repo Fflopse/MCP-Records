@@ -78,15 +78,15 @@
         "name": "Allooy",
         "rank": "Premium+",
         "minecraft_party": {
-            "Gewonnene Spiele": 1660.0,
-            "Gewonnene Minispiele": 10283.0,
-            "Gespielte Spiele": 2096.0,
-            "Gespielte Minispiele": 17548.0,
-            "Spielzeit": "29.0d 8.0h 38.0m",
-            "Punkte": 108448.0,
+            "Gewonnene Spiele": 1662,
+            "Gewonnene Minispiele": 10297,
+            "Gespielte Spiele": 2098,
+            "Gespielte Minispiele": 17566,
+            "Spielzeit": "29d 9h 27m",
+            "Punkte": 108577,
             "Rang": 17,
-            "Winrate %": 79.2,
-            "Minigame Winrate %": 58.6
+            "Winrate %": 79.22,
+            "Minigame Winrate %": 58.62
         }
     },
     "Anni808": {
@@ -196,6 +196,11 @@
     },
     "Carl1_1": {
         "name": "Carl1_1",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Cemsy": {
+        "name": "Cemsy",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -649,11 +654,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "MoZadaTV": {
-        "name": "MoZadaTV",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "Morittz": {
         "name": "Morittz",
         "rank": "Error",
@@ -721,11 +721,6 @@
     },
     "Oronor": {
         "name": "Oronor",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "Otronix": {
-        "name": "Otronix",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -874,11 +869,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "Sinochaloll": {
-        "name": "Sinochaloll",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "SmartyxD": {
         "name": "SmartyxD",
         "rank": "Error",
@@ -996,6 +986,11 @@
     },
     "Vanillinchen": {
         "name": "Vanillinchen",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "WachsameWachtel": {
+        "name": "WachsameWachtel",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1149,8 +1144,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "jiimmii": {
-        "name": "jiimmii",
+    "jimmiyo": {
+        "name": "jimmiyo",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1171,11 +1166,6 @@
     },
     "lizsyy": {
         "name": "lizsyy",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "lolisamakun": {
-        "name": "lolisamakun",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1206,6 +1196,11 @@
     },
     "musi1999": {
         "name": "musi1999",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "otronix": {
+        "name": "otronix",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1316,6 +1311,11 @@
     },
     "xd_Maiky": {
         "name": "xd_Maiky",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "xyof": {
+        "name": "xyof",
         "rank": "Error",
         "minecraft_party": {}
     },
