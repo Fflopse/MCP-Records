@@ -24,7 +24,7 @@
             "Gespielte Minispiele": 1656,
             "Spielzeit": "2d 14h 40m",
             "Punkte": 7681,
-            "Rang": 1052,
+            "Rang": 1054,
             "Winrate %": 61.99,
             "Minigame Winrate %": 41.12
         }
@@ -144,7 +144,7 @@
             "Gespielte Minispiele": 1691,
             "Spielzeit": "2d 18h 41m",
             "Punkte": 3720,
-            "Rang": 3293,
+            "Rang": 3294,
             "Winrate %": 15.19,
             "Minigame Winrate %": 17.21
         }
@@ -326,6 +326,11 @@
     },
     "FrozenNoah": {
         "name": "FrozenNoah",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "G0at3D": {
+        "name": "G0at3D",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -624,11 +629,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "Maekku": {
-        "name": "Maekku",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "Mansuni": {
         "name": "Mansuni",
         "rank": "Error",
@@ -721,6 +721,11 @@
     },
     "Oronor": {
         "name": "Oronor",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Otronix": {
+        "name": "Otronix",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -874,11 +879,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "Sinochaloll": {
-        "name": "Sinochaloll",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "SmartyxD": {
         "name": "SmartyxD",
         "rank": "Error",
@@ -981,11 +981,6 @@
     },
     "Ungluecklicher": {
         "name": "Ungluecklicher",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "UnnormalKrasse": {
-        "name": "UnnormalKrasse",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1209,11 +1204,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "otronix": {
-        "name": "otronix",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "qMika": {
         "name": "qMika",
         "rank": "Error",
@@ -1234,8 +1224,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "revolverz": {
-        "name": "revolverz",
+    "rev_xd": {
+        "name": "rev_xd",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1294,6 +1284,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "xFloraSun": {
+        "name": "xFloraSun",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "xIForgotMySkill": {
         "name": "xIForgotMySkill",
         "rank": "Error",
@@ -1316,6 +1311,11 @@
     },
     "xd_Maiky": {
         "name": "xd_Maiky",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "xyof": {
+        "name": "xyof",
         "rank": "Error",
         "minecraft_party": {}
     },
