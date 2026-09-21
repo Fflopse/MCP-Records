@@ -39,7 +39,7 @@
             "Gespielte Minispiele": 9236.0,
             "Spielzeit": "13.0d 20.0h 45.0m",
             "Punkte": 40050.0,
-            "Rang": 83,
+            "Rang": 84,
             "Winrate %": 63.69,
             "Minigame Winrate %": 43.99
         }
@@ -144,7 +144,7 @@
             "Gespielte Minispiele": 1691,
             "Spielzeit": "2d 18h 41m",
             "Punkte": 3720,
-            "Rang": 3349,
+            "Rang": 3350,
             "Winrate %": 15.19,
             "Minigame Winrate %": 17.21
         }
@@ -794,11 +794,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "Red_An": {
-        "name": "Red_An",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "ReichesBrot": {
         "name": "ReichesBrot",
         "rank": "Error",
@@ -1239,8 +1234,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "revolverz": {
-        "name": "revolverz",
+    "revolverz_": {
+        "name": "revolverz_",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1286,6 +1281,11 @@
     },
     "unausgesprochen": {
         "name": "unausgesprochen",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "vzqs": {
+        "name": "vzqs",
         "rank": "Error",
         "minecraft_party": {}
     },
