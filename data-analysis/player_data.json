@@ -3,15 +3,15 @@
         "name": "20LeRe10",
         "rank": "Spieler",
         "minecraft_party": {
-            "Gewonnene Spiele": 212.0,
-            "Gewonnene Minispiele": 1503.0,
-            "Gespielte Spiele": 1532.0,
-            "Gespielte Minispiele": 11705.0,
-            "Spielzeit": "19.0d 11.0h 13.0m",
-            "Punkte": 22256.0,
-            "Rang": 178,
-            "Winrate %": 13.84,
-            "Minigame Winrate %": 12.84
+            "Gewonnene Spiele": 213,
+            "Gewonnene Minispiele": 1510,
+            "Gespielte Spiele": 1535,
+            "Gespielte Minispiele": 11730,
+            "Spielzeit": "19d 12h 25m",
+            "Punkte": 22377,
+            "Rang": 176,
+            "Winrate %": 13.88,
+            "Minigame Winrate %": 12.87
         }
     },
     "21brizi": {
@@ -144,7 +144,7 @@
             "Gespielte Minispiele": 1691,
             "Spielzeit": "2d 18h 41m",
             "Punkte": 3720,
-            "Rang": 3368,
+            "Rang": 3369,
             "Winrate %": 15.19,
             "Minigame Winrate %": 17.21
         }
@@ -326,6 +326,11 @@
     },
     "FrozenNoah": {
         "name": "FrozenNoah",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "G0at3D": {
+        "name": "G0at3D",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -639,11 +644,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "Maekku": {
-        "name": "Maekku",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "Mansuni": {
         "name": "Mansuni",
         "rank": "Error",
@@ -886,11 +886,6 @@
     },
     "Simlll": {
         "name": "Simlll",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "Sinochaloll": {
-        "name": "Sinochaloll",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1244,8 +1239,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "revolverz": {
-        "name": "revolverz",
+    "revolverz_": {
+        "name": "revolverz_",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1316,6 +1311,11 @@
     },
     "xd_Maiky": {
         "name": "xd_Maiky",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "xyof": {
+        "name": "xyof",
         "rank": "Error",
         "minecraft_party": {}
     },
