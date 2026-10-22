@@ -9,7 +9,7 @@
             "Gespielte Minispiele": 11919.0,
             "Spielzeit": "19.0d 21.0h 19.0m",
             "Punkte": 23179.0,
-            "Rang": 169,
+            "Rang": 170,
             "Winrate %": 14.38,
             "Minigame Winrate %": 13.03
         }
@@ -24,7 +24,7 @@
             "Gespielte Minispiele": 1656,
             "Spielzeit": "2d 14h 40m",
             "Punkte": 7681,
-            "Rang": 1084,
+            "Rang": 1085,
             "Winrate %": 61.99,
             "Minigame Winrate %": 41.12
         }
@@ -110,13 +110,13 @@
         "minecraft_party": {
             "Gewonnene Spiele": 420.0,
             "Gewonnene Minispiele": 2429.0,
-            "Gespielte Spiele": 1588.0,
-            "Gespielte Minispiele": 12214.0,
-            "Spielzeit": "19.0d 15.0h 52.0m",
-            "Punkte": 35649.0,
+            "Gespielte Spiele": 1589,
+            "Gespielte Minispiele": 12224,
+            "Spielzeit": "19d 16h 20m",
+            "Punkte": 35656,
             "Rang": 96,
-            "Winrate %": 26.45,
-            "Minigame Winrate %": 19.89
+            "Winrate %": 26.43,
+            "Minigame Winrate %": 19.87
         }
     },
     "ArthurAlchemist": {
@@ -144,7 +144,7 @@
             "Gespielte Minispiele": 1691,
             "Spielzeit": "2d 18h 41m",
             "Punkte": 3720,
-            "Rang": 3380,
+            "Rang": 3381,
             "Winrate %": 15.19,
             "Minigame Winrate %": 17.21
         }
@@ -329,6 +329,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "G0at3D": {
+        "name": "G0at3D",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "GamemasterNiki": {
         "name": "GamemasterNiki",
         "rank": "Error",
@@ -509,11 +514,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "Karsten5": {
-        "name": "Karsten5",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "Keenaai": {
         "name": "Keenaai",
         "rank": "Error",
@@ -526,6 +526,11 @@
     },
     "Kokochampo": {
         "name": "Kokochampo",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Kopek123245": {
+        "name": "Kopek123245",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -634,11 +639,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "Maekku": {
-        "name": "Maekku",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "Mansuni": {
         "name": "Mansuni",
         "rank": "Error",
@@ -734,11 +734,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "Otronix": {
-        "name": "Otronix",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "OutcroYoutube": {
         "name": "OutcroYoutube",
         "rank": "Error",
@@ -801,6 +796,11 @@
     },
     "Reconest": {
         "name": "Reconest",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Red_An": {
+        "name": "Red_An",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1154,8 +1154,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "jiimmii": {
-        "name": "jiimmii",
+    "jimmiyo_": {
+        "name": "jimmiyo_",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1176,11 +1176,6 @@
     },
     "lizsyy": {
         "name": "lizsyy",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "lolisamasan": {
-        "name": "lolisamasan",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1214,8 +1209,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "pascalsiiakam": {
-        "name": "pascalsiiakam",
+    "otronix": {
+        "name": "otronix",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1236,6 +1231,11 @@
     },
     "redbrll": {
         "name": "redbrll",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "redrauber": {
+        "name": "redrauber",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1289,11 +1289,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "vzqs": {
-        "name": "vzqs",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "xBaumeisterin": {
         "name": "xBaumeisterin",
         "rank": "Error",
@@ -1301,6 +1296,11 @@
     },
     "xIForgotMySkill": {
         "name": "xIForgotMySkill",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "xKarstn": {
+        "name": "xKarstn",
         "rank": "Error",
         "minecraft_party": {}
     },
