@@ -110,10 +110,10 @@
         "minecraft_party": {
             "Gewonnene Spiele": 420.0,
             "Gewonnene Minispiele": 2429.0,
-            "Gespielte Spiele": 1589,
-            "Gespielte Minispiele": 12224,
-            "Spielzeit": "19d 16h 20m",
-            "Punkte": 35656,
+            "Gespielte Spiele": 1589.0,
+            "Gespielte Minispiele": 12224.0,
+            "Spielzeit": "19.0d 16.0h 20.0m",
+            "Punkte": 35656.0,
             "Rang": 96,
             "Winrate %": 26.43,
             "Minigame Winrate %": 19.87
@@ -326,11 +326,6 @@
     },
     "FrozenNoah": {
         "name": "FrozenNoah",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "G0at3D": {
-        "name": "G0at3D",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -639,6 +634,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "Maekku": {
+        "name": "Maekku",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "Mansuni": {
         "name": "Mansuni",
         "rank": "Error",
@@ -754,6 +754,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "Phoenix3000": {
+        "name": "Phoenix3000",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "Picutar": {
         "name": "Picutar",
         "rank": "Error",
@@ -806,6 +811,11 @@
     },
     "ReichesBrot": {
         "name": "ReichesBrot",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Ritokii": {
+        "name": "Ritokii",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1134,18 +1144,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "foenichs": {
-        "name": "foenichs",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "frutigall": {
         "name": "frutigall",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "galanzus": {
-        "name": "galanzus",
         "rank": "Error",
         "minecraft_party": {}
     },
