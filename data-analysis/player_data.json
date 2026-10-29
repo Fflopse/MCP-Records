@@ -31,18 +31,8 @@
     },
     "2B9": {
         "name": "2B9",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 714.0,
-            "Gewonnene Minispiele": 4063.0,
-            "Gespielte Spiele": 1121.0,
-            "Gespielte Minispiele": 9236.0,
-            "Spielzeit": "13.0d 20.0h 45.0m",
-            "Punkte": 40050.0,
-            "Rang": 86,
-            "Winrate %": 63.69,
-            "Minigame Winrate %": 43.99
-        }
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "2wc": {
         "name": "2wc",
@@ -256,11 +246,6 @@
     },
     "FrozenNoah": {
         "name": "FrozenNoah",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "G0at3D": {
-        "name": "G0at3D",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -504,11 +489,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "Lelouch610": {
-        "name": "Lelouch610",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "Lennart0911": {
         "name": "Lennart0911",
         "rank": "Error",
@@ -571,6 +551,11 @@
     },
     "M0osebumps": {
         "name": "M0osebumps",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Maekku": {
+        "name": "Maekku",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -689,6 +674,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "Phoenix3000": {
+        "name": "Phoenix3000",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "Picutar": {
         "name": "Picutar",
         "rank": "Error",
@@ -726,6 +716,11 @@
     },
     "RasenLP": {
         "name": "RasenLP",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Reconest": {
+        "name": "Reconest",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1061,11 +1056,6 @@
     },
     "ffawks": {
         "name": "ffawks",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "foenichs": {
-        "name": "foenichs",
         "rank": "Error",
         "minecraft_party": {}
     },
