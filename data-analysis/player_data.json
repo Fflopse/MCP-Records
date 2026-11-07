@@ -1,33 +1,93 @@
 {
     "20LeRe10": {
         "name": "20LeRe10",
-        "rank": "Error",
-        "minecraft_party": {}
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 241.0,
+            "Gewonnene Minispiele": 1642.0,
+            "Gespielte Spiele": 1609.0,
+            "Gespielte Minispiele": 12364.0,
+            "Spielzeit": "20.0d 18.0h 38.0m",
+            "Punkte": 24546.0,
+            "Rang": 153,
+            "Winrate %": 14.98,
+            "Minigame Winrate %": 13.28
+        }
     },
     "21brizi": {
         "name": "21brizi",
-        "rank": "Error",
-        "minecraft_party": {}
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 137,
+            "Gewonnene Minispiele": 681,
+            "Gespielte Spiele": 221,
+            "Gespielte Minispiele": 1656,
+            "Spielzeit": "2d 14h 40m",
+            "Punkte": 7681,
+            "Rang": 1090,
+            "Winrate %": 61.99,
+            "Minigame Winrate %": 41.12
+        }
     },
     "2B9": {
         "name": "2B9",
-        "rank": "Error",
-        "minecraft_party": {}
+        "rank": "Spieler",
+        "minecraft_party": {
+            "Gewonnene Spiele": 714.0,
+            "Gewonnene Minispiele": 4063.0,
+            "Gespielte Spiele": 1121.0,
+            "Gespielte Minispiele": 9236.0,
+            "Spielzeit": "13.0d 20.0h 45.0m",
+            "Punkte": 40050.0,
+            "Rang": 86,
+            "Winrate %": 63.69,
+            "Minigame Winrate %": 43.99
+        }
     },
     "2wc": {
         "name": "2wc",
-        "rank": "Error",
-        "minecraft_party": {}
+        "rank": "Premium",
+        "minecraft_party": {
+            "Gewonnene Spiele": 765.0,
+            "Gewonnene Minispiele": 4864.0,
+            "Gespielte Spiele": 1688.0,
+            "Gespielte Minispiele": 12236.0,
+            "Spielzeit": "20.0d 23.0h 51.0m",
+            "Punkte": 51081.0,
+            "Rang": 60,
+            "Winrate %": 45.32,
+            "Minigame Winrate %": 39.75
+        }
     },
     "Acidey": {
         "name": "Acidey",
-        "rank": "Error",
-        "minecraft_party": {}
+        "rank": "Premium",
+        "minecraft_party": {
+            "Gewonnene Spiele": 1229,
+            "Gewonnene Minispiele": 6378,
+            "Gespielte Spiele": 1796.0,
+            "Gespielte Minispiele": 13694.0,
+            "Spielzeit": "21.0d 2.0h 50.0m",
+            "Punkte": 62832.0,
+            "Rang": 50,
+            "Winrate %": 68.43,
+            "Minigame Winrate %": 46.58
+        }
     },
     "Allooy": {
         "name": "Allooy",
-        "rank": "Error",
-        "minecraft_party": {}
+        "rank": "Premium+",
+        "minecraft_party": {
+            "Gewonnene Spiele": 1666.0,
+            "Gewonnene Minispiele": 10324.0,
+            "Gespielte Spiele": 2102.0,
+            "Gespielte Minispiele": 17600.0,
+            "Spielzeit": "29.0d 11.0h 0.0m",
+            "Punkte": 108843.0,
+            "Rang": 18,
+            "Winrate %": 79.26,
+            "Minigame Winrate %": 58.66
+        }
     },
     "Anni808": {
         "name": "Anni808",
@@ -96,6 +156,11 @@
     },
     "Carl1_1": {
         "name": "Carl1_1",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Cemsy": {
+        "name": "Cemsy",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -221,11 +286,6 @@
     },
     "FrozenNoah": {
         "name": "FrozenNoah",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "G0at3D": {
-        "name": "G0at3D",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -391,138 +451,58 @@
     },
     "KINT0": {
         "name": "KINT0",
-        "rank": "Premium",
-        "minecraft_party": {
-            "Gewonnene Spiele": 1178,
-            "Gewonnene Minispiele": 6074,
-            "Gespielte Spiele": 2019,
-            "Gespielte Minispiele": 13898,
-            "Spielzeit": "21d 0h 27m",
-            "Punkte": 63639,
-            "Rang": 47,
-            "Winrate %": 58.35,
-            "Minigame Winrate %": 43.7
-        }
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "KMaxN": {
         "name": "KMaxN",
-        "rank": "Premium",
-        "minecraft_party": {
-            "Gewonnene Spiele": 6,
-            "Gewonnene Minispiele": 62.0,
-            "Gespielte Spiele": 170.0,
-            "Gespielte Minispiele": 1277.0,
-            "Spielzeit": "2.0d 2.0h 10.0m",
-            "Punkte": 869.0,
-            "Rang": 25653,
-            "Winrate %": 3.53,
-            "Minigame Winrate %": 4.86
-        }
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "KakaMC": {
         "name": "KakaMC",
-        "rank": "Premium",
-        "minecraft_party": {
-            "Gewonnene Spiele": 4163.0,
-            "Gewonnene Minispiele": 21924.0,
-            "Gespielte Spiele": 4943.0,
-            "Gespielte Minispiele": 34077.0,
-            "Spielzeit": "47.0d 11.0h 38.0m",
-            "Punkte": 203048.0,
-            "Rang": 6,
-            "Winrate %": 84.22,
-            "Minigame Winrate %": 64.34
-        }
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "Kanickelul": {
         "name": "Kanickelul",
-        "rank": "Bauteam",
-        "minecraft_party": {
-            "Gewonnene Spiele": 219,
-            "Gewonnene Minispiele": 1040.0,
-            "Gespielte Spiele": 417.0,
-            "Gespielte Minispiele": 2775.0,
-            "Spielzeit": "4.0d 7.0h 29.0m",
-            "Punkte": 11547.0,
-            "Rang": 564,
-            "Winrate %": 52.52,
-            "Minigame Winrate %": 37.48
-        }
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Karsten5": {
+        "name": "Karsten5",
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "Keenaai": {
         "name": "Keenaai",
-        "rank": "Premium",
-        "minecraft_party": {
-            "Gewonnene Spiele": 275,
-            "Gewonnene Minispiele": 1636.0,
-            "Gespielte Spiele": 792.0,
-            "Gespielte Minispiele": 6225.0,
-            "Spielzeit": "9.0d 23.0h 42.0m",
-            "Punkte": 21914.0,
-            "Rang": 190,
-            "Winrate %": 34.72,
-            "Minigame Winrate %": 26.28
-        }
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "Kklopse": {
         "name": "Kklopse",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 2,
-            "Gewonnene Minispiele": 71.0,
-            "Gespielte Spiele": 232.0,
-            "Gespielte Minispiele": 1864.0,
-            "Spielzeit": "3.0d 9.0h 53.0m",
-            "Punkte": 1362.0,
-            "Rang": 15399,
-            "Winrate %": 0.86,
-            "Minigame Winrate %": 3.81
-        }
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "Kokochampo": {
         "name": "Kokochampo",
-        "rank": "Premium",
-        "minecraft_party": {
-            "Gewonnene Spiele": 45,
-            "Gewonnene Minispiele": 301,
-            "Gespielte Spiele": 198,
-            "Gespielte Minispiele": 1584,
-            "Spielzeit": "2d 14h 0m",
-            "Punkte": 3756,
-            "Rang": 3362,
-            "Winrate %": 22.73,
-            "Minigame Winrate %": 19.0
-        }
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Kopek123245": {
+        "name": "Kopek123245",
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "Kopfradio": {
         "name": "Kopfradio",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 39,
-            "Gewonnene Minispiele": 274,
-            "Gespielte Spiele": 895,
-            "Gespielte Minispiele": 5837,
-            "Spielzeit": "10d 0h 3m",
-            "Punkte": 4800,
-            "Rang": 2265,
-            "Winrate %": 4.36,
-            "Minigame Winrate %": 4.69
-        }
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "Krusti": {
         "name": "Krusti",
-        "rank": "Spieler",
-        "minecraft_party": {
-            "Gewonnene Spiele": 496.0,
-            "Gewonnene Minispiele": 2999.0,
-            "Gespielte Spiele": 1703.0,
-            "Gespielte Minispiele": 12504.0,
-            "Spielzeit": "19.0d 18.0h 20.0m",
-            "Punkte": 37212.0,
-            "Rang": 92,
-            "Winrate %": 29.13,
-            "Minigame Winrate %": 23.98
-        }
+        "rank": "Error",
+        "minecraft_party": {}
     },
     "Kyuudo": {
         "name": "Kyuudo",
@@ -551,6 +531,11 @@
     },
     "LeWi_100": {
         "name": "LeWi_100",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "Lelouch610": {
+        "name": "Lelouch610",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -619,6 +604,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "Maekku": {
+        "name": "Maekku",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "Mansuni": {
         "name": "Mansuni",
         "rank": "Error",
@@ -646,11 +636,6 @@
     },
     "Mincheeen": {
         "name": "Mincheeen",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "MoZadaTV": {
-        "name": "MoZadaTV",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -739,6 +724,11 @@
         "rank": "Error",
         "minecraft_party": {}
     },
+    "Phoenix3000": {
+        "name": "Phoenix3000",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
     "Picutar": {
         "name": "Picutar",
         "rank": "Error",
@@ -779,11 +769,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "Reconest": {
-        "name": "Reconest",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "Red_An": {
         "name": "Red_An",
         "rank": "Error",
@@ -791,11 +776,6 @@
     },
     "ReichesBrot": {
         "name": "ReichesBrot",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "Ritokii": {
-        "name": "Ritokii",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -994,11 +974,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "WachsameWachtel": {
-        "name": "WachsameWachtel",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "Wienerisch": {
         "name": "Wienerisch",
         "rank": "Error",
@@ -1124,13 +1099,13 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "foenichs": {
-        "name": "foenichs",
+    "frutigall": {
+        "name": "frutigall",
         "rank": "Error",
         "minecraft_party": {}
     },
-    "frutigall": {
-        "name": "frutigall",
+    "galanzus": {
+        "name": "galanzus",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1139,8 +1114,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "jimmiyo_": {
-        "name": "jimmiyo_",
+    "jiimmii": {
+        "name": "jiimmii",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1161,6 +1136,11 @@
     },
     "lizsyy": {
         "name": "lizsyy",
+        "rank": "Error",
+        "minecraft_party": {}
+    },
+    "lolisamakun": {
+        "name": "lolisamakun",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1199,11 +1179,6 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "pascalsiiakam": {
-        "name": "pascalsiiakam",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
     "qMika": {
         "name": "qMika",
         "rank": "Error",
@@ -1229,8 +1204,8 @@
         "rank": "Error",
         "minecraft_party": {}
     },
-    "revolverz": {
-        "name": "revolverz",
+    "revolverz_": {
+        "name": "revolverz_",
         "rank": "Error",
         "minecraft_party": {}
     },
@@ -1286,11 +1261,6 @@
     },
     "xIForgotMySkill": {
         "name": "xIForgotMySkill",
-        "rank": "Error",
-        "minecraft_party": {}
-    },
-    "xKarstn": {
-        "name": "xKarstn",
         "rank": "Error",
         "minecraft_party": {}
     },
